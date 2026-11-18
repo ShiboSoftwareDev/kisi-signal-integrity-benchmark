@@ -1,0 +1,27 @@
+{
+  "identity_method": "The exact boardIdentity() algorithm from the upstream render-example-images script.",
+  "examples": [
+    {
+      "level": "level1-single-ended",
+      "rendered_hash": "54192988b13c4d7c35dfe324b9f191c2b446040ba68844b34005fea4492b8278",
+      "historical_accepted_hash": "54192988b13c4d7c35dfe324b9f191c2b446040ba68844b34005fea4492b8278",
+      "matches_historical_accepted_board": true,
+      "tsx_source_sha256": "0827c08e270de7c01a0f175b918f8773ff1cc294b608ca4c4547bbc3d022f9f0"
+    },
+    {
+      "level": "level1-differential",
+      "rendered_hash": "3f3dd9effba4190856a9a865c66f9f2c662e8905e0fe9f5e4e5c5d9274310d84",
+      "historical_accepted_hash": "da07fe5dcda8a77d2a886ff8b8414aac9d8d48aec495764c32ad9f638f11bdc4",
+      "matches_historical_accepted_board": false,
+      "tsx_source_sha256": "b18401a07e533d291f0618646845ea25635270cf67eea2b3632595554d7ed4ff"
+    },
+    {
+      "level": "level2-two-channels",
+      "rendered_hash": "34931f3a65f68833d35af98ca845066c582e9058c779326418ede5d3eba37112",
+      "historical_accepted_hash": "049a61392b5e7019d8cbfadcf4eb3653c75197a0cb71315a20b7b163f24040a9",
+      "matches_historical_accepted_board": false,
+      "tsx_source_sha256": "afeabe2d778cca548293835099286c200f748ed9b0cfbcf46d6355f02b55244d"
+    }
+  ],
+  "note": "Current TSX examples rerendered with their pinned published dependencies. Historical CSVs were not used as new solver output."
+}

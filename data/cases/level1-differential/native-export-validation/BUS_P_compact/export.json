@@ -1,0 +1,168 @@
+{
+ "bus": "U1 \u2194 U2",
+ "export": "lane",
+ "field_solver": {
+  "cross_sections": 17,
+  "cross_sections_field": 16,
+  "target_length_coverage_pct": 100
+ },
+ "files": [
+  "BUS_P.lib",
+  "bench_ngspice.cir",
+  "sparam_ngspice.cir",
+  "bench_xyce.cir",
+  "sparam_xyce.cir",
+  "BUS_P_ltspice.lib",
+  "bench_ltspice.cir",
+  "BUS_P.s4p",
+  "BUS_P_kicad.lib",
+  "BUS_P.kicad_pro",
+  "BUS_P.kicad_sch",
+  "kisi.kicad_sym",
+  "sym-lib-table",
+  "README.md"
+ ],
+ "lanes": [
+  {
+   "bench_ends": {
+    "notes": [
+     "termination R1 at U2 used as the receiver termination (60 \u03a9 per line)"
+    ],
+    "rise_ps": 300,
+    "rx": {
+     "c_pf": 2,
+     "l_nh": 0,
+     "r": 60
+    },
+    "swing_v": 0.35000000000000003,
+    "tx": {
+     "c_pf": 2,
+     "l_nh": 0,
+     "r": 5000
+    }
+   },
+   "check_against_kisi": {
+    "circuit_max_sv": 0.999998431855799,
+    "circuit_max_sv_ghz": 9.999999999999997e-07,
+    "fit_line_pct": [
+     0.5148254432770308,
+     0.03237835582892008,
+     95.9790218306438,
+     13.305345415000303
+    ],
+    "fit_line_worst_pct": [
+     0.6273665100377168,
+     0.03237835582892008,
+     95.9790218306438,
+     13.305345415000303
+    ],
+    "fit_via_pct": 0,
+    "max_ds": 0.45112762292923697,
+    "max_ds11": 0.8178583481716979,
+    "max_ds21_db": 3.4114701872604316,
+    "max_ds21_db_nyq": 0.09951947962888785,
+    "max_ds_nyq": 0.015622721009948812,
+    "via_active_from_ghz": null,
+    "via_spans_active": 0
+   },
+   "delay_ps": 315.3129681960694,
+   "elements": {
+    "c": 627,
+    "cells": 56,
+    "l": 771,
+    "r": 714,
+    "rlgc_sections": 0,
+    "sources": 80,
+    "total": 2192
+   },
+   "frequency": {
+    "fmax_hz": 10000000000,
+    "fmin_hz": 20000000,
+    "points": 500
+   },
+   "lane": "BUS_P",
+   "length_mm": 55.751248916810276,
+   "line_model": "compact",
+   "merged_sections": 5,
+   "model": "4-port (pair)",
+   "notes": [
+    "termination R1 at U2 used as the receiver termination (60 \u03a9 per line)",
+    "BUS_P branches: 1 side stub(s) included as open stubs",
+    "BUS_N branches: 1 side stub(s) included as open stubs"
+   ],
+   "ports": [
+    {
+     "at": "P BUS_P at U1.6 (transmitter end)",
+     "node": "ap",
+     "port": 1
+    },
+    {
+     "at": "N BUS_N at U1.7 (transmitter end)",
+     "node": "an",
+     "port": 2
+    },
+    {
+     "at": "P BUS_P at U2.6 (receiver end)",
+     "node": "bp",
+     "port": 3
+    },
+    {
+     "at": "N BUS_N at U2.7 (receiver end)",
+     "node": "bn",
+     "port": 4
+    }
+   ],
+   "profile": "lvds",
+   "rate_gbps": 1,
+   "subckt": "BUS_P_lane",
+   "z_ref_ohm": 50
+  }
+ ],
+ "name": "BUS_P",
+ "note": "SPICE: the lane's board channel as kisi's check models it (RLGC ladders with fitted R(f)/G(f) networks \u2013 or, with --model compact, lossless-line cells with the same networks lumped \u2013, kisi's via model, parts with estimated parasitics, stubs; pairs with modal coupled blocks); check_against_kisi compares the exported circuit with kisi's own S-parameters. Benches use the profile's linear ends; the receiver's termination resistors on the board act as the receiver's termination and are not in the subcircuit or the Touchstone file. Not included: the channel behind a connector, crosstalk between lanes, IBIS ends.",
+ "stackup_used": {
+  "lines": [
+   "stackup used (2 copper layers, 1.49 mm; er and tand at 1 GHz, the line models follow Djordjevic-Sarkar from there):",
+   "  solder mask (top): 20 um, er 3.3 [board file]",
+   "  F.Cu: copper 30 um [board file]",
+   "    NP-155F core: 1430 um, er 4.42, tand 0.02 [board file]",
+   "  B.Cu: copper 30 um [board file]",
+   "  solder mask (bottom): 20 um, er 3.3 [board file]"
+  ],
+  "provenance": {
+   "copper": [
+    "board file",
+    "board file"
+   ],
+   "dielectrics": [
+    "board file"
+   ],
+   "mask": "board file"
+  }
+ },
+ "variant": {
+  "available": [],
+  "chosen_by": null,
+  "description": null,
+  "errors": [],
+  "field_overrides": [],
+  "fitted_by_variant": [],
+  "forks_all_fitted": 0,
+  "name": null,
+  "needs_choice": false,
+  "not_fitted_by_variant": [],
+  "not_fitted_total": 0,
+  "unused_nets": 0,
+  "warnings": []
+ },
+ "written": "data/cases/level1-differential/native-export-validation/BUS_P_compact",
+ "field_solver_run": {
+  "planned": 16,
+  "from_cache": 16,
+  "solved_now": 0,
+  "failed_now": 0,
+  "not_solved": 0,
+  "seconds": 0,
+  "cache": "native/kisi-cache/field-cache.json"
+ }
+}

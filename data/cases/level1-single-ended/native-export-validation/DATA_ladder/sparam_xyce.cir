@@ -1,0 +1,15 @@
+* kisi 0.3.3: S-parameters of the lane subcircuit, reference 50.00 ohm per port
+* lane DATA
+* port 1 = a = DATA at U1.4 (transmitter end)
+* port 2 = b = DATA at U2.2 (receiver end)
+* stackup: 2 copper layers, 1.49 mm, er and tand at 1 GHz; from board file (layer by layer in the README)
+*   layers (um): F.Cu 30 / 1430 er 4.42 tand 0.02 / B.Cu 30
+.include "DATA.lib"
+
+P1 a 0 port=1 z0=5.000000e1
+P2 b 0 port=2 z0=5.000000e1
+XLANE a b 0 DATA_lane
+
+.ac lin 500 2.000000e7 1.000000e10
+.lin sparcalc=1 format=touchstone2 dataformat=ri file=sparam_xyce.s2p
+.end

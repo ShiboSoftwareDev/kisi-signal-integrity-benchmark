@@ -1,0 +1,2446 @@
+* LTspice version of the lane library: the same circuit as the .lib next to it, with Rser=0 Rpar=1e30 on every
+* inductor (LTspice adds a series resistance of 1 mOhm and an implicit parallel damping to inductors by default)
+* kisi 0.3.3: lane BUS_P as a SPICE subcircuit (ngspice, Xyce, LTspice, KiCad)
+* board board.kicad_pcb
+* subcircuit BUS_P_lane (pair: P and N on their own paths, coupled sections in modal form)
+* port 1 (ap): P BUS_P at U1.6 (transmitter end)
+* port 2 (an): N BUS_N at U1.7 (transmitter end)
+* port 3 (bp): P BUS_P at U2.6 (receiver end)
+* port 4 (bn): N BUS_N at U2.7 (receiver end)
+* track length 55.75 mm, delay 315.3 ps, reference 50.00 ohm per port
+* model: kisi's channel sections; lines as RLGC ladders (20.00 sections per wavelength at 10.00 GHz) with fitted
+*   Foster (R(f), L_int(f)) and Debye (G(f), C(f)) networks, vias as kisi's via ladder, parts with estimated
+*   parasitics, open stubs; coupled sections of a pair as even/odd chains between ideal mode converters (E/F)
+* check against kisi's S-parameters (same model): |dS21| <= 0.09911 dB to 1.5 x Nyquist (3.383 dB to the top), largest |dS| 0.01564 to 1.5 x Nyquist (0.4426 to the top)
+* fits of the main line sections (each at least 10 % of the length): R 0.5148 %, X 0.03238 %, G 95.98 %, B 13.31 %; via ladders 0 %
+* elements after flattening: 2218 R, 1586 L, 992 C, 80 sources; 164 RLGC sections
+* usage: X1 ap an bp bn 0 BUS_P_lane   (the last port is the reference)
+* stackup: 2 copper layers, 1.49 mm, er and tand at 1 GHz; from board file (layer by layer in the README)
+*   layers (um): F.Cu 30 / 1430 er 4.42 tand 0.02 / B.Cu 30
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL11_F_Cu_end a b ref
+R1 a n1 4.777538e-4
+L1 n1 n2 3.404761e-10 Rser=0 Rpar=1e30
+R2 n2 n3 1.711986e-4
+L2 n2 n3 5.870209e-12 Rser=0 Rpar=1e30
+R3 n3 n4 6.680487e-4
+L3 n3 n4 4.935088e-12 Rser=0 Rpar=1e30
+R4 n4 n5 1.412762e-3
+L4 n4 n5 2.248481e-12 Rser=0 Rpar=1e30
+R5 n5 n6 3.193289e-3
+L5 n5 n6 1.094943e-12 Rser=0 Rpar=1e30
+R6 n6 n7 6.619226e-3
+L6 n6 n7 4.889833e-13 Rser=0 Rpar=1e30
+R7 n7 n8 1.645343e-2
+L7 n7 n8 2.618645e-13 Rser=0 Rpar=1e30
+R8 n8 b 1.588922e-2
+L8 n8 b 5.448239e-14 Rser=0 Rpar=1e30
+C1 b ref 1.140540e-14
+R9 b n9 7.967427e8
+C2 n9 ref 5.017670e-16
+R10 b n10 6.947123e7
+C3 n10 ref 3.630907e-16
+R11 b n11 4.065678e6
+C4 n11 ref 3.914598e-16
+R12 b n12 2.761717e5
+C5 n12 ref 3.636143e-16
+R13 b n13 2.329812e3
+L9 n13 n14 2.317507e-8 Rser=0 Rpar=1e30
+C6 n14 ref 1.067381e-15
+.ends BUS_P_TL11_F_Cu_end
+
+* coupled line, even mode: 0.500 mm on F.Cu, Z0 115.88 ohm, eps_eff 3.102 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL11_F_Cu a b ref
+C1 a ref 1.140540e-14
+R1 a n1 7.967427e8
+C2 n1 ref 5.017670e-16
+R2 a n2 6.947123e7
+C3 n2 ref 3.630907e-16
+R3 a n3 4.065678e6
+C4 n3 ref 3.914598e-16
+R4 a n4 2.761717e5
+C5 n4 ref 3.636143e-16
+R5 a n5 2.329812e3
+L1 n5 n6 2.317507e-8 Rser=0 Rpar=1e30
+C6 n6 ref 1.067381e-15
+X1 a b ref BUS_P_TL11_F_Cu_end
+.ends BUS_P_TL11_F_Cu
+
+* one RLGC section: z, then y
+.subckt BUS_P_TL13_F_Cu_sec a b ref
+R1 a n1 1.628056e-3
+L1 n1 n2 4.189922e-10 Rser=0 Rpar=1e30
+R2 n2 n3 3.300757e-5
+L2 n2 n3 1.131793e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.033471e-3
+L3 n3 n4 7.634581e-12 Rser=0 Rpar=1e30
+R4 n4 n5 2.790053e-3
+L4 n4 n5 4.440507e-12 Rser=0 Rpar=1e30
+R5 n5 n6 6.180725e-3
+L5 n5 n6 2.119302e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.316441e-2
+L6 n6 n7 9.724967e-13 Rser=0 Rpar=1e30
+R7 n7 n8 3.174707e-2
+L7 n7 n8 5.052703e-13 Rser=0 Rpar=1e30
+R8 n8 b 3.761818e-2
+L8 n8 b 1.289886e-13 Rser=0 Rpar=1e30
+C1 b ref 1.315524e-14
+R9 b n9 6.730539e8
+C2 n9 ref 5.939779e-16
+R10 b n10 5.834509e7
+C3 n10 ref 4.323305e-16
+R11 b n11 3.413980e6
+C4 n11 ref 4.661860e-16
+R12 b n12 2.296963e5
+C5 n12 ref 4.371858e-16
+R13 b n13 1.232294e3
+L9 n13 n14 9.806288e-9 Rser=0 Rpar=1e30
+C6 n14 ref 1.614417e-15
+.ends BUS_P_TL13_F_Cu_sec
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL13_F_Cu_end a b ref
+R1 a n1 1.628056e-3
+L1 n1 n2 4.189922e-10 Rser=0 Rpar=1e30
+R2 n2 n3 3.300757e-5
+L2 n2 n3 1.131793e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.033471e-3
+L3 n3 n4 7.634581e-12 Rser=0 Rpar=1e30
+R4 n4 n5 2.790053e-3
+L4 n4 n5 4.440507e-12 Rser=0 Rpar=1e30
+R5 n5 n6 6.180725e-3
+L5 n5 n6 2.119302e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.316441e-2
+L6 n6 n7 9.724967e-13 Rser=0 Rpar=1e30
+R7 n7 n8 3.174707e-2
+L7 n7 n8 5.052703e-13 Rser=0 Rpar=1e30
+R8 n8 b 3.761818e-2
+L8 n8 b 1.289886e-13 Rser=0 Rpar=1e30
+C1 b ref 6.577620e-15
+R9 b n9 1.346108e9
+C2 n9 ref 2.969890e-16
+R10 b n10 1.166902e8
+C3 n10 ref 2.161652e-16
+R11 b n11 6.827959e6
+C4 n11 ref 2.330930e-16
+R12 b n12 4.593927e5
+C5 n12 ref 2.185929e-16
+R13 b n13 2.464589e3
+L9 n13 n14 1.961258e-8 Rser=0 Rpar=1e30
+C6 n14 ref 8.072084e-16
+.ends BUS_P_TL13_F_Cu_end
+
+* coupled line, even mode: 0.850 mm on F.Cu, Z0 166.91 ohm, eps_eff 3.132 at 1 GHz (field solver), 2 RLGC sections
+.subckt BUS_P_TL13_F_Cu a b ref
+C1 a ref 6.577620e-15
+R1 a n1 1.346108e9
+C2 n1 ref 2.969890e-16
+R2 a n2 1.166902e8
+C3 n2 ref 2.161652e-16
+R3 a n3 6.827959e6
+C4 n3 ref 2.330930e-16
+R4 a n4 4.593927e5
+C5 n4 ref 2.185929e-16
+R5 a n5 2.464589e3
+L1 n5 n6 1.961258e-8 Rser=0 Rpar=1e30
+C6 n6 ref 8.072084e-16
+X1 a n7 ref BUS_P_TL13_F_Cu_sec
+X2 n7 b ref BUS_P_TL13_F_Cu_end
+.ends BUS_P_TL13_F_Cu
+
+* even mode, per line
+.subckt BUS_P_CPL1_even a b ref
+X1 a n1 ref BUS_P_TL11_F_Cu
+X2 n1 b ref BUS_P_TL13_F_Cu
+.ends BUS_P_CPL1_even
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL12_F_Cu_end a b ref
+R1 a n1 4.782184e-4
+L1 n1 n2 1.822984e-10 Rser=0 Rpar=1e30
+R2 n2 n3 3.736584e-5
+L2 n2 n3 1.880593e-12 Rser=0 Rpar=1e30
+R3 n3 n4 3.631084e-4
+L3 n3 n4 4.590462e-12 Rser=0 Rpar=1e30
+R4 n4 n5 7.675698e-4
+L4 n4 n5 2.437463e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.620140e-3
+L5 n5 n6 1.292328e-12 Rser=0 Rpar=1e30
+R6 n6 n7 3.214292e-3
+L6 n6 n7 6.440290e-13 Rser=0 Rpar=1e30
+R7 n7 n8 6.421230e-3
+L7 n7 n8 3.231755e-13 Rser=0 Rpar=1e30
+R8 n8 n9 1.302774e-2
+L8 n8 n9 1.646983e-13 Rser=0 Rpar=1e30
+R9 n9 b 2.902966e-2
+L9 n9 b 9.218540e-14 Rser=0 Rpar=1e30
+R10 b ref 2.476415e8
+C1 b ref 2.112801e-14
+R11 b n10 2.691892e4
+L10 n10 n11 2.399197e-7 Rser=0 Rpar=1e30
+C2 n11 ref 6.757008e-16
+.ends BUS_P_TL12_F_Cu_end
+
+* coupled line, odd mode: 0.500 mm on F.Cu, Z0 65.70 ohm, eps_eff 2.766 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL12_F_Cu a b ref
+R1 a ref 2.476415e8
+C1 a ref 2.112801e-14
+R2 a n1 2.691892e4
+L1 n1 n2 2.399197e-7 Rser=0 Rpar=1e30
+C2 n2 ref 6.757008e-16
+X1 a b ref BUS_P_TL12_F_Cu_end
+.ends BUS_P_TL12_F_Cu
+
+* one RLGC section: z, then y
+.subckt BUS_P_TL14_F_Cu_sec a b ref
+R1 a n1 1.628188e-3
+L1 n1 n2 2.629750e-10 Rser=0 Rpar=1e30
+R2 n2 n3 1.719419e-5
+L2 n2 n3 5.895699e-13 Rser=0 Rpar=1e30
+R3 n3 n4 9.160837e-4
+L3 n3 n4 6.767402e-12 Rser=0 Rpar=1e30
+R4 n4 n5 2.651356e-3
+L4 n4 n5 4.219765e-12 Rser=0 Rpar=1e30
+R5 n5 n6 5.819250e-3
+L5 n5 n6 1.995357e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.249778e-2
+L6 n6 n7 9.232504e-13 Rser=0 Rpar=1e30
+R7 n7 n8 2.980371e-2
+L7 n7 n8 4.743408e-13 Rser=0 Rpar=1e30
+R8 n8 b 3.789756e-2
+L8 n8 b 1.299465e-13 Rser=0 Rpar=1e30
+C1 b ref 1.850158e-14
+R9 b n9 3.114202e8
+C2 n9 ref 9.088105e-16
+R10 b n10 1.217688e7
+C3 n10 ref 7.349948e-16
+R11 b n11 3.832800e5
+C4 n11 ref 7.384210e-16
+R12 b n12 4.136408e4
+C5 n12 ref 2.163699e-16
+R13 b n13 8.147884e2
+L9 n13 n14 6.483880e-9 Rser=0 Rpar=1e30
+C6 n14 ref 2.441661e-15
+.ends BUS_P_TL14_F_Cu_sec
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL14_F_Cu_end a b ref
+R1 a n1 1.628188e-3
+L1 n1 n2 2.629750e-10 Rser=0 Rpar=1e30
+R2 n2 n3 1.719419e-5
+L2 n2 n3 5.895699e-13 Rser=0 Rpar=1e30
+R3 n3 n4 9.160837e-4
+L3 n3 n4 6.767402e-12 Rser=0 Rpar=1e30
+R4 n4 n5 2.651356e-3
+L4 n4 n5 4.219765e-12 Rser=0 Rpar=1e30
+R5 n5 n6 5.819250e-3
+L5 n5 n6 1.995357e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.249778e-2
+L6 n6 n7 9.232504e-13 Rser=0 Rpar=1e30
+R7 n7 n8 2.980371e-2
+L7 n7 n8 4.743408e-13 Rser=0 Rpar=1e30
+R8 n8 b 3.789756e-2
+L8 n8 b 1.299465e-13 Rser=0 Rpar=1e30
+C1 b ref 9.250788e-15
+R9 b n9 6.228405e8
+C2 n9 ref 4.544052e-16
+R10 b n10 2.435375e7
+C3 n10 ref 3.674974e-16
+R11 b n11 7.665599e5
+C4 n11 ref 3.692105e-16
+R12 b n12 8.272816e4
+C5 n12 ref 1.081849e-16
+R13 b n13 1.629577e3
+L9 n13 n14 1.296776e-8 Rser=0 Rpar=1e30
+C6 n14 ref 1.220830e-15
+.ends BUS_P_TL14_F_Cu_end
+
+* coupled line, odd mode: 0.850 mm on F.Cu, Z0 111.08 ohm, eps_eff 2.784 at 1 GHz (field solver), 2 RLGC sections
+.subckt BUS_P_TL14_F_Cu a b ref
+C1 a ref 9.250788e-15
+R1 a n1 6.228405e8
+C2 n1 ref 4.544052e-16
+R2 a n2 2.435375e7
+C3 n2 ref 3.674974e-16
+R3 a n3 7.665599e5
+C4 n3 ref 3.692105e-16
+R4 a n4 8.272816e4
+C5 n4 ref 1.081849e-16
+R5 a n5 1.629577e3
+L1 n5 n6 1.296776e-8 Rser=0 Rpar=1e30
+C6 n6 ref 1.220830e-15
+X1 a n7 ref BUS_P_TL14_F_Cu_sec
+X2 n7 b ref BUS_P_TL14_F_Cu_end
+.ends BUS_P_TL14_F_Cu
+
+* odd mode, per line
+.subckt BUS_P_CPL1_odd a b ref
+X1 a n1 ref BUS_P_TL12_F_Cu
+X2 n1 b ref BUS_P_TL14_F_Cu
+.ends BUS_P_CPL1_odd
+
+* coupled run 0.500 mm on F.Cu (Zodd 65.70, Zeven 115.88 ohm per line)
+* coupled run 0.850 mm on F.Cu (Zodd 111.08, Zeven 166.91 ohm per line)
+* coupled block in modal form: V_e = (V_P + V_N)/2, V_o = (V_P - V_N)/2, I_P = I_e + I_o, I_N = I_e - I_o
+.subckt BUS_P_CPL1 p1 n1 p2 n2 ref
+E1 e1x ref p1 ref 0.5
+E2 e1s e1x n1 ref 0.5
+E3 o1x ref p1 ref 0.5
+E4 o1s o1x n1 ref -0.5
+V1 e1s e1 0
+V2 o1s o1 0
+F1 p1 ref V1 1
+F2 p1 ref V2 1
+F3 n1 ref V1 1
+F4 n1 ref V2 -1
+X1 e1 e2 ref BUS_P_CPL1_even
+X2 o1 o2 ref BUS_P_CPL1_odd
+E5 p2x ref e2 ref 1
+E6 p2s p2x o2 ref 1
+E7 n2x ref e2 ref 1
+E8 n2s n2x o2 ref -1
+V3 p2s p2 0
+V4 n2s n2 0
+F5 e2 ref V3 0.5
+F6 e2 ref V4 0.5
+F7 o2 ref V3 0.5
+F8 o2 ref V4 -0.5
+.ends BUS_P_CPL1
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL15_F_Cu_end a b ref
+R1 a n1 2.762891e-3
+L1 n1 n2 5.827121e-10 Rser=0 Rpar=1e30
+R2 n2 n3 6.807479e-5
+L2 n2 n3 2.334209e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.835453e-3
+L3 n3 n4 1.355908e-11 Rser=0 Rpar=1e30
+R4 n4 n5 4.827868e-3
+L4 n4 n5 7.683790e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.074002e-2
+L5 n5 n6 3.682635e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.279977e-2
+L6 n6 n7 1.684291e-12 Rser=0 Rpar=1e30
+R7 n7 n8 5.519213e-2
+L7 n7 n8 8.784101e-13 Rser=0 Rpar=1e30
+R8 n8 b 6.396766e-2
+L8 n8 b 2.193380e-13 Rser=0 Rpar=1e30
+C1 b ref 1.338586e-14
+R9 b n9 6.904355e8
+C2 n9 ref 5.790246e-16
+R10 b n10 6.010753e7
+C3 n10 ref 4.196539e-16
+R11 b n11 3.519599e6
+C4 n11 ref 4.521962e-16
+R12 b n12 2.377742e5
+C5 n12 ref 4.223333e-16
+R13 b n13 2.032977e3
+L9 n13 n14 2.022240e-8 Rser=0 Rpar=1e30
+C6 n14 ref 1.223229e-15
+.ends BUS_P_TL15_F_Cu_end
+
+* line: 0.721 mm on F.Cu, Z0 140.04 ohm, eps_eff 2.987 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL15_F_Cu a b ref
+C1 a ref 1.338586e-14
+R1 a n1 6.904355e8
+C2 n1 ref 5.790246e-16
+R2 a n2 6.010753e7
+C3 n2 ref 4.196539e-16
+R3 a n3 3.519599e6
+C4 n3 ref 4.521962e-16
+R4 a n4 2.377742e5
+C5 n4 ref 4.223333e-16
+R5 a n5 2.032977e3
+L1 n5 n6 2.022240e-8 Rser=0 Rpar=1e30
+C6 n6 ref 1.223229e-15
+X1 a b ref BUS_P_TL15_F_Cu_end
+.ends BUS_P_TL15_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL16_F_Cu_end a b ref
+R1 a n1 2.762891e-3
+L1 n1 n2 5.827121e-10 Rser=0 Rpar=1e30
+R2 n2 n3 6.807479e-5
+L2 n2 n3 2.334209e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.835453e-3
+L3 n3 n4 1.355908e-11 Rser=0 Rpar=1e30
+R4 n4 n5 4.827868e-3
+L4 n4 n5 7.683790e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.074002e-2
+L5 n5 n6 3.682635e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.279977e-2
+L6 n6 n7 1.684291e-12 Rser=0 Rpar=1e30
+R7 n7 n8 5.519213e-2
+L7 n7 n8 8.784101e-13 Rser=0 Rpar=1e30
+R8 n8 b 6.396766e-2
+L8 n8 b 2.193380e-13 Rser=0 Rpar=1e30
+C1 b ref 1.338586e-14
+R9 b n9 6.904355e8
+C2 n9 ref 5.790246e-16
+R10 b n10 6.010753e7
+C3 n10 ref 4.196539e-16
+R11 b n11 3.519599e6
+C4 n11 ref 4.521962e-16
+R12 b n12 2.377742e5
+C5 n12 ref 4.223333e-16
+R13 b n13 2.032977e3
+L9 n13 n14 2.022240e-8 Rser=0 Rpar=1e30
+C6 n14 ref 1.223229e-15
+.ends BUS_P_TL16_F_Cu_end
+
+* line: 0.721 mm on F.Cu, Z0 140.04 ohm, eps_eff 2.987 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL16_F_Cu a b ref
+C1 a ref 1.338586e-14
+R1 a n1 6.904355e8
+C2 n1 ref 5.790246e-16
+R2 a n2 6.010753e7
+C3 n2 ref 4.196539e-16
+R3 a n3 3.519599e6
+C4 n3 ref 4.521962e-16
+R4 a n4 2.377742e5
+C5 n4 ref 4.223333e-16
+R5 a n5 2.032977e3
+L1 n5 n6 2.022240e-8 Rser=0 Rpar=1e30
+C6 n6 ref 1.223229e-15
+X1 a b ref BUS_P_TL16_F_Cu_end
+.ends BUS_P_TL16_F_Cu
+
+* one RLGC section: z, then y
+.subckt BUS_P_TL17_F_Cu_sec a b ref
+R1 a n1 3.054418e-3
+L1 n1 n2 1.031648e-9 Rser=0 Rpar=1e30
+R2 n2 n3 1.389885e-4
+L2 n2 n3 4.765763e-12 Rser=0 Rpar=1e30
+R3 n3 n4 2.334542e-3
+L3 n3 n4 1.724601e-11 Rser=0 Rpar=1e30
+R4 n4 n5 5.728839e-3
+L4 n4 n5 9.117730e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.286011e-2
+L5 n5 n6 4.409590e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.707642e-2
+L6 n6 n7 2.000221e-12 Rser=0 Rpar=1e30
+R7 n7 n8 6.622441e-2
+L7 n7 n8 1.053994e-12 Rser=0 Rpar=1e30
+R8 n8 b 7.169517e-2
+L8 n8 b 2.458348e-13 Rser=0 Rpar=1e30
+C1 b ref 1.830662e-14
+R9 b n9 4.914808e8
+C2 n9 ref 8.134176e-16
+R10 b n10 4.249867e7
+C3 n10 ref 5.935328e-16
+R11 b n11 2.488607e6
+C4 n11 ref 6.395342e-16
+R12 b n12 1.661029e5
+C5 n12 ref 6.045648e-16
+R13 b n13 9.090423e2
+L9 n13 n14 7.233929e-9 Rser=0 Rpar=1e30
+C6 n14 ref 2.188497e-15
+.ends BUS_P_TL17_F_Cu_sec
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL17_F_Cu_end a b ref
+R1 a n1 3.054418e-3
+L1 n1 n2 1.031648e-9 Rser=0 Rpar=1e30
+R2 n2 n3 1.389885e-4
+L2 n2 n3 4.765763e-12 Rser=0 Rpar=1e30
+R3 n3 n4 2.334542e-3
+L3 n3 n4 1.724601e-11 Rser=0 Rpar=1e30
+R4 n4 n5 5.728839e-3
+L4 n4 n5 9.117730e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.286011e-2
+L5 n5 n6 4.409590e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.707642e-2
+L6 n6 n7 2.000221e-12 Rser=0 Rpar=1e30
+R7 n7 n8 6.622441e-2
+L7 n7 n8 1.053994e-12 Rser=0 Rpar=1e30
+R8 n8 b 7.169517e-2
+L8 n8 b 2.458348e-13 Rser=0 Rpar=1e30
+C1 b ref 9.153308e-15
+R9 b n9 9.829616e8
+C2 n9 ref 4.067088e-16
+R10 b n10 8.499735e7
+C3 n10 ref 2.967664e-16
+R11 b n11 4.977214e6
+C4 n11 ref 3.197671e-16
+R12 b n12 3.322058e5
+C5 n12 ref 3.022824e-16
+R13 b n13 1.818085e3
+L9 n13 n14 1.446786e-8 Rser=0 Rpar=1e30
+C6 n14 ref 1.094249e-15
+.ends BUS_P_TL17_F_Cu_end
+
+* coupled line, even mode: 37.490 mm on F.Cu, Z0 222.30 ohm, eps_eff 3.039 at 1 GHz (field solver), 47 RLGC sections
+.subckt BUS_P_TL17_F_Cu a b ref
+C1 a ref 9.153308e-15
+R1 a n1 9.829616e8
+C2 n1 ref 4.067088e-16
+R2 a n2 8.499735e7
+C3 n2 ref 2.967664e-16
+R3 a n3 4.977214e6
+C4 n3 ref 3.197671e-16
+R4 a n4 3.322058e5
+C5 n4 ref 3.022824e-16
+R5 a n5 1.818085e3
+L1 n5 n6 1.446786e-8 Rser=0 Rpar=1e30
+C6 n6 ref 1.094249e-15
+X1 a n7 ref BUS_P_TL17_F_Cu_sec
+X2 n7 n8 ref BUS_P_TL17_F_Cu_sec
+X3 n8 n9 ref BUS_P_TL17_F_Cu_sec
+X4 n9 n10 ref BUS_P_TL17_F_Cu_sec
+X5 n10 n11 ref BUS_P_TL17_F_Cu_sec
+X6 n11 n12 ref BUS_P_TL17_F_Cu_sec
+X7 n12 n13 ref BUS_P_TL17_F_Cu_sec
+X8 n13 n14 ref BUS_P_TL17_F_Cu_sec
+X9 n14 n15 ref BUS_P_TL17_F_Cu_sec
+X10 n15 n16 ref BUS_P_TL17_F_Cu_sec
+X11 n16 n17 ref BUS_P_TL17_F_Cu_sec
+X12 n17 n18 ref BUS_P_TL17_F_Cu_sec
+X13 n18 n19 ref BUS_P_TL17_F_Cu_sec
+X14 n19 n20 ref BUS_P_TL17_F_Cu_sec
+X15 n20 n21 ref BUS_P_TL17_F_Cu_sec
+X16 n21 n22 ref BUS_P_TL17_F_Cu_sec
+X17 n22 n23 ref BUS_P_TL17_F_Cu_sec
+X18 n23 n24 ref BUS_P_TL17_F_Cu_sec
+X19 n24 n25 ref BUS_P_TL17_F_Cu_sec
+X20 n25 n26 ref BUS_P_TL17_F_Cu_sec
+X21 n26 n27 ref BUS_P_TL17_F_Cu_sec
+X22 n27 n28 ref BUS_P_TL17_F_Cu_sec
+X23 n28 n29 ref BUS_P_TL17_F_Cu_sec
+X24 n29 n30 ref BUS_P_TL17_F_Cu_sec
+X25 n30 n31 ref BUS_P_TL17_F_Cu_sec
+X26 n31 n32 ref BUS_P_TL17_F_Cu_sec
+X27 n32 n33 ref BUS_P_TL17_F_Cu_sec
+X28 n33 n34 ref BUS_P_TL17_F_Cu_sec
+X29 n34 n35 ref BUS_P_TL17_F_Cu_sec
+X30 n35 n36 ref BUS_P_TL17_F_Cu_sec
+X31 n36 n37 ref BUS_P_TL17_F_Cu_sec
+X32 n37 n38 ref BUS_P_TL17_F_Cu_sec
+X33 n38 n39 ref BUS_P_TL17_F_Cu_sec
+X34 n39 n40 ref BUS_P_TL17_F_Cu_sec
+X35 n40 n41 ref BUS_P_TL17_F_Cu_sec
+X36 n41 n42 ref BUS_P_TL17_F_Cu_sec
+X37 n42 n43 ref BUS_P_TL17_F_Cu_sec
+X38 n43 n44 ref BUS_P_TL17_F_Cu_sec
+X39 n44 n45 ref BUS_P_TL17_F_Cu_sec
+X40 n45 n46 ref BUS_P_TL17_F_Cu_sec
+X41 n46 n47 ref BUS_P_TL17_F_Cu_sec
+X42 n47 n48 ref BUS_P_TL17_F_Cu_sec
+X43 n48 n49 ref BUS_P_TL17_F_Cu_sec
+X44 n49 n50 ref BUS_P_TL17_F_Cu_sec
+X45 n50 n51 ref BUS_P_TL17_F_Cu_sec
+X46 n51 n52 ref BUS_P_TL17_F_Cu_sec
+X47 n52 b ref BUS_P_TL17_F_Cu_end
+.ends BUS_P_TL17_F_Cu
+
+* even mode, per line
+.subckt BUS_P_CPL3_even a b ref
+X1 a b ref BUS_P_TL17_F_Cu
+.ends BUS_P_CPL3_even
+
+* one RLGC section: z, then y
+.subckt BUS_P_TL18_F_Cu_sec a b ref
+R1 a n1 3.055638e-3
+L1 n1 n2 2.287587e-10 Rser=0 Rpar=1e30
+R2 n2 n3 3.327878e-5
+L2 n2 n3 1.674895e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.447001e-3
+L3 n3 n4 1.829317e-11 Rser=0 Rpar=1e30
+R4 n4 n5 3.961178e-3
+L4 n4 n5 1.257895e-11 Rser=0 Rpar=1e30
+R5 n5 n6 7.993410e-3
+L5 n5 n6 6.376057e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.645378e-2
+L6 n6 n7 3.296748e-12 Rser=0 Rpar=1e30
+R7 n7 n8 3.210483e-2
+L7 n7 n8 1.615811e-12 Rser=0 Rpar=1e30
+R8 n8 n9 6.867191e-2
+L8 n8 n9 8.681589e-13 Rser=0 Rpar=1e30
+R9 n9 b 1.255071e-1
+L9 n9 b 3.985552e-13 Rser=0 Rpar=1e30
+R10 b ref 5.692862e7
+C1 b ref 8.845053e-14
+R11 b n10 6.238753e3
+L10 n10 n11 5.560399e-8 Rser=0 Rpar=1e30
+C2 n11 ref 2.915508e-15
+.ends BUS_P_TL18_F_Cu_sec
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL18_F_Cu_end a b ref
+R1 a n1 3.055638e-3
+L1 n1 n2 2.287587e-10 Rser=0 Rpar=1e30
+R2 n2 n3 3.327878e-5
+L2 n2 n3 1.674895e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.447001e-3
+L3 n3 n4 1.829317e-11 Rser=0 Rpar=1e30
+R4 n4 n5 3.961178e-3
+L4 n4 n5 1.257895e-11 Rser=0 Rpar=1e30
+R5 n5 n6 7.993410e-3
+L5 n5 n6 6.376057e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.645378e-2
+L6 n6 n7 3.296748e-12 Rser=0 Rpar=1e30
+R7 n7 n8 3.210483e-2
+L7 n7 n8 1.615811e-12 Rser=0 Rpar=1e30
+R8 n8 n9 6.867191e-2
+L8 n8 n9 8.681589e-13 Rser=0 Rpar=1e30
+R9 n9 b 1.255071e-1
+L9 n9 b 3.985552e-13 Rser=0 Rpar=1e30
+R10 b ref 1.138572e8
+C1 b ref 4.422527e-14
+R11 b n10 1.247751e4
+L10 n10 n11 1.112080e-7 Rser=0 Rpar=1e30
+C2 n11 ref 1.457754e-15
+.ends BUS_P_TL18_F_Cu_end
+
+* coupled line, odd mode: 37.490 mm on F.Cu, Z0 50.87 ohm, eps_eff 2.846 at 1 GHz (field solver), 47 RLGC sections
+.subckt BUS_P_TL18_F_Cu a b ref
+R1 a ref 1.138572e8
+C1 a ref 4.422527e-14
+R2 a n1 1.247751e4
+L1 n1 n2 1.112080e-7 Rser=0 Rpar=1e30
+C2 n2 ref 1.457754e-15
+X1 a n3 ref BUS_P_TL18_F_Cu_sec
+X2 n3 n4 ref BUS_P_TL18_F_Cu_sec
+X3 n4 n5 ref BUS_P_TL18_F_Cu_sec
+X4 n5 n6 ref BUS_P_TL18_F_Cu_sec
+X5 n6 n7 ref BUS_P_TL18_F_Cu_sec
+X6 n7 n8 ref BUS_P_TL18_F_Cu_sec
+X7 n8 n9 ref BUS_P_TL18_F_Cu_sec
+X8 n9 n10 ref BUS_P_TL18_F_Cu_sec
+X9 n10 n11 ref BUS_P_TL18_F_Cu_sec
+X10 n11 n12 ref BUS_P_TL18_F_Cu_sec
+X11 n12 n13 ref BUS_P_TL18_F_Cu_sec
+X12 n13 n14 ref BUS_P_TL18_F_Cu_sec
+X13 n14 n15 ref BUS_P_TL18_F_Cu_sec
+X14 n15 n16 ref BUS_P_TL18_F_Cu_sec
+X15 n16 n17 ref BUS_P_TL18_F_Cu_sec
+X16 n17 n18 ref BUS_P_TL18_F_Cu_sec
+X17 n18 n19 ref BUS_P_TL18_F_Cu_sec
+X18 n19 n20 ref BUS_P_TL18_F_Cu_sec
+X19 n20 n21 ref BUS_P_TL18_F_Cu_sec
+X20 n21 n22 ref BUS_P_TL18_F_Cu_sec
+X21 n22 n23 ref BUS_P_TL18_F_Cu_sec
+X22 n23 n24 ref BUS_P_TL18_F_Cu_sec
+X23 n24 n25 ref BUS_P_TL18_F_Cu_sec
+X24 n25 n26 ref BUS_P_TL18_F_Cu_sec
+X25 n26 n27 ref BUS_P_TL18_F_Cu_sec
+X26 n27 n28 ref BUS_P_TL18_F_Cu_sec
+X27 n28 n29 ref BUS_P_TL18_F_Cu_sec
+X28 n29 n30 ref BUS_P_TL18_F_Cu_sec
+X29 n30 n31 ref BUS_P_TL18_F_Cu_sec
+X30 n31 n32 ref BUS_P_TL18_F_Cu_sec
+X31 n32 n33 ref BUS_P_TL18_F_Cu_sec
+X32 n33 n34 ref BUS_P_TL18_F_Cu_sec
+X33 n34 n35 ref BUS_P_TL18_F_Cu_sec
+X34 n35 n36 ref BUS_P_TL18_F_Cu_sec
+X35 n36 n37 ref BUS_P_TL18_F_Cu_sec
+X36 n37 n38 ref BUS_P_TL18_F_Cu_sec
+X37 n38 n39 ref BUS_P_TL18_F_Cu_sec
+X38 n39 n40 ref BUS_P_TL18_F_Cu_sec
+X39 n40 n41 ref BUS_P_TL18_F_Cu_sec
+X40 n41 n42 ref BUS_P_TL18_F_Cu_sec
+X41 n42 n43 ref BUS_P_TL18_F_Cu_sec
+X42 n43 n44 ref BUS_P_TL18_F_Cu_sec
+X43 n44 n45 ref BUS_P_TL18_F_Cu_sec
+X44 n45 n46 ref BUS_P_TL18_F_Cu_sec
+X45 n46 n47 ref BUS_P_TL18_F_Cu_sec
+X46 n47 n48 ref BUS_P_TL18_F_Cu_sec
+X47 n48 b ref BUS_P_TL18_F_Cu_end
+.ends BUS_P_TL18_F_Cu
+
+* odd mode, per line
+.subckt BUS_P_CPL3_odd a b ref
+X1 a b ref BUS_P_TL18_F_Cu
+.ends BUS_P_CPL3_odd
+
+* coupled run 37.490 mm on F.Cu (Zodd 50.87, Zeven 222.30 ohm per line)
+* coupled block in modal form: V_e = (V_P + V_N)/2, V_o = (V_P - V_N)/2, I_P = I_e + I_o, I_N = I_e - I_o
+.subckt BUS_P_CPL3 p1 n1 p2 n2 ref
+E1 e1x ref p1 ref 0.5
+E2 e1s e1x n1 ref 0.5
+E3 o1x ref p1 ref 0.5
+E4 o1s o1x n1 ref -0.5
+V1 e1s e1 0
+V2 o1s o1 0
+F1 p1 ref V1 1
+F2 p1 ref V2 1
+F3 n1 ref V1 1
+F4 n1 ref V2 -1
+X1 e1 e2 ref BUS_P_CPL3_even
+X2 o1 o2 ref BUS_P_CPL3_odd
+E5 p2x ref e2 ref 1
+E6 p2s p2x o2 ref 1
+E7 n2x ref e2 ref 1
+E8 n2s n2x o2 ref -1
+V3 p2s p2 0
+V4 n2s n2 0
+F5 e2 ref V3 0.5
+F6 e2 ref V4 0.5
+F7 o2 ref V3 0.5
+F8 o2 ref V4 -0.5
+.ends BUS_P_CPL3
+
+* one RLGC section: z, then y
+.subckt BUS_P_TL19_F_Cu_sec a b ref
+R1 a n1 3.051043e-3
+L1 n1 n2 6.434852e-10 Rser=0 Rpar=1e30
+R2 n2 n3 7.517456e-5
+L2 n2 n3 2.577652e-12 Rser=0 Rpar=1e30
+R3 n3 n4 2.026879e-3
+L3 n3 n4 1.497320e-11 Rser=0 Rpar=1e30
+R4 n4 n5 5.331384e-3
+L4 n4 n5 8.485161e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.186014e-2
+L5 n5 n6 4.066711e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.517764e-2
+L6 n6 n7 1.859952e-12 Rser=0 Rpar=1e30
+R7 n7 n8 6.094832e-2
+L7 n7 n8 9.700226e-13 Rser=0 Rpar=1e30
+R8 n8 b 7.063908e-2
+L8 n8 b 2.422136e-13 Rser=0 Rpar=1e30
+C1 b ref 2.956384e-14
+R9 b n9 3.126141e8
+C2 n9 ref 1.278826e-15
+R10 b n10 2.721537e7
+C3 n10 ref 9.268423e-16
+R11 b n11 1.593597e6
+C4 n11 ref 9.987149e-16
+R12 b n12 1.076590e5
+C5 n12 ref 9.327600e-16
+R13 b n13 9.204875e2
+L9 n13 n14 9.156259e-9 Rser=0 Rpar=1e30
+C6 n14 ref 2.701608e-15
+.ends BUS_P_TL19_F_Cu_sec
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL19_F_Cu_end a b ref
+R1 a n1 3.051043e-3
+L1 n1 n2 6.434852e-10 Rser=0 Rpar=1e30
+R2 n2 n3 7.517456e-5
+L2 n2 n3 2.577652e-12 Rser=0 Rpar=1e30
+R3 n3 n4 2.026879e-3
+L3 n3 n4 1.497320e-11 Rser=0 Rpar=1e30
+R4 n4 n5 5.331384e-3
+L4 n4 n5 8.485161e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.186014e-2
+L5 n5 n6 4.066711e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.517764e-2
+L6 n6 n7 1.859952e-12 Rser=0 Rpar=1e30
+R7 n7 n8 6.094832e-2
+L7 n7 n8 9.700226e-13 Rser=0 Rpar=1e30
+R8 n8 b 7.063908e-2
+L8 n8 b 2.422136e-13 Rser=0 Rpar=1e30
+C1 b ref 1.478192e-14
+R9 b n9 6.252282e8
+C2 n9 ref 6.394132e-16
+R10 b n10 5.443075e7
+C3 n10 ref 4.634211e-16
+R11 b n11 3.187195e6
+C4 n11 ref 4.993574e-16
+R12 b n12 2.153179e5
+C5 n12 ref 4.663800e-16
+R13 b n13 1.840975e3
+L9 n13 n14 1.831252e-8 Rser=0 Rpar=1e30
+C6 n14 ref 1.350804e-15
+.ends BUS_P_TL19_F_Cu_end
+
+* line: 13.540 mm on F.Cu, Z0 140.04 ohm, eps_eff 2.987 at 1 GHz (field solver), 17 RLGC sections
+.subckt BUS_P_TL19_F_Cu a b ref
+C1 a ref 1.478192e-14
+R1 a n1 6.252282e8
+C2 n1 ref 6.394132e-16
+R2 a n2 5.443075e7
+C3 n2 ref 4.634211e-16
+R3 a n3 3.187195e6
+C4 n3 ref 4.993574e-16
+R4 a n4 2.153179e5
+C5 n4 ref 4.663800e-16
+R5 a n5 1.840975e3
+L1 n5 n6 1.831252e-8 Rser=0 Rpar=1e30
+C6 n6 ref 1.350804e-15
+X1 a n7 ref BUS_P_TL19_F_Cu_sec
+X2 n7 n8 ref BUS_P_TL19_F_Cu_sec
+X3 n8 n9 ref BUS_P_TL19_F_Cu_sec
+X4 n9 n10 ref BUS_P_TL19_F_Cu_sec
+X5 n10 n11 ref BUS_P_TL19_F_Cu_sec
+X6 n11 n12 ref BUS_P_TL19_F_Cu_sec
+X7 n12 n13 ref BUS_P_TL19_F_Cu_sec
+X8 n13 n14 ref BUS_P_TL19_F_Cu_sec
+X9 n14 n15 ref BUS_P_TL19_F_Cu_sec
+X10 n15 n16 ref BUS_P_TL19_F_Cu_sec
+X11 n16 n17 ref BUS_P_TL19_F_Cu_sec
+X12 n17 n18 ref BUS_P_TL19_F_Cu_sec
+X13 n18 n19 ref BUS_P_TL19_F_Cu_sec
+X14 n19 n20 ref BUS_P_TL19_F_Cu_sec
+X15 n20 n21 ref BUS_P_TL19_F_Cu_sec
+X16 n21 n22 ref BUS_P_TL19_F_Cu_sec
+X17 n22 b ref BUS_P_TL19_F_Cu_end
+.ends BUS_P_TL19_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL20_F_Cu_end a b ref
+R1 a n1 9.573064e-4
+L1 n1 n2 3.233361e-10 Rser=0 Rpar=1e30
+R2 n2 n3 4.356136e-5
+L2 n2 n3 1.493671e-12 Rser=0 Rpar=1e30
+R3 n3 n4 7.316851e-4
+L3 n3 n4 5.405190e-12 Rser=0 Rpar=1e30
+R4 n4 n5 1.795515e-3
+L4 n4 n5 2.857651e-12 Rser=0 Rpar=1e30
+R5 n5 n6 4.030576e-3
+L5 n5 n6 1.382040e-12 Rser=0 Rpar=1e30
+R6 n6 n7 8.486208e-3
+L6 n6 n7 6.269032e-13 Rser=0 Rpar=1e30
+R7 n7 n8 2.075585e-2
+L7 n7 n8 3.303396e-13 Rser=0 Rpar=1e30
+R8 n8 b 2.247048e-2
+L8 n8 b 7.704879e-14 Rser=0 Rpar=1e30
+C1 b ref 2.868802e-15
+R9 b n9 3.136275e9
+C2 n9 ref 1.274694e-16
+R10 b n10 2.711958e8
+C3 n10 ref 9.301162e-17
+R11 b n11 1.588049e7
+C4 n11 ref 1.002204e-16
+R12 b n12 1.059949e6
+C5 n12 ref 9.474042e-17
+R13 b n13 5.800850e3
+L9 n13 n14 4.616170e-8 Rser=0 Rpar=1e30
+C6 n14 ref 3.429561e-16
+.ends BUS_P_TL20_F_Cu_end
+
+* coupled line, even mode: 0.250 mm on F.Cu, Z0 222.30 ohm, eps_eff 3.039 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL20_F_Cu a b ref
+C1 a ref 2.868802e-15
+R1 a n1 3.136275e9
+C2 n1 ref 1.274694e-16
+R2 a n2 2.711958e8
+C3 n2 ref 9.301162e-17
+R3 a n3 1.588049e7
+C4 n3 ref 1.002204e-16
+R4 a n4 1.059949e6
+C5 n4 ref 9.474042e-17
+R5 a n5 5.800850e3
+L1 n5 n6 4.616170e-8 Rser=0 Rpar=1e30
+C6 n6 ref 3.429561e-16
+X1 a b ref BUS_P_TL20_F_Cu_end
+.ends BUS_P_TL20_F_Cu
+
+* even mode, per line
+.subckt BUS_P_CPL4_even a b ref
+X1 a b ref BUS_P_TL20_F_Cu
+.ends BUS_P_CPL4_even
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL21_F_Cu_end a b ref
+R1 a n1 9.576885e-4
+L1 n1 n2 7.169683e-11 Rser=0 Rpar=1e30
+R2 n2 n3 1.043013e-5
+L2 n2 n3 5.249403e-13 Rser=0 Rpar=1e30
+R3 n3 n4 4.535147e-4
+L3 n3 n4 5.733390e-12 Rser=0 Rpar=1e30
+R4 n4 n5 1.241500e-3
+L4 n4 n5 3.942456e-12 Rser=0 Rpar=1e30
+R5 n5 n6 2.505270e-3
+L5 n5 n6 1.998364e-12 Rser=0 Rpar=1e30
+R6 n6 n7 5.156892e-3
+L6 n6 n7 1.033257e-12 Rser=0 Rpar=1e30
+R7 n7 n8 1.006220e-2
+L7 n7 n8 5.064224e-13 Rser=0 Rpar=1e30
+R8 n8 n9 2.152294e-2
+L8 n8 n9 2.720957e-13 Rser=0 Rpar=1e30
+R9 n9 b 3.933605e-2
+L9 n9 b 1.249139e-13 Rser=0 Rpar=1e30
+R10 b ref 3.632773e8
+C1 b ref 1.386095e-14
+R11 b n10 3.981121e4
+L10 n10 n11 3.548244e-7 Rser=0 Rpar=1e30
+C2 n11 ref 4.568848e-16
+.ends BUS_P_TL21_F_Cu_end
+
+* coupled line, odd mode: 0.250 mm on F.Cu, Z0 50.87 ohm, eps_eff 2.846 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL21_F_Cu a b ref
+R1 a ref 3.632773e8
+C1 a ref 1.386095e-14
+R2 a n1 3.981121e4
+L1 n1 n2 3.548244e-7 Rser=0 Rpar=1e30
+C2 n2 ref 4.568848e-16
+X1 a b ref BUS_P_TL21_F_Cu_end
+.ends BUS_P_TL21_F_Cu
+
+* odd mode, per line
+.subckt BUS_P_CPL4_odd a b ref
+X1 a b ref BUS_P_TL21_F_Cu
+.ends BUS_P_CPL4_odd
+
+* coupled run 0.250 mm on F.Cu (Zodd 50.87, Zeven 222.30 ohm per line)
+* coupled block in modal form: V_e = (V_P + V_N)/2, V_o = (V_P - V_N)/2, I_P = I_e + I_o, I_N = I_e - I_o
+.subckt BUS_P_CPL4 p1 n1 p2 n2 ref
+E1 e1x ref p1 ref 0.5
+E2 e1s e1x n1 ref 0.5
+E3 o1x ref p1 ref 0.5
+E4 o1s o1x n1 ref -0.5
+V1 e1s e1 0
+V2 o1s o1 0
+F1 p1 ref V1 1
+F2 p1 ref V2 1
+F3 n1 ref V1 1
+F4 n1 ref V2 -1
+X1 e1 e2 ref BUS_P_CPL4_even
+X2 o1 o2 ref BUS_P_CPL4_odd
+E5 p2x ref e2 ref 1
+E6 p2s p2x o2 ref 1
+E7 n2x ref e2 ref 1
+E8 n2s n2x o2 ref -1
+V3 p2s p2 0
+V4 n2s n2 0
+F5 e2 ref V3 0.5
+F6 e2 ref V4 0.5
+F7 o2 ref V3 0.5
+F8 o2 ref V4 -0.5
+.ends BUS_P_CPL4
+
+* one RLGC section: z, then y
+.subckt BUS_P_TL22_F_Cu_sec a b ref
+R1 a n1 2.915278e-3
+L1 n1 n2 6.148516e-10 Rser=0 Rpar=1e30
+R2 n2 n3 7.182946e-5
+L2 n2 n3 2.462953e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.936688e-3
+L3 n3 n4 1.430693e-11 Rser=0 Rpar=1e30
+R4 n4 n5 5.094149e-3
+L4 n4 n5 8.107590e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.133239e-2
+L5 n5 n6 3.885751e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.405729e-2
+L6 n6 n7 1.777189e-12 Rser=0 Rpar=1e30
+R7 n7 n8 5.823625e-2
+L7 n7 n8 9.268588e-13 Rser=0 Rpar=1e30
+R8 n8 b 6.749580e-2
+L8 n8 b 2.314356e-13 Rser=0 Rpar=1e30
+C1 b ref 2.824832e-14
+R9 b n9 3.271725e8
+C2 n9 ref 1.221921e-15
+R10 b n10 2.848279e7
+C3 n10 ref 8.855998e-16
+R11 b n11 1.667811e6
+C4 n11 ref 9.542743e-16
+R12 b n12 1.126727e5
+C5 n12 ref 8.912542e-16
+R13 b n13 9.633547e2
+L9 n13 n14 9.582666e-9 Rser=0 Rpar=1e30
+C6 n14 ref 2.581392e-15
+.ends BUS_P_TL22_F_Cu_sec
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL22_F_Cu_end a b ref
+R1 a n1 2.915278e-3
+L1 n1 n2 6.148516e-10 Rser=0 Rpar=1e30
+R2 n2 n3 7.182946e-5
+L2 n2 n3 2.462953e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.936688e-3
+L3 n3 n4 1.430693e-11 Rser=0 Rpar=1e30
+R4 n4 n5 5.094149e-3
+L4 n4 n5 8.107590e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.133239e-2
+L5 n5 n6 3.885751e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.405729e-2
+L6 n6 n7 1.777189e-12 Rser=0 Rpar=1e30
+R7 n7 n8 5.823625e-2
+L7 n7 n8 9.268588e-13 Rser=0 Rpar=1e30
+R8 n8 b 6.749580e-2
+L8 n8 b 2.314356e-13 Rser=0 Rpar=1e30
+C1 b ref 1.412416e-14
+R9 b n9 6.543451e8
+C2 n9 ref 6.109607e-16
+R10 b n10 5.696559e7
+C3 n10 ref 4.427999e-16
+R11 b n11 3.335623e6
+C4 n11 ref 4.771371e-16
+R12 b n12 2.253453e5
+C5 n12 ref 4.456271e-16
+R13 b n13 1.926709e3
+L9 n13 n14 1.916533e-8 Rser=0 Rpar=1e30
+C6 n14 ref 1.290696e-15
+.ends BUS_P_TL22_F_Cu_end
+
+* one RLGC section: z, then y
+.subckt BUS_P_TL22_F_Cu_sec_2 a b ref
+R1 a n1 1.813832e-3
+L1 n1 n2 3.423859e-10 Rser=0 Rpar=1e30
+R2 n2 n3 6.620744e-5
+L2 n2 n3 2.270180e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.331016e-3
+L3 n3 n4 9.832636e-12 Rser=0 Rpar=1e30
+R4 n4 n5 3.312564e-3
+L4 n4 n5 5.272109e-12 Rser=0 Rpar=1e30
+R5 n5 n6 7.444783e-3
+L5 n5 n6 2.552734e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.567901e-2
+L6 n6 n7 1.158258e-12 Rser=0 Rpar=1e30
+R7 n7 n8 3.832707e-2
+L7 n7 n8 6.099942e-13 Rser=0 Rpar=1e30
+R8 n8 b 4.178146e-2
+L8 n8 b 1.432640e-13 Rser=0 Rpar=1e30
+C1 b ref 1.887559e-14
+R9 b n9 4.954292e8
+C2 n9 ref 8.069350e-16
+R10 b n10 4.331264e7
+C3 n10 ref 5.823787e-16
+R11 b n11 2.533128e6
+C4 n11 ref 6.282941e-16
+R12 b n12 1.733271e5
+C5 n12 ref 5.793670e-16
+R13 b n13 1.435720e3
+L9 n13 n14 1.428137e-8 Rser=0 Rpar=1e30
+C6 n14 ref 1.732090e-15
+.ends BUS_P_TL22_F_Cu_sec_2
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL22_F_Cu_end_2 a b ref
+R1 a n1 1.813832e-3
+L1 n1 n2 3.423859e-10 Rser=0 Rpar=1e30
+R2 n2 n3 6.620744e-5
+L2 n2 n3 2.270180e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.331016e-3
+L3 n3 n4 9.832636e-12 Rser=0 Rpar=1e30
+R4 n4 n5 3.312564e-3
+L4 n4 n5 5.272109e-12 Rser=0 Rpar=1e30
+R5 n5 n6 7.444783e-3
+L5 n5 n6 2.552734e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.567901e-2
+L6 n6 n7 1.158258e-12 Rser=0 Rpar=1e30
+R7 n7 n8 3.832707e-2
+L7 n7 n8 6.099942e-13 Rser=0 Rpar=1e30
+R8 n8 b 4.178146e-2
+L8 n8 b 1.432640e-13 Rser=0 Rpar=1e30
+C1 b ref 9.437794e-15
+R9 b n9 9.908583e8
+C2 n9 ref 4.034675e-16
+R10 b n10 8.662528e7
+C3 n10 ref 2.911894e-16
+R11 b n11 5.066256e6
+C4 n11 ref 3.141471e-16
+R12 b n12 3.466541e5
+C5 n12 ref 2.896835e-16
+R13 b n13 2.871440e3
+L9 n13 n14 2.856275e-8 Rser=0 Rpar=1e30
+C6 n14 ref 8.660448e-16
+.ends BUS_P_TL22_F_Cu_end_2
+
+* one RLGC section: z, then y
+.subckt BUS_P_TL22_F_Cu_sec_3 a b ref
+R1 a n1 3.021562e-3
+L1 n1 n2 6.372674e-10 Rser=0 Rpar=1e30
+R2 n2 n3 7.444817e-5
+L2 n2 n3 2.552745e-12 Rser=0 Rpar=1e30
+R3 n3 n4 2.007294e-3
+L3 n3 n4 1.482852e-11 Rser=0 Rpar=1e30
+R4 n4 n5 5.279868e-3
+L4 n4 n5 8.403171e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.174554e-2
+L5 n5 n6 4.027415e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.493435e-2
+L6 n6 n7 1.841980e-12 Rser=0 Rpar=1e30
+R7 n7 n8 6.035939e-2
+L7 n7 n8 9.606496e-13 Rser=0 Rpar=1e30
+R8 n8 b 6.995652e-2
+L8 n8 b 2.398731e-13 Rser=0 Rpar=1e30
+C1 b ref 2.927818e-14
+R9 b n9 3.156643e8
+C2 n9 ref 1.266469e-15
+R10 b n10 2.748091e7
+C3 n10 ref 9.178864e-16
+R11 b n11 1.609146e6
+C4 n11 ref 9.890645e-16
+R12 b n12 1.087094e5
+C5 n12 ref 9.237470e-16
+R13 b n13 9.294687e2
+L9 n13 n14 9.245596e-9 Rser=0 Rpar=1e30
+C6 n14 ref 2.675503e-15
+.ends BUS_P_TL22_F_Cu_sec_3
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL22_F_Cu_end_3 a b ref
+R1 a n1 3.021562e-3
+L1 n1 n2 6.372674e-10 Rser=0 Rpar=1e30
+R2 n2 n3 7.444817e-5
+L2 n2 n3 2.552745e-12 Rser=0 Rpar=1e30
+R3 n3 n4 2.007294e-3
+L3 n3 n4 1.482852e-11 Rser=0 Rpar=1e30
+R4 n4 n5 5.279868e-3
+L4 n4 n5 8.403171e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.174554e-2
+L5 n5 n6 4.027415e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.493435e-2
+L6 n6 n7 1.841980e-12 Rser=0 Rpar=1e30
+R7 n7 n8 6.035939e-2
+L7 n7 n8 9.606496e-13 Rser=0 Rpar=1e30
+R8 n8 b 6.995652e-2
+L8 n8 b 2.398731e-13 Rser=0 Rpar=1e30
+C1 b ref 1.463909e-14
+R9 b n9 6.313285e8
+C2 n9 ref 6.332347e-16
+R10 b n10 5.496183e7
+C3 n10 ref 4.589432e-16
+R11 b n11 3.218292e6
+C4 n11 ref 4.945323e-16
+R12 b n12 2.174188e5
+C5 n12 ref 4.618735e-16
+R13 b n13 1.858937e3
+L9 n13 n14 1.849119e-8 Rser=0 Rpar=1e30
+C6 n14 ref 1.337751e-15
+.ends BUS_P_TL22_F_Cu_end_3
+
+* line: 7.610 mm on F.Cu, Z0 140.04 ohm, eps_eff 2.987 at 1 GHz (field solver), 10 RLGC sections
+* line: 0.947 mm on F.Cu, Z0 127.89 ohm, eps_eff 2.868 at 1 GHz (field solver), 2 RLGC sections
+* line: 4.733 mm on F.Cu, Z0 140.04 ohm, eps_eff 2.987 at 1 GHz (field solver), 6 RLGC sections
+.subckt BUS_P_TL22_F_Cu a b ref
+C1 a ref 1.412416e-14
+R1 a n2 6.543451e8
+C2 n2 ref 6.109607e-16
+R2 a n3 5.696559e7
+C3 n3 ref 4.427999e-16
+R3 a n4 3.335623e6
+C4 n4 ref 4.771371e-16
+R4 a n5 2.253453e5
+C5 n5 ref 4.456271e-16
+R5 a n6 1.926709e3
+L1 n6 n7 1.916533e-8 Rser=0 Rpar=1e30
+C6 n7 ref 1.290696e-15
+X1 a n8 ref BUS_P_TL22_F_Cu_sec
+X2 n8 n9 ref BUS_P_TL22_F_Cu_sec
+X3 n9 n10 ref BUS_P_TL22_F_Cu_sec
+X4 n10 n11 ref BUS_P_TL22_F_Cu_sec
+X5 n11 n12 ref BUS_P_TL22_F_Cu_sec
+X6 n12 n13 ref BUS_P_TL22_F_Cu_sec
+X7 n13 n14 ref BUS_P_TL22_F_Cu_sec
+X8 n14 n15 ref BUS_P_TL22_F_Cu_sec
+X9 n15 n16 ref BUS_P_TL22_F_Cu_sec
+X10 n16 n1 ref BUS_P_TL22_F_Cu_end
+C7 n1 ref 9.437794e-15
+R6 n1 n18 9.908583e8
+C8 n18 ref 4.034675e-16
+R7 n1 n19 8.662528e7
+C9 n19 ref 2.911894e-16
+R8 n1 n20 5.066256e6
+C10 n20 ref 3.141471e-16
+R9 n1 n21 3.466541e5
+C11 n21 ref 2.896835e-16
+R10 n1 n22 2.871440e3
+L2 n22 n23 2.856275e-8 Rser=0 Rpar=1e30
+C12 n23 ref 8.660448e-16
+X11 n1 n24 ref BUS_P_TL22_F_Cu_sec_2
+X12 n24 n17 ref BUS_P_TL22_F_Cu_end_2
+C13 n17 ref 1.463909e-14
+R11 n17 n25 6.313285e8
+C14 n25 ref 6.332347e-16
+R12 n17 n26 5.496183e7
+C15 n26 ref 4.589432e-16
+R13 n17 n27 3.218292e6
+C16 n27 ref 4.945323e-16
+R14 n17 n28 2.174188e5
+C17 n28 ref 4.618735e-16
+R15 n17 n29 1.858937e3
+L3 n29 n30 1.849119e-8 Rser=0 Rpar=1e30
+C18 n30 ref 1.337751e-15
+X13 n17 n31 ref BUS_P_TL22_F_Cu_sec_3
+X14 n31 n32 ref BUS_P_TL22_F_Cu_sec_3
+X15 n32 n33 ref BUS_P_TL22_F_Cu_sec_3
+X16 n33 n34 ref BUS_P_TL22_F_Cu_sec_3
+X17 n34 n35 ref BUS_P_TL22_F_Cu_sec_3
+X18 n35 b ref BUS_P_TL22_F_Cu_end_3
+.ends BUS_P_TL22_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL25_F_Cu_end a b ref
+R1 a n1 1.053448e-3
+L1 n1 n2 2.711126e-10 Rser=0 Rpar=1e30
+R2 n2 n3 2.135784e-5
+L2 n2 n3 7.323366e-13 Rser=0 Rpar=1e30
+R3 n3 n4 6.687167e-4
+L3 n3 n4 4.940023e-12 Rser=0 Rpar=1e30
+R4 n4 n5 1.805328e-3
+L4 n4 n5 2.873269e-12 Rser=0 Rpar=1e30
+R5 n5 n6 3.999293e-3
+L5 n5 n6 1.371313e-12 Rser=0 Rpar=1e30
+R6 n6 n7 8.518147e-3
+L6 n6 n7 6.292626e-13 Rser=0 Rpar=1e30
+R7 n7 n8 2.054222e-2
+L7 n7 n8 3.269396e-13 Rser=0 Rpar=1e30
+R8 n8 b 2.434118e-2
+L8 n8 b 8.346320e-14 Rser=0 Rpar=1e30
+C1 b ref 4.256107e-15
+R9 b n9 2.080348e9
+C2 n9 ref 1.921693e-16
+R10 b n10 1.803394e8
+C3 n10 ref 1.398716e-16
+R11 b n11 1.055230e7
+C4 n11 ref 1.508249e-16
+R12 b n12 7.099705e5
+C5 n12 ref 1.414425e-16
+R13 b n13 3.808910e3
+L9 n13 n14 3.031034e-8 Rser=0 Rpar=1e30
+C6 n14 ref 5.223113e-16
+.ends BUS_P_TL25_F_Cu_end
+
+* coupled line, even mode: 0.275 mm on F.Cu, Z0 166.91 ohm, eps_eff 3.132 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL25_F_Cu a b ref
+C1 a ref 4.256107e-15
+R1 a n1 2.080348e9
+C2 n1 ref 1.921693e-16
+R2 a n2 1.803394e8
+C3 n2 ref 1.398716e-16
+R3 a n3 1.055230e7
+C4 n3 ref 1.508249e-16
+R4 a n4 7.099705e5
+C5 n4 ref 1.414425e-16
+R5 a n5 3.808910e3
+L1 n5 n6 3.031034e-8 Rser=0 Rpar=1e30
+C6 n6 ref 5.223113e-16
+X1 a b ref BUS_P_TL25_F_Cu_end
+.ends BUS_P_TL25_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL27_F_Cu_end a b ref
+R1 a n1 9.576802e-4
+L1 n1 n2 2.464660e-10 Rser=0 Rpar=1e30
+R2 n2 n3 1.941622e-5
+L2 n2 n3 6.657606e-13 Rser=0 Rpar=1e30
+R3 n3 n4 6.079243e-4
+L3 n3 n4 4.490930e-12 Rser=0 Rpar=1e30
+R4 n4 n5 1.641208e-3
+L4 n4 n5 2.612063e-12 Rser=0 Rpar=1e30
+R5 n5 n6 3.635721e-3
+L5 n5 n6 1.246648e-12 Rser=0 Rpar=1e30
+R6 n6 n7 7.743770e-3
+L6 n6 n7 5.720569e-13 Rser=0 Rpar=1e30
+R7 n7 n8 1.867475e-2
+L7 n7 n8 2.972178e-13 Rser=0 Rpar=1e30
+R8 n8 b 2.212834e-2
+L8 n8 b 7.587564e-14 Rser=0 Rpar=1e30
+C1 b ref 3.869188e-15
+R9 b n9 2.288383e9
+C2 n9 ref 1.746994e-16
+R10 b n10 1.983733e8
+C3 n10 ref 1.271560e-16
+R11 b n11 1.160753e7
+C4 n11 ref 1.371135e-16
+R12 b n12 7.809675e5
+C5 n12 ref 1.285841e-16
+R13 b n13 4.189801e3
+L9 n13 n14 3.334138e-8 Rser=0 Rpar=1e30
+C6 n14 ref 4.748285e-16
+.ends BUS_P_TL27_F_Cu_end
+
+* coupled line, even mode: 0.250 mm on F.Cu, Z0 166.91 ohm, eps_eff 3.132 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL27_F_Cu a b ref
+C1 a ref 3.869188e-15
+R1 a n1 2.288383e9
+C2 n1 ref 1.746994e-16
+R2 a n2 1.983733e8
+C3 n2 ref 1.271560e-16
+R3 a n3 1.160753e7
+C4 n3 ref 1.371135e-16
+R4 a n4 7.809675e5
+C5 n4 ref 1.285841e-16
+R5 a n5 4.189801e3
+L1 n5 n6 3.334138e-8 Rser=0 Rpar=1e30
+C6 n6 ref 4.748285e-16
+X1 a b ref BUS_P_TL27_F_Cu_end
+.ends BUS_P_TL27_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL29_F_Cu_end a b ref
+R1 a n1 5.008802e-4
+L1 n1 n2 4.773465e-10 Rser=0 Rpar=1e30
+R2 n2 n3 1.670715e-4
+L2 n2 n3 5.728698e-12 Rser=0 Rpar=1e30
+R3 n3 n4 6.798180e-4
+L3 n3 n4 5.022032e-12 Rser=0 Rpar=1e30
+R4 n4 n5 1.444268e-3
+L4 n4 n5 2.298624e-12 Rser=0 Rpar=1e30
+R5 n5 n6 3.262416e-3
+L5 n5 n6 1.118646e-12 Rser=0 Rpar=1e30
+R6 n6 n7 6.768322e-3
+L6 n6 n7 4.999975e-13 Rser=0 Rpar=1e30
+R7 n7 n8 1.680997e-2
+L7 n7 n8 2.675390e-13 Rser=0 Rpar=1e30
+R8 n8 b 1.631931e-2
+L8 n8 b 5.595711e-14 Rser=0 Rpar=1e30
+C1 b ref 1.664749e-14
+R9 b n9 5.245352e8
+C2 n9 ref 7.621588e-16
+R10 b n10 4.560611e7
+C3 n10 ref 5.530917e-16
+R11 b n11 2.668101e6
+C4 n11 ref 5.965103e-16
+R12 b n12 1.806695e5
+C5 n12 ref 5.558215e-16
+R13 b n13 3.722802e3
+L9 n13 n14 3.703140e-8 Rser=0 Rpar=1e30
+C6 n14 ref 6.679903e-16
+R14 b n15 1.624857e3
+L10 n15 n16 1.293020e-8 Rser=0 Rpar=1e30
+C7 n16 ref 1.224377e-15
+.ends BUS_P_TL29_F_Cu_end
+
+* coupled line, even mode: 0.700 mm on F.Cu, Z0 112.48 ohm, eps_eff 3.302 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL29_F_Cu a b ref
+C1 a ref 1.664749e-14
+R1 a n1 5.245352e8
+C2 n1 ref 7.621588e-16
+R2 a n2 4.560611e7
+C3 n2 ref 5.530917e-16
+R3 a n3 2.668101e6
+C4 n3 ref 5.965103e-16
+R4 a n4 1.806695e5
+C5 n4 ref 5.558215e-16
+R5 a n5 3.722802e3
+L1 n5 n6 3.703140e-8 Rser=0 Rpar=1e30
+C6 n6 ref 6.679903e-16
+R6 a n7 1.624857e3
+L2 n7 n8 1.293020e-8 Rser=0 Rpar=1e30
+C7 n8 ref 1.224377e-15
+X1 a b ref BUS_P_TL29_F_Cu_end
+.ends BUS_P_TL29_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL31_F_Cu_end a b ref
+R1 a n1 1.788858e-4
+L1 n1 n2 1.704809e-10 Rser=0 Rpar=1e30
+R2 n2 n3 5.966840e-5
+L2 n2 n3 2.045963e-12 Rser=0 Rpar=1e30
+R3 n3 n4 2.427921e-4
+L3 n3 n4 1.793583e-12 Rser=0 Rpar=1e30
+R4 n4 n5 5.158101e-4
+L4 n4 n5 8.209372e-13 Rser=0 Rpar=1e30
+R5 n5 n6 1.165149e-3
+L5 n5 n6 3.995166e-13 Rser=0 Rpar=1e30
+R6 n6 n7 2.417258e-3
+L6 n6 n7 1.785705e-13 Rser=0 Rpar=1e30
+R7 n7 n8 6.003561e-3
+L7 n7 n8 9.554964e-14 Rser=0 Rpar=1e30
+R8 n8 b 5.828326e-3
+L8 n8 b 1.998468e-14 Rser=0 Rpar=1e30
+C1 b ref 5.945533e-15
+R9 b n9 1.468699e9
+C2 n9 ref 2.721996e-16
+R10 b n10 1.276971e8
+C3 n10 ref 1.975327e-16
+R11 b n11 7.470682e6
+C4 n11 ref 2.130394e-16
+R12 b n12 5.058745e5
+C5 n12 ref 1.985077e-16
+R13 b n13 1.042385e4
+L9 n13 n14 1.036879e-7 Rser=0 Rpar=1e30
+C6 n14 ref 2.385680e-16
+R14 b n15 4.549598e3
+L10 n15 n16 3.620455e-8 Rser=0 Rpar=1e30
+C7 n16 ref 4.372774e-16
+.ends BUS_P_TL31_F_Cu_end
+
+* coupled line, even mode: 0.250 mm on F.Cu, Z0 112.48 ohm, eps_eff 3.302 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL31_F_Cu a b ref
+C1 a ref 5.945533e-15
+R1 a n1 1.468699e9
+C2 n1 ref 2.721996e-16
+R2 a n2 1.276971e8
+C3 n2 ref 1.975327e-16
+R3 a n3 7.470682e6
+C4 n3 ref 2.130394e-16
+R4 a n4 5.058745e5
+C5 n4 ref 1.985077e-16
+R5 a n5 1.042385e4
+L1 n5 n6 1.036879e-7 Rser=0 Rpar=1e30
+C6 n6 ref 2.385680e-16
+R6 a n7 4.549598e3
+L2 n7 n8 3.620455e-8 Rser=0 Rpar=1e30
+C7 n8 ref 4.372774e-16
+X1 a b ref BUS_P_TL31_F_Cu_end
+.ends BUS_P_TL31_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL33_F_Cu_end a b ref
+R1 a n1 1.628056e-3
+L1 n1 n2 4.189922e-10 Rser=0 Rpar=1e30
+R2 n2 n3 3.300757e-5
+L2 n2 n3 1.131793e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.033471e-3
+L3 n3 n4 7.634581e-12 Rser=0 Rpar=1e30
+R4 n4 n5 2.790053e-3
+L4 n4 n5 4.440507e-12 Rser=0 Rpar=1e30
+R5 n5 n6 6.180725e-3
+L5 n5 n6 2.119302e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.316441e-2
+L6 n6 n7 9.724967e-13 Rser=0 Rpar=1e30
+R7 n7 n8 3.174707e-2
+L7 n7 n8 5.052703e-13 Rser=0 Rpar=1e30
+R8 n8 b 3.761818e-2
+L8 n8 b 1.289886e-13 Rser=0 Rpar=1e30
+C1 b ref 6.577620e-15
+R9 b n9 1.346108e9
+C2 n9 ref 2.969890e-16
+R10 b n10 1.166902e8
+C3 n10 ref 2.161652e-16
+R11 b n11 6.827959e6
+C4 n11 ref 2.330930e-16
+R12 b n12 4.593927e5
+C5 n12 ref 2.185929e-16
+R13 b n13 2.464589e3
+L9 n13 n14 1.961258e-8 Rser=0 Rpar=1e30
+C6 n14 ref 8.072084e-16
+.ends BUS_P_TL33_F_Cu_end
+
+* coupled line, even mode: 0.425 mm on F.Cu, Z0 166.91 ohm, eps_eff 3.132 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL33_F_Cu a b ref
+C1 a ref 6.577620e-15
+R1 a n1 1.346108e9
+C2 n1 ref 2.969890e-16
+R2 a n2 1.166902e8
+C3 n2 ref 2.161652e-16
+R3 a n3 6.827959e6
+C4 n3 ref 2.330930e-16
+R4 a n4 4.593927e5
+C5 n4 ref 2.185929e-16
+R5 a n5 2.464589e3
+L1 n5 n6 1.961258e-8 Rser=0 Rpar=1e30
+C6 n6 ref 8.072084e-16
+X1 a b ref BUS_P_TL33_F_Cu_end
+.ends BUS_P_TL33_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL35_F_Cu_end a b ref
+R1 a n1 9.576802e-4
+L1 n1 n2 2.464660e-10 Rser=0 Rpar=1e30
+R2 n2 n3 1.941622e-5
+L2 n2 n3 6.657606e-13 Rser=0 Rpar=1e30
+R3 n3 n4 6.079243e-4
+L3 n3 n4 4.490930e-12 Rser=0 Rpar=1e30
+R4 n4 n5 1.641208e-3
+L4 n4 n5 2.612063e-12 Rser=0 Rpar=1e30
+R5 n5 n6 3.635721e-3
+L5 n5 n6 1.246648e-12 Rser=0 Rpar=1e30
+R6 n6 n7 7.743770e-3
+L6 n6 n7 5.720569e-13 Rser=0 Rpar=1e30
+R7 n7 n8 1.867475e-2
+L7 n7 n8 2.972178e-13 Rser=0 Rpar=1e30
+R8 n8 b 2.212834e-2
+L8 n8 b 7.587564e-14 Rser=0 Rpar=1e30
+C1 b ref 3.869188e-15
+R9 b n9 2.288383e9
+C2 n9 ref 1.746994e-16
+R10 b n10 1.983733e8
+C3 n10 ref 1.271560e-16
+R11 b n11 1.160753e7
+C4 n11 ref 1.371135e-16
+R12 b n12 7.809675e5
+C5 n12 ref 1.285841e-16
+R13 b n13 4.189801e3
+L9 n13 n14 3.334138e-8 Rser=0 Rpar=1e30
+C6 n14 ref 4.748285e-16
+.ends BUS_P_TL35_F_Cu_end
+
+* coupled line, even mode: 0.250 mm on F.Cu, Z0 166.91 ohm, eps_eff 3.132 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL35_F_Cu a b ref
+C1 a ref 3.869188e-15
+R1 a n1 2.288383e9
+C2 n1 ref 1.746994e-16
+R2 a n2 1.983733e8
+C3 n2 ref 1.271560e-16
+R3 a n3 1.160753e7
+C4 n3 ref 1.371135e-16
+R4 a n4 7.809675e5
+C5 n4 ref 1.285841e-16
+R5 a n5 4.189801e3
+L1 n5 n6 3.334138e-8 Rser=0 Rpar=1e30
+C6 n6 ref 4.748285e-16
+X1 a b ref BUS_P_TL35_F_Cu_end
+.ends BUS_P_TL35_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL37_F_Cu_end a b ref
+R1 a n1 2.388769e-4
+L1 n1 n2 1.702380e-10 Rser=0 Rpar=1e30
+R2 n2 n3 8.559928e-5
+L2 n2 n3 2.935104e-12 Rser=0 Rpar=1e30
+R3 n3 n4 3.340244e-4
+L3 n3 n4 2.467544e-12 Rser=0 Rpar=1e30
+R4 n4 n5 7.063811e-4
+L4 n4 n5 1.124240e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.596645e-3
+L5 n5 n6 5.474717e-13 Rser=0 Rpar=1e30
+R6 n6 n7 3.309613e-3
+L6 n6 n7 2.444916e-13 Rser=0 Rpar=1e30
+R7 n7 n8 8.226716e-3
+L7 n7 n8 1.309323e-13 Rser=0 Rpar=1e30
+R8 n8 b 7.944612e-3
+L8 n8 b 2.724119e-14 Rser=0 Rpar=1e30
+C1 b ref 5.702699e-15
+R9 b n9 1.593485e9
+C2 n9 ref 2.508835e-16
+R10 b n10 1.389425e8
+C3 n10 ref 1.815453e-16
+R11 b n11 8.131356e6
+C4 n11 ref 1.957299e-16
+R12 b n12 5.523435e5
+C5 n12 ref 1.818071e-16
+R13 b n13 4.659624e3
+L9 n13 n14 4.635013e-8 Rser=0 Rpar=1e30
+C6 n14 ref 5.336903e-16
+.ends BUS_P_TL37_F_Cu_end
+
+* coupled line, even mode: 0.250 mm on F.Cu, Z0 115.88 ohm, eps_eff 3.102 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL37_F_Cu a b ref
+C1 a ref 5.702699e-15
+R1 a n1 1.593485e9
+C2 n1 ref 2.508835e-16
+R2 a n2 1.389425e8
+C3 n2 ref 1.815453e-16
+R3 a n3 8.131356e6
+C4 n3 ref 1.957299e-16
+R4 a n4 5.523435e5
+C5 n4 ref 1.818071e-16
+R5 a n5 4.659624e3
+L1 n5 n6 4.635013e-8 Rser=0 Rpar=1e30
+C6 n6 ref 5.336903e-16
+X1 a b ref BUS_P_TL37_F_Cu_end
+.ends BUS_P_TL37_F_Cu
+
+* even mode, per line
+.subckt BUS_P_CPL5_even a b ref
+X1 a n1 ref BUS_P_TL25_F_Cu
+X2 n1 n2 ref BUS_P_TL27_F_Cu
+X3 n2 n3 ref BUS_P_TL29_F_Cu
+X4 n3 n4 ref BUS_P_TL31_F_Cu
+X5 n4 n5 ref BUS_P_TL33_F_Cu
+X6 n5 n6 ref BUS_P_TL35_F_Cu
+X7 n6 b ref BUS_P_TL37_F_Cu
+.ends BUS_P_CPL5_even
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL26_F_Cu_end a b ref
+R1 a n1 1.053533e-3
+L1 n1 n2 1.701603e-10 Rser=0 Rpar=1e30
+R2 n2 n3 1.112565e-5
+L2 n2 n3 3.814864e-13 Rser=0 Rpar=1e30
+R3 n3 n4 5.927601e-4
+L3 n3 n4 4.378907e-12 Rser=0 Rpar=1e30
+R4 n4 n5 1.715584e-3
+L4 n4 n5 2.730436e-12 Rser=0 Rpar=1e30
+R5 n5 n6 3.765397e-3
+L5 n5 n6 1.291113e-12 Rser=0 Rpar=1e30
+R6 n6 n7 8.086796e-3
+L6 n6 n7 5.973973e-13 Rser=0 Rpar=1e30
+R7 n7 n8 1.928476e-2
+L7 n7 n8 3.069264e-13 Rser=0 Rpar=1e30
+R8 n8 b 2.452195e-2
+L8 n8 b 8.408305e-14 Rser=0 Rpar=1e30
+C1 b ref 5.985804e-15
+R9 b n9 9.625716e8
+C2 n9 ref 2.940269e-16
+R10 b n10 3.763762e7
+C3 n10 ref 2.377924e-16
+R11 b n11 1.184683e6
+C4 n11 ref 2.389009e-16
+R12 b n12 1.278526e5
+C5 n12 ref 7.000201e-17
+R13 b n13 2.518437e3
+L9 n13 n14 2.004108e-8 Rser=0 Rpar=1e30
+C6 n14 ref 7.899490e-16
+.ends BUS_P_TL26_F_Cu_end
+
+* coupled line, odd mode: 0.275 mm on F.Cu, Z0 111.08 ohm, eps_eff 2.784 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL26_F_Cu a b ref
+C1 a ref 5.985804e-15
+R1 a n1 9.625716e8
+C2 n1 ref 2.940269e-16
+R2 a n2 3.763762e7
+C3 n2 ref 2.377924e-16
+R3 a n3 1.184683e6
+C4 n3 ref 2.389009e-16
+R4 a n4 1.278526e5
+C5 n4 ref 7.000201e-17
+R5 a n5 2.518437e3
+L1 n5 n6 2.004108e-8 Rser=0 Rpar=1e30
+C6 n6 ref 7.899490e-16
+X1 a b ref BUS_P_TL26_F_Cu_end
+.ends BUS_P_TL26_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL28_F_Cu_end a b ref
+R1 a n1 9.577576e-4
+L1 n1 n2 1.546912e-10 Rser=0 Rpar=1e30
+R2 n2 n3 1.011423e-5
+L2 n2 n3 3.468058e-13 Rser=0 Rpar=1e30
+R3 n3 n4 5.388728e-4
+L3 n3 n4 3.980825e-12 Rser=0 Rpar=1e30
+R4 n4 n5 1.559621e-3
+L4 n4 n5 2.482215e-12 Rser=0 Rpar=1e30
+R5 n5 n6 3.423088e-3
+L5 n5 n6 1.173739e-12 Rser=0 Rpar=1e30
+R6 n6 n7 7.351633e-3
+L6 n6 n7 5.430885e-13 Rser=0 Rpar=1e30
+R7 n7 n8 1.753160e-2
+L7 n7 n8 2.790240e-13 Rser=0 Rpar=1e30
+R8 n8 b 2.229268e-2
+L8 n8 b 7.643913e-14 Rser=0 Rpar=1e30
+C1 b ref 5.441640e-15
+R9 b n9 1.058829e9
+C2 n9 ref 2.672972e-16
+R10 b n10 4.140138e7
+C3 n10 ref 2.161749e-16
+R11 b n11 1.303152e6
+C4 n11 ref 2.171826e-16
+R12 b n12 1.406379e5
+C5 n12 ref 6.363819e-17
+R13 b n13 2.770281e3
+L9 n13 n14 2.204519e-8 Rser=0 Rpar=1e30
+C6 n14 ref 7.181355e-16
+.ends BUS_P_TL28_F_Cu_end
+
+* coupled line, odd mode: 0.250 mm on F.Cu, Z0 111.08 ohm, eps_eff 2.784 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL28_F_Cu a b ref
+C1 a ref 5.441640e-15
+R1 a n1 1.058829e9
+C2 n1 ref 2.672972e-16
+R2 a n2 4.140138e7
+C3 n2 ref 2.161749e-16
+R3 a n3 1.303152e6
+C4 n3 ref 2.171826e-16
+R4 a n4 1.406379e5
+C5 n4 ref 6.363819e-17
+R5 a n5 2.770281e3
+L1 n5 n6 2.204519e-8 Rser=0 Rpar=1e30
+C6 n6 ref 7.181355e-16
+X1 a b ref BUS_P_TL28_F_Cu_end
+.ends BUS_P_TL28_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL30_F_Cu_end a b ref
+R1 a n1 5.018827e-4
+L1 n1 n2 2.382663e-10 Rser=0 Rpar=1e30
+R2 n2 n3 4.938873e-5
+L2 n2 n3 2.485696e-12 Rser=0 Rpar=1e30
+R3 n3 n4 4.048865e-4
+L3 n3 n4 5.118627e-12 Rser=0 Rpar=1e30
+R4 n4 n5 8.390033e-4
+L4 n4 n5 2.664304e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.772435e-3
+L5 n5 n6 1.413808e-12 Rser=0 Rpar=1e30
+R6 n6 n7 3.509849e-3
+L6 n6 n7 7.032482e-13 Rser=0 Rpar=1e30
+R7 n7 n8 7.018530e-3
+L7 n7 n8 3.532371e-13 Rser=0 Rpar=1e30
+R8 n8 n9 1.419448e-2
+L8 n8 n9 1.794484e-13 Rser=0 Rpar=1e30
+R9 n9 b 3.201968e-2
+L9 n9 b 1.016804e-13 Rser=0 Rpar=1e30
+R10 b ref 1.629538e8
+C1 b ref 3.204889e-14
+R11 b n10 1.774738e4
+L10 n10 n11 1.581767e-7 Rser=0 Rpar=1e30
+C2 n11 ref 1.024891e-15
+.ends BUS_P_TL30_F_Cu_end
+
+* coupled line, odd mode: 0.700 mm on F.Cu, Z0 61.00 ohm, eps_eff 2.797 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL30_F_Cu a b ref
+R1 a ref 1.629538e8
+C1 a ref 3.204889e-14
+R2 a n1 1.774738e4
+L1 n1 n2 1.581767e-7 Rser=0 Rpar=1e30
+C2 n2 ref 1.024891e-15
+X1 a b ref BUS_P_TL30_F_Cu_end
+.ends BUS_P_TL30_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL32_F_Cu_end a b ref
+R1 a n1 1.792438e-4
+L1 n1 n2 8.509509e-11 Rser=0 Rpar=1e30
+R2 n2 n3 1.763883e-5
+L2 n2 n3 8.877485e-13 Rser=0 Rpar=1e30
+R3 n3 n4 1.446023e-4
+L3 n3 n4 1.828081e-12 Rser=0 Rpar=1e30
+R4 n4 n5 2.996440e-4
+L4 n4 n5 9.515372e-13 Rser=0 Rpar=1e30
+R5 n5 n6 6.330126e-4
+L5 n5 n6 5.049315e-13 Rser=0 Rpar=1e30
+R6 n6 n7 1.253518e-3
+L6 n6 n7 2.511601e-13 Rser=0 Rpar=1e30
+R7 n7 n8 2.506618e-3
+L7 n7 n8 1.261561e-13 Rser=0 Rpar=1e30
+R8 n8 n9 5.069458e-3
+L8 n8 n9 6.408873e-14 Rser=0 Rpar=1e30
+R9 n9 b 1.143560e-2
+L9 n9 b 3.631442e-14 Rser=0 Rpar=1e30
+R10 b ref 4.562706e8
+C1 b ref 1.144603e-14
+R11 b n10 4.969266e4
+L10 n10 n11 4.428946e-7 Rser=0 Rpar=1e30
+C2 n11 ref 3.660326e-16
+.ends BUS_P_TL32_F_Cu_end
+
+* coupled line, odd mode: 0.250 mm on F.Cu, Z0 61.00 ohm, eps_eff 2.797 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL32_F_Cu a b ref
+R1 a ref 4.562706e8
+C1 a ref 1.144603e-14
+R2 a n1 4.969266e4
+L1 n1 n2 4.428946e-7 Rser=0 Rpar=1e30
+C2 n2 ref 3.660326e-16
+X1 a b ref BUS_P_TL32_F_Cu_end
+.ends BUS_P_TL32_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL34_F_Cu_end a b ref
+R1 a n1 1.628188e-3
+L1 n1 n2 2.629750e-10 Rser=0 Rpar=1e30
+R2 n2 n3 1.719419e-5
+L2 n2 n3 5.895699e-13 Rser=0 Rpar=1e30
+R3 n3 n4 9.160837e-4
+L3 n3 n4 6.767402e-12 Rser=0 Rpar=1e30
+R4 n4 n5 2.651356e-3
+L4 n4 n5 4.219765e-12 Rser=0 Rpar=1e30
+R5 n5 n6 5.819250e-3
+L5 n5 n6 1.995357e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.249778e-2
+L6 n6 n7 9.232504e-13 Rser=0 Rpar=1e30
+R7 n7 n8 2.980371e-2
+L7 n7 n8 4.743408e-13 Rser=0 Rpar=1e30
+R8 n8 b 3.789756e-2
+L8 n8 b 1.299465e-13 Rser=0 Rpar=1e30
+C1 b ref 9.250788e-15
+R9 b n9 6.228405e8
+C2 n9 ref 4.544052e-16
+R10 b n10 2.435375e7
+C3 n10 ref 3.674974e-16
+R11 b n11 7.665599e5
+C4 n11 ref 3.692105e-16
+R12 b n12 8.272816e4
+C5 n12 ref 1.081849e-16
+R13 b n13 1.629577e3
+L9 n13 n14 1.296776e-8 Rser=0 Rpar=1e30
+C6 n14 ref 1.220830e-15
+.ends BUS_P_TL34_F_Cu_end
+
+* coupled line, odd mode: 0.425 mm on F.Cu, Z0 111.08 ohm, eps_eff 2.784 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL34_F_Cu a b ref
+C1 a ref 9.250788e-15
+R1 a n1 6.228405e8
+C2 n1 ref 4.544052e-16
+R2 a n2 2.435375e7
+C3 n2 ref 3.674974e-16
+R3 a n3 7.665599e5
+C4 n3 ref 3.692105e-16
+R4 a n4 8.272816e4
+C5 n4 ref 1.081849e-16
+R5 a n5 1.629577e3
+L1 n5 n6 1.296776e-8 Rser=0 Rpar=1e30
+C6 n6 ref 1.220830e-15
+X1 a b ref BUS_P_TL34_F_Cu_end
+.ends BUS_P_TL34_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL36_F_Cu_end a b ref
+R1 a n1 9.577576e-4
+L1 n1 n2 1.546912e-10 Rser=0 Rpar=1e30
+R2 n2 n3 1.011423e-5
+L2 n2 n3 3.468058e-13 Rser=0 Rpar=1e30
+R3 n3 n4 5.388728e-4
+L3 n3 n4 3.980825e-12 Rser=0 Rpar=1e30
+R4 n4 n5 1.559621e-3
+L4 n4 n5 2.482215e-12 Rser=0 Rpar=1e30
+R5 n5 n6 3.423088e-3
+L5 n5 n6 1.173739e-12 Rser=0 Rpar=1e30
+R6 n6 n7 7.351633e-3
+L6 n6 n7 5.430885e-13 Rser=0 Rpar=1e30
+R7 n7 n8 1.753160e-2
+L7 n7 n8 2.790240e-13 Rser=0 Rpar=1e30
+R8 n8 b 2.229268e-2
+L8 n8 b 7.643913e-14 Rser=0 Rpar=1e30
+C1 b ref 5.441640e-15
+R9 b n9 1.058829e9
+C2 n9 ref 2.672972e-16
+R10 b n10 4.140138e7
+C3 n10 ref 2.161749e-16
+R11 b n11 1.303152e6
+C4 n11 ref 2.171826e-16
+R12 b n12 1.406379e5
+C5 n12 ref 6.363819e-17
+R13 b n13 2.770281e3
+L9 n13 n14 2.204519e-8 Rser=0 Rpar=1e30
+C6 n14 ref 7.181355e-16
+.ends BUS_P_TL36_F_Cu_end
+
+* coupled line, odd mode: 0.250 mm on F.Cu, Z0 111.08 ohm, eps_eff 2.784 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL36_F_Cu a b ref
+C1 a ref 5.441640e-15
+R1 a n1 1.058829e9
+C2 n1 ref 2.672972e-16
+R2 a n2 4.140138e7
+C3 n2 ref 2.161749e-16
+R3 a n3 1.303152e6
+C4 n3 ref 2.171826e-16
+R4 a n4 1.406379e5
+C5 n4 ref 6.363819e-17
+R5 a n5 2.770281e3
+L1 n5 n6 2.204519e-8 Rser=0 Rpar=1e30
+C6 n6 ref 7.181355e-16
+X1 a b ref BUS_P_TL36_F_Cu_end
+.ends BUS_P_TL36_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL38_F_Cu_end a b ref
+R1 a n1 2.391092e-4
+L1 n1 n2 9.114921e-11 Rser=0 Rpar=1e30
+R2 n2 n3 1.868292e-5
+L2 n2 n3 9.402966e-13 Rser=0 Rpar=1e30
+R3 n3 n4 1.815542e-4
+L3 n3 n4 2.295231e-12 Rser=0 Rpar=1e30
+R4 n4 n5 3.837849e-4
+L4 n4 n5 1.218732e-12 Rser=0 Rpar=1e30
+R5 n5 n6 8.100701e-4
+L5 n5 n6 6.461639e-13 Rser=0 Rpar=1e30
+R6 n6 n7 1.607146e-3
+L6 n6 n7 3.220145e-13 Rser=0 Rpar=1e30
+R7 n7 n8 3.210615e-3
+L7 n7 n8 1.615877e-13 Rser=0 Rpar=1e30
+R8 n8 n9 6.513869e-3
+L8 n8 n9 8.234916e-14 Rser=0 Rpar=1e30
+R9 n9 b 1.451483e-2
+L9 n9 b 4.609270e-14 Rser=0 Rpar=1e30
+R10 b ref 4.952830e8
+C1 b ref 1.056401e-14
+R11 b n10 5.383784e4
+L10 n10 n11 4.798393e-7 Rser=0 Rpar=1e30
+C2 n11 ref 3.378504e-16
+.ends BUS_P_TL38_F_Cu_end
+
+* coupled line, odd mode: 0.250 mm on F.Cu, Z0 65.70 ohm, eps_eff 2.766 at 1 GHz (field solver), 1 RLGC sections
+.subckt BUS_P_TL38_F_Cu a b ref
+R1 a ref 4.952830e8
+C1 a ref 1.056401e-14
+R2 a n1 5.383784e4
+L1 n1 n2 4.798393e-7 Rser=0 Rpar=1e30
+C2 n2 ref 3.378504e-16
+X1 a b ref BUS_P_TL38_F_Cu_end
+.ends BUS_P_TL38_F_Cu
+
+* odd mode, per line
+.subckt BUS_P_CPL5_odd a b ref
+X1 a n1 ref BUS_P_TL26_F_Cu
+X2 n1 n2 ref BUS_P_TL28_F_Cu
+X3 n2 n3 ref BUS_P_TL30_F_Cu
+X4 n3 n4 ref BUS_P_TL32_F_Cu
+X5 n4 n5 ref BUS_P_TL34_F_Cu
+X6 n5 n6 ref BUS_P_TL36_F_Cu
+X7 n6 b ref BUS_P_TL38_F_Cu
+.ends BUS_P_CPL5_odd
+
+* coupled run 0.275 mm on F.Cu (Zodd 111.08, Zeven 166.91 ohm per line)
+* coupled run 0.250 mm on F.Cu (Zodd 111.08, Zeven 166.91 ohm per line)
+* coupled run 0.700 mm on F.Cu (Zodd 61.00, Zeven 112.48 ohm per line)
+* coupled run 0.250 mm on F.Cu (Zodd 61.00, Zeven 112.48 ohm per line)
+* coupled run 0.425 mm on F.Cu (Zodd 111.08, Zeven 166.91 ohm per line)
+* coupled run 0.250 mm on F.Cu (Zodd 111.08, Zeven 166.91 ohm per line)
+* coupled run 0.250 mm on F.Cu (Zodd 65.70, Zeven 115.88 ohm per line)
+* coupled block in modal form: V_e = (V_P + V_N)/2, V_o = (V_P - V_N)/2, I_P = I_e + I_o, I_N = I_e - I_o
+.subckt BUS_P_CPL5 p1 n1 p2 n2 ref
+E1 e1x ref p1 ref 0.5
+E2 e1s e1x n1 ref 0.5
+E3 o1x ref p1 ref 0.5
+E4 o1s o1x n1 ref -0.5
+V1 e1s e1 0
+V2 o1s o1 0
+F1 p1 ref V1 1
+F2 p1 ref V2 1
+F3 n1 ref V1 1
+F4 n1 ref V2 -1
+X1 e1 e2 ref BUS_P_CPL5_even
+X2 o1 o2 ref BUS_P_CPL5_odd
+E5 p2x ref e2 ref 1
+E6 p2s p2x o2 ref 1
+E7 n2x ref e2 ref 1
+E8 n2s n2x o2 ref -1
+V3 p2s p2 0
+V4 n2s n2 0
+F5 e2 ref V3 0.5
+F6 e2 ref V4 0.5
+F7 o2 ref V3 0.5
+F8 o2 ref V4 -0.5
+.ends BUS_P_CPL5
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL1_F_Cu_end a b ref
+R1 a n1 2.389353e-4
+L1 n1 n2 1.266111e-10 Rser=0 Rpar=1e30
+R2 n2 n3 2.499618e-5
+L2 n2 n3 1.258038e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.955248e-4
+L3 n3 n4 2.471849e-12 Rser=0 Rpar=1e30
+R4 n4 n5 4.040682e-4
+L4 n4 n5 1.283142e-12 Rser=0 Rpar=1e30
+R5 n5 n6 8.527708e-4
+L5 n5 n6 6.802248e-13 Rser=0 Rpar=1e30
+R6 n6 n7 1.689022e-3
+L6 n6 n7 3.384196e-13 Rser=0 Rpar=1e30
+R7 n7 n8 3.376647e-3
+L7 n7 n8 1.699440e-13 Rser=0 Rpar=1e30
+R8 n8 n9 6.830764e-3
+L8 n8 n9 8.635538e-14 Rser=0 Rpar=1e30
+R9 n9 b 1.540027e-2
+L9 n9 b 4.890447e-14 Rser=0 Rpar=1e30
+C1 b ref 6.921876e-15
+R10 b n10 7.842873e8
+C2 n10 ref 3.608652e-16
+R11 b n11 3.072107e7
+C3 n11 ref 2.913290e-16
+R12 b n12 9.611730e5
+C4 n12 ref 2.944547e-16
+R13 b n13 5.184755e6
+C5 n13 ref 1.726203e-18
+R14 b n14 3.259786e6
+L10 n14 n15 2.905342e-5 Rser=0 Rpar=1e30
+C6 n15 ref 5.579855e-18
+R15 b n16 1.620051e3
+L11 n16 n17 1.289195e-8 Rser=0 Rpar=1e30
+C7 n17 ref 1.228009e-15
+.ends BUS_P_TL1_F_Cu_end
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL1_F_Cu_end_2 a b ref
+R1 a n1 2.389100e-4
+L1 n1 n2 1.344708e-10 Rser=0 Rpar=1e30
+R2 n2 n3 2.510302e-5
+L2 n2 n3 1.263415e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.953080e-4
+L3 n3 n4 2.469108e-12 Rser=0 Rpar=1e30
+R4 n4 n5 4.043508e-4
+L4 n4 n5 1.284040e-12 Rser=0 Rpar=1e30
+R5 n5 n6 8.524534e-4
+L5 n5 n6 6.799716e-13 Rser=0 Rpar=1e30
+R6 n6 n7 1.689407e-3
+L6 n6 n7 3.384967e-13 Rser=0 Rpar=1e30
+R7 n7 n8 3.375910e-3
+L7 n7 n8 1.699069e-13 Rser=0 Rpar=1e30
+R8 n8 n9 6.835736e-3
+L8 n8 n9 8.641825e-14 Rser=0 Rpar=1e30
+R9 n9 b 1.536148e-2
+L9 n9 b 4.878127e-14 Rser=0 Rpar=1e30
+C1 b ref 6.885092e-15
+R10 b n10 8.001837e8
+C2 n10 ref 3.536962e-16
+R11 b n11 3.125744e7
+C3 n11 ref 2.863299e-16
+R12 b n12 9.845131e5
+C4 n12 ref 2.874740e-16
+R13 b n13 9.327995e4
+C5 n13 ref 9.594710e-17
+R14 b n14 2.190646e3
+L10 n14 n15 1.743261e-8 Rser=0 Rpar=1e30
+C6 n15 ref 9.081508e-16
+.ends BUS_P_TL1_F_Cu_end_2
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL1_F_Cu_end_3 a b ref
+R1 a n1 1.301226e-3
+L1 n1 n2 2.671647e-10 Rser=0 Rpar=1e30
+R2 n2 n3 5.847523e-5
+L2 n2 n3 2.005051e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.007323e-3
+L3 n3 n4 7.441419e-12 Rser=0 Rpar=1e30
+R4 n4 n5 2.440019e-3
+L4 n4 n5 3.883411e-12 Rser=0 Rpar=1e30
+R5 n5 n6 5.509547e-3
+L5 n5 n6 1.889163e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.155880e-2
+L6 n6 n7 8.538854e-13 Rser=0 Rpar=1e30
+R7 n7 n8 2.839517e-2
+L7 n7 n8 4.519232e-13 Rser=0 Rpar=1e30
+R8 n8 b 2.993125e-2
+L8 n8 b 1.026310e-13 Rser=0 Rpar=1e30
+C1 b ref 6.459739e-15
+R9 b n9 1.432034e9
+C2 n9 ref 2.791688e-16
+R10 b n10 1.247514e8
+C3 n10 ref 2.021970e-16
+R11 b n11 7.303408e6
+C4 n11 ref 2.179187e-16
+R12 b n12 4.943985e5
+C5 n12 ref 2.031155e-16
+R13 b n13 4.205773e3
+L9 n13 n14 4.183560e-8 Rser=0 Rpar=1e30
+C6 n14 ref 5.912815e-16
+.ends BUS_P_TL1_F_Cu_end_3
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL1_F_Cu_end_4 a b ref
+R1 a n1 1.301226e-3
+L1 n1 n2 2.674648e-10 Rser=0 Rpar=1e30
+R2 n2 n3 5.847968e-5
+L2 n2 n3 2.005204e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.007308e-3
+L3 n3 n4 7.441308e-12 Rser=0 Rpar=1e30
+R4 n4 n5 2.440042e-3
+L4 n4 n5 3.883448e-12 Rser=0 Rpar=1e30
+R5 n5 n6 5.509520e-3
+L5 n5 n6 1.889153e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.155884e-2
+L6 n6 n7 8.538884e-13 Rser=0 Rpar=1e30
+R7 n7 n8 2.839500e-2
+L7 n7 n8 4.519205e-13 Rser=0 Rpar=1e30
+R8 n8 b 2.993266e-2
+L8 n8 b 1.026358e-13 Rser=0 Rpar=1e30
+C1 b ref 6.455163e-15
+R9 b n9 1.432736e9
+C2 n9 ref 2.790320e-16
+R10 b n10 1.248074e8
+C3 n10 ref 2.021063e-16
+R11 b n11 7.306769e6
+C4 n11 ref 2.178185e-16
+R12 b n12 4.945648e5
+C5 n12 ref 2.030472e-16
+R13 b n13 4.208495e3
+L9 n13 n14 4.186267e-8 Rser=0 Rpar=1e30
+C6 n14 ref 5.908991e-16
+.ends BUS_P_TL1_F_Cu_end_4
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL1_F_Cu_end_5 a b ref
+R1 a n1 3.401675e-4
+L1 n1 n2 2.344495e-10 Rser=0 Rpar=1e30
+R2 n2 n3 4.871092e-5
+L2 n2 n3 2.451582e-12 Rser=0 Rpar=1e30
+R3 n3 n4 3.032688e-4
+L3 n3 n4 3.833963e-12 Rser=0 Rpar=1e30
+R4 n4 n5 6.136734e-4
+L4 n4 n5 1.948756e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.294315e-3
+L5 n5 n6 1.032429e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.559082e-3
+L6 n6 n7 5.127484e-13 Rser=0 Rpar=1e30
+R7 n7 n8 5.119717e-3
+L7 n7 n8 2.576713e-13 Rser=0 Rpar=1e30
+R8 n8 n9 1.032891e-2
+L8 n8 n9 1.305794e-13 Rser=0 Rpar=1e30
+R9 n9 b 2.353201e-2
+L9 n9 b 7.472729e-14 Rser=0 Rpar=1e30
+C1 b ref 1.421173e-14
+R10 b n10 3.795542e8
+C2 n10 ref 7.456694e-16
+R11 b n11 1.484226e7
+C3 n11 ref 6.030038e-16
+R12 b n12 4.660061e5
+C4 n12 ref 6.073354e-16
+R13 b n13 7.261755e4
+C5 n13 ref 1.232476e-16
+R14 b n14 9.063132e2
+L10 n14 n15 7.212211e-9 Rser=0 Rpar=1e30
+C6 n15 ref 2.195088e-15
+.ends BUS_P_TL1_F_Cu_end_5
+
+* line: 0.252 mm on F.Cu, Z0 87.79 ohm, eps_eff 2.950 at 1 GHz (formula), 1 RLGC sections
+* line: 0.252 mm on F.Cu, Z0 91.98 ohm, eps_eff 3.032 at 1 GHz (formula), 1 RLGC sections
+* line: 0.340 mm on F.Cu, Z0 136.49 ohm, eps_eff 2.979 at 1 GHz (formula), 1 RLGC sections
+* line: 0.340 mm on F.Cu, Z0 136.62 ohm, eps_eff 2.980 at 1 GHz (formula), 1 RLGC sections
+* line: 0.478 mm on F.Cu, Z0 83.90 ohm, eps_eff 3.068 at 1 GHz (formula), 1 RLGC sections
+.subckt BUS_P_TL1_F_Cu a b ref
+C1 a ref 6.921876e-15
+R1 a n2 7.842873e8
+C2 n2 ref 3.608652e-16
+R2 a n3 3.072107e7
+C3 n3 ref 2.913290e-16
+R3 a n4 9.611730e5
+C4 n4 ref 2.944547e-16
+R4 a n5 5.184755e6
+C5 n5 ref 1.726203e-18
+R5 a n6 3.259786e6
+L1 n6 n7 2.905342e-5 Rser=0 Rpar=1e30
+C6 n7 ref 5.579855e-18
+R6 a n8 1.620051e3
+L2 n8 n9 1.289195e-8 Rser=0 Rpar=1e30
+C7 n9 ref 1.228009e-15
+X1 a n1 ref BUS_P_TL1_F_Cu_end
+C8 n1 ref 6.885092e-15
+R7 n1 n11 8.001837e8
+C9 n11 ref 3.536962e-16
+R8 n1 n12 3.125744e7
+C10 n12 ref 2.863299e-16
+R9 n1 n13 9.845131e5
+C11 n13 ref 2.874740e-16
+R10 n1 n14 9.327995e4
+C12 n14 ref 9.594710e-17
+R11 n1 n15 2.190646e3
+L3 n15 n16 1.743261e-8 Rser=0 Rpar=1e30
+C13 n16 ref 9.081508e-16
+X2 n1 n10 ref BUS_P_TL1_F_Cu_end_2
+C14 n10 ref 6.459739e-15
+R12 n10 n18 1.432034e9
+C15 n18 ref 2.791688e-16
+R13 n10 n19 1.247514e8
+C16 n19 ref 2.021970e-16
+R14 n10 n20 7.303408e6
+C17 n20 ref 2.179187e-16
+R15 n10 n21 4.943985e5
+C18 n21 ref 2.031155e-16
+R16 n10 n22 4.205773e3
+L4 n22 n23 4.183560e-8 Rser=0 Rpar=1e30
+C19 n23 ref 5.912815e-16
+X3 n10 n17 ref BUS_P_TL1_F_Cu_end_3
+C20 n17 ref 6.455163e-15
+R17 n17 n25 1.432736e9
+C21 n25 ref 2.790320e-16
+R18 n17 n26 1.248074e8
+C22 n26 ref 2.021063e-16
+R19 n17 n27 7.306769e6
+C23 n27 ref 2.178185e-16
+R20 n17 n28 4.945648e5
+C24 n28 ref 2.030472e-16
+R21 n17 n29 4.208495e3
+L5 n29 n30 4.186267e-8 Rser=0 Rpar=1e30
+C25 n30 ref 5.908991e-16
+X4 n17 n24 ref BUS_P_TL1_F_Cu_end_4
+C26 n24 ref 1.421173e-14
+R22 n24 n31 3.795542e8
+C27 n31 ref 7.456694e-16
+R23 n24 n32 1.484226e7
+C28 n32 ref 6.030038e-16
+R24 n24 n33 4.660061e5
+C29 n33 ref 6.073354e-16
+R25 n24 n34 7.261755e4
+C30 n34 ref 1.232476e-16
+R26 n24 n35 9.063132e2
+L6 n35 n36 7.212211e-9 Rser=0 Rpar=1e30
+C31 n36 ref 2.195088e-15
+X5 n24 b ref BUS_P_TL1_F_Cu_end_5
+.ends BUS_P_TL1_F_Cu
+
+* open stub
+.subckt BUS_P_STUB1_stub a b ref
+X1 a b ref BUS_P_TL1_F_Cu
+.ends BUS_P_STUB1_stub
+
+* open stub: stub 1.7 mm to R1.2
+.subckt BUS_P_STUB1 a ref
+X1 a n1 ref BUS_P_STUB1_stub
+.ends BUS_P_STUB1
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL39_F_Cu_end a b ref
+R1 a n1 2.389430e-4
+L1 n1 n2 1.249146e-10 Rser=0 Rpar=1e30
+R2 n2 n3 2.479163e-5
+L2 n2 n3 1.247743e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.951457e-4
+L3 n3 n4 2.467056e-12 Rser=0 Rpar=1e30
+R4 n4 n5 4.034468e-4
+L4 n4 n5 1.281169e-12 Rser=0 Rpar=1e30
+R5 n5 n6 8.515528e-4
+L5 n5 n6 6.792532e-13 Rser=0 Rpar=1e30
+R6 n6 n7 1.686590e-3
+L6 n6 n7 3.379323e-13 Rser=0 Rpar=1e30
+R7 n7 n8 3.371861e-3
+L7 n7 n8 1.697031e-13 Rser=0 Rpar=1e30
+R8 n8 n9 6.820994e-3
+L8 n8 n9 8.623187e-14 Rser=0 Rpar=1e30
+R9 n9 b 1.537831e-2
+L9 n9 b 4.883471e-14 Rser=0 Rpar=1e30
+C1 b ref 6.898025e-15
+R10 b n10 7.858451e8
+C2 n10 ref 3.601498e-16
+R11 b n11 3.078882e7
+C3 n11 ref 2.906880e-16
+R12 b n12 9.628771e5
+C4 n12 ref 2.939336e-16
+R13 b n13 5.007539e6
+L10 n13 n14 4.463057e-5 Rser=0 Rpar=1e30
+C5 n14 ref 3.632351e-18
+R14 b n15 1.597044e3
+L11 n15 n16 1.270887e-8 Rser=0 Rpar=1e30
+C6 n16 ref 1.245700e-15
+.ends BUS_P_TL39_F_Cu_end
+
+* line: 0.250 mm on F.Cu, Z0 87.25 ohm, eps_eff 2.946 at 1 GHz (formula), 1 RLGC sections
+.subckt BUS_P_TL39_F_Cu a b ref
+C1 a ref 6.898025e-15
+R1 a n1 7.858451e8
+C2 n1 ref 3.601498e-16
+R2 a n2 3.078882e7
+C3 n2 ref 2.906880e-16
+R3 a n3 9.628771e5
+C4 n3 ref 2.939336e-16
+R4 a n4 5.007539e6
+L1 n4 n5 4.463057e-5 Rser=0 Rpar=1e30
+C5 n5 ref 3.632351e-18
+R5 a n6 1.597044e3
+L2 n6 n7 1.270887e-8 Rser=0 Rpar=1e30
+C6 n7 ref 1.245700e-15
+X1 a b ref BUS_P_TL39_F_Cu_end
+.ends BUS_P_TL39_F_Cu
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL6_F_Cu_end a b ref
+R1 a n1 2.389388e-4
+L1 n1 n2 1.255140e-10 Rser=0 Rpar=1e30
+R2 n2 n3 2.498107e-5
+L2 n2 n3 1.257278e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.955563e-4
+L3 n3 n4 2.472247e-12 Rser=0 Rpar=1e30
+R4 n4 n5 4.040265e-4
+L4 n4 n5 1.283010e-12 Rser=0 Rpar=1e30
+R5 n5 n6 8.528178e-4
+L5 n5 n6 6.802623e-13 Rser=0 Rpar=1e30
+R6 n6 n7 1.688965e-3
+L6 n6 n7 3.384081e-13 Rser=0 Rpar=1e30
+R7 n7 n8 3.376756e-3
+L7 n7 n8 1.699495e-13 Rser=0 Rpar=1e30
+R8 n8 n9 6.830032e-3
+L8 n8 n9 8.634613e-14 Rser=0 Rpar=1e30
+R9 n9 b 1.540597e-2
+L9 n9 b 4.892256e-14 Rser=0 Rpar=1e30
+C1 b ref 6.951888e-15
+R10 b n10 7.794457e8
+C2 n10 ref 3.631067e-16
+R11 b n11 3.053940e7
+C3 n11 ref 2.930621e-16
+R12 b n12 9.549979e5
+C4 n12 ref 2.963587e-16
+R13 b n13 5.817075e6
+L10 n13 n14 5.184571e-5 Rser=0 Rpar=1e30
+C5 n14 ref 3.126853e-18
+R14 b n15 1.579174e3
+L11 n15 n16 1.256666e-8 Rser=0 Rpar=1e30
+C6 n16 ref 1.259796e-15
+.ends BUS_P_TL6_F_Cu_end
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL6_F_Cu_end_2 a b ref
+R1 a n1 2.389385e-4
+L1 n1 n2 1.256164e-10 Rser=0 Rpar=1e30
+R2 n2 n3 2.498248e-5
+L2 n2 n3 1.257349e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.955533e-4
+L3 n3 n4 2.472210e-12 Rser=0 Rpar=1e30
+R4 n4 n5 4.040304e-4
+L4 n4 n5 1.283022e-12 Rser=0 Rpar=1e30
+R5 n5 n6 8.528134e-4
+L5 n5 n6 6.802588e-13 Rser=0 Rpar=1e30
+R6 n6 n7 1.688970e-3
+L6 n6 n7 3.384092e-13 Rser=0 Rpar=1e30
+R7 n7 n8 3.376746e-3
+L7 n7 n8 1.699489e-13 Rser=0 Rpar=1e30
+R8 n8 n9 6.830101e-3
+L8 n8 n9 8.634700e-14 Rser=0 Rpar=1e30
+R9 n9 b 1.540543e-2
+L9 n9 b 4.892086e-14 Rser=0 Rpar=1e30
+C1 b ref 6.948632e-15
+R10 b n10 7.799467e8
+C2 n10 ref 3.628735e-16
+R11 b n11 3.055835e7
+C3 n11 ref 2.928803e-16
+R12 b n12 9.556304e5
+C4 n12 ref 2.961626e-16
+R13 b n13 5.356522e6
+L10 n13 n14 4.774095e-5 Rser=0 Rpar=1e30
+C5 n14 ref 3.395699e-18
+R14 b n15 1.582650e3
+L11 n15 n16 1.259433e-8 Rser=0 Rpar=1e30
+C6 n16 ref 1.257029e-15
+.ends BUS_P_TL6_F_Cu_end_2
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL6_F_Cu_end_3 a b ref
+R1 a n1 1.301233e-3
+L1 n1 n2 2.606440e-10 Rser=0 Rpar=1e30
+R2 n2 n3 5.837788e-5
+L2 n2 n3 2.001713e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.007653e-3
+L3 n3 n4 7.443856e-12 Rser=0 Rpar=1e30
+R4 n4 n5 2.439511e-3
+L4 n4 n5 3.882602e-12 Rser=0 Rpar=1e30
+R5 n5 n6 5.510146e-3
+L5 n5 n6 1.889368e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.155790e-2
+L6 n6 n7 8.538190e-13 Rser=0 Rpar=1e30
+R7 n7 n8 2.839892e-2
+L7 n7 n8 4.519829e-13 Rser=0 Rpar=1e30
+R8 n8 b 2.990052e-2
+L8 n8 b 1.025256e-13 Rser=0 Rpar=1e30
+C1 b ref 6.531244e-15
+R9 b n9 1.427003e9
+C2 n9 ref 2.801529e-16
+R10 b n10 1.244568e8
+C3 n10 ref 2.026756e-16
+R11 b n11 7.283826e6
+C4 n11 ref 2.185046e-16
+R12 b n12 4.947384e5
+C5 n12 ref 2.029759e-16
+R13 b n13 4.173229e3
+L9 n13 n14 4.151188e-8 Rser=0 Rpar=1e30
+C6 n14 ref 5.958925e-16
+.ends BUS_P_TL6_F_Cu_end_3
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL6_F_Cu_end_4 a b ref
+R1 a n1 1.301226e-3
+L1 n1 n2 2.674648e-10 Rser=0 Rpar=1e30
+R2 n2 n3 5.847968e-5
+L2 n2 n3 2.005204e-12 Rser=0 Rpar=1e30
+R3 n3 n4 1.007308e-3
+L3 n3 n4 7.441308e-12 Rser=0 Rpar=1e30
+R4 n4 n5 2.440042e-3
+L4 n4 n5 3.883448e-12 Rser=0 Rpar=1e30
+R5 n5 n6 5.509520e-3
+L5 n5 n6 1.889153e-12 Rser=0 Rpar=1e30
+R6 n6 n7 1.155884e-2
+L6 n6 n7 8.538884e-13 Rser=0 Rpar=1e30
+R7 n7 n8 2.839500e-2
+L7 n7 n8 4.519205e-13 Rser=0 Rpar=1e30
+R8 n8 b 2.993266e-2
+L8 n8 b 1.026358e-13 Rser=0 Rpar=1e30
+C1 b ref 6.455163e-15
+R9 b n9 1.432736e9
+C2 n9 ref 2.790320e-16
+R10 b n10 1.248074e8
+C3 n10 ref 2.021063e-16
+R11 b n11 7.306769e6
+C4 n11 ref 2.178185e-16
+R12 b n12 4.945648e5
+C5 n12 ref 2.030472e-16
+R13 b n13 4.208495e3
+L9 n13 n14 4.186267e-8 Rser=0 Rpar=1e30
+C6 n14 ref 5.908991e-16
+.ends BUS_P_TL6_F_Cu_end_4
+
+* last RLGC section: z, then y/2
+.subckt BUS_P_TL6_F_Cu_end_5 a b ref
+R1 a n1 3.401675e-4
+L1 n1 n2 2.344495e-10 Rser=0 Rpar=1e30
+R2 n2 n3 4.871092e-5
+L2 n2 n3 2.451582e-12 Rser=0 Rpar=1e30
+R3 n3 n4 3.032688e-4
+L3 n3 n4 3.833963e-12 Rser=0 Rpar=1e30
+R4 n4 n5 6.136734e-4
+L4 n4 n5 1.948756e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.294315e-3
+L5 n5 n6 1.032429e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.559082e-3
+L6 n6 n7 5.127484e-13 Rser=0 Rpar=1e30
+R7 n7 n8 5.119717e-3
+L7 n7 n8 2.576713e-13 Rser=0 Rpar=1e30
+R8 n8 n9 1.032891e-2
+L8 n8 n9 1.305794e-13 Rser=0 Rpar=1e30
+R9 n9 b 2.353201e-2
+L9 n9 b 7.472729e-14 Rser=0 Rpar=1e30
+C1 b ref 1.421173e-14
+R10 b n10 3.795542e8
+C2 n10 ref 7.456694e-16
+R11 b n11 1.484226e7
+C3 n11 ref 6.030038e-16
+R12 b n12 4.660061e5
+C4 n12 ref 6.073354e-16
+R13 b n13 7.261755e4
+C5 n13 ref 1.232476e-16
+R14 b n14 9.063132e2
+L10 n14 n15 7.212211e-9 Rser=0 Rpar=1e30
+C6 n15 ref 2.195088e-15
+.ends BUS_P_TL6_F_Cu_end_5
+
+* line: 0.252 mm on F.Cu, Z0 87.10 ohm, eps_eff 2.945 at 1 GHz (formula), 1 RLGC sections
+* line: 0.252 mm on F.Cu, Z0 87.17 ohm, eps_eff 2.946 at 1 GHz (formula), 1 RLGC sections
+* line: 0.340 mm on F.Cu, Z0 134.12 ohm, eps_eff 2.936 at 1 GHz (formula), 1 RLGC sections
+* line: 0.340 mm on F.Cu, Z0 136.62 ohm, eps_eff 2.980 at 1 GHz (formula), 1 RLGC sections
+* line: 0.478 mm on F.Cu, Z0 83.90 ohm, eps_eff 3.068 at 1 GHz (formula), 1 RLGC sections
+.subckt BUS_P_TL6_F_Cu a b ref
+C1 a ref 6.951888e-15
+R1 a n2 7.794457e8
+C2 n2 ref 3.631067e-16
+R2 a n3 3.053940e7
+C3 n3 ref 2.930621e-16
+R3 a n4 9.549979e5
+C4 n4 ref 2.963587e-16
+R4 a n5 5.817075e6
+L1 n5 n6 5.184571e-5 Rser=0 Rpar=1e30
+C5 n6 ref 3.126853e-18
+R5 a n7 1.579174e3
+L2 n7 n8 1.256666e-8 Rser=0 Rpar=1e30
+C6 n8 ref 1.259796e-15
+X1 a n1 ref BUS_P_TL6_F_Cu_end
+C7 n1 ref 6.948632e-15
+R6 n1 n10 7.799467e8
+C8 n10 ref 3.628735e-16
+R7 n1 n11 3.055835e7
+C9 n11 ref 2.928803e-16
+R8 n1 n12 9.556304e5
+C10 n12 ref 2.961626e-16
+R9 n1 n13 5.356522e6
+L3 n13 n14 4.774095e-5 Rser=0 Rpar=1e30
+C11 n14 ref 3.395699e-18
+R10 n1 n15 1.582650e3
+L4 n15 n16 1.259433e-8 Rser=0 Rpar=1e30
+C12 n16 ref 1.257029e-15
+X2 n1 n9 ref BUS_P_TL6_F_Cu_end_2
+C13 n9 ref 6.531244e-15
+R11 n9 n18 1.427003e9
+C14 n18 ref 2.801529e-16
+R12 n9 n19 1.244568e8
+C15 n19 ref 2.026756e-16
+R13 n9 n20 7.283826e6
+C16 n20 ref 2.185046e-16
+R14 n9 n21 4.947384e5
+C17 n21 ref 2.029759e-16
+R15 n9 n22 4.173229e3
+L5 n22 n23 4.151188e-8 Rser=0 Rpar=1e30
+C18 n23 ref 5.958925e-16
+X3 n9 n17 ref BUS_P_TL6_F_Cu_end_3
+C19 n17 ref 6.455163e-15
+R16 n17 n25 1.432736e9
+C20 n25 ref 2.790320e-16
+R17 n17 n26 1.248074e8
+C21 n26 ref 2.021063e-16
+R18 n17 n27 7.306769e6
+C22 n27 ref 2.178185e-16
+R19 n17 n28 4.945648e5
+C23 n28 ref 2.030472e-16
+R20 n17 n29 4.208495e3
+L6 n29 n30 4.186267e-8 Rser=0 Rpar=1e30
+C24 n30 ref 5.908991e-16
+X4 n17 n24 ref BUS_P_TL6_F_Cu_end_4
+C25 n24 ref 1.421173e-14
+R21 n24 n31 3.795542e8
+C26 n31 ref 7.456694e-16
+R22 n24 n32 1.484226e7
+C27 n32 ref 6.030038e-16
+R23 n24 n33 4.660061e5
+C28 n33 ref 6.073354e-16
+R24 n24 n34 7.261755e4
+C29 n34 ref 1.232476e-16
+R25 n24 n35 9.063132e2
+L7 n35 n36 7.212211e-9 Rser=0 Rpar=1e30
+C30 n36 ref 2.195088e-15
+X5 n24 b ref BUS_P_TL6_F_Cu_end_5
+.ends BUS_P_TL6_F_Cu
+
+* open stub
+.subckt BUS_P_STUB2_stub a b ref
+X1 a b ref BUS_P_TL6_F_Cu
+.ends BUS_P_STUB2_stub
+
+* open stub: stub 1.7 mm to R1.1
+.subckt BUS_P_STUB2 a ref
+X1 a n1 ref BUS_P_STUB2_stub
+.ends BUS_P_STUB2
+
+* lane BUS_P: pair, transmitter end = ap/an, receiver end = bp/bn
+.subckt BUS_P_lane ap an bp bn ref
+X1 ap an n1 n2 ref BUS_P_CPL1
+X2 n1 n3 ref BUS_P_TL15_F_Cu
+X3 n2 n4 ref BUS_P_TL16_F_Cu
+X4 n3 n4 n5 n6 ref BUS_P_CPL3
+X5 n6 n7 ref BUS_P_TL19_F_Cu
+X6 n5 n7 n8 n9 ref BUS_P_CPL4
+X7 n8 n10 ref BUS_P_TL22_F_Cu
+X8 n10 n9 n11 bn ref BUS_P_CPL5
+X9 bn ref BUS_P_STUB1
+X10 n11 bp ref BUS_P_TL39_F_Cu
+X11 bp ref BUS_P_STUB2
+.ends BUS_P_lane

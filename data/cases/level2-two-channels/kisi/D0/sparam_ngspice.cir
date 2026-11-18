@@ -1,0 +1,18 @@
+* kisi 0.3.3: S-parameters of the lane subcircuit, reference 50.00 ohm per port
+* lane D0
+* port 1 = a = D0 at U1.4 (transmitter end)
+* port 2 = b = D0 at U3.2 (receiver end)
+* stackup: 2 copper layers, 1.49 mm, er and tand at 1 GHz; from board file (layer by layer in the README)
+*   layers (um): F.Cu 30 / 1430 er 4.42 tand 0.02 / B.Cu 30
+.include "D0.lib"
+
+VP1 a 0 dc 0 ac 1 portnum 1 z0 5.000000e1
+VP2 b 0 dc 0 ac 1 portnum 2 z0 5.000000e1
+XLANE a b 0 D0_lane
+
+.sp lin 1000 1.000000e7 1.000000e10
+.control
+run
+wrdata sparam_ngspice.txt S_1_1 S_1_2 S_2_1 S_2_2
+.endc
+.end

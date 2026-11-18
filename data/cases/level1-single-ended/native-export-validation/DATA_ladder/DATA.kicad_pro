@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "filename": "DATA.kicad_pro",
+    "version": 1
+  },
+  "schematic": {
+    "legacy_lib_dir": "",
+    "legacy_lib_list": []
+  },
+  "sheets": [
+    [
+      "c7287742-b3f1-411b-8edc-6dfe4bb4a80d",
+      ""
+    ]
+  ],
+  "text_variables": {}
+}

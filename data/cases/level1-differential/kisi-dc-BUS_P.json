@@ -1,0 +1,156 @@
+{
+  "bus": "U1 ↔ U2",
+  "export": "lane",
+  "field_solver": {
+    "cross_sections": 17,
+    "cross_sections_field": 16,
+    "target_length_coverage_pct": 100
+  },
+  "files": [
+    "BUS_P.s4p",
+    "README.md"
+  ],
+  "lanes": [
+    {
+      "bench_ends": {
+        "notes": [
+          "termination R1 at U2 used as the receiver termination (60 Ω per line)"
+        ],
+        "rise_ps": 300,
+        "rx": {
+          "c_pf": 2,
+          "l_nh": 0,
+          "r": 60
+        },
+        "swing_v": 0.35000000000000003,
+        "tx": {
+          "c_pf": 2,
+          "l_nh": 0,
+          "r": 5000
+        }
+      },
+      "check_against_kisi": {
+        "circuit_max_sv": 0.9999984102747528,
+        "circuit_max_sv_ghz": 9.999999999999997e-7,
+        "fit_line_pct": [
+          0.9053371645736983,
+          0.0911658477461308,
+          1.1181278977070754,
+          0.10136577589649691
+        ],
+        "fit_line_worst_pct": [
+          0.9178801448287165,
+          0.0911658477461308,
+          1.1181278977070754,
+          0.10136577589649691
+        ],
+        "fit_via_pct": 0,
+        "max_ds": 0.0033613273651424062,
+        "max_ds11": 0.0011268879419933497,
+        "max_ds21_db": 0.01127864456186245,
+        "max_ds21_db_nyq": 0.0006794731990814595,
+        "max_ds_nyq": 0.0005981178871215734,
+        "via_active_from_ghz": null,
+        "via_spans_active": 0
+      },
+      "delay_ps": 315.3129681960694,
+      "elements": {
+        "c": 470,
+        "cells": 32,
+        "l": 344,
+        "r": 590,
+        "rlgc_sections": 0,
+        "sources": 80,
+        "total": 1484
+      },
+      "frequency": {
+        "fmax_hz": 1250000000,
+        "fmin_hz": 125000,
+        "points": 10000
+      },
+      "lane": "BUS_P",
+      "length_mm": 55.751248916810276,
+      "line_model": "compact",
+      "merged_sections": 5,
+      "model": "4-port (pair)",
+      "notes": [
+        "termination R1 at U2 used as the receiver termination (60 Ω per line)",
+        "BUS_P branches: 1 side stub(s) included as open stubs",
+        "BUS_N branches: 1 side stub(s) included as open stubs"
+      ],
+      "ports": [
+        {
+          "at": "P BUS_P at U1.6 (transmitter end)",
+          "node": "ap",
+          "port": 1
+        },
+        {
+          "at": "N BUS_N at U1.7 (transmitter end)",
+          "node": "an",
+          "port": 2
+        },
+        {
+          "at": "P BUS_P at U2.6 (receiver end)",
+          "node": "bp",
+          "port": 3
+        },
+        {
+          "at": "N BUS_N at U2.7 (receiver end)",
+          "node": "bn",
+          "port": 4
+        }
+      ],
+      "profile": "lvds",
+      "rate_gbps": 1,
+      "subckt": "BUS_P_lane",
+      "z_ref_ohm": 50
+    }
+  ],
+  "name": "BUS_P",
+  "note": "SPICE: the lane's board channel as kisi's check models it (RLGC ladders with fitted R(f)/G(f) networks – or, with --model compact, lossless-line cells with the same networks lumped –, kisi's via model, parts with estimated parasitics, stubs; pairs with modal coupled blocks); check_against_kisi compares the exported circuit with kisi's own S-parameters. Benches use the profile's linear ends; the receiver's termination resistors on the board act as the receiver's termination and are not in the subcircuit or the Touchstone file. Not included: the channel behind a connector, crosstalk between lanes, IBIS ends.",
+  "stackup_used": {
+    "lines": [
+      "stackup used (2 copper layers, 1.49 mm; er and tand at 1 GHz, the line models follow Djordjevic-Sarkar from there):",
+      "  solder mask (top): 20 um, er 3.3 [board file]",
+      "  F.Cu: copper 30 um [board file]",
+      "    NP-155F core: 1430 um, er 4.42, tand 0.02 [board file]",
+      "  B.Cu: copper 30 um [board file]",
+      "  solder mask (bottom): 20 um, er 3.3 [board file]"
+    ],
+    "provenance": {
+      "copper": [
+        "board file",
+        "board file"
+      ],
+      "dielectrics": [
+        "board file"
+      ],
+      "mask": "board file"
+    }
+  },
+  "variant": {
+    "available": [],
+    "chosen_by": null,
+    "description": null,
+    "errors": [],
+    "field_overrides": [],
+    "fitted_by_variant": [],
+    "forks_all_fitted": 0,
+    "name": null,
+    "needs_choice": false,
+    "not_fitted_by_variant": [],
+    "not_fitted_total": 0,
+    "unused_nets": 0,
+    "warnings": []
+  },
+  "written": "data/cases/level1-differential/kisi-dc/BUS_P",
+  "field_solver_run": {
+    "planned": 16,
+    "from_cache": 16,
+    "solved_now": 0,
+    "failed_now": 0,
+    "not_solved": 0,
+    "seconds": 0,
+    "cache": "native/kisi-cache/field-cache.json"
+  }
+}

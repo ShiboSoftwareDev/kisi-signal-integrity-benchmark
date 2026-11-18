@@ -1,0 +1,250 @@
+{
+ "lanes": [
+  {
+   "lane": "BUS_P",
+   "dir": "data/cases/level1-differential/native-export-validation/BUS_P_ladder",
+   "model": "4-port (pair)",
+   "length_mm": 55.751248916810276,
+   "delay_ps": 315.3129681960694,
+   "elements": {
+    "c": 992,
+    "cells": 0,
+    "l": 1586,
+    "r": 2218,
+    "rlgc_sections": 164,
+    "sources": 80,
+    "total": 4876
+   },
+   "kisi_eval": {
+    "circuit_max_sv": 0.999998431855721,
+    "circuit_max_sv_ghz": 9.999999999999997e-07,
+    "fit_line_pct": [
+     0.5148254432770308,
+     0.03237835582892008,
+     95.9790218306438,
+     13.305345415000303
+    ],
+    "fit_line_worst_pct": [
+     0.6273665100377168,
+     0.03237835582892008,
+     95.9790218306438,
+     13.305345415000303
+    ],
+    "fit_via_pct": 0,
+    "max_ds": 0.4426221473399232,
+    "max_ds11": 0.8062403417372714,
+    "max_ds21_db": 3.3826549705044116,
+    "max_ds21_db_nyq": 0.09910590559496535,
+    "max_ds_nyq": 0.015639848498839797,
+    "via_active_from_ghz": null,
+    "via_spans_active": 0
+   },
+   "touchstone": {
+    "file": "BUS_P.s4p",
+    "ports": 4,
+    "points": 500,
+    "z0": 50.0,
+    "max_singular_value": 0.9998009042595852,
+    "passive": true,
+    "reciprocity_error": 0.0,
+    "scikit_rf": {
+     "version": "2.0.1",
+     "read": true,
+     "nports": 4,
+     "is_passive": true,
+     "is_reciprocal": true
+    },
+    "energy_before_arrival": 0.004597711146990076
+   },
+   "ngspice_sparam_s": 2.5,
+   "ngspice_vs_kisi": {
+    "max_ds21_db": 3.38265025879401,
+    "max_ds21_db_nyq": 0.0991056806138213,
+    "max_ds11": 0.8062397494236617,
+    "max_ds": 0.44262200126569307,
+    "max_ds_nyq": 0.01563980248828257
+   },
+   "line_model": "ladder",
+   "passivity": {
+    "kisi_circuit_max_sv": 0.999998431855721,
+    "kisi_circuit_max_sv_ghz": 9.999999999999997e-07,
+    "ngspice_grid_max_sv": 0.9998740404121667,
+    "ngspice_sweep": {
+     "f_lo_hz": 1000.0,
+     "f_hi_hz": 47863009200.0,
+     "points": 193,
+     "max_singular_value": 1.0000000033162293,
+     "at_hz": 1584.89319,
+     "seconds": 1.0
+    }
+   },
+   "step": {
+    "ngspice_s": 4.8,
+    "max_diff_of_final": 0.05178708300960837,
+    "t50_ngspice_ps": 346.24036070435477,
+    "t50_kisi_ps": 338.077848457316,
+    "final_ngspice": 0.497291507,
+    "final_kisi": 0.4974236919822886
+   },
+   "bench": {
+    "ok": true,
+    "seconds": 101.2,
+    "v_min": -0.414692741,
+    "v_max": 0.413034728,
+    "time_points": 9929
+   },
+   "ltspice": {
+    "ok": true,
+    "subckts": 93,
+    "instances": 210,
+    "floating_nodes": 0,
+    "errors": []
+   },
+   "export_s": 0.4
+  },
+  {
+   "lane": "BUS_P",
+   "dir": "data/cases/level1-differential/native-export-validation/BUS_P_compact",
+   "model": "4-port (pair)",
+   "length_mm": 55.751248916810276,
+   "delay_ps": 315.3129681960694,
+   "elements": {
+    "c": 627,
+    "cells": 56,
+    "l": 771,
+    "r": 714,
+    "rlgc_sections": 0,
+    "sources": 80,
+    "total": 2192
+   },
+   "kisi_eval": {
+    "circuit_max_sv": 0.999998431855799,
+    "circuit_max_sv_ghz": 9.999999999999997e-07,
+    "fit_line_pct": [
+     0.5148254432770308,
+     0.03237835582892008,
+     95.9790218306438,
+     13.305345415000303
+    ],
+    "fit_line_worst_pct": [
+     0.6273665100377168,
+     0.03237835582892008,
+     95.9790218306438,
+     13.305345415000303
+    ],
+    "fit_via_pct": 0,
+    "max_ds": 0.45112762292923697,
+    "max_ds11": 0.8178583481716979,
+    "max_ds21_db": 3.4114701872604316,
+    "max_ds21_db_nyq": 0.09951947962888785,
+    "max_ds_nyq": 0.015622721009948812,
+    "via_active_from_ghz": null,
+    "via_spans_active": 0
+   },
+   "touchstone": {
+    "file": "BUS_P.s4p",
+    "ports": 4,
+    "points": 500,
+    "z0": 50.0,
+    "max_singular_value": 0.9998009042595852,
+    "passive": true,
+    "reciprocity_error": 0.0,
+    "scikit_rf": {
+     "version": "2.0.1",
+     "read": true,
+     "nports": 4,
+     "is_passive": true,
+     "is_reciprocal": true
+    },
+    "energy_before_arrival": 0.004597711146990076
+   },
+   "ngspice_sparam_s": 0.1,
+   "ngspice_vs_kisi": {
+    "max_ds21_db": 3.411465006248437,
+    "max_ds21_db_nyq": 0.0995193813310089,
+    "max_ds11": 0.8178577849935885,
+    "max_ds": 0.45112739854340744,
+    "max_ds_nyq": 0.015622667379348996
+   },
+   "line_model": "compact",
+   "passivity": {
+    "kisi_circuit_max_sv": 0.999998431855799,
+    "kisi_circuit_max_sv_ghz": 9.999999999999997e-07,
+    "ngspice_grid_max_sv": 0.9998740535312148,
+    "ngspice_sweep": {
+     "f_lo_hz": 1000.0,
+     "f_hi_hz": 47863009200.0,
+     "points": 193,
+     "max_singular_value": 1.0000000008985546,
+     "at_hz": 1000.0,
+     "seconds": 0.1
+    }
+   },
+   "step": {
+    "ngspice_s": 0.1,
+    "max_diff_of_final": 0.05208428230326269,
+    "t50_ngspice_ps": 346.175392887955,
+    "t50_kisi_ps": 338.077848457316,
+    "final_ngspice": 0.497314714,
+    "final_kisi": 0.4974236919822886
+   },
+   "bench": {
+    "ok": true,
+    "seconds": 2.3,
+    "v_min": -0.414592754,
+    "v_max": 0.413022605,
+    "time_points": 9705
+   },
+   "ltspice": {
+    "ok": true,
+    "subckts": 107,
+    "instances": 127,
+    "floating_nodes": 0,
+    "errors": []
+   },
+   "export_s": 0.4
+  }
+ ],
+ "buses": [],
+ "compact_vs_ladder": [
+  {
+   "elements": {
+    "ladder": 4876,
+    "compact": 2192
+   },
+   "max_ds21_db_nyq": 0.00041370071718760393,
+   "max_ds21_db": 0.17154100076727108,
+   "max_ds_nyq": 8.699034289875866e-05,
+   "max_ds": 0.029499920791555806,
+   "ngspice_sparam_s": {
+    "ladder": 2.5,
+    "compact": 0.1
+   },
+   "ngspice_step_s": {
+    "ladder": 4.8,
+    "compact": 0.1
+   },
+   "step_max_diff_of_final": 0.0017291074266060095,
+   "bench": {
+    "seconds": {
+     "ladder": 101.2,
+     "compact": 2.3
+    },
+    "time_points": {
+     "ladder": 9929,
+     "compact": 9705
+    },
+    "levels_max_diff_v": 0.0003027999592394859,
+    "levels_max_diff_of_swing": 0.0008253706622201021,
+    "waveform_max_diff_of_swing": 0.0030928942226252695,
+    "swing_v": 0.3668654255592356,
+    "t50_ps": {
+     "ladder": 7539.566523443968,
+     "compact": 7539.6000689148705
+    }
+   },
+   "lane": "BUS_P"
+  }
+ ],
+ "corners": []
+}

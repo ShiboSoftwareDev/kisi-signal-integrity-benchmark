@@ -1,0 +1,42 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: native routed passive channel ac
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  1.00000e+06
+ Reference value :  3.90961e+08
+ Reference value :  6.80932e+08
+ Reference value :  9.90901e+08
+ Reference value :  1.36086e+09
+ Reference value :  1.73083e+09
+ Reference value :  2.13079e+09
+ Reference value :  2.50075e+09
+ Reference value :  2.87071e+09
+ Reference value :  3.32067e+09
+ Reference value :  3.73063e+09
+ Reference value :  4.16058e+09
+ Reference value :  4.60054e+09
+ Reference value :  5.05050e+09
+ Reference value :  5.48045e+09
+ Reference value :  5.90041e+09
+ Reference value :  6.34037e+09
+ Reference value :  6.77032e+09
+ Reference value :  7.19028e+09
+ Reference value :  7.62024e+09
+ Reference value :  8.06019e+09
+ Reference value :  8.48015e+09
+ Reference value :  8.91011e+09
+ Reference value :  9.36006e+09
+ Reference value :  9.80002e+09
+No. of Data Rows : 1001
+ngspice-47 done
+
+The Inductive System consisting of
+ larcl871 larcl361 larcl362 larcl899 larcl363 larcl364 larcl368 larcl369 larcl439 larcl440 larcl441 larcl442 larcl443 larcl444 larcl445 larcl446 larcl447 larcl448 larcl449 larcl450 larcl451 larcl452 larcl453 larcl454 larcl455 larcl456 larcl457 larcl458 larcl459 larcl460 larcl461 larcl462 larcl463 larcl464 larcl485 larcl486 larcl487 larcl488 larcl489 larcl490 larcl491 larcl492 larcl493 larcl494 larcl495 larcl496 larcl497 larcl498 larcl499 larcl500 larcl501 larcl502 larcl503 larcl504 larcl505 larcl506 larcl507 larcl508 larcl509 larcl876 larcl877 larcl898 larcl949 larcl974 larcl995 larcl973 larcl996 larcl972 larcl997 larcl971 larcl998 larcl970 larcl999 larcl969 larcl1000 larcl968 larcl1001 larcl967 larcl1002 larcl966 larcl1003 larcl965 larcl1004 larcl964 larcl1005 larcl963 larcl1006 larcl962 larcl1007 larcl961 larcl1008 larcl960 larcl1009 larcl959 larcl1010 larcl958 larcl1011 larcl957 larcl1012 larcl956 larcl1013 larcl955 larcl1014 larcl954 larcl1015 larcl953 larcl1016 larcl952 larcl1017 larcl951 larcl1018 larcl950 larcl1019 larcl897 larcl975 larcl896 larcl976 larcl895 larcl977 larcl894 larcl978 larcl893 larcl979 larcl892 larcl980 larcl891 larcl981 larcl890 larcl982 larcl889 larcl983 larcl888 larcl984 larcl887 larcl985 larcl886 larcl986 larcl885 larcl987 larcl884 larcl988 larcl883 larcl989 larcl882 larcl990 larcl881 larcl991 larcl880 larcl992 larcl879 larcl993 larcl878 larcl994 larcl390 larcl900 larcl389 larcl465 larcl388 larcl466 larcl387 larcl467 larcl386 larcl468 larcl385 larcl469 larcl384 larcl470 larcl383 larcl471 larcl382 larcl472 larcl381 larcl473 larcl380 larcl474 larcl379 larcl475 larcl378 larcl476 larcl377 larcl477 larcl376 larcl478 larcl375 larcl479 larcl374 larcl480 larcl373 larcl481 larcl372 larcl482 larcl371 larcl483 larcl370 larcl484
+ karcl361_871 karcl361_898 karcl362_898 karcl362_899 karcl363_899 karcl363_900 karcl364_900 karcl368_485 karcl369_484 karcl369_485 karcl370_483 karcl371_482 karcl372_481 karcl373_480 karcl374_479 karcl375_478 karcl376_477 karcl377_476 karcl378_475 karcl379_474 karcl380_473 karcl381_472 karcl382_471 karcl383_470 karcl384_469 karcl385_468 karcl386_467 karcl387_466 karcl388_465 karcl389_464 karcl390_464 karcl439_509 karcl439_949 karcl439_1019 karcl440_508 karcl440_509 karcl440_950 karcl440_1018 karcl440_1019 karcl441_507 karcl441_508 karcl441_951 karcl441_1017 karcl441_1018 karcl442_506 karcl442_507 karcl442_952 karcl442_1016 karcl442_1017 karcl443_505 karcl443_506 karcl443_953 karcl443_1015 karcl443_1016 karcl444_504 karcl444_505 karcl444_954 karcl444_1014 karcl444_1015 karcl445_503 karcl445_504 karcl445_955 karcl445_1013 karcl445_1014 karcl446_502 karcl446_503 karcl446_956 karcl446_1012 karcl446_1013 karcl447_501 karcl447_502 karcl447_957 karcl447_1011 karcl447_1012 karcl448_500 karcl448_501 karcl448_958 karcl448_1010 karcl448_1011 karcl449_499 karcl449_500 karcl449_959 karcl449_1009 karcl449_1010 karcl450_498 karcl450_499 karcl450_960 karcl450_1008 karcl450_1009 karcl451_497 karcl451_498 karcl451_961 karcl451_1007 karcl451_1008 karcl452_496 karcl452_497 karcl452_962 karcl452_1006 karcl452_1007 karcl453_495 karcl453_496 karcl453_963 karcl453_1005 karcl453_1006 karcl454_494 karcl454_495 karcl454_964 karcl454_1004 karcl454_1005 karcl455_493 karcl455_494 karcl455_965 karcl455_1003 karcl455_1004 karcl456_492 karcl456_493 karcl456_966 karcl456_1002 karcl456_1003 karcl457_491 karcl457_492 karcl457_967 karcl457_1001 karcl457_1002 karcl458_490 karcl458_491 karcl458_968 karcl458_1000 karcl458_1001 karcl459_489 karcl459_490 karcl459_969 karcl459_999 karcl459_1000 karcl460_488 karcl460_489 karcl460_970 karcl460_998 karcl460_999 karcl461_487 karcl461_488 karcl461_971 karcl461_997 karcl461_998 karcl462_486 karcl462_487 karcl462_972 karcl462_996 karcl462_997 karcl463_485 karcl463_486 karcl463_973 karcl463_995 karcl463_996 karcl464_485 karcl464_974 karcl464_995 karcl485_973 karcl485_974 karcl485_995 karcl486_972 karcl486_973 karcl486_996 karcl487_971 karcl487_972 karcl487_997 karcl488_970 karcl488_971 karcl488_998 karcl489_969 karcl489_970 karcl489_999 karcl490_968 karcl490_969 karcl490_1000 karcl491_967 karcl491_968 karcl491_1001 karcl492_966 karcl492_967 karcl492_1002 karcl493_965 karcl493_966 karcl493_1003 karcl494_964 karcl494_965 karcl494_1004 karcl495_963 karcl495_964 karcl495_1005 karcl496_962 karcl496_963 karcl496_1006 karcl497_961 karcl497_962 karcl497_1007 karcl498_960 karcl498_961 karcl498_1008 karcl499_959 karcl499_960 karcl499_1009 karcl500_958 karcl500_959 karcl500_1010 karcl501_957 karcl501_958 karcl501_1011 karcl502_956 karcl502_957 karcl502_1012 karcl503_955 karcl503_956 karcl503_1013 karcl504_954 karcl504_955 karcl504_1014 karcl505_953 karcl505_954 karcl505_1015 karcl506_952 karcl506_953 karcl506_1016 karcl507_951 karcl507_952 karcl507_1017 karcl508_950 karcl508_951 karcl508_1018 karcl509_949 karcl509_950 karcl509_1019 karcl876_995 karcl877_994 karcl877_995 karcl878_993 karcl879_992 karcl880_991 karcl881_990 karcl882_989 karcl883_988 karcl884_987 karcl885_986 karcl886_985 karcl887_984 karcl888_983 karcl889_982 karcl890_981 karcl891_980 karcl892_979 karcl893_978 karcl894_977 karcl895_976 karcl896_975 karcl897_974 karcl898_974 karcl949_1019 karcl950_1018 karcl951_1017 karcl952_1016 karcl953_1015 karcl954_1014 karcl955_1013 karcl956_1012 karcl957_1011 karcl958_1010 karcl959_1009 karcl960_1008 karcl961_1007 karcl962_1006 karcl963_1005 karcl964_1004 karcl965_1003 karcl966_1002 karcl967_1001 karcl968_1000 karcl969_999 karcl970_998 karcl971_997 karcl972_996 karcl973_995 karcl974_995 karcl973_996 karcl972_997 karcl971_998 karcl970_999 karcl969_1000 karcl968_1001 karcl967_1002 karcl966_1003 karcl965_1004 karcl964_1005 karcl963_1006 karcl962_1007 karcl961_1008 karcl960_1009 karcl959_1010 karcl958_1011 karcl957_1012 karcl956_1013 karcl955_1014 karcl954_1015 karcl953_1016 karcl952_1017 karcl951_1018 karcl950_1019 karcl897_975 karcl896_976 karcl895_977 karcl894_978 karcl893_979 karcl892_980 karcl891_981 karcl890_982 karcl889_983 karcl888_984 karcl887_985 karcl886_986 karcl885_987 karcl884_988 karcl883_989 karcl882_990 karcl881_991 karcl880_992 karcl879_993 karcl878_994 karcl390_900 karcl389_465 karcl388_466 karcl387_467 karcl386_468 karcl385_469 karcl384_470 karcl383_471 karcl382_472 karcl381_473 karcl380_474 karcl379_475 karcl378_476 karcl377_477 karcl376_478 karcl375_479 karcl374_480 karcl373_481 karcl372_482 karcl371_483 karcl370_484
+has an incomplete set of K couplings, (missing ones are implicitly 0)
+

@@ -1,0 +1,139 @@
+{
+  "level": "level2-two-channels",
+  "signal_names": [
+    "D0",
+    "D1"
+  ],
+  "our": [
+    {
+      "height_v": 0.9903355252660815,
+      "width_ui": 0.9885207094646375,
+      "best_phase_ui": 0.0859375,
+      "min_v": -0.027725324639075403,
+      "max_v": 1.0266420281499136,
+      "threshold_v": 0.49946655428403497,
+      "bits": 127,
+      "spui": 256
+    },
+    {
+      "height_v": 0.9894506042354438,
+      "width_ui": 0.9888467501565401,
+      "best_phase_ui": 0.0859375,
+      "min_v": -0.029902706710516806,
+      "max_v": 1.0290746234765085,
+      "threshold_v": 0.49946655428403497,
+      "bits": 127,
+      "spui": 256
+    }
+  ],
+  "kisi": [
+    {
+      "height_v": 0.996384680242478,
+      "width_ui": 0.9972191070804399,
+      "best_phase_ui": 0.11328125,
+      "min_v": -0.021701014345730074,
+      "max_v": 1.0205760464772904,
+      "threshold_v": 0.49946655428403497,
+      "bits": 127,
+      "spui": 256
+    },
+    {
+      "height_v": 0.9963846802424785,
+      "width_ui": 0.9972191070804683,
+      "best_phase_ui": 0.11328125,
+      "min_v": -0.02170101434573035,
+      "max_v": 1.0205760464772902,
+      "threshold_v": 0.49946655428403497,
+      "bits": 127,
+      "spui": 256
+    }
+  ],
+  "loaded_gain_1ghz_db": {
+    "our": -2.8455079065689186,
+    "kisi": -3.019413451374536
+  },
+  "step_delay_ps": {
+    "our": 251.29227854491052,
+    "kisi": 251.14181593359734
+  },
+  "dc_gain_v_per_bit": {
+    "our": 0.9989105207075917,
+    "kisi": 0.9989556964285481
+  },
+  "max_complex_loaded_difference_to_3ghz": 0.0877293976905377,
+  "max_complex_loaded_difference_to_10ghz": 0.37168341592243326,
+  "kisi_max_singular_value": 0.9999992223154437,
+  "notes": [
+    "Kisi exports each lane independently; block-diagonal assembly deliberately contains no inter-lane coupling."
+  ],
+  "render_diagnostics": [
+    {
+      "type": "pcb_trace_error",
+      "pcb_trace_error_id": "pcb_trace_error_0",
+      "error_type": "pcb_trace_error",
+      "message": "PCB trace .TX1 > .GND to net.GND overlaps with pcb_smtpad \"TX1.Y\" (accidental contact)",
+      "pcb_trace_id": "source_net_1_mst0_0",
+      "center": {
+        "x": -14.525,
+        "y": -2.9486562500000035
+      },
+      "source_trace_id": "",
+      "pcb_component_ids": [
+        "pcb_component_1"
+      ],
+      "pcb_port_ids": [
+        "pcb_port_7",
+        "pcb_port_8"
+      ]
+    }
+  ],
+  "kicad_shorts": [
+    {
+      "description": "Items shorting two nets (nets D1 and GND)",
+      "items": [
+        {
+          "description": "Pad 4 [D1] of U2 on F.Cu",
+          "pos": {
+            "x": 6.1375,
+            "y": 12.95
+          },
+          "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+        },
+        {
+          "description": "Track [GND] on F.Cu, length 1.8000 mm",
+          "pos": {
+            "x": 3.8625,
+            "y": 12.95
+          },
+          "uuid": "41ece69a-96b0-5762-be98-a8e7825f9ade"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    },
+    {
+      "description": "Items shorting two nets (nets D1 and GND)",
+      "items": [
+        {
+          "description": "Pad 4 [D1] of U2 on F.Cu",
+          "pos": {
+            "x": 6.1375,
+            "y": 12.95
+          },
+          "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+        },
+        {
+          "description": "Track [GND] on F.Cu, length 0.6000 mm",
+          "pos": {
+            "x": 5.662499,
+            "y": 12.9485
+          },
+          "uuid": "cb84dd6c-c315-5876-a481-8e03d0f16286"
+        }
+      ],
+      "severity": "error",
+      "type": "shorting_items"
+    }
+  ],
+  "our_cross_transfer_peak_v_per_bit": 0.09254525587375406
+}

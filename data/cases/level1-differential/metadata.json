@@ -1,0 +1,72 @@
+{
+  "level": "level1-differential",
+  "status": "extracted",
+  "render_errors": 0,
+  "elapsed_s": 0.9689057080000002,
+  "source_commit": "374229d3dd3ca4581053423604b715dfb11ac86b",
+  "nodes": {
+    "source_port_5": "n5",
+    "source_port_13": "n12",
+    "source_port_6": "n6",
+    "source_port_14": "n13"
+  },
+  "mappings": [
+    {
+      "port": "BUS",
+      "from": "source_port_5",
+      "to": "source_port_13",
+      "sourceTraceId": "source_trace_2",
+      "pcbTraceId": "",
+      "pcbPorts": [],
+      "stages": [],
+      "originalRoute": []
+    },
+    {
+      "port": "BUS",
+      "from": "source_port_6",
+      "to": "source_port_14",
+      "sourceTraceId": "source_trace_3",
+      "pcbTraceId": "",
+      "pcbPorts": [],
+      "stages": [],
+      "originalRoute": []
+    }
+  ],
+  "node_map": {
+    "source_port_0": "n1",
+    "source_port_1": "n2",
+    "source_port_2": "n3",
+    "source_port_3": "n4",
+    "source_port_4": "0",
+    "source_port_5": "n5",
+    "source_port_6": "n6",
+    "source_port_7": "n7",
+    "source_port_8": "n8",
+    "source_port_9": "n9",
+    "source_port_10": "n10",
+    "source_port_11": "n11",
+    "source_port_12": "0",
+    "source_port_13": "n12",
+    "source_port_14": "n13",
+    "source_port_15": "n14",
+    "source_port_16": "n15",
+    "source_port_17": "n16",
+    "source_port_18": "0",
+    "source_port_19": "n17",
+    "source_port_20": "0",
+    "source_port_21": "n18",
+    "source_net_0": "0"
+  },
+  "electrical_lines": [
+    "VDECLARED0 n7 0 3.3",
+    "VDECLARED1 n14 0 3.3",
+    "RPHYSICAL0 n15 n16 120"
+  ],
+  "passive_elements": 42650,
+  "materials": {
+    "maskMm": 0.02,
+    "maskEr": 3.3,
+    "maskLoss": 0.025,
+    "substrateLoss": 0.02
+  }
+}

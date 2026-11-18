@@ -1,0 +1,25 @@
+Kisi signal-integrity benchmark
+Recorded 2026-11-18
+
+Selected TSX examples, routes, shared parts, dependency snapshots, and pipeline
+outputs derive from tscircuit/signal-integrity-pipeline, commit
+374229d3dd3ca4581053423604b715dfb11ac86b, including Ankan Roy (0hmX)'s PR #87.
+Upstream uses MIT; its copyright and license are preserved in
+licenses/upstream-pipeline-MIT.txt. Source examples are copied without edits.
+https://github.com/tscircuit/signal-integrity-pipeline/pull/87
+
+Kisi 0.3.3 by the riehlies/kisi contributors is a separately obtained GPL-3.0
+solver. This repository contains experiment outputs and adapters that invoke
+it. It does not bundle Kisi's executable or source. Obtain Kisi and review its
+license from its upstream repository/release. A copy is retained in
+licenses/kisi-GPL-3.0.txt; generated upstream material retains its terms.
+https://github.com/riehlies/kisi/tree/12d8eab579bbd7f89b9483cdba6637f86703a84e
+https://github.com/riehlies/kisi/releases/tag/v0.3.3
+
+Texas Instruments SN74LVC1G04 and SN65HVD72 model files are not redistributed.
+Their identities, download references, and hashes are preserved for local
+reproduction. Native scientific waveform captures are experiment results;
+manufacturer model tables and generated decks containing them are excluded.
+
+New benchmark adapters, analysis, tests, and documentation are under LICENSE.
+Original upstream material retains its original notices and terms.

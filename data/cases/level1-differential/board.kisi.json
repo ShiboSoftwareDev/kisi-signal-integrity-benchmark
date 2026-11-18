@@ -1,0 +1,18 @@
+{
+  "kisi_config": 1,
+  "net_classes": {
+    "Benchmark": {
+      "nets": [
+        "BUS_P",
+        "BUS_N"
+      ],
+      "target_ohm": 100,
+      "diff": true,
+      "profile": "lvds",
+      "source": {
+        "kind": "design",
+        "note": "Linear channel benchmark; does not assert original interface rate or controlled impedance."
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "type": "pcb_trace_error",
+    "pcb_trace_error_id": "pcb_trace_error_0",
+    "error_type": "pcb_trace_error",
+    "message": "PCB trace .TX1 > .GND to net.GND overlaps with pcb_smtpad \"TX1.Y\" (accidental contact)",
+    "pcb_trace_id": "source_net_1_mst0_0",
+    "center": {
+      "x": -14.525,
+      "y": -2.9486562500000035
+    },
+    "source_trace_id": "",
+    "pcb_component_ids": [
+      "pcb_component_1"
+    ],
+    "pcb_port_ids": [
+      "pcb_port_7",
+      "pcb_port_8"
+    ]
+  }
+]

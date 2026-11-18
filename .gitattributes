@@ -1,0 +1,8 @@
+* text=auto
+*.png binary
+*.npz binary
+*.s2p text eol=lf
+*.s4p text eol=lf
+native/kisi-cli text eol=lf
+# Preserve native fixed-width solver output, including its trailing spaces.
+data/** -whitespace linguist-generated=true

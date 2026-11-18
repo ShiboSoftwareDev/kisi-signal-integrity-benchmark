@@ -1,0 +1,18 @@
+{
+  "kisi_config": 1,
+  "net_classes": {
+    "Benchmark": {
+      "nets": [
+        "D0",
+        "D1"
+      ],
+      "target_ohm": 50,
+      "diff": false,
+      "profile": "se50",
+      "source": {
+        "kind": "design",
+        "note": "Linear channel benchmark; does not assert original interface rate or controlled impedance."
+      }
+    }
+  }
+}

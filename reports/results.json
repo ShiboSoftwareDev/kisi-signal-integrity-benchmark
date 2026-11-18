@@ -1,0 +1,4915 @@
+{
+  "date_local": "2026-11-18",
+  "source": {
+    "commit": "374229d3dd3ca4581053423604b715dfb11ac86b",
+    "author_pr": "https://github.com/tscircuit/signal-integrity-pipeline/pull/87",
+    "pr_author": "0hmX",
+    "archive_sha256": "8c7c50858cfeb5be262b728251f6260f02eb01d256f2c46406b402a447a2e95c",
+    "archive_files_compared": 360,
+    "changed_source_files": []
+  },
+  "board_identities": {
+    "identity_method": "The exact boardIdentity() algorithm from the upstream render-example-images script.",
+    "examples": [
+      {
+        "level": "level1-single-ended",
+        "rendered_hash": "54192988b13c4d7c35dfe324b9f191c2b446040ba68844b34005fea4492b8278",
+        "historical_accepted_hash": "54192988b13c4d7c35dfe324b9f191c2b446040ba68844b34005fea4492b8278",
+        "matches_historical_accepted_board": true,
+        "tsx_source_sha256": "0827c08e270de7c01a0f175b918f8773ff1cc294b608ca4c4547bbc3d022f9f0"
+      },
+      {
+        "level": "level1-differential",
+        "rendered_hash": "3f3dd9effba4190856a9a865c66f9f2c662e8905e0fe9f5e4e5c5d9274310d84",
+        "historical_accepted_hash": "da07fe5dcda8a77d2a886ff8b8414aac9d8d48aec495764c32ad9f638f11bdc4",
+        "matches_historical_accepted_board": false,
+        "tsx_source_sha256": "b18401a07e533d291f0618646845ea25635270cf67eea2b3632595554d7ed4ff"
+      },
+      {
+        "level": "level2-two-channels",
+        "rendered_hash": "34931f3a65f68833d35af98ca845066c582e9058c779326418ede5d3eba37112",
+        "historical_accepted_hash": "049a61392b5e7019d8cbfadcf4eb3653c75197a0cb71315a20b7b163f24040a9",
+        "matches_historical_accepted_board": false,
+        "tsx_source_sha256": "afeabe2d778cca548293835099286c200f748ed9b0cfbcf46d6355f02b55244d"
+      }
+    ],
+    "note": "Current TSX examples rerendered with their pinned published dependencies. Historical CSVs were not used as new solver output."
+  },
+  "settings": {
+    "our_spatial_refinement": 4,
+    "bitrate_bps": 1000000000.0,
+    "prbs": 7,
+    "spui": 256,
+    "edge_10_90_ps": 100,
+    "source_ohm_per_leg": 50,
+    "pin_capacitance_pf_per_leg": 1,
+    "single_ended_rx_ohm": 50,
+    "differential_rx_bridge_ohm": 120,
+    "noise": 0,
+    "jitter": 0,
+    "equalization": false,
+    "two_channel_pattern_offset_ui": 31,
+    "roughness": "smooth",
+    "native_touchstone_used_for_kisi": true,
+    "native_ngspice_ac_used_for_ours": true,
+    "eye_processing": "Same FFT and metric implementation for both independent extracted channels; no output amplitude normalization."
+  },
+  "interpretation": "Independent native channel extractions with shared linear loading, eye synthesis and metrics. Kisi is not a nonlinear IBIS simulator. Original geometry is retained, including the confirmed two-channel short.",
+  "examples": {
+    "level1-differential": {
+      "level": "level1-differential",
+      "signal_names": [
+        "BUS_P-N"
+      ],
+      "our": [
+        {
+          "height_v": 1.0850897130861956,
+          "width_ui": 0.9992707281859907,
+          "best_phase_ui": 0.96484375,
+          "min_v": -0.016720789176948227,
+          "max_v": 1.1053678659283948,
+          "threshold_v": 0.544406038687987,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "kisi": [
+        {
+          "height_v": 1.0858376989256757,
+          "width_ui": 0.9991378133892113,
+          "best_phase_ui": 0.34765625,
+          "min_v": -0.02349554917426025,
+          "max_v": 1.1123484042262815,
+          "threshold_v": 0.544406038687987,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "loaded_gain_1ghz_db": {
+        "our": -0.274359151724365,
+        "kisi": -0.5381075091168507
+      },
+      "step_delay_ps": {
+        "our": 426.4323092988596,
+        "kisi": 402.9325692134449
+      },
+      "dc_gain_v_per_bit": {
+        "our": 1.0887774694034678,
+        "kisi": 1.08884668534848
+      },
+      "max_complex_loaded_difference_to_3ghz": 0.4024966767692368,
+      "max_complex_loaded_difference_to_10ghz": 0.8208879923088273,
+      "kisi_max_singular_value": 0.9999988287277874,
+      "notes": [
+        "Original 120ohm resistor remains at its physical nodes in our circuit. Kisi removes it from the channel and applies it as an RX differential termination; the common loading restores that 120ohm bridge, without duplicating it. This includes a placement approximation in Kisi."
+      ],
+      "render_diagnostics": [],
+      "kicad_shorts": []
+    },
+    "level1-single-ended": {
+      "level": "level1-single-ended",
+      "signal_names": [
+        "DATA"
+      ],
+      "our": [
+        {
+          "height_v": 0.9949936820505898,
+          "width_ui": 0.9986013056260674,
+          "best_phase_ui": 0.1328125,
+          "min_v": -0.0217111668220243,
+          "max_v": 1.0205168229310544,
+          "threshold_v": 0.4994664250006035,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "kisi": [
+        {
+          "height_v": 0.996384680242478,
+          "width_ui": 0.9972191053179813,
+          "best_phase_ui": 0.11328125,
+          "min_v": -0.021701014345730074,
+          "max_v": 1.0205760464772904,
+          "threshold_v": 0.4994664250006035,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "loaded_gain_1ghz_db": {
+        "our": -2.874827193806464,
+        "kisi": -3.019413451374536
+      },
+      "step_delay_ps": {
+        "our": 251.73888328631895,
+        "kisi": 251.14181593359734
+      },
+      "dc_gain_v_per_bit": {
+        "our": 0.998910003573866,
+        "kisi": 0.9989556964285481
+      },
+      "max_complex_loaded_difference_to_3ghz": 0.06808892414590154,
+      "max_complex_loaded_difference_to_10ghz": 0.2759192496678089,
+      "kisi_max_singular_value": 0.9999992223154435,
+      "notes": [],
+      "render_diagnostics": [],
+      "kicad_shorts": []
+    },
+    "level2-two-channels": {
+      "level": "level2-two-channels",
+      "signal_names": [
+        "D0",
+        "D1"
+      ],
+      "our": [
+        {
+          "height_v": 0.990267579129729,
+          "width_ui": 0.9885453207797639,
+          "best_phase_ui": 0.0859375,
+          "min_v": -0.027756542003951907,
+          "max_v": 1.0266595115627928,
+          "threshold_v": 0.4994662027562563,
+          "bits": 127,
+          "spui": 256
+        },
+        {
+          "height_v": 0.9893376175486636,
+          "width_ui": 0.9888561481362785,
+          "best_phase_ui": 0.0859375,
+          "min_v": -0.02991704436216908,
+          "max_v": 1.0290806813555966,
+          "threshold_v": 0.4994662027562563,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "kisi": [
+        {
+          "height_v": 0.996384680242478,
+          "width_ui": 0.9972191022882555,
+          "best_phase_ui": 0.11328125,
+          "min_v": -0.021701014345730074,
+          "max_v": 1.0205760464772904,
+          "threshold_v": 0.4994662027562563,
+          "bits": 127,
+          "spui": 256
+        },
+        {
+          "height_v": 0.9963846802424785,
+          "width_ui": 0.9972191022882555,
+          "best_phase_ui": 0.11328125,
+          "min_v": -0.02170101434573035,
+          "max_v": 1.0205760464772902,
+          "threshold_v": 0.4994662027562563,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "loaded_gain_1ghz_db": {
+        "our": -2.845274983240356,
+        "kisi": -3.019413451374536
+      },
+      "step_delay_ps": {
+        "our": 251.27981682348926,
+        "kisi": 251.14181593359734
+      },
+      "dc_gain_v_per_bit": {
+        "our": 0.9989091145964771,
+        "kisi": 0.9989556964285481
+      },
+      "max_complex_loaded_difference_to_3ghz": 0.08744717667357702,
+      "max_complex_loaded_difference_to_10ghz": 0.36610527359117817,
+      "kisi_max_singular_value": 0.9999992223154437,
+      "notes": [
+        "Kisi exports each lane independently; block-diagonal assembly deliberately contains no inter-lane coupling."
+      ],
+      "render_diagnostics": [
+        {
+          "type": "pcb_trace_error",
+          "pcb_trace_error_id": "pcb_trace_error_0",
+          "error_type": "pcb_trace_error",
+          "message": "PCB trace .TX1 > .GND to net.GND overlaps with pcb_smtpad \"TX1.Y\" (accidental contact)",
+          "pcb_trace_id": "source_net_1_mst0_0",
+          "center": {
+            "x": -14.525,
+            "y": -2.9486562500000035
+          },
+          "source_trace_id": "",
+          "pcb_component_ids": [
+            "pcb_component_1"
+          ],
+          "pcb_port_ids": [
+            "pcb_port_7",
+            "pcb_port_8"
+          ]
+        }
+      ],
+      "kicad_shorts": [
+        {
+          "description": "Items shorting two nets (nets D1 and GND)",
+          "items": [
+            {
+              "description": "Pad 4 [D1] of U2 on F.Cu",
+              "pos": {
+                "x": 6.1375,
+                "y": 12.95
+              },
+              "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+            },
+            {
+              "description": "Track [GND] on F.Cu, length 1.8000 mm",
+              "pos": {
+                "x": 3.8625,
+                "y": 12.95
+              },
+              "uuid": "41ece69a-96b0-5762-be98-a8e7825f9ade"
+            }
+          ],
+          "severity": "error",
+          "type": "shorting_items"
+        },
+        {
+          "description": "Items shorting two nets (nets D1 and GND)",
+          "items": [
+            {
+              "description": "Pad 4 [D1] of U2 on F.Cu",
+              "pos": {
+                "x": 6.1375,
+                "y": 12.95
+              },
+              "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+            },
+            {
+              "description": "Track [GND] on F.Cu, length 0.6000 mm",
+              "pos": {
+                "x": 5.662499,
+                "y": 12.9485
+              },
+              "uuid": "cb84dd6c-c315-5876-a481-8e03d0f16286"
+            }
+          ],
+          "severity": "error",
+          "type": "shorting_items"
+        }
+      ],
+      "our_cross_transfer_peak_v_per_bit": 0.09251801167506662
+    }
+  },
+  "our_refinement_check": {
+    "level1-single-ended": {
+      "coarse_refinement": 2,
+      "fine_refinement": 4,
+      "step_delay_ps": 251.73888328631895,
+      "delay_change_ps": -0.025695719703094255,
+      "max_complex_response_change_to_3ghz": 0.0005707813137840776,
+      "max_complex_response_change_to_10ghz": 0.048145274124370696,
+      "fine_metrics": [
+        {
+          "height_v": 0.9949936820505898,
+          "width_ui": 0.9986013089842061,
+          "best_phase_ui": 0.1328125,
+          "min_v": -0.0217111668220243,
+          "max_v": 1.0205168229310544,
+          "threshold_v": 0.4994666740587823,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "height_changes_v": [
+        -0.000153650746384848
+      ]
+    },
+    "level2-two-channels": {
+      "coarse_refinement": 2,
+      "fine_refinement": 4,
+      "step_delay_ps": 251.27981682348926,
+      "delay_change_ps": -0.012461721421260563,
+      "max_complex_response_change_to_3ghz": 0.0002864775812367114,
+      "max_complex_response_change_to_10ghz": 0.015269961226959842,
+      "fine_metrics": [
+        {
+          "height_v": 0.990267579129729,
+          "width_ui": 0.9885453129132316,
+          "best_phase_ui": 0.0859375,
+          "min_v": -0.027756542003951907,
+          "max_v": 1.0266595115627928,
+          "threshold_v": 0.49946655428403497,
+          "bits": 127,
+          "spui": 256
+        },
+        {
+          "height_v": 0.9893376175486636,
+          "width_ui": 0.9888561389552137,
+          "best_phase_ui": 0.0859375,
+          "min_v": -0.02991704436216908,
+          "max_v": 1.0290806813555966,
+          "threshold_v": 0.49946655428403497,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "height_changes_v": [
+        -6.794613635252578e-05,
+        -0.0001129866867802809
+      ]
+    },
+    "level1-differential": {
+      "coarse_refinement": 2,
+      "fine_refinement": 4,
+      "step_delay_ps": 426.4323092988596,
+      "delay_change_ps": 0.04601259017766779,
+      "max_complex_response_change_to_3ghz": 0.0017937470304606891,
+      "max_complex_response_change_to_10ghz": 0.029917886029195793,
+      "fine_metrics": [
+        {
+          "height_v": 1.0850897130861956,
+          "width_ui": 0.9992700515192894,
+          "best_phase_ui": 0.96484375,
+          "min_v": -0.016720789176948227,
+          "max_v": 1.1053678659283948,
+          "threshold_v": 0.544407976545605,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "height_changes_v": [
+        1.2945792191798589e-05
+      ]
+    }
+  },
+  "known_prbs_label_audit": {
+    "method": "Independent PRBS-label classification on the same absolute phase grid. Offset grids can change maxima by sub-mV sampling differences.",
+    "results": {
+      "level1-single-ended": {
+        "our": [
+          {
+            "rx": 0,
+            "height_using_known_prbs_labels_v": 0.9949936820505898,
+            "reported_height_v": 0.9949936820505898,
+            "difference_v": 0.0
+          }
+        ],
+        "kisi": [
+          {
+            "rx": 0,
+            "height_using_known_prbs_labels_v": 0.996384680242478,
+            "reported_height_v": 0.996384680242478,
+            "difference_v": 0.0
+          }
+        ]
+      },
+      "level2-two-channels": {
+        "our": [
+          {
+            "rx": 0,
+            "height_using_known_prbs_labels_v": 0.990267579129729,
+            "reported_height_v": 0.990267579129729,
+            "difference_v": 0.0
+          },
+          {
+            "rx": 1,
+            "height_using_known_prbs_labels_v": 0.9893376175486636,
+            "reported_height_v": 0.9893376175486636,
+            "difference_v": 0.0
+          }
+        ],
+        "kisi": [
+          {
+            "rx": 0,
+            "height_using_known_prbs_labels_v": 0.996384680242478,
+            "reported_height_v": 0.996384680242478,
+            "difference_v": 0.0
+          },
+          {
+            "rx": 1,
+            "height_using_known_prbs_labels_v": 0.9963846802424785,
+            "reported_height_v": 0.9963846802424785,
+            "difference_v": 0.0
+          }
+        ]
+      },
+      "level1-differential": {
+        "our": [
+          {
+            "rx": 0,
+            "height_using_known_prbs_labels_v": 1.0850897130861956,
+            "reported_height_v": 1.0850897130861956,
+            "difference_v": 0.0
+          }
+        ],
+        "kisi": [
+          {
+            "rx": 0,
+            "height_using_known_prbs_labels_v": 1.0858376989256757,
+            "reported_height_v": 1.0858376989256757,
+            "difference_v": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "examples_additional": {
+    "level1-single-ended": {
+      "native_kisi_check": {
+        "config": {
+          "entries": 1,
+          "errors": [],
+          "file": "data/cases/level1-single-ended/board.kisi.json",
+          "ok": true,
+          "warnings": []
+        },
+        "field_solver": {
+          "cross_sections": 5,
+          "cross_sections_field": 5,
+          "target_length_coverage_pct": 100
+        },
+        "models": "Impedance from Forst\u00e9n's 2D field solver for 5 cross-sections (see field_solver: coverage), formula (Hammerstad-Jensen, Wheeler, conformal mapping for coplanar lines, IPC-2141) for the rest. Losses: Wheeler/Huray/Djordjevic-Sarkar. Lanes run from device pin to device pin through series parts (estimated parasitics); side stubs of the lane nets are open stubs (unused pads, parts not fitted with their pad capacitance, the other path of a fork). Pads: a track inside an SMD pad has the pad's width; the rest of a part's pad is a capacitance from the pad's cross-section (with what lies below it), else an estimate per package. Eye: PRBS7, linear transmitter/receiver from the profile (a termination next to the receiver acts as its termination), without equalisation, jitter and noise; the step response with a DC point and checks (band edge, response before arrival, settling, passivity) in its warnings. Pairs are 4-ports (both lines on their own paths, coupled where they run together): loss and return loss Sdd21/Sdd11, the eye driven differentially, mode_conversion_db (worst Scd21 up to 1.5 \u00d7 Nyquist) as information. Multi-drop lines along one path: the eye at every receiver (receivers), the worst counts. One N-port Touchstone file behind a connector with a port map (connector_ends.<connector>.touchstone.ports): the connector's other lanes in it are worst-case aggressors (crosstalk_peak; they enter at the connector without their board traces \u2013 an estimate). Shunt parts on the lane's nets (capacitors to ground, \u2026) are in the channel at their pads. Lanes from connector to connector: board share only (loss, return loss, skew, TDR), no eye. Lanes ending at a connector: board share \u2013 loss, return loss and skew judged; the eye with the connector end model (kisi.json connector_ends.<connector>, default the profile's receiver or transmitter at the connector) \u2013 information (eye_board_share), or judged when a channel behind the connector (rest_loss_db or a Touchstone file) is given.",
+        "not_checked_unused": null,
+        "rows": [
+          {
+            "accuracy": {
+              "impedance": {
+                "field_share": 1,
+                "level": "field solver",
+                "uncertainty_pct": 1
+              },
+              "note": "typical deviations from kisi's validation (data/accuracy.json, docs/models.md section Accuracy levels), not bounds",
+              "vias": null
+            },
+            "branches": [],
+            "bus": "U1 \u2194 U2",
+            "class": "Benchmark",
+            "criteria": [
+              {
+                "hi": 55.00000000000001,
+                "key": "z",
+                "lo": 45,
+                "note": "mean along the line from the impedance analysis",
+                "red_below": null,
+                "status": "yellow",
+                "value": 135.43207196065785
+              },
+              {
+                "hi": null,
+                "key": "eye_h",
+                "lo": 0.65,
+                "note": null,
+                "red_below": 0.4,
+                "status": "green",
+                "value": 0.9951628749452819
+              },
+              {
+                "hi": null,
+                "key": "eye_w",
+                "lo": 0.5,
+                "note": null,
+                "red_below": null,
+                "status": "green",
+                "value": 0.8437499999999999
+              },
+              {
+                "hi": null,
+                "key": "il",
+                "lo": null,
+                "note": null,
+                "red_below": null,
+                "status": "green",
+                "value": -1.3440797156911202
+              },
+              {
+                "hi": null,
+                "key": "rl",
+                "lo": 10,
+                "note": null,
+                "red_below": null,
+                "status": "yellow",
+                "value": 3.919916751535699
+              }
+            ],
+            "diff": false,
+            "direction": "default order",
+            "ends": [
+              "U1.4",
+              "U2.2"
+            ],
+            "eye_computed": true,
+            "from": "U1.4",
+            "kind": "ic-ic",
+            "lane": "DATA",
+            "length_mm": 28.118502884254436,
+            "metrics": {
+              "error": null,
+              "eye_h": 0.9951628749452819,
+              "eye_w_ui": 0.8437499999999999,
+              "il_nyq_db": -1.3440797156911202,
+              "rl_db": 3.919916751535699,
+              "skew_ps": null,
+              "skew_uncertain": false,
+              "stub_ghz": null,
+              "z_max": 140.0388044551959,
+              "z_mean": 135.43207196065785,
+              "z_min": 79.34279317741161
+            },
+            "model": "single-ended",
+            "nets": [
+              "DATA"
+            ],
+            "not_modelled": [],
+            "profile": "se50",
+            "rate_gbps": 1,
+            "receivers_on_stubs": [],
+            "series_parts": [],
+            "status": "yellow",
+            "stubs": [],
+            "terminations": [],
+            "to": "U2.2",
+            "vias": 0
+          }
+        ],
+        "rows_omitted": 0,
+        "rows_shown": "all",
+        "summary": {
+          "green": 0,
+          "red": 0,
+          "yellow": 1
+        },
+        "variant": {
+          "available": [],
+          "chosen_by": null,
+          "description": null,
+          "errors": [],
+          "field_overrides": [],
+          "fitted_by_variant": [],
+          "forks_all_fitted": 0,
+          "name": null,
+          "needs_choice": false,
+          "not_fitted_by_variant": [],
+          "not_fitted_total": 0,
+          "unused_nets": 0,
+          "warnings": []
+        },
+        "field_solver_run": {
+          "planned": 5,
+          "from_cache": 5,
+          "solved_now": 0,
+          "failed_now": 0,
+          "not_solved": 0,
+          "seconds": 0,
+          "cache": "native/kisi-cache/field-cache.json"
+        }
+      },
+      "native_export_validation_status": {
+        "exit_code": 0,
+        "command": [
+          "python",
+          ".cache/upstream/kisi/validation/channel_export/compare.py",
+          "native/kisi-cli",
+          "data/cases/level1-single-ended/board.kicad_pcb",
+          "--out",
+          "data/cases/level1-single-ended/native-export-validation",
+          "--lane",
+          "DATA",
+          "--models",
+          "ladder,compact",
+          "--fmax",
+          "10",
+          "--passivity",
+          "--transient",
+          "--strict",
+          "--report",
+          "data/cases/level1-single-ended/native-export-validation.md"
+        ],
+        "kisi_roughness": "smooth",
+        "strict": true
+      },
+      "native_export_validation": {
+        "lanes": [
+          {
+            "lane": "DATA",
+            "dir": "data/cases/level1-single-ended/native-export-validation/DATA_ladder",
+            "model": "2-port",
+            "length_mm": 28.118502884254436,
+            "delay_ps": 162.09791107687744,
+            "elements": {
+              "c": 232,
+              "cells": 0,
+              "l": 329,
+              "r": 483,
+              "rlgc_sections": 36,
+              "sources": 0,
+              "total": 1044
+            },
+            "kisi_eval": {
+              "circuit_max_sv": 0.9999990169420774,
+              "circuit_max_sv_ghz": 9.999999999999997e-07,
+              "fit_line_pct": [
+                0.5148254432770308,
+                0.01713204938161044,
+                17.433045092224013,
+                3.5241096580949467
+              ],
+              "fit_line_worst_pct": [
+                0.5279108523602015,
+                0.01713204938161044,
+                40.64523267026799,
+                7.949484241277409
+              ],
+              "fit_via_pct": 0,
+              "max_ds": 0.1534210846020098,
+              "max_ds11": 0.09861627541847641,
+              "max_ds21_db": 0.44458835582868983,
+              "max_ds21_db_nyq": 0.004620686247731154,
+              "max_ds_nyq": 0.0006721405888076509,
+              "via_active_from_ghz": null,
+              "via_spans_active": 0
+            },
+            "touchstone": {
+              "file": "DATA.s2p",
+              "ports": 2,
+              "points": 500,
+              "z0": 50.0,
+              "max_singular_value": 0.9998715546329431,
+              "passive": true,
+              "reciprocity_error": 0.0,
+              "scikit_rf": {
+                "version": "2.0.1",
+                "read": true,
+                "nports": 2,
+                "is_passive": true,
+                "is_reciprocal": true
+              },
+              "energy_before_arrival": 0.023434989446312886
+            },
+            "ngspice_sparam_s": 0.1,
+            "ngspice_vs_kisi": {
+              "max_ds21_db": 0.44458678062940993,
+              "max_ds21_db_nyq": 0.004621349937407704,
+              "max_ds11": 0.098615988360315,
+              "max_ds": 0.15342069742653683,
+              "max_ds_nyq": 0.0006721157447851164
+            },
+            "line_model": "ladder",
+            "passivity": {
+              "kisi_circuit_max_sv": 0.9999990169420774,
+              "kisi_circuit_max_sv_ghz": 9.999999999999997e-07,
+              "ngspice_grid_max_sv": 0.9998845307636642,
+              "ngspice_sweep": {
+                "f_lo_hz": 1000.0,
+                "f_hi_hz": 47863009200.0,
+                "points": 193,
+                "max_singular_value": 1.0000000068606523,
+                "at_hz": 2754.2287,
+                "seconds": 0.0
+              }
+            },
+            "step": {
+              "ngspice_s": 0.0,
+              "max_diff_of_final": 0.02942231900545725,
+              "t50_ngspice_ps": 180.1371258301502,
+              "t50_kisi_ps": 175.5397326109198,
+              "final_ngspice": 0.498418531,
+              "final_kisi": 0.49791195386361425
+            },
+            "bench": {
+              "ok": true,
+              "seconds": 3.8,
+              "v_min": -1.03981048,
+              "v_max": 1.03944838,
+              "time_points": 38002
+            },
+            "ltspice": {
+              "ok": true,
+              "subckts": 6,
+              "instances": 39,
+              "floating_nodes": 0,
+              "errors": []
+            },
+            "export_s": 0.6
+          },
+          {
+            "lane": "DATA",
+            "dir": "data/cases/level1-single-ended/native-export-validation/DATA_compact",
+            "model": "2-port",
+            "length_mm": 28.118502884254436,
+            "delay_ps": 162.09791107687744,
+            "elements": {
+              "c": 136,
+              "cells": 11,
+              "l": 158,
+              "r": 144,
+              "rlgc_sections": 0,
+              "sources": 0,
+              "total": 438
+            },
+            "kisi_eval": {
+              "circuit_max_sv": 0.9999990169422254,
+              "circuit_max_sv_ghz": 9.999999999999997e-07,
+              "fit_line_pct": [
+                0.5148254432770308,
+                0.01713204938161044,
+                17.433045092224013,
+                3.5241096580949467
+              ],
+              "fit_line_worst_pct": [
+                0.5279108523602015,
+                0.01713204938161044,
+                40.64523267026799,
+                7.949484241277409
+              ],
+              "fit_via_pct": 0,
+              "max_ds": 0.17468791193516223,
+              "max_ds11": 0.11293975514304397,
+              "max_ds21_db": 0.4544519866409005,
+              "max_ds21_db_nyq": 0.0051290664917376105,
+              "max_ds_nyq": 0.0006898138827360048,
+              "via_active_from_ghz": null,
+              "via_spans_active": 0
+            },
+            "touchstone": {
+              "file": "DATA.s2p",
+              "ports": 2,
+              "points": 500,
+              "z0": 50.0,
+              "max_singular_value": 0.9998715546329431,
+              "passive": true,
+              "reciprocity_error": 0.0,
+              "scikit_rf": {
+                "version": "2.0.1",
+                "read": true,
+                "nports": 2,
+                "is_passive": true,
+                "is_reciprocal": true
+              },
+              "energy_before_arrival": 0.023434989446312886
+            },
+            "ngspice_sparam_s": 0.0,
+            "ngspice_vs_kisi": {
+              "max_ds21_db": 0.4544495297964146,
+              "max_ds21_db_nyq": 0.005129873839021304,
+              "max_ds11": 0.11293930124606373,
+              "max_ds": 0.17468756020635057,
+              "max_ds_nyq": 0.0006897994915916207
+            },
+            "line_model": "compact",
+            "passivity": {
+              "kisi_circuit_max_sv": 0.9999990169422254,
+              "kisi_circuit_max_sv_ghz": 9.999999999999997e-07,
+              "ngspice_grid_max_sv": 0.9998845252685098,
+              "ngspice_sweep": {
+                "f_lo_hz": 1000.0,
+                "f_hi_hz": 47863009200.0,
+                "points": 193,
+                "max_singular_value": 0.9999999995951034,
+                "at_hz": 1096.4782,
+                "seconds": 0.0
+              }
+            },
+            "step": {
+              "ngspice_s": 0.0,
+              "max_diff_of_final": 0.029322987751894375,
+              "t50_ngspice_ps": 180.08968367831255,
+              "t50_kisi_ps": 175.53903208149617,
+              "final_ngspice": 0.49846152,
+              "final_kisi": 0.49791195386361425
+            },
+            "bench": {
+              "ok": true,
+              "seconds": 0.9,
+              "v_min": -1.03974822,
+              "v_max": 1.0395102,
+              "time_points": 29893
+            },
+            "ltspice": {
+              "ok": true,
+              "subckts": 9,
+              "instances": 17,
+              "floating_nodes": 0,
+              "errors": []
+            },
+            "export_s": 0.2
+          }
+        ],
+        "buses": [],
+        "compact_vs_ladder": [
+          {
+            "elements": {
+              "ladder": 1044,
+              "compact": 438
+            },
+            "max_ds21_db_nyq": 0.0005085239016136001,
+            "max_ds21_db": 0.1121163468368489,
+            "max_ds_nyq": 7.132952300417592e-05,
+            "max_ds": 0.023569961778607717,
+            "ngspice_sparam_s": {
+              "ladder": 0.1,
+              "compact": 0.0
+            },
+            "ngspice_step_s": {
+              "ladder": 0.0,
+              "compact": 0.0
+            },
+            "step_max_diff_of_final": 0.0023136279683380174,
+            "bench": {
+              "seconds": {
+                "ladder": 3.8,
+                "compact": 0.9
+              },
+              "time_points": {
+                "ladder": 38002,
+                "compact": 29893
+              },
+              "levels_max_diff_v": 0.002311055652486349,
+              "levels_max_diff_of_swing": 0.002308065067988315,
+              "waveform_max_diff_of_swing": 0.005106294766232587,
+              "swing_v": 1.001295710653704,
+              "t50_ps": {
+                "ladder": 7253.223666047026,
+                "compact": 7253.160146908652
+              }
+            },
+            "lane": "DATA"
+          }
+        ],
+        "corners": []
+      },
+      "native_ibis": {
+        "status": "completed",
+        "qualification": "candidate-unqualified",
+        "bits": 16,
+        "bit_rate_bps": 20000000,
+        "duration_s": 8e-07,
+        "samples": 29706,
+        "seconds": 0.921490084,
+        "pcb_records_unchanged": true,
+        "pcb_sha256": "b4a68944085dd0e88b8b3144562c5b09302251b17ec1f9600b3c9f0b35201cfb",
+        "probes": [
+          {
+            "name": "DATA_0",
+            "min_v": -0.8828782991630686,
+            "max_v": 4.883916745482843
+          }
+        ]
+      },
+      "export_geometry_audit": {
+        "level": "level1-single-ended",
+        "reference_mapping": {
+          "TX": "U1",
+          "RX": "U2"
+        },
+        "net_names": [
+          "",
+          "DATA",
+          "GND",
+          "UNCONNECTED_0",
+          "UNCONNECTED_1",
+          "UNCONNECTED_5",
+          "UNCONNECTED_8",
+          "VCC"
+        ],
+        "signal_net_names": [
+          "DATA"
+        ],
+        "source_port_to_net": {
+          "source_port_0": "UNCONNECTED_0",
+          "source_port_1": "UNCONNECTED_1",
+          "source_port_2": "GND",
+          "source_port_3": "DATA",
+          "source_port_4": "VCC",
+          "source_port_5": "UNCONNECTED_5",
+          "source_port_6": "DATA",
+          "source_port_7": "GND",
+          "source_port_8": "UNCONNECTED_8",
+          "source_port_9": "VCC",
+          "source_net_0": "VCC",
+          "source_net_1": "GND"
+        },
+        "lengths_mm": {
+          "GND": 1.2014142135623789,
+          "VCC": 30.439354173480297,
+          "DATA": 28.118502884254436
+        },
+        "segments": 11,
+        "pads": 10,
+        "vias": 2,
+        "pours": 1,
+        "original_nominal_board_mm": 1.6,
+        "actual_stack_mm": 1.49,
+        "coordinate_transform": "x_kicad=x-cx+width/2; y_kicad=height/2-(y-cy)",
+        "routes_modified": false,
+        "materials": "Exact generated stackup, plus the same declared mask and loss assumptions used by our extractor.",
+        "known_render_errors": []
+      },
+      "kicad_drc": {
+        "$schema": "https://schemas.kicad.org/drc.v1.json",
+        "coordinate_units": "mm",
+        "date": "2026-11-18T07:07:27",
+        "ignored_checks": [
+          {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+          },
+          {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+          },
+          {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+          },
+          {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+          },
+          {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+          }
+        ],
+        "included_severities": [
+          "error",
+          "warning"
+        ],
+        "kicad_version": "10.0.6",
+        "schematic_parity": [],
+        "source": "board.kicad_pcb",
+        "unconnected_items": [],
+        "violations": [
+          {
+            "description": "Annular width (board setup constraints min annular width 0.1000 mm; actual 0.0500 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 11.55
+                },
+                "uuid": "2afb66b2-3774-51b6-87bf-a474d0a0ac19"
+              }
+            ],
+            "severity": "error",
+            "type": "annular_width"
+          },
+          {
+            "description": "Annular width (board setup constraints min annular width 0.1000 mm; actual 0.0500 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 11.55
+                },
+                "uuid": "ac89af71-8614-5fb8-8c15-a4b64d57ddfa"
+              }
+            ],
+            "severity": "error",
+            "type": "annular_width"
+          },
+          {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Rectangle on Edge.Cuts",
+                "pos": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "uuid": "a4e499a7-52ba-5672-83bf-017fde308dc7"
+              },
+              {
+                "description": "Zone [GND] on B.Cu, priority 0",
+                "pos": {
+                  "x": 0.2,
+                  "y": 19.8
+                },
+                "uuid": "4acdc14e-7ee3-5663-addd-376afdf13c7c"
+              }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+          },
+          {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 11.55
+                },
+                "uuid": "2afb66b2-3774-51b6-87bf-a474d0a0ac19"
+              }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+          },
+          {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 11.55
+                },
+                "uuid": "ac89af71-8614-5fb8-8c15-a4b64d57ddfa"
+              }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.5995 mm",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 10.95
+                },
+                "uuid": "0ee24274-b77e-5217-b10c-255125eddebd"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.0007 mm",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 11.5495
+                },
+                "uuid": "8ec06347-f08d-559b-a4ec-152caf2f5855"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.0005 mm",
+                "pos": {
+                  "x": 3.863,
+                  "y": 11.55
+                },
+                "uuid": "d633e7b5-26db-55dc-9f12-827f2c0c6c19"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.5995 mm",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 10.95
+                },
+                "uuid": "03b393d2-6769-54de-a71e-afe5bcbde82c"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.0007 mm",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 11.5495
+                },
+                "uuid": "1e1137f4-0316-5a0f-a898-9397a14d42e2"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.0005 mm",
+                "pos": {
+                  "x": 33.863,
+                  "y": 11.55
+                },
+                "uuid": "bba829df-be2d-5053-9807-c6dc62e6cfe3"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.7498 mm",
+                "pos": {
+                  "x": 6.1375,
+                  "y": 9.05
+                },
+                "uuid": "608f6ece-c86b-5726-8bea-3d7c733f60eb"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 28.9402 mm",
+                "pos": {
+                  "x": 6.667671,
+                  "y": 8.519829
+                },
+                "uuid": "d85b0ca6-3fc9-5225-8c65-b28a05964010"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.7494 mm",
+                "pos": {
+                  "x": 35.607829,
+                  "y": 8.519829
+                },
+                "uuid": "fd949cb0-1a14-5594-bfff-283365b2dac6"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [DATA] on F.Cu, length 1.3435 mm",
+                "pos": {
+                  "x": 6.1375,
+                  "y": 10.95
+                },
+                "uuid": "cc8637b1-1c6c-58c2-8e47-dc17a5ff37e2"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [DATA] on F.Cu, length 26.7750 mm",
+                "pos": {
+                  "x": 7.0875,
+                  "y": 10.0
+                },
+                "uuid": "2006444c-58bd-559e-98fa-50a2550abac6"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.3000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 11.55
+                },
+                "uuid": "2afb66b2-3774-51b6-87bf-a474d0a0ac19"
+              }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+          },
+          {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.3000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 11.55
+                },
+                "uuid": "ac89af71-8614-5fb8-8c15-a4b64d57ddfa"
+              }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+          },
+          {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+              {
+                "description": "Rectangle on Edge.Cuts",
+                "pos": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "uuid": "a4e499a7-52ba-5672-83bf-017fde308dc7"
+              },
+              {
+                "description": "Value field of U1 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "85bacc67-c9f5-422c-af95-9cc13d3060c4"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+          },
+          {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+              {
+                "description": "Rectangle on Edge.Cuts",
+                "pos": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "uuid": "a4e499a7-52ba-5672-83bf-017fde308dc7"
+              },
+              {
+                "description": "Value field of U2 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 35.0,
+                  "y": 10.0
+                },
+                "uuid": "881bb036-3b11-41f9-b6e3-0ae11570ef93"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+          },
+          {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+              {
+                "description": "Footprint U1",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "e769948f-0c9f-5b38-a25d-15d8e080c603"
+              }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+          },
+          {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+              {
+                "description": "Footprint U2",
+                "pos": {
+                  "x": 35.0,
+                  "y": 10.0
+                },
+                "uuid": "454dcee6-2084-574b-a47c-df00ed18f7ab"
+              }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+          },
+          {
+            "description": "Silkscreen clearance",
+            "items": [
+              {
+                "description": "Value field of U1 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "85bacc67-c9f5-422c-af95-9cc13d3060c4"
+              },
+              {
+                "description": "Reference field of U1",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "877f6d96-11db-45c0-ab4e-4d6b3c23b917"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+          },
+          {
+            "description": "Silkscreen clearance",
+            "items": [
+              {
+                "description": "Reference field of U2",
+                "pos": {
+                  "x": 35.0,
+                  "y": 10.0
+                },
+                "uuid": "0eadaf95-6c2b-4877-bb60-daa3cc67b5c8"
+              },
+              {
+                "description": "Value field of U2 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 35.0,
+                  "y": 10.0
+                },
+                "uuid": "881bb036-3b11-41f9-b6e3-0ae11570ef93"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Reference field of U1",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "877f6d96-11db-45c0-ab4e-4d6b3c23b917"
+              },
+              {
+                "description": "Pad 2 [UNCONNECTED_1] of U1 on F.Cu",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 10.0
+                },
+                "uuid": "252cf2ae-9b20-5c0a-8904-aad212bace2b"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U1 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "85bacc67-c9f5-422c-af95-9cc13d3060c4"
+              },
+              {
+                "description": "Pad 2 [UNCONNECTED_1] of U1 on F.Cu",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 10.0
+                },
+                "uuid": "252cf2ae-9b20-5c0a-8904-aad212bace2b"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Reference field of U2",
+                "pos": {
+                  "x": 35.0,
+                  "y": 10.0
+                },
+                "uuid": "0eadaf95-6c2b-4877-bb60-daa3cc67b5c8"
+              },
+              {
+                "description": "Pad 2 [DATA] of U2 on F.Cu",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 10.0
+                },
+                "uuid": "9ef4c7b9-1cea-59bc-beea-b85365e8ad9d"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U2 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 35.0,
+                  "y": 10.0
+                },
+                "uuid": "881bb036-3b11-41f9-b6e3-0ae11570ef93"
+              },
+              {
+                "description": "Pad 2 [DATA] of U2 on F.Cu",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 10.0
+                },
+                "uuid": "9ef4c7b9-1cea-59bc-beea-b85365e8ad9d"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          }
+        ]
+      },
+      "our_ac": {
+        "ports": [
+          "source_port_3",
+          "source_port_6"
+        ],
+        "nodes": [
+          "n3",
+          "n6"
+        ],
+        "ac_seconds": 0.5016852089902386,
+        "max_singular_value": 0.9999912475988695,
+        "reciprocity_error": 0.0,
+        "physical_termination_included": false
+      }
+    },
+    "level1-differential": {
+      "native_kisi_check": {
+        "config": {
+          "entries": 1,
+          "errors": [],
+          "file": "data/cases/level1-differential/board.kisi.json",
+          "ok": true,
+          "warnings": []
+        },
+        "field_solver": {
+          "cross_sections": 17,
+          "cross_sections_field": 16,
+          "target_length_coverage_pct": 100
+        },
+        "models": "Impedance from Forst\u00e9n's 2D field solver for 16 cross-sections (see field_solver: coverage), formula (Hammerstad-Jensen, Wheeler, conformal mapping for coplanar lines, IPC-2141) for the rest. Losses: Wheeler/Huray/Djordjevic-Sarkar. Lanes run from device pin to device pin through series parts (estimated parasitics); side stubs of the lane nets are open stubs (unused pads, parts not fitted with their pad capacitance, the other path of a fork). Pads: a track inside an SMD pad has the pad's width; the rest of a part's pad is a capacitance from the pad's cross-section (with what lies below it), else an estimate per package. Eye: PRBS7, linear transmitter/receiver from the profile (a termination next to the receiver acts as its termination), without equalisation, jitter and noise; the step response with a DC point and checks (band edge, response before arrival, settling, passivity) in its warnings. Pairs are 4-ports (both lines on their own paths, coupled where they run together): loss and return loss Sdd21/Sdd11, the eye driven differentially, mode_conversion_db (worst Scd21 up to 1.5 \u00d7 Nyquist) as information. Multi-drop lines along one path: the eye at every receiver (receivers), the worst counts. One N-port Touchstone file behind a connector with a port map (connector_ends.<connector>.touchstone.ports): the connector's other lanes in it are worst-case aggressors (crosstalk_peak; they enter at the connector without their board traces \u2013 an estimate). Shunt parts on the lane's nets (capacitors to ground, \u2026) are in the channel at their pads. Lanes from connector to connector: board share only (loss, return loss, skew, TDR), no eye. Lanes ending at a connector: board share \u2013 loss, return loss and skew judged; the eye with the connector end model (kisi.json connector_ends.<connector>, default the profile's receiver or transmitter at the connector) \u2013 information (eye_board_share), or judged when a channel behind the connector (rest_loss_db or a Touchstone file) is given.",
+        "not_checked_unused": null,
+        "rows": [
+          {
+            "accuracy": {
+              "impedance": {
+                "field_share": 1,
+                "level": "field solver",
+                "uncertainty_pct": 1
+              },
+              "note": "typical deviations from kisi's validation (data/accuracy.json, docs/models.md section Accuracy levels), not bounds",
+              "vias": null
+            },
+            "branches": [],
+            "bus": "U1 \u2194 U2",
+            "class": "Benchmark",
+            "criteria": [
+              {
+                "hi": 110.00000000000001,
+                "key": "z",
+                "lo": 90,
+                "note": "mean along the line from the impedance analysis",
+                "red_below": null,
+                "status": "yellow",
+                "value": 152.12447465150524
+              },
+              {
+                "hi": null,
+                "key": "eye_h",
+                "lo": 0.65,
+                "note": null,
+                "red_below": 0.4,
+                "status": "green",
+                "value": 0.9478566747872788
+              },
+              {
+                "hi": null,
+                "key": "eye_w",
+                "lo": 0.5,
+                "note": null,
+                "red_below": null,
+                "status": "green",
+                "value": 0.9062499999999999
+              },
+              {
+                "hi": null,
+                "key": "il",
+                "lo": null,
+                "note": null,
+                "red_below": null,
+                "status": "green",
+                "value": -0.5813743390760802
+              },
+              {
+                "hi": null,
+                "key": "rl",
+                "lo": 10,
+                "note": null,
+                "red_below": null,
+                "status": "yellow",
+                "value": 8.661306588454242
+              },
+              {
+                "hi": 50,
+                "key": "skew",
+                "lo": null,
+                "note": "path branches or is split by components",
+                "red_below": null,
+                "status": "green",
+                "value": 0.1438257257833584
+              }
+            ],
+            "diff": true,
+            "direction": "termination R1 next to U2",
+            "ends": [
+              "U1.6",
+              "U2.6"
+            ],
+            "eye_computed": true,
+            "from": "U1.6",
+            "kind": "ic-ic",
+            "lane": "BUS_P",
+            "length_mm": 55.751248916810276,
+            "metrics": {
+              "error": null,
+              "eye_h": 0.9478566747872788,
+              "eye_w_ui": 0.9062499999999999,
+              "il_nyq_db": -0.5813743390760802,
+              "rl_db": 8.661306588454242,
+              "skew_ps": -0.1438257257833584,
+              "skew_uncertain": true,
+              "stub_ghz": null,
+              "z_max": 280.0776089103918,
+              "z_mean": 152.12447465150524,
+              "z_min": 101.74765499932003
+            },
+            "mode_conversion_db": -62.690075358429,
+            "model": "4-port",
+            "nets": [
+              "BUS_P"
+            ],
+            "not_modelled": [],
+            "profile": "lvds",
+            "rate_gbps": 1,
+            "receivers_on_stubs": [],
+            "series_parts": [],
+            "status": "yellow",
+            "stubs": [
+              "stub 1.7 mm to R1.1"
+            ],
+            "terminations": [
+              "R1 120 across the pair"
+            ],
+            "to": "U2.6",
+            "vias": 0
+          }
+        ],
+        "rows_omitted": 0,
+        "rows_shown": "all",
+        "summary": {
+          "green": 0,
+          "red": 0,
+          "yellow": 1
+        },
+        "variant": {
+          "available": [],
+          "chosen_by": null,
+          "description": null,
+          "errors": [],
+          "field_overrides": [],
+          "fitted_by_variant": [],
+          "forks_all_fitted": 0,
+          "name": null,
+          "needs_choice": false,
+          "not_fitted_by_variant": [],
+          "not_fitted_total": 0,
+          "unused_nets": 0,
+          "warnings": []
+        },
+        "field_solver_run": {
+          "planned": 16,
+          "from_cache": 16,
+          "solved_now": 0,
+          "failed_now": 0,
+          "not_solved": 0,
+          "seconds": 0,
+          "cache": "native/kisi-cache/field-cache.json"
+        }
+      },
+      "native_export_validation_status": {
+        "exit_code": 1,
+        "command": [
+          "python",
+          ".cache/upstream/kisi/validation/channel_export/compare.py",
+          "native/kisi-cli",
+          "data/cases/level1-differential/board.kicad_pcb",
+          "--out",
+          "data/cases/level1-differential/native-export-validation",
+          "--lane",
+          "BUS_P",
+          "--models",
+          "ladder,compact",
+          "--fmax",
+          "10",
+          "--passivity",
+          "--transient",
+          "--strict",
+          "--report",
+          "data/cases/level1-differential/native-export-validation.md"
+        ],
+        "kisi_roughness": "smooth",
+        "strict": true
+      },
+      "native_export_validation": {
+        "lanes": [
+          {
+            "lane": "BUS_P",
+            "dir": "data/cases/level1-differential/native-export-validation/BUS_P_ladder",
+            "model": "4-port (pair)",
+            "length_mm": 55.751248916810276,
+            "delay_ps": 315.3129681960694,
+            "elements": {
+              "c": 992,
+              "cells": 0,
+              "l": 1586,
+              "r": 2218,
+              "rlgc_sections": 164,
+              "sources": 80,
+              "total": 4876
+            },
+            "kisi_eval": {
+              "circuit_max_sv": 0.999998431855721,
+              "circuit_max_sv_ghz": 9.999999999999997e-07,
+              "fit_line_pct": [
+                0.5148254432770308,
+                0.03237835582892008,
+                95.9790218306438,
+                13.305345415000303
+              ],
+              "fit_line_worst_pct": [
+                0.6273665100377168,
+                0.03237835582892008,
+                95.9790218306438,
+                13.305345415000303
+              ],
+              "fit_via_pct": 0,
+              "max_ds": 0.4426221473399232,
+              "max_ds11": 0.8062403417372714,
+              "max_ds21_db": 3.3826549705044116,
+              "max_ds21_db_nyq": 0.09910590559496535,
+              "max_ds_nyq": 0.015639848498839797,
+              "via_active_from_ghz": null,
+              "via_spans_active": 0
+            },
+            "touchstone": {
+              "file": "BUS_P.s4p",
+              "ports": 4,
+              "points": 500,
+              "z0": 50.0,
+              "max_singular_value": 0.9998009042595852,
+              "passive": true,
+              "reciprocity_error": 0.0,
+              "scikit_rf": {
+                "version": "2.0.1",
+                "read": true,
+                "nports": 4,
+                "is_passive": true,
+                "is_reciprocal": true
+              },
+              "energy_before_arrival": 0.004597711146990076
+            },
+            "ngspice_sparam_s": 2.5,
+            "ngspice_vs_kisi": {
+              "max_ds21_db": 3.38265025879401,
+              "max_ds21_db_nyq": 0.0991056806138213,
+              "max_ds11": 0.8062397494236617,
+              "max_ds": 0.44262200126569307,
+              "max_ds_nyq": 0.01563980248828257
+            },
+            "line_model": "ladder",
+            "passivity": {
+              "kisi_circuit_max_sv": 0.999998431855721,
+              "kisi_circuit_max_sv_ghz": 9.999999999999997e-07,
+              "ngspice_grid_max_sv": 0.9998740404121667,
+              "ngspice_sweep": {
+                "f_lo_hz": 1000.0,
+                "f_hi_hz": 47863009200.0,
+                "points": 193,
+                "max_singular_value": 1.0000000033162293,
+                "at_hz": 1584.89319,
+                "seconds": 1.0
+              }
+            },
+            "step": {
+              "ngspice_s": 4.8,
+              "max_diff_of_final": 0.05178708300960837,
+              "t50_ngspice_ps": 346.24036070435477,
+              "t50_kisi_ps": 338.077848457316,
+              "final_ngspice": 0.497291507,
+              "final_kisi": 0.4974236919822886
+            },
+            "bench": {
+              "ok": true,
+              "seconds": 101.2,
+              "v_min": -0.414692741,
+              "v_max": 0.413034728,
+              "time_points": 9929
+            },
+            "ltspice": {
+              "ok": true,
+              "subckts": 93,
+              "instances": 210,
+              "floating_nodes": 0,
+              "errors": []
+            },
+            "export_s": 0.4
+          },
+          {
+            "lane": "BUS_P",
+            "dir": "data/cases/level1-differential/native-export-validation/BUS_P_compact",
+            "model": "4-port (pair)",
+            "length_mm": 55.751248916810276,
+            "delay_ps": 315.3129681960694,
+            "elements": {
+              "c": 627,
+              "cells": 56,
+              "l": 771,
+              "r": 714,
+              "rlgc_sections": 0,
+              "sources": 80,
+              "total": 2192
+            },
+            "kisi_eval": {
+              "circuit_max_sv": 0.999998431855799,
+              "circuit_max_sv_ghz": 9.999999999999997e-07,
+              "fit_line_pct": [
+                0.5148254432770308,
+                0.03237835582892008,
+                95.9790218306438,
+                13.305345415000303
+              ],
+              "fit_line_worst_pct": [
+                0.6273665100377168,
+                0.03237835582892008,
+                95.9790218306438,
+                13.305345415000303
+              ],
+              "fit_via_pct": 0,
+              "max_ds": 0.45112762292923697,
+              "max_ds11": 0.8178583481716979,
+              "max_ds21_db": 3.4114701872604316,
+              "max_ds21_db_nyq": 0.09951947962888785,
+              "max_ds_nyq": 0.015622721009948812,
+              "via_active_from_ghz": null,
+              "via_spans_active": 0
+            },
+            "touchstone": {
+              "file": "BUS_P.s4p",
+              "ports": 4,
+              "points": 500,
+              "z0": 50.0,
+              "max_singular_value": 0.9998009042595852,
+              "passive": true,
+              "reciprocity_error": 0.0,
+              "scikit_rf": {
+                "version": "2.0.1",
+                "read": true,
+                "nports": 4,
+                "is_passive": true,
+                "is_reciprocal": true
+              },
+              "energy_before_arrival": 0.004597711146990076
+            },
+            "ngspice_sparam_s": 0.1,
+            "ngspice_vs_kisi": {
+              "max_ds21_db": 3.411465006248437,
+              "max_ds21_db_nyq": 0.0995193813310089,
+              "max_ds11": 0.8178577849935885,
+              "max_ds": 0.45112739854340744,
+              "max_ds_nyq": 0.015622667379348996
+            },
+            "line_model": "compact",
+            "passivity": {
+              "kisi_circuit_max_sv": 0.999998431855799,
+              "kisi_circuit_max_sv_ghz": 9.999999999999997e-07,
+              "ngspice_grid_max_sv": 0.9998740535312148,
+              "ngspice_sweep": {
+                "f_lo_hz": 1000.0,
+                "f_hi_hz": 47863009200.0,
+                "points": 193,
+                "max_singular_value": 1.0000000008985546,
+                "at_hz": 1000.0,
+                "seconds": 0.1
+              }
+            },
+            "step": {
+              "ngspice_s": 0.1,
+              "max_diff_of_final": 0.05208428230326269,
+              "t50_ngspice_ps": 346.175392887955,
+              "t50_kisi_ps": 338.077848457316,
+              "final_ngspice": 0.497314714,
+              "final_kisi": 0.4974236919822886
+            },
+            "bench": {
+              "ok": true,
+              "seconds": 2.3,
+              "v_min": -0.414592754,
+              "v_max": 0.413022605,
+              "time_points": 9705
+            },
+            "ltspice": {
+              "ok": true,
+              "subckts": 107,
+              "instances": 127,
+              "floating_nodes": 0,
+              "errors": []
+            },
+            "export_s": 0.4
+          }
+        ],
+        "buses": [],
+        "compact_vs_ladder": [
+          {
+            "elements": {
+              "ladder": 4876,
+              "compact": 2192
+            },
+            "max_ds21_db_nyq": 0.00041370071718760393,
+            "max_ds21_db": 0.17154100076727108,
+            "max_ds_nyq": 8.699034289875866e-05,
+            "max_ds": 0.029499920791555806,
+            "ngspice_sparam_s": {
+              "ladder": 2.5,
+              "compact": 0.1
+            },
+            "ngspice_step_s": {
+              "ladder": 4.8,
+              "compact": 0.1
+            },
+            "step_max_diff_of_final": 0.0017291074266060095,
+            "bench": {
+              "seconds": {
+                "ladder": 101.2,
+                "compact": 2.3
+              },
+              "time_points": {
+                "ladder": 9929,
+                "compact": 9705
+              },
+              "levels_max_diff_v": 0.0003027999592394859,
+              "levels_max_diff_of_swing": 0.0008253706622201021,
+              "waveform_max_diff_of_swing": 0.0030928942226252695,
+              "swing_v": 0.3668654255592356,
+              "t50_ps": {
+                "ladder": 7539.566523443968,
+                "compact": 7539.6000689148705
+              }
+            },
+            "lane": "BUS_P"
+          }
+        ],
+        "corners": []
+      },
+      "native_ibis": {
+        "status": "completed",
+        "qualification": "candidate-unqualified",
+        "bits": 16,
+        "bit_rate_bps": 250000,
+        "duration_s": 6.4e-05,
+        "samples": 13878,
+        "seconds": 1.3171208340000002,
+        "pcb_records_unchanged": true,
+        "pcb_sha256": "8990881e39fb07493d7f007a4b52eb2662d9e4d16deead1ce427ab3c971231a5",
+        "probes": [
+          {
+            "name": "BUS_0",
+            "min_v": -2.2294932212964866,
+            "max_v": 2.229484282183462
+          },
+          {
+            "name": "BUS_0_P",
+            "min_v": 0.8718578007134744,
+            "max_v": 3.101344800581204
+          },
+          {
+            "name": "BUS_0_N",
+            "min_v": 0.871860473095738,
+            "max_v": 3.101351051526846
+          }
+        ]
+      },
+      "export_geometry_audit": {
+        "level": "level1-differential",
+        "reference_mapping": {
+          "TX": "U1",
+          "RX": "U2",
+          "RTERM": "R1"
+        },
+        "net_names": [
+          "",
+          "BUS_N",
+          "BUS_P",
+          "GND",
+          "UNCONNECTED_0",
+          "UNCONNECTED_1",
+          "UNCONNECTED_10",
+          "UNCONNECTED_11",
+          "UNCONNECTED_15",
+          "UNCONNECTED_19",
+          "UNCONNECTED_2",
+          "UNCONNECTED_21",
+          "UNCONNECTED_3",
+          "UNCONNECTED_7",
+          "UNCONNECTED_8",
+          "UNCONNECTED_9"
+        ],
+        "signal_net_names": [
+          "BUS_P",
+          "BUS_N"
+        ],
+        "source_port_to_net": {
+          "source_port_0": "UNCONNECTED_0",
+          "source_port_1": "UNCONNECTED_1",
+          "source_port_2": "UNCONNECTED_2",
+          "source_port_3": "UNCONNECTED_3",
+          "source_port_4": "GND",
+          "source_port_5": "BUS_P",
+          "source_port_6": "BUS_N",
+          "source_port_7": "UNCONNECTED_7",
+          "source_port_8": "UNCONNECTED_8",
+          "source_port_9": "UNCONNECTED_9",
+          "source_port_10": "UNCONNECTED_10",
+          "source_port_11": "UNCONNECTED_11",
+          "source_port_12": "GND",
+          "source_port_13": "BUS_P",
+          "source_port_14": "BUS_N",
+          "source_port_15": "UNCONNECTED_15",
+          "source_port_16": "BUS_P",
+          "source_port_17": "BUS_N",
+          "source_port_18": "GND",
+          "source_port_19": "UNCONNECTED_19",
+          "source_port_20": "GND",
+          "source_port_21": "UNCONNECTED_21",
+          "source_net_0": "GND"
+        },
+        "lengths_mm": {
+          "GND": 2.100000000000005,
+          "BUS_P": 57.412152285462405,
+          "BUS_N": 57.412152285462405
+        },
+        "segments": 18,
+        "pads": 18,
+        "vias": 2,
+        "pours": 1,
+        "original_nominal_board_mm": 1.6,
+        "actual_stack_mm": 1.49,
+        "coordinate_transform": "x_kicad=x-cx+width/2; y_kicad=height/2-(y-cy)",
+        "routes_modified": false,
+        "materials": "Exact generated stackup, plus the same declared mask and loss assumptions used by our extractor.",
+        "known_render_errors": []
+      },
+      "kicad_drc": {
+        "$schema": "https://schemas.kicad.org/drc.v1.json",
+        "coordinate_units": "mm",
+        "date": "2026-11-18T07:07:26",
+        "ignored_checks": [
+          {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+          },
+          {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+          },
+          {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+          },
+          {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+          },
+          {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+          }
+        ],
+        "included_severities": [
+          "error",
+          "warning"
+        ],
+        "kicad_version": "10.0.6",
+        "schematic_parity": [],
+        "source": "board.kicad_pcb",
+        "unconnected_items": [],
+        "violations": [
+          {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Rectangle on Edge.Cuts",
+                "pos": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "uuid": "eafc1af5-4e01-5ae8-b030-c2435f11b98a"
+              },
+              {
+                "description": "Zone [GND] on B.Cu, priority 0",
+                "pos": {
+                  "x": 0.2,
+                  "y": 19.8
+                },
+                "uuid": "7b53d6aa-a14e-5495-8e9e-2b8e424196b1"
+              }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+          },
+          {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 8.3,
+                  "y": 11.905
+                },
+                "uuid": "65818d3e-e169-5cee-8bc1-52454ff8c76b"
+              }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+          },
+          {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 53.1,
+                  "y": 11.905
+                },
+                "uuid": "cda83eb0-2259-5902-bed0-0beecb241313"
+              }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1000 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 1.1500 mm",
+                "pos": {
+                  "x": 7.15,
+                  "y": 11.905
+                },
+                "uuid": "c4d526d7-e80c-5277-83c9-0ae8249dc0e4"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1000 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.9500 mm",
+                "pos": {
+                  "x": 52.15,
+                  "y": 11.905
+                },
+                "uuid": "df6bfc21-bb92-5d87-9f9f-263091d7d0ad"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_P] on F.Cu, length 1.3500 mm",
+                "pos": {
+                  "x": 7.15,
+                  "y": 10.635
+                },
+                "uuid": "eb26a144-0595-5b1a-b02d-f7872dc7c493"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_P] on F.Cu, length 0.7212 mm",
+                "pos": {
+                  "x": 8.5,
+                  "y": 10.635
+                },
+                "uuid": "6bd304d6-5bed-5cce-a2fc-d9d8e25d2480"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_P] on F.Cu, length 37.7400 mm",
+                "pos": {
+                  "x": 9.01,
+                  "y": 10.125
+                },
+                "uuid": "0a669770-189d-5317-a59f-bc42f96c9f5e"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_P] on F.Cu, length 2.8750 mm",
+                "pos": {
+                  "x": 46.75,
+                  "y": 10.125
+                },
+                "uuid": "6b39f0cf-352d-55fb-9178-3ccdb9cede25"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_P] on F.Cu, length 8.0500 mm",
+                "pos": {
+                  "x": 46.75,
+                  "y": 13.0
+                },
+                "uuid": "50a4568e-1979-539c-9898-ad04f10e4dd2"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_P] on F.Cu, length 2.3650 mm",
+                "pos": {
+                  "x": 54.8,
+                  "y": 13.0
+                },
+                "uuid": "5f94482e-0606-5391-a069-c266c6f58db6"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_P] on F.Cu, length 2.6500 mm",
+                "pos": {
+                  "x": 54.8,
+                  "y": 10.635
+                },
+                "uuid": "f7317e91-b1b6-583b-b9c1-4a5b350564bb"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_N] on F.Cu, length 1.3500 mm",
+                "pos": {
+                  "x": 7.15,
+                  "y": 9.365
+                },
+                "uuid": "677d1b1f-3b53-5560-9f9b-8edb0e672ec4"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_N] on F.Cu, length 0.7212 mm",
+                "pos": {
+                  "x": 8.5,
+                  "y": 9.365
+                },
+                "uuid": "87bce4f2-b175-524c-a4f4-3ff75e865714"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_N] on F.Cu, length 37.4900 mm",
+                "pos": {
+                  "x": 9.01,
+                  "y": 9.875
+                },
+                "uuid": "3202d3d9-91d9-5f6c-a8f4-1b43e691c72e"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_N] on F.Cu, length 2.8750 mm",
+                "pos": {
+                  "x": 46.5,
+                  "y": 9.875
+                },
+                "uuid": "b438ad14-96cf-5bb2-9084-e6c4c3ce5004"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_N] on F.Cu, length 8.3000 mm",
+                "pos": {
+                  "x": 46.5,
+                  "y": 7.0
+                },
+                "uuid": "74bc9f19-0c8b-5c73-8361-3b9059affc9e"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_N] on F.Cu, length 2.3650 mm",
+                "pos": {
+                  "x": 54.8,
+                  "y": 7.0
+                },
+                "uuid": "4fea5c9f-d0c7-5e7f-ad1e-e0e8af29e35e"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_N] on F.Cu, length 2.6500 mm",
+                "pos": {
+                  "x": 54.8,
+                  "y": 9.365
+                },
+                "uuid": "e074403a-f025-50df-b01f-0b1a1ad73787"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_P] on F.Cu, length 1.6609 mm",
+                "pos": {
+                  "x": 52.15,
+                  "y": 10.635
+                },
+                "uuid": "38a8168b-6068-5c90-ad82-36ecbc80e4cf"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [BUS_N] on F.Cu, length 1.6609 mm",
+                "pos": {
+                  "x": 52.15,
+                  "y": 9.365
+                },
+                "uuid": "79dd0a27-db6c-58cd-9b59-6ced97ad6dbb"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.4000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 8.3,
+                  "y": 11.905
+                },
+                "uuid": "65818d3e-e169-5cee-8bc1-52454ff8c76b"
+              }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+          },
+          {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.4000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 53.1,
+                  "y": 11.905
+                },
+                "uuid": "cda83eb0-2259-5902-bed0-0beecb241313"
+              }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+          },
+          {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+              {
+                "description": "Footprint U1",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "8eba9c12-1a86-5683-9db5-3b128efa1506"
+              }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+          },
+          {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+              {
+                "description": "Footprint U2",
+                "pos": {
+                  "x": 50.0,
+                  "y": 10.0
+                },
+                "uuid": "2ee76e58-6834-575a-932d-f3f7660ec6fb"
+              }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+          },
+          {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+              {
+                "description": "Footprint R1",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.0
+                },
+                "uuid": "27efa529-0415-5ba4-934a-3e64fba9ae7e"
+              }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+          },
+          {
+            "description": "Silkscreen clearance",
+            "items": [
+              {
+                "description": "Reference field of U1",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "a4ce4496-2032-4666-a7ec-7813d63ddfb0"
+              },
+              {
+                "description": "Value field of U1 (SN65HVD72D)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "d49c51c5-5a48-4a5e-be5f-5d60eb004cf7"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+          },
+          {
+            "description": "Silkscreen clearance",
+            "items": [
+              {
+                "description": "Value field of U2 (SN65HVD72D)",
+                "pos": {
+                  "x": 50.0,
+                  "y": 10.0
+                },
+                "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+              },
+              {
+                "description": "Reference field of U2",
+                "pos": {
+                  "x": 50.0,
+                  "y": 10.0
+                },
+                "uuid": "c7b7ab6d-c985-4390-9277-d02b13286289"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+          },
+          {
+            "description": "Silkscreen clearance",
+            "items": [
+              {
+                "description": "Value field of R1 (120)",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.0
+                },
+                "uuid": "492cc535-fae4-4506-ac9c-7ad5ba3d4dce"
+              },
+              {
+                "description": "Value field of U2 (SN65HVD72D)",
+                "pos": {
+                  "x": 50.0,
+                  "y": 10.0
+                },
+                "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+          },
+          {
+            "description": "Silkscreen clearance",
+            "items": [
+              {
+                "description": "Reference field of R1",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.0
+                },
+                "uuid": "5335ca43-13b5-4cf9-9bdf-420dd31911e1"
+              },
+              {
+                "description": "Value field of U2 (SN65HVD72D)",
+                "pos": {
+                  "x": 50.0,
+                  "y": 10.0
+                },
+                "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+          },
+          {
+            "description": "Silkscreen clearance",
+            "items": [
+              {
+                "description": "Value field of R1 (120)",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.0
+                },
+                "uuid": "492cc535-fae4-4506-ac9c-7ad5ba3d4dce"
+              },
+              {
+                "description": "Reference field of R1",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.0
+                },
+                "uuid": "5335ca43-13b5-4cf9-9bdf-420dd31911e1"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U1 (SN65HVD72D)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "d49c51c5-5a48-4a5e-be5f-5d60eb004cf7"
+              },
+              {
+                "description": "Pad 3 [UNCONNECTED_2] of U1 on F.Cu",
+                "pos": {
+                  "x": 2.85,
+                  "y": 10.635
+                },
+                "uuid": "fe1ab99d-c75c-5ab7-906e-063a66c48065"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U1 (SN65HVD72D)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "d49c51c5-5a48-4a5e-be5f-5d60eb004cf7"
+              },
+              {
+                "description": "Pad 2 [UNCONNECTED_1] of U1 on F.Cu",
+                "pos": {
+                  "x": 2.85,
+                  "y": 9.365
+                },
+                "uuid": "b99a06c7-5083-5396-a43f-c6b700fdb935"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U1 (SN65HVD72D)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "d49c51c5-5a48-4a5e-be5f-5d60eb004cf7"
+              },
+              {
+                "description": "Pad 7 [BUS_N] of U1 on F.Cu",
+                "pos": {
+                  "x": 7.15,
+                  "y": 9.365
+                },
+                "uuid": "d62af984-18c8-539a-845e-e94e336f1a5a"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U1 (SN65HVD72D)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 10.0
+                },
+                "uuid": "d49c51c5-5a48-4a5e-be5f-5d60eb004cf7"
+              },
+              {
+                "description": "Pad 6 [BUS_P] of U1 on F.Cu",
+                "pos": {
+                  "x": 7.15,
+                  "y": 10.635
+                },
+                "uuid": "0d93947b-6455-523d-82c6-cf62ef218578"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U2 (SN65HVD72D)",
+                "pos": {
+                  "x": 50.0,
+                  "y": 10.0
+                },
+                "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+              },
+              {
+                "description": "Pad 2 [UNCONNECTED_9] of U2 on F.Cu",
+                "pos": {
+                  "x": 47.85,
+                  "y": 9.365
+                },
+                "uuid": "3b96af97-cba6-5a4d-a9a2-5e17618f3fa6"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U2 (SN65HVD72D)",
+                "pos": {
+                  "x": 50.0,
+                  "y": 10.0
+                },
+                "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+              },
+              {
+                "description": "Pad 3 [UNCONNECTED_10] of U2 on F.Cu",
+                "pos": {
+                  "x": 47.85,
+                  "y": 10.635
+                },
+                "uuid": "bd29a51c-8250-543e-8d9d-db3361ca42dd"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U2 (SN65HVD72D)",
+                "pos": {
+                  "x": 50.0,
+                  "y": 10.0
+                },
+                "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+              },
+              {
+                "description": "Pad 7 [BUS_N] of U2 on F.Cu",
+                "pos": {
+                  "x": 52.15,
+                  "y": 9.365
+                },
+                "uuid": "262c09f6-0e66-5a64-9916-659ba76d5bae"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U2 (SN65HVD72D)",
+                "pos": {
+                  "x": 50.0,
+                  "y": 10.0
+                },
+                "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+              },
+              {
+                "description": "Pad 6 [BUS_P] of U2 on F.Cu",
+                "pos": {
+                  "x": 52.15,
+                  "y": 10.635
+                },
+                "uuid": "298ec5a8-95ac-5dfe-bf09-d6319bebe157"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of R1 (120)",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.0
+                },
+                "uuid": "492cc535-fae4-4506-ac9c-7ad5ba3d4dce"
+              },
+              {
+                "description": "Pad 7 [BUS_N] of U2 on F.Cu",
+                "pos": {
+                  "x": 52.15,
+                  "y": 9.365
+                },
+                "uuid": "262c09f6-0e66-5a64-9916-659ba76d5bae"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U2 (SN65HVD72D)",
+                "pos": {
+                  "x": 50.0,
+                  "y": 10.0
+                },
+                "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+              },
+              {
+                "description": "Pad 2 [BUS_N] of R1 on F.Cu",
+                "pos": {
+                  "x": 53.8,
+                  "y": 9.175
+                },
+                "uuid": "67cbcb75-3949-5d35-803f-431ec711065d"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Reference field of R1",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.0
+                },
+                "uuid": "5335ca43-13b5-4cf9-9bdf-420dd31911e1"
+              },
+              {
+                "description": "Pad 2 [BUS_N] of R1 on F.Cu",
+                "pos": {
+                  "x": 53.8,
+                  "y": 9.175
+                },
+                "uuid": "67cbcb75-3949-5d35-803f-431ec711065d"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of R1 (120)",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.0
+                },
+                "uuid": "492cc535-fae4-4506-ac9c-7ad5ba3d4dce"
+              },
+              {
+                "description": "Pad 2 [BUS_N] of R1 on F.Cu",
+                "pos": {
+                  "x": 53.8,
+                  "y": 9.175
+                },
+                "uuid": "67cbcb75-3949-5d35-803f-431ec711065d"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U2 (SN65HVD72D)",
+                "pos": {
+                  "x": 50.0,
+                  "y": 10.0
+                },
+                "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+              },
+              {
+                "description": "Pad 1 [BUS_P] of R1 on F.Cu",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.825
+                },
+                "uuid": "70fac05c-0497-5e0a-9817-8c9054615a2e"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Reference field of R1",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.0
+                },
+                "uuid": "5335ca43-13b5-4cf9-9bdf-420dd31911e1"
+              },
+              {
+                "description": "Pad 1 [BUS_P] of R1 on F.Cu",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.825
+                },
+                "uuid": "70fac05c-0497-5e0a-9817-8c9054615a2e"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of R1 (120)",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.0
+                },
+                "uuid": "492cc535-fae4-4506-ac9c-7ad5ba3d4dce"
+              },
+              {
+                "description": "Pad 6 [BUS_P] of U2 on F.Cu",
+                "pos": {
+                  "x": 52.15,
+                  "y": 10.635
+                },
+                "uuid": "298ec5a8-95ac-5dfe-bf09-d6319bebe157"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of R1 (120)",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.0
+                },
+                "uuid": "492cc535-fae4-4506-ac9c-7ad5ba3d4dce"
+              },
+              {
+                "description": "Pad 1 [BUS_P] of R1 on F.Cu",
+                "pos": {
+                  "x": 53.8,
+                  "y": 10.825
+                },
+                "uuid": "70fac05c-0497-5e0a-9817-8c9054615a2e"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          }
+        ]
+      },
+      "our_ac": {
+        "ports": [
+          "source_port_5",
+          "source_port_13",
+          "source_port_6",
+          "source_port_14"
+        ],
+        "nodes": [
+          "n5",
+          "n12",
+          "n6",
+          "n13"
+        ],
+        "ac_seconds": 25.718496625078842,
+        "max_singular_value": 0.9999668289132716,
+        "reciprocity_error": 4.2581216496499255e-09,
+        "physical_termination_included": true
+      }
+    },
+    "level2-two-channels": {
+      "native_kisi_check": {
+        "config": {
+          "entries": 1,
+          "errors": [],
+          "file": "data/cases/level2-two-channels/board.kisi.json",
+          "ok": true,
+          "warnings": []
+        },
+        "field_solver": {
+          "cross_sections": 9,
+          "cross_sections_field": 5,
+          "target_length_coverage_pct": 100
+        },
+        "models": "Impedance from Forst\u00e9n's 2D field solver for 5 cross-sections (see field_solver: coverage), formula (Hammerstad-Jensen, Wheeler, conformal mapping for coplanar lines, IPC-2141) for the rest. Losses: Wheeler/Huray/Djordjevic-Sarkar. Lanes run from device pin to device pin through series parts (estimated parasitics); side stubs of the lane nets are open stubs (unused pads, parts not fitted with their pad capacitance, the other path of a fork). Pads: a track inside an SMD pad has the pad's width; the rest of a part's pad is a capacitance from the pad's cross-section (with what lies below it), else an estimate per package. Eye: PRBS7, linear transmitter/receiver from the profile (a termination next to the receiver acts as its termination), without equalisation, jitter and noise; the step response with a DC point and checks (band edge, response before arrival, settling, passivity) in its warnings. Pairs are 4-ports (both lines on their own paths, coupled where they run together): loss and return loss Sdd21/Sdd11, the eye driven differentially, mode_conversion_db (worst Scd21 up to 1.5 \u00d7 Nyquist) as information. Multi-drop lines along one path: the eye at every receiver (receivers), the worst counts. One N-port Touchstone file behind a connector with a port map (connector_ends.<connector>.touchstone.ports): the connector's other lanes in it are worst-case aggressors (crosstalk_peak; they enter at the connector without their board traces \u2013 an estimate). Shunt parts on the lane's nets (capacitors to ground, \u2026) are in the channel at their pads. Lanes from connector to connector: board share only (loss, return loss, skew, TDR), no eye. Lanes ending at a connector: board share \u2013 loss, return loss and skew judged; the eye with the connector end model (kisi.json connector_ends.<connector>, default the profile's receiver or transmitter at the connector) \u2013 information (eye_board_share), or judged when a channel behind the connector (rest_loss_db or a Touchstone file) is given.",
+        "not_checked_unused": null,
+        "rows": [
+          {
+            "accuracy": {
+              "impedance": {
+                "field_share": 1,
+                "level": "field solver",
+                "uncertainty_pct": 1
+              },
+              "note": "typical deviations from kisi's validation (data/accuracy.json, docs/models.md section Accuracy levels), not bounds",
+              "vias": null
+            },
+            "branches": [],
+            "bus": "U1 \u2194 U3",
+            "class": "Benchmark",
+            "criteria": [
+              {
+                "hi": 55.00000000000001,
+                "key": "z",
+                "lo": 45,
+                "note": "mean along the line from the impedance analysis",
+                "red_below": null,
+                "status": "yellow",
+                "value": 135.43207196065785
+              },
+              {
+                "hi": null,
+                "key": "eye_h",
+                "lo": 0.65,
+                "note": null,
+                "red_below": 0.4,
+                "status": "green",
+                "value": 0.9951628749452819
+              },
+              {
+                "hi": null,
+                "key": "eye_w",
+                "lo": 0.5,
+                "note": null,
+                "red_below": null,
+                "status": "green",
+                "value": 0.8437499999999999
+              },
+              {
+                "hi": null,
+                "key": "il",
+                "lo": null,
+                "note": null,
+                "red_below": null,
+                "status": "green",
+                "value": -1.3440797156911202
+              },
+              {
+                "hi": null,
+                "key": "rl",
+                "lo": 10,
+                "note": null,
+                "red_below": null,
+                "status": "yellow",
+                "value": 3.919916751535699
+              }
+            ],
+            "diff": false,
+            "direction": "default order",
+            "ends": [
+              "U1.4",
+              "U3.2"
+            ],
+            "eye_computed": true,
+            "from": "U1.4",
+            "kind": "ic-ic",
+            "lane": "D0",
+            "length_mm": 28.118502884254436,
+            "metrics": {
+              "error": null,
+              "eye_h": 0.9951628749452819,
+              "eye_w_ui": 0.8437499999999999,
+              "il_nyq_db": -1.3440797156911202,
+              "rl_db": 3.919916751535699,
+              "skew_ps": null,
+              "skew_uncertain": false,
+              "stub_ghz": null,
+              "z_max": 140.0388044551959,
+              "z_mean": 135.43207196065785,
+              "z_min": 79.34279317741161
+            },
+            "model": "single-ended",
+            "nets": [
+              "D0"
+            ],
+            "not_modelled": [],
+            "profile": "se50",
+            "rate_gbps": 1,
+            "receivers_on_stubs": [],
+            "series_parts": [],
+            "status": "yellow",
+            "stubs": [],
+            "terminations": [],
+            "to": "U3.2",
+            "vias": 0
+          },
+          {
+            "accuracy": {
+              "impedance": {
+                "field_share": 1,
+                "level": "field solver",
+                "uncertainty_pct": 1
+              },
+              "note": "typical deviations from kisi's validation (data/accuracy.json, docs/models.md section Accuracy levels), not bounds",
+              "vias": null
+            },
+            "branches": [],
+            "bus": "U2 \u2194 U4",
+            "class": "Benchmark",
+            "criteria": [
+              {
+                "hi": 55.00000000000001,
+                "key": "z",
+                "lo": 45,
+                "note": "mean along the line from the impedance analysis",
+                "red_below": null,
+                "status": "yellow",
+                "value": 135.43207196065785
+              },
+              {
+                "hi": null,
+                "key": "eye_h",
+                "lo": 0.65,
+                "note": null,
+                "red_below": 0.4,
+                "status": "green",
+                "value": 0.9951628749452819
+              },
+              {
+                "hi": null,
+                "key": "eye_w",
+                "lo": 0.5,
+                "note": null,
+                "red_below": null,
+                "status": "green",
+                "value": 0.8437499999999999
+              },
+              {
+                "hi": null,
+                "key": "il",
+                "lo": null,
+                "note": null,
+                "red_below": null,
+                "status": "green",
+                "value": -1.3440797156911202
+              },
+              {
+                "hi": null,
+                "key": "rl",
+                "lo": 10,
+                "note": null,
+                "red_below": null,
+                "status": "yellow",
+                "value": 3.919916751535699
+              }
+            ],
+            "diff": false,
+            "direction": "default order",
+            "ends": [
+              "U2.4",
+              "U4.2"
+            ],
+            "eye_computed": true,
+            "from": "U2.4",
+            "kind": "ic-ic",
+            "lane": "D1",
+            "length_mm": 28.118502884254436,
+            "metrics": {
+              "error": null,
+              "eye_h": 0.9951628749452819,
+              "eye_w_ui": 0.8437499999999999,
+              "il_nyq_db": -1.3440797156911202,
+              "rl_db": 3.919916751535699,
+              "skew_ps": null,
+              "skew_uncertain": false,
+              "stub_ghz": null,
+              "z_max": 140.0388044551959,
+              "z_mean": 135.43207196065785,
+              "z_min": 79.34279317741161
+            },
+            "model": "single-ended",
+            "nets": [
+              "D1"
+            ],
+            "not_modelled": [],
+            "profile": "se50",
+            "rate_gbps": 1,
+            "receivers_on_stubs": [],
+            "series_parts": [],
+            "status": "yellow",
+            "stubs": [],
+            "terminations": [],
+            "to": "U4.2",
+            "vias": 0
+          }
+        ],
+        "rows_omitted": 0,
+        "rows_shown": "all",
+        "summary": {
+          "green": 0,
+          "red": 0,
+          "yellow": 2
+        },
+        "variant": {
+          "available": [],
+          "chosen_by": null,
+          "description": null,
+          "errors": [],
+          "field_overrides": [],
+          "fitted_by_variant": [],
+          "forks_all_fitted": 0,
+          "name": null,
+          "needs_choice": false,
+          "not_fitted_by_variant": [],
+          "not_fitted_total": 0,
+          "unused_nets": 0,
+          "warnings": []
+        },
+        "field_solver_run": {
+          "planned": 5,
+          "from_cache": 5,
+          "solved_now": 0,
+          "failed_now": 0,
+          "not_solved": 0,
+          "seconds": 0,
+          "cache": "native/kisi-cache/field-cache.json"
+        }
+      },
+      "native_export_validation_status": {
+        "exit_code": 0,
+        "command": [
+          "python",
+          ".cache/upstream/kisi/validation/channel_export/compare.py",
+          "native/kisi-cli",
+          "data/cases/level2-two-channels/board.kicad_pcb",
+          "--out",
+          "data/cases/level2-two-channels/native-export-validation",
+          "--lane",
+          "D0",
+          "--models",
+          "ladder,compact",
+          "--fmax",
+          "10",
+          "--passivity",
+          "--transient",
+          "--strict",
+          "--report",
+          "data/cases/level2-two-channels/native-export-validation.md"
+        ],
+        "kisi_roughness": "smooth",
+        "strict": true
+      },
+      "native_export_validation": {
+        "lanes": [
+          {
+            "lane": "D0",
+            "dir": "data/cases/level2-two-channels/native-export-validation/D0_ladder",
+            "model": "2-port",
+            "length_mm": 28.118502884254436,
+            "delay_ps": 162.09791107687744,
+            "elements": {
+              "c": 232,
+              "cells": 0,
+              "l": 329,
+              "r": 483,
+              "rlgc_sections": 36,
+              "sources": 0,
+              "total": 1044
+            },
+            "kisi_eval": {
+              "circuit_max_sv": 0.9999990169420774,
+              "circuit_max_sv_ghz": 9.999999999999997e-07,
+              "fit_line_pct": [
+                0.5148254432770308,
+                0.01713204938161044,
+                17.433045092224013,
+                3.5241096580949467
+              ],
+              "fit_line_worst_pct": [
+                0.5279108523602015,
+                0.01713204938161044,
+                40.64523267026799,
+                7.949484241277409
+              ],
+              "fit_via_pct": 0,
+              "max_ds": 0.1534210846020098,
+              "max_ds11": 0.09861627541847641,
+              "max_ds21_db": 0.44458835582868983,
+              "max_ds21_db_nyq": 0.004620686247731154,
+              "max_ds_nyq": 0.0006721405888076509,
+              "via_active_from_ghz": null,
+              "via_spans_active": 0
+            },
+            "touchstone": {
+              "file": "D0.s2p",
+              "ports": 2,
+              "points": 500,
+              "z0": 50.0,
+              "max_singular_value": 0.9998715546329431,
+              "passive": true,
+              "reciprocity_error": 0.0,
+              "scikit_rf": {
+                "version": "2.0.1",
+                "read": true,
+                "nports": 2,
+                "is_passive": true,
+                "is_reciprocal": true
+              },
+              "energy_before_arrival": 0.023434989446312886
+            },
+            "ngspice_sparam_s": 0.0,
+            "ngspice_vs_kisi": {
+              "max_ds21_db": 0.44458678062940993,
+              "max_ds21_db_nyq": 0.004621349937407704,
+              "max_ds11": 0.098615988360315,
+              "max_ds": 0.15342069742653683,
+              "max_ds_nyq": 0.0006721157447851164
+            },
+            "line_model": "ladder",
+            "passivity": {
+              "kisi_circuit_max_sv": 0.9999990169420774,
+              "kisi_circuit_max_sv_ghz": 9.999999999999997e-07,
+              "ngspice_grid_max_sv": 0.9998845307636642,
+              "ngspice_sweep": {
+                "f_lo_hz": 1000.0,
+                "f_hi_hz": 47863009200.0,
+                "points": 193,
+                "max_singular_value": 1.0000000068606523,
+                "at_hz": 2754.2287,
+                "seconds": 0.0
+              }
+            },
+            "step": {
+              "ngspice_s": 0.1,
+              "max_diff_of_final": 0.02942231900545725,
+              "t50_ngspice_ps": 180.1371258301502,
+              "t50_kisi_ps": 175.5397326109198,
+              "final_ngspice": 0.498418531,
+              "final_kisi": 0.49791195386361425
+            },
+            "bench": {
+              "ok": true,
+              "seconds": 4.0,
+              "v_min": -1.03981048,
+              "v_max": 1.03944838,
+              "time_points": 38002
+            },
+            "ltspice": {
+              "ok": true,
+              "subckts": 6,
+              "instances": 39,
+              "floating_nodes": 0,
+              "errors": []
+            },
+            "export_s": 0.2
+          },
+          {
+            "lane": "D0",
+            "dir": "data/cases/level2-two-channels/native-export-validation/D0_compact",
+            "model": "2-port",
+            "length_mm": 28.118502884254436,
+            "delay_ps": 162.09791107687744,
+            "elements": {
+              "c": 136,
+              "cells": 11,
+              "l": 158,
+              "r": 144,
+              "rlgc_sections": 0,
+              "sources": 0,
+              "total": 438
+            },
+            "kisi_eval": {
+              "circuit_max_sv": 0.9999990169422254,
+              "circuit_max_sv_ghz": 9.999999999999997e-07,
+              "fit_line_pct": [
+                0.5148254432770308,
+                0.01713204938161044,
+                17.433045092224013,
+                3.5241096580949467
+              ],
+              "fit_line_worst_pct": [
+                0.5279108523602015,
+                0.01713204938161044,
+                40.64523267026799,
+                7.949484241277409
+              ],
+              "fit_via_pct": 0,
+              "max_ds": 0.17468791193516223,
+              "max_ds11": 0.11293975514304397,
+              "max_ds21_db": 0.4544519866409005,
+              "max_ds21_db_nyq": 0.0051290664917376105,
+              "max_ds_nyq": 0.0006898138827360048,
+              "via_active_from_ghz": null,
+              "via_spans_active": 0
+            },
+            "touchstone": {
+              "file": "D0.s2p",
+              "ports": 2,
+              "points": 500,
+              "z0": 50.0,
+              "max_singular_value": 0.9998715546329431,
+              "passive": true,
+              "reciprocity_error": 0.0,
+              "scikit_rf": {
+                "version": "2.0.1",
+                "read": true,
+                "nports": 2,
+                "is_passive": true,
+                "is_reciprocal": true
+              },
+              "energy_before_arrival": 0.023434989446312886
+            },
+            "ngspice_sparam_s": 0.0,
+            "ngspice_vs_kisi": {
+              "max_ds21_db": 0.4544495297964146,
+              "max_ds21_db_nyq": 0.005129873839021304,
+              "max_ds11": 0.11293930124606373,
+              "max_ds": 0.17468756020635057,
+              "max_ds_nyq": 0.0006897994915916207
+            },
+            "line_model": "compact",
+            "passivity": {
+              "kisi_circuit_max_sv": 0.9999990169422254,
+              "kisi_circuit_max_sv_ghz": 9.999999999999997e-07,
+              "ngspice_grid_max_sv": 0.9998845252685098,
+              "ngspice_sweep": {
+                "f_lo_hz": 1000.0,
+                "f_hi_hz": 47863009200.0,
+                "points": 193,
+                "max_singular_value": 0.9999999995951034,
+                "at_hz": 1096.4782,
+                "seconds": 0.0
+              }
+            },
+            "step": {
+              "ngspice_s": 0.0,
+              "max_diff_of_final": 0.029322987751894375,
+              "t50_ngspice_ps": 180.08968367831255,
+              "t50_kisi_ps": 175.53903208149617,
+              "final_ngspice": 0.49846152,
+              "final_kisi": 0.49791195386361425
+            },
+            "bench": {
+              "ok": true,
+              "seconds": 0.9,
+              "v_min": -1.03974822,
+              "v_max": 1.0395102,
+              "time_points": 29893
+            },
+            "ltspice": {
+              "ok": true,
+              "subckts": 9,
+              "instances": 17,
+              "floating_nodes": 0,
+              "errors": []
+            },
+            "export_s": 0.2
+          }
+        ],
+        "buses": [],
+        "compact_vs_ladder": [
+          {
+            "elements": {
+              "ladder": 1044,
+              "compact": 438
+            },
+            "max_ds21_db_nyq": 0.0005085239016136001,
+            "max_ds21_db": 0.1121163468368489,
+            "max_ds_nyq": 7.132952300417592e-05,
+            "max_ds": 0.023569961778607717,
+            "ngspice_sparam_s": {
+              "ladder": 0.0,
+              "compact": 0.0
+            },
+            "ngspice_step_s": {
+              "ladder": 0.1,
+              "compact": 0.0
+            },
+            "step_max_diff_of_final": 0.0023136279683380174,
+            "bench": {
+              "seconds": {
+                "ladder": 4.0,
+                "compact": 0.9
+              },
+              "time_points": {
+                "ladder": 38002,
+                "compact": 29893
+              },
+              "levels_max_diff_v": 0.002311055652486349,
+              "levels_max_diff_of_swing": 0.002308065067988315,
+              "waveform_max_diff_of_swing": 0.005106294766232587,
+              "swing_v": 1.001295710653704,
+              "t50_ps": {
+                "ladder": 7253.223666047026,
+                "compact": 7253.160146908652
+              }
+            },
+            "lane": "D0"
+          }
+        ],
+        "corners": []
+      },
+      "native_ibis": {
+        "status": "blocked_by_verified_short",
+        "shorts": 2,
+        "reason": "Do not present a net-labelled simulation as a valid physical PCB result."
+      },
+      "export_geometry_audit": {
+        "level": "level2-two-channels",
+        "reference_mapping": {
+          "TX0": "U1",
+          "TX1": "U2",
+          "RX0": "U3",
+          "RX1": "U4"
+        },
+        "net_names": [
+          "",
+          "D0",
+          "D1",
+          "GND",
+          "UNCONNECTED_0",
+          "UNCONNECTED_1",
+          "UNCONNECTED_10",
+          "UNCONNECTED_13",
+          "UNCONNECTED_15",
+          "UNCONNECTED_18",
+          "UNCONNECTED_5",
+          "UNCONNECTED_6",
+          "VCC"
+        ],
+        "signal_net_names": [
+          "D0",
+          "D1"
+        ],
+        "source_port_to_net": {
+          "source_port_0": "UNCONNECTED_0",
+          "source_port_1": "UNCONNECTED_1",
+          "source_port_2": "GND",
+          "source_port_3": "D0",
+          "source_port_4": "VCC",
+          "source_port_5": "UNCONNECTED_5",
+          "source_port_6": "UNCONNECTED_6",
+          "source_port_7": "GND",
+          "source_port_8": "D1",
+          "source_port_9": "VCC",
+          "source_port_10": "UNCONNECTED_10",
+          "source_port_11": "D0",
+          "source_port_12": "GND",
+          "source_port_13": "UNCONNECTED_13",
+          "source_port_14": "VCC",
+          "source_port_15": "UNCONNECTED_15",
+          "source_port_16": "D1",
+          "source_port_17": "GND",
+          "source_port_18": "UNCONNECTED_18",
+          "source_port_19": "VCC",
+          "source_net_0": "VCC",
+          "source_net_1": "GND"
+        },
+        "lengths_mm": {
+          "GND": 6.728207315114489,
+          "VCC": 39.79115643132645,
+          "D1": 28.118502884254436,
+          "D0": 28.118502884254436
+        },
+        "segments": 32,
+        "pads": 20,
+        "vias": 4,
+        "pours": 1,
+        "original_nominal_board_mm": 1.6,
+        "actual_stack_mm": 1.49,
+        "coordinate_transform": "x_kicad=x-cx+width/2; y_kicad=height/2-(y-cy)",
+        "routes_modified": false,
+        "materials": "Exact generated stackup, plus the same declared mask and loss assumptions used by our extractor.",
+        "known_render_errors": [
+          {
+            "type": "pcb_trace_error",
+            "pcb_trace_error_id": "pcb_trace_error_0",
+            "error_type": "pcb_trace_error",
+            "message": "PCB trace .TX1 > .GND to net.GND overlaps with pcb_smtpad \"TX1.Y\" (accidental contact)",
+            "pcb_trace_id": "source_net_1_mst0_0",
+            "center": {
+              "x": -14.525,
+              "y": -2.9486562500000035
+            },
+            "source_trace_id": "",
+            "pcb_component_ids": [
+              "pcb_component_1"
+            ],
+            "pcb_port_ids": [
+              "pcb_port_7",
+              "pcb_port_8"
+            ]
+          }
+        ]
+      },
+      "kicad_drc": {
+        "$schema": "https://schemas.kicad.org/drc.v1.json",
+        "coordinate_units": "mm",
+        "date": "2026-11-18T07:06:42",
+        "ignored_checks": [
+          {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+          },
+          {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+          },
+          {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+          },
+          {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+          },
+          {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+          }
+        ],
+        "included_severities": [
+          "error",
+          "warning"
+        ],
+        "kicad_version": "10.0.6",
+        "schematic_parity": [],
+        "source": "board.kicad_pcb",
+        "unconnected_items": [],
+        "violations": [
+          {
+            "description": "Annular width (board setup constraints min annular width 0.1000 mm; actual 0.0500 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 13.55
+                },
+                "uuid": "bacd3a55-bf5c-55dd-993d-b76134223b90"
+              }
+            ],
+            "severity": "error",
+            "type": "annular_width"
+          },
+          {
+            "description": "Annular width (board setup constraints min annular width 0.1000 mm; actual 0.0500 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 13.55
+                },
+                "uuid": "8a41da3d-cb97-5310-a3e9-c5c5995ad531"
+              }
+            ],
+            "severity": "error",
+            "type": "annular_width"
+          },
+          {
+            "description": "Annular width (board setup constraints min annular width 0.1000 mm; actual 0.0500 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.9,
+                  "y": 8.95
+                },
+                "uuid": "5ca75648-f16a-52d4-b03a-21825eea2029"
+              }
+            ],
+            "severity": "error",
+            "type": "annular_width"
+          },
+          {
+            "description": "Annular width (board setup constraints min annular width 0.1000 mm; actual 0.0500 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 2.9,
+                  "y": 8.95
+                },
+                "uuid": "ba63ec2f-3ecc-5a26-ab7e-379884d0fcb1"
+              }
+            ],
+            "severity": "error",
+            "type": "annular_width"
+          },
+          {
+            "description": "Items shorting two nets (nets D1 and GND)",
+            "items": [
+              {
+                "description": "Pad 4 [D1] of U2 on F.Cu",
+                "pos": {
+                  "x": 6.1375,
+                  "y": 12.95
+                },
+                "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+              },
+              {
+                "description": "Track [GND] on F.Cu, length 1.8000 mm",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 12.95
+                },
+                "uuid": "41ece69a-96b0-5762-be98-a8e7825f9ade"
+              }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+          },
+          {
+            "description": "Items shorting two nets (nets D1 and GND)",
+            "items": [
+              {
+                "description": "Pad 4 [D1] of U2 on F.Cu",
+                "pos": {
+                  "x": 6.1375,
+                  "y": 12.95
+                },
+                "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+              },
+              {
+                "description": "Track [GND] on F.Cu, length 0.6000 mm",
+                "pos": {
+                  "x": 5.662499,
+                  "y": 12.9485
+                },
+                "uuid": "cb84dd6c-c315-5876-a481-8e03d0f16286"
+              }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+          },
+          {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Rectangle on Edge.Cuts",
+                "pos": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "uuid": "d1794087-e1f8-5f2b-93a5-67a99b55f91b"
+              },
+              {
+                "description": "Zone [GND] on B.Cu, priority 0",
+                "pos": {
+                  "x": 0.2,
+                  "y": 19.8
+                },
+                "uuid": "593cc85d-e8ff-5e0f-bb9a-c3093b4f6bac"
+              }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+          },
+          {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 13.55
+                },
+                "uuid": "bacd3a55-bf5c-55dd-993d-b76134223b90"
+              }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+          },
+          {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 13.55
+                },
+                "uuid": "8a41da3d-cb97-5310-a3e9-c5c5995ad531"
+              }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+          },
+          {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.9,
+                  "y": 8.95
+                },
+                "uuid": "5ca75648-f16a-52d4-b03a-21825eea2029"
+              }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+          },
+          {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 2.9,
+                  "y": 8.95
+                },
+                "uuid": "ba63ec2f-3ecc-5a26-ab7e-379884d0fcb1"
+              }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 1.8000 mm",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 12.95
+                },
+                "uuid": "41ece69a-96b0-5762-be98-a8e7825f9ade"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.6000 mm",
+                "pos": {
+                  "x": 5.662499,
+                  "y": 12.9485
+                },
+                "uuid": "cb84dd6c-c315-5876-a481-8e03d0f16286"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 1.8000 mm",
+                "pos": {
+                  "x": 5.662999,
+                  "y": 13.5485
+                },
+                "uuid": "62da93fa-bced-58e8-8859-3b67dae75658"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.0005 mm",
+                "pos": {
+                  "x": 3.863,
+                  "y": 13.55
+                },
+                "uuid": "6cddb219-1acd-5eb7-9855-9c323dcc9f31"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.5995 mm",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 12.95
+                },
+                "uuid": "56921520-3b45-5b56-8f2e-5550efa3a67d"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.0007 mm",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 13.5495
+                },
+                "uuid": "9e3568be-996d-5904-9f60-edce39a84c69"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.0005 mm",
+                "pos": {
+                  "x": 33.863,
+                  "y": 13.55
+                },
+                "uuid": "f00c44f1-b5ef-537e-8937-0e888ad9f9e8"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.0005 mm",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 8.95
+                },
+                "uuid": "c494884f-65af-557f-8a8e-326cdf582ea9"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.9630 mm",
+                "pos": {
+                  "x": 33.863,
+                  "y": 8.95
+                },
+                "uuid": "82e43321-2e66-5fc3-94f4-6b7d331022c2"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.0005 mm",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 8.95
+                },
+                "uuid": "50790aea-fbab-519f-a75f-aafaeafd21ef"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.9630 mm",
+                "pos": {
+                  "x": 3.863,
+                  "y": 8.95
+                },
+                "uuid": "97a8a117-37a3-5e97-9753-1453919143e9"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 1.1986 mm",
+                "pos": {
+                  "x": 6.1375,
+                  "y": 7.05
+                },
+                "uuid": "80585838-0b90-57a6-91fc-dfc7ecef22a6"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.0035 mm",
+                "pos": {
+                  "x": 5.290195,
+                  "y": 7.897805
+                },
+                "uuid": "246c9e7c-97a4-562d-9dc5-3cd9b79a3f56"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 2.3014 mm",
+                "pos": {
+                  "x": 5.290195,
+                  "y": 7.901264
+                },
+                "uuid": "06a8c6df-65ee-5852-a540-bfe8d03b963c"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 1.1983 mm",
+                "pos": {
+                  "x": 5.290195,
+                  "y": 10.202695
+                },
+                "uuid": "1edd967a-63a3-5b02-89a7-2bf812d8b4e8"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 1.1034 mm",
+                "pos": {
+                  "x": 36.1375,
+                  "y": 7.05
+                },
+                "uuid": "af84d9aa-e505-5cf1-a849-9699652212f7"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.4780 mm",
+                "pos": {
+                  "x": 36.918,
+                  "y": 7.83
+                },
+                "uuid": "767f1af2-4fcd-52d1-8d81-7ea33c52e67f"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.2500 mm",
+                "pos": {
+                  "x": 37.005,
+                  "y": 8.3
+                },
+                "uuid": "781b3ab3-f24a-5524-9ee6-395b2996caed"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.2500 mm",
+                "pos": {
+                  "x": 37.005,
+                  "y": 8.55
+                },
+                "uuid": "2ff4cd6b-0c1e-5a48-b53e-08a2301a263c"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.2500 mm",
+                "pos": {
+                  "x": 37.005,
+                  "y": 8.8
+                },
+                "uuid": "1ab64ff0-09b2-5ddf-bb67-7aebda1417da"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.2500 mm",
+                "pos": {
+                  "x": 37.005,
+                  "y": 9.05
+                },
+                "uuid": "2b4dc290-8848-560e-b7df-eb8d91bbb1c5"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.2996 mm",
+                "pos": {
+                  "x": 37.005,
+                  "y": 9.3
+                },
+                "uuid": "867d52ee-7aa3-510e-ba4e-ba2ac7c7f3d0"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 1.0344 mm",
+                "pos": {
+                  "x": 36.911153,
+                  "y": 9.584513
+                },
+                "uuid": "b07a108f-6daf-502d-a627-b55c54bdc55e"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.7788 mm",
+                "pos": {
+                  "x": 36.1375,
+                  "y": 10.271166
+                },
+                "uuid": "bdabb3c2-eca0-516a-8c09-1957444f735e"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.6742 mm",
+                "pos": {
+                  "x": 6.1375,
+                  "y": 7.05
+                },
+                "uuid": "ed1457c3-8a9e-5775-b7f8-1597a8ed54f8"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 28.9715 mm",
+                "pos": {
+                  "x": 6.61425,
+                  "y": 6.57325
+                },
+                "uuid": "a66f4ab1-8f50-5e79-8eb9-fcee402f2d05"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.0755 mm",
+                "pos": {
+                  "x": 35.585789,
+                  "y": 6.57325
+                },
+                "uuid": "4d55b4ef-fa97-5efd-96e4-e65797a94c9e"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [VCC] on F.Cu, length 0.6739 mm",
+                "pos": {
+                  "x": 35.66125,
+                  "y": 6.57325
+                },
+                "uuid": "80620b34-5866-54a8-b982-bcccc220926e"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [D1] on F.Cu, length 1.3435 mm",
+                "pos": {
+                  "x": 6.1375,
+                  "y": 12.95
+                },
+                "uuid": "a1aa349d-a89a-5b12-bb60-936519949a16"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [D1] on F.Cu, length 26.7750 mm",
+                "pos": {
+                  "x": 7.0875,
+                  "y": 12.0
+                },
+                "uuid": "0048b222-01d4-5339-beb7-2ce4976a410b"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [D0] on F.Cu, length 1.3435 mm",
+                "pos": {
+                  "x": 6.1375,
+                  "y": 8.95
+                },
+                "uuid": "17ae56eb-823f-59e1-91c2-6db04e9dce07"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+              {
+                "description": "Track [D0] on F.Cu, length 26.7750 mm",
+                "pos": {
+                  "x": 7.0875,
+                  "y": 8.0
+                },
+                "uuid": "03eb1a9f-e8d3-513a-84c6-6214f33ca728"
+              }
+            ],
+            "severity": "error",
+            "type": "track_width"
+          },
+          {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.3000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 13.55
+                },
+                "uuid": "bacd3a55-bf5c-55dd-993d-b76134223b90"
+              }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+          },
+          {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.3000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 13.55
+                },
+                "uuid": "8a41da3d-cb97-5310-a3e9-c5c5995ad531"
+              }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+          },
+          {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.3000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.9,
+                  "y": 8.95
+                },
+                "uuid": "5ca75648-f16a-52d4-b03a-21825eea2029"
+              }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+          },
+          {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.3000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 2.9,
+                  "y": 8.95
+                },
+                "uuid": "ba63ec2f-3ecc-5a26-ab7e-379884d0fcb1"
+              }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+          },
+          {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 1.8000 mm",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 12.95
+                },
+                "uuid": "41ece69a-96b0-5762-be98-a8e7825f9ade"
+              },
+              {
+                "description": "Pad 4 [D1] of U2 on F.Cu",
+                "pos": {
+                  "x": 6.1375,
+                  "y": 12.95
+                },
+                "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+              }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+          },
+          {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+              {
+                "description": "Track [GND] on F.Cu, length 0.6000 mm",
+                "pos": {
+                  "x": 5.662499,
+                  "y": 12.9485
+                },
+                "uuid": "cb84dd6c-c315-5876-a481-8e03d0f16286"
+              },
+              {
+                "description": "Pad 4 [D1] of U2 on F.Cu",
+                "pos": {
+                  "x": 6.1375,
+                  "y": 12.95
+                },
+                "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+              }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+          },
+          {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+              {
+                "description": "Rectangle on Edge.Cuts",
+                "pos": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "uuid": "d1794087-e1f8-5f2b-93a5-67a99b55f91b"
+              },
+              {
+                "description": "Value field of U1 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 8.0
+                },
+                "uuid": "e1d7c62b-b734-4470-a4ea-4eb6fcebde2c"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+          },
+          {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+              {
+                "description": "Rectangle on Edge.Cuts",
+                "pos": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "uuid": "d1794087-e1f8-5f2b-93a5-67a99b55f91b"
+              },
+              {
+                "description": "Value field of U2 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 12.0
+                },
+                "uuid": "debedbed-10ba-49a7-a82c-dca3e5e74ce4"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+          },
+          {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+              {
+                "description": "Rectangle on Edge.Cuts",
+                "pos": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "uuid": "d1794087-e1f8-5f2b-93a5-67a99b55f91b"
+              },
+              {
+                "description": "Value field of U3 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 35.0,
+                  "y": 8.0
+                },
+                "uuid": "f202afab-3971-4b63-ba5a-906932d5b71b"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+          },
+          {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+              {
+                "description": "Rectangle on Edge.Cuts",
+                "pos": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "uuid": "d1794087-e1f8-5f2b-93a5-67a99b55f91b"
+              },
+              {
+                "description": "Value field of U4 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 35.0,
+                  "y": 12.0
+                },
+                "uuid": "93f3eaef-9036-4713-ab27-67b77dd427bf"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+          },
+          {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+              {
+                "description": "Footprint U1",
+                "pos": {
+                  "x": 5.0,
+                  "y": 8.0
+                },
+                "uuid": "5fd321f9-8c87-5d4f-a1d2-b1bbbd927b80"
+              }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+          },
+          {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+              {
+                "description": "Footprint U2",
+                "pos": {
+                  "x": 5.0,
+                  "y": 12.0
+                },
+                "uuid": "96441c5c-f929-55ec-8f2f-709853fd1470"
+              }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+          },
+          {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+              {
+                "description": "Footprint U3",
+                "pos": {
+                  "x": 35.0,
+                  "y": 8.0
+                },
+                "uuid": "2f72a02e-a68e-589b-b69b-61c28faff60e"
+              }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+          },
+          {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+              {
+                "description": "Footprint U4",
+                "pos": {
+                  "x": 35.0,
+                  "y": 12.0
+                },
+                "uuid": "7776d52e-135a-5822-b5a1-bcd916e08432"
+              }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+          },
+          {
+            "description": "Silkscreen clearance",
+            "items": [
+              {
+                "description": "Reference field of U2",
+                "pos": {
+                  "x": 5.0,
+                  "y": 12.0
+                },
+                "uuid": "8a9f3ade-2c6e-4a80-9085-9041f6a0edf8"
+              },
+              {
+                "description": "Value field of U2 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 12.0
+                },
+                "uuid": "debedbed-10ba-49a7-a82c-dca3e5e74ce4"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+          },
+          {
+            "description": "Silkscreen clearance",
+            "items": [
+              {
+                "description": "Reference field of U1",
+                "pos": {
+                  "x": 5.0,
+                  "y": 8.0
+                },
+                "uuid": "be555eb0-2dab-4892-8450-7fc542d5460f"
+              },
+              {
+                "description": "Value field of U1 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 8.0
+                },
+                "uuid": "e1d7c62b-b734-4470-a4ea-4eb6fcebde2c"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+          },
+          {
+            "description": "Silkscreen clearance",
+            "items": [
+              {
+                "description": "Reference field of U3",
+                "pos": {
+                  "x": 35.0,
+                  "y": 8.0
+                },
+                "uuid": "bad0d6bf-821e-4385-919a-06a1822da1ca"
+              },
+              {
+                "description": "Value field of U3 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 35.0,
+                  "y": 8.0
+                },
+                "uuid": "f202afab-3971-4b63-ba5a-906932d5b71b"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+          },
+          {
+            "description": "Silkscreen clearance",
+            "items": [
+              {
+                "description": "Reference field of U4",
+                "pos": {
+                  "x": 35.0,
+                  "y": 12.0
+                },
+                "uuid": "53196d7f-bf9a-4e73-8eda-58011aed75a9"
+              },
+              {
+                "description": "Value field of U4 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 35.0,
+                  "y": 12.0
+                },
+                "uuid": "93f3eaef-9036-4713-ab27-67b77dd427bf"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Reference field of U1",
+                "pos": {
+                  "x": 5.0,
+                  "y": 8.0
+                },
+                "uuid": "be555eb0-2dab-4892-8450-7fc542d5460f"
+              },
+              {
+                "description": "Pad 2 [UNCONNECTED_1] of U1 on F.Cu",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 8.0
+                },
+                "uuid": "9bb51ffb-88c8-5439-b0b2-98668f23b7c7"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U1 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 8.0
+                },
+                "uuid": "e1d7c62b-b734-4470-a4ea-4eb6fcebde2c"
+              },
+              {
+                "description": "Pad 2 [UNCONNECTED_1] of U1 on F.Cu",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 8.0
+                },
+                "uuid": "9bb51ffb-88c8-5439-b0b2-98668f23b7c7"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Reference field of U2",
+                "pos": {
+                  "x": 5.0,
+                  "y": 12.0
+                },
+                "uuid": "8a9f3ade-2c6e-4a80-9085-9041f6a0edf8"
+              },
+              {
+                "description": "Pad 2 [UNCONNECTED_6] of U2 on F.Cu",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 12.0
+                },
+                "uuid": "45068e00-a12e-569f-bdb8-1c87247dceee"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U2 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 5.0,
+                  "y": 12.0
+                },
+                "uuid": "debedbed-10ba-49a7-a82c-dca3e5e74ce4"
+              },
+              {
+                "description": "Pad 2 [UNCONNECTED_6] of U2 on F.Cu",
+                "pos": {
+                  "x": 3.8625,
+                  "y": 12.0
+                },
+                "uuid": "45068e00-a12e-569f-bdb8-1c87247dceee"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Reference field of U3",
+                "pos": {
+                  "x": 35.0,
+                  "y": 8.0
+                },
+                "uuid": "bad0d6bf-821e-4385-919a-06a1822da1ca"
+              },
+              {
+                "description": "Pad 2 [D0] of U3 on F.Cu",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 8.0
+                },
+                "uuid": "7b871166-8656-56d7-acb4-a625e662373d"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U3 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 35.0,
+                  "y": 8.0
+                },
+                "uuid": "f202afab-3971-4b63-ba5a-906932d5b71b"
+              },
+              {
+                "description": "Pad 2 [D0] of U3 on F.Cu",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 8.0
+                },
+                "uuid": "7b871166-8656-56d7-acb4-a625e662373d"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Value field of U4 (SN74LVC1G04DBV)",
+                "pos": {
+                  "x": 35.0,
+                  "y": 12.0
+                },
+                "uuid": "93f3eaef-9036-4713-ab27-67b77dd427bf"
+              },
+              {
+                "description": "Pad 2 [D1] of U4 on F.Cu",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 12.0
+                },
+                "uuid": "36dbc4d6-01cb-54fa-a118-72c208fdf6ad"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Reference field of U4",
+                "pos": {
+                  "x": 35.0,
+                  "y": 12.0
+                },
+                "uuid": "53196d7f-bf9a-4e73-8eda-58011aed75a9"
+              },
+              {
+                "description": "Pad 2 [D1] of U4 on F.Cu",
+                "pos": {
+                  "x": 33.8625,
+                  "y": 12.0
+                },
+                "uuid": "36dbc4d6-01cb-54fa-a118-72c208fdf6ad"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          },
+          {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+              {
+                "description": "Reference field of U4",
+                "pos": {
+                  "x": 35.0,
+                  "y": 12.0
+                },
+                "uuid": "53196d7f-bf9a-4e73-8eda-58011aed75a9"
+              },
+              {
+                "description": "Pad 5 [VCC] of U4 on F.Cu",
+                "pos": {
+                  "x": 36.1375,
+                  "y": 11.05
+                },
+                "uuid": "160dc680-dd09-5a5d-a906-8d7c910a0796"
+              }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+          }
+        ]
+      },
+      "our_ac": {
+        "ports": [
+          "source_port_3",
+          "source_port_11",
+          "source_port_8",
+          "source_port_16"
+        ],
+        "nodes": [
+          "n3",
+          "n9",
+          "n7",
+          "n12"
+        ],
+        "ac_seconds": 3.456346832914278,
+        "max_singular_value": 0.9999896944505886,
+        "reciprocity_error": 1.000000082740371e-09,
+        "physical_termination_included": false
+      }
+    }
+  },
+  "issues": [
+    {
+      "priority": "high",
+      "example": "level2-two-channels",
+      "finding": "D1 output is physically shorted to GND in the current render.",
+      "evidence": "Core reports an accidental GND-to-TX1.Y contact before export; KiCad independently reports two shorting_items violations on U2 pad 4 / D1 and GND traces. Both SI extractions still produce plausible net-labelled eye results.",
+      "action": "Require a connectivity/shorts gate before treating SI output as a physical board result."
+    },
+    {
+      "priority": "medium",
+      "example": "level1-differential",
+      "finding": "Kisi SPICE export fails its own strict step-response check.",
+      "evidence": "5.18% ladder and 5.21% compact error against its native analytic channel, exceeding the validator's 5% limit; up to 3.41 dB Sdd21 error over the 10GHz export band.",
+      "action": "Keep this export unqualified; use native Touchstone for the channel comparison and resolve export model fidelity before relying on its SPICE library."
+    },
+    {
+      "priority": "medium",
+      "example": "level1-differential",
+      "finding": "Native extracted channels disagree in timing despite similar eye openings.",
+      "evidence": "Our refined loaded step delay is 426.43ps; Kisi is 402.93ps, a 23.50ps gap. Our 2-to-4 spatial refinement changes delay by only 0.046ps.",
+      "action": "Investigate field, pad/stub, loss/dispersion and termination representation against an independent reference; these runs do not establish which model is physically correct."
+    }
+  ],
+  "limits": [
+    "The differential and two-channel current renders differ from archived accepted-board hashes. They use the pinned current TSX, not historical CSV replay.",
+    "The two-channel main eyes are diagnostic only because the board is shorted.",
+    "Kisi exports lanes separately, without inter-lane coupling; our explicit block-diagonal assembly retains that limitation. The crosstalk command produces separate estimates.",
+    "Kisi removes the physical receiver termination from its channel block and models it at the RX reference; our original physical resistor and stub geometry are retained.",
+    "Common plots use absolute voltages and a shared metric. Native Kisi eye heights are normalized and its sampled width calculation is a different metric.",
+    "No native/linear/IBIS result in this investigation constitutes external physical sign-off."
+  ],
+  "termination_location_control": {
+    "purpose": "Separate diagnostic of termination reference placement. Not an original-circuit result and not used in the main comparison.",
+    "original_resistor": "RPHYSICAL0 n15 n16 120",
+    "diagnostic_resistor": "RPHYSICAL0 n12 n13 120",
+    "all_original_copper_stubs_preserved": true,
+    "geometry_rerouted": false,
+    "step_delay_ps": 439.4052213188322,
+    "original_delay_ps": 426.3862967086819,
+    "kisi_delay_ps": 402.9325692134449,
+    "original_delay_gap_ps": 23.453727495237047,
+    "controlled_delay_gap_ps": 36.47265210538734
+  },
+  "versions": {
+    "pipeline_commit": "374229d3dd3ca4581053423604b715dfb11ac86b",
+    "core": "0.0.2409",
+    "props": "0.0.735",
+    "circuit_json": "0.0.552",
+    "kisi": "0.3.3",
+    "kisi_commit": "12d8eab579bbd7f89b9483cdba6637f86703a84e",
+    "ngspice": "47",
+    "kicad": "10.0.6",
+    "package_manager": "pnpm 11.25.0, frozen lockfile",
+    "physics_source_modified": false
+  },
+  "vendor_models": {
+    "sn74lvc1g04.ibs": "03033638d7fe8bf268428be133a5aad63aae0145980113561b20ab92063e2c00",
+    "sn65hvd72.ibs": "293f71f8d6c8764914a73564ebbb5b9e0e706d9dcc18d87aae91f1def06ca47e"
+  },
+  "vendor_bytes_redistributed": false
+}

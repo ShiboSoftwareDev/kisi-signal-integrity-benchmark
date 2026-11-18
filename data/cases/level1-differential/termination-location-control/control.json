@@ -1,0 +1,12 @@
+{
+  "purpose": "Separate diagnostic of termination reference placement. Not an original-circuit result and not used in the main comparison.",
+  "original_resistor": "RPHYSICAL0 n15 n16 120",
+  "diagnostic_resistor": "RPHYSICAL0 n12 n13 120",
+  "all_original_copper_stubs_preserved": true,
+  "geometry_rerouted": false,
+  "step_delay_ps": 439.4052213188322,
+  "original_delay_ps": 426.3862967086819,
+  "kisi_delay_ps": 402.9325692134449,
+  "original_delay_gap_ps": 23.453727495237047,
+  "controlled_delay_gap_ps": 36.47265210538734
+}

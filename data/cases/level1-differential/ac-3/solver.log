@@ -1,0 +1,26 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: native routed passive channel ac
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  2.00980e+08
+ Reference value :  1.25088e+09
+ Reference value :  2.38076e+09
+ Reference value :  3.56064e+09
+ Reference value :  4.78052e+09
+ Reference value :  5.90041e+09
+ Reference value :  7.03030e+09
+ Reference value :  8.18018e+09
+ Reference value :  9.33007e+09
+No. of Data Rows : 1001
+ngspice-47 done
+
+The Inductive System consisting of
+ larcl435 larcl180 larcl181 larcl182 larcl184 larcl185 larcl219 larcl220 larcl221 larcl222 larcl223 larcl224 larcl225 larcl226 larcl227 larcl228 larcl229 larcl230 larcl231 larcl232 larcl242 larcl243 larcl244 larcl245 larcl246 larcl247 larcl248 larcl249 larcl250 larcl251 larcl252 larcl253 larcl254 larcl438 larcl439 larcl449 larcl474 larcl487 larcl497 larcl486 larcl498 larcl485 larcl499 larcl484 larcl500 larcl483 larcl501 larcl482 larcl502 larcl481 larcl503 larcl480 larcl504 larcl479 larcl505 larcl478 larcl506 larcl477 larcl507 larcl476 larcl508 larcl475 larcl509 larcl448 larcl488 larcl447 larcl489 larcl446 larcl490 larcl445 larcl491 larcl444 larcl492 larcl443 larcl493 larcl442 larcl494 larcl441 larcl495 larcl440 larcl496 larcl195 larcl450 larcl194 larcl233 larcl193 larcl234 larcl192 larcl235 larcl191 larcl236 larcl190 larcl237 larcl189 larcl238 larcl188 larcl239 larcl187 larcl240 larcl186 larcl241
+ karcl180_435 karcl180_449 karcl181_449 karcl181_450 karcl182_450 karcl184_242 karcl185_241 karcl185_242 karcl186_240 karcl187_239 karcl188_238 karcl189_237 karcl190_236 karcl191_235 karcl192_234 karcl193_233 karcl194_232 karcl195_232 karcl219_254 karcl219_474 karcl219_509 karcl220_253 karcl220_254 karcl220_475 karcl220_508 karcl220_509 karcl221_252 karcl221_253 karcl221_476 karcl221_507 karcl221_508 karcl222_251 karcl222_252 karcl222_477 karcl222_506 karcl222_507 karcl223_250 karcl223_251 karcl223_478 karcl223_505 karcl223_506 karcl224_249 karcl224_250 karcl224_479 karcl224_504 karcl224_505 karcl225_248 karcl225_249 karcl225_480 karcl225_503 karcl225_504 karcl226_247 karcl226_248 karcl226_481 karcl226_502 karcl226_503 karcl227_246 karcl227_247 karcl227_482 karcl227_501 karcl227_502 karcl228_245 karcl228_246 karcl228_483 karcl228_500 karcl228_501 karcl229_244 karcl229_245 karcl229_484 karcl229_499 karcl229_500 karcl230_243 karcl230_244 karcl230_485 karcl230_498 karcl230_499 karcl231_242 karcl231_243 karcl231_486 karcl231_497 karcl231_498 karcl232_242 karcl232_487 karcl232_497 karcl242_486 karcl242_487 karcl242_497 karcl243_485 karcl243_486 karcl243_498 karcl244_484 karcl244_485 karcl244_499 karcl245_483 karcl245_484 karcl245_500 karcl246_482 karcl246_483 karcl246_501 karcl247_481 karcl247_482 karcl247_502 karcl248_480 karcl248_481 karcl248_503 karcl249_479 karcl249_480 karcl249_504 karcl250_478 karcl250_479 karcl250_505 karcl251_477 karcl251_478 karcl251_506 karcl252_476 karcl252_477 karcl252_507 karcl253_475 karcl253_476 karcl253_508 karcl254_474 karcl254_475 karcl254_509 karcl438_497 karcl439_496 karcl439_497 karcl440_495 karcl441_494 karcl442_493 karcl443_492 karcl444_491 karcl445_490 karcl446_489 karcl447_488 karcl448_487 karcl449_487 karcl474_509 karcl475_508 karcl476_507 karcl477_506 karcl478_505 karcl479_504 karcl480_503 karcl481_502 karcl482_501 karcl483_500 karcl484_499 karcl485_498 karcl486_497 karcl487_497 karcl486_498 karcl485_499 karcl484_500 karcl483_501 karcl482_502 karcl481_503 karcl480_504 karcl479_505 karcl478_506 karcl477_507 karcl476_508 karcl475_509 karcl448_488 karcl447_489 karcl446_490 karcl445_491 karcl444_492 karcl443_493 karcl442_494 karcl441_495 karcl440_496 karcl195_450 karcl194_233 karcl193_234 karcl192_235 karcl191_236 karcl190_237 karcl189_238 karcl188_239 karcl187_240 karcl186_241
+has an incomplete set of K couplings, (missing ones are implicitly 0)
+

@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "filename": "BUS_P.kicad_pro",
+    "version": 1
+  },
+  "schematic": {
+    "legacy_lib_dir": "",
+    "legacy_lib_list": []
+  },
+  "sheets": [
+    [
+      "42b425ec-5408-4e32-8cda-3cd93b275698",
+      ""
+    ]
+  ],
+  "text_variables": {}
+}

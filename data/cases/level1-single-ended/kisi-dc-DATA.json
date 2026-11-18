@@ -1,0 +1,140 @@
+{
+  "bus": "U1 ↔ U2",
+  "export": "lane",
+  "field_solver": {
+    "cross_sections": 5,
+    "cross_sections_field": 5,
+    "target_length_coverage_pct": 100
+  },
+  "files": [
+    "DATA.s2p",
+    "README.md"
+  ],
+  "lanes": [
+    {
+      "bench_ends": {
+        "notes": [],
+        "rise_ps": 100,
+        "rx": {
+          "c_pf": 1,
+          "l_nh": 0,
+          "r": 50
+        },
+        "swing_v": 1,
+        "tx": {
+          "c_pf": 1,
+          "l_nh": 0,
+          "r": 50
+        }
+      },
+      "check_against_kisi": {
+        "circuit_max_sv": 0.999998934768958,
+        "circuit_max_sv_ghz": 9.999999999999997e-7,
+        "fit_line_pct": [
+          0.6347578565160187,
+          0.05561840742268388,
+          0.7348131974553186,
+          0.012688395874835699
+        ],
+        "fit_line_worst_pct": [
+          0.9598383609167596,
+          0.06573005558949747,
+          0.739042931564762,
+          0.08712718379445315
+        ],
+        "fit_via_pct": 0,
+        "max_ds": 0.0014828670840998002,
+        "max_ds11": 0.0004799279024868908,
+        "max_ds21_db": 0.01070070032007786,
+        "max_ds21_db_nyq": 0.003383415202854234,
+        "max_ds_nyq": 0.0003747592623646261,
+        "via_active_from_ghz": null,
+        "via_spans_active": 0
+      },
+      "delay_ps": 162.09791107687744,
+      "elements": {
+        "c": 46,
+        "cells": 3,
+        "l": 35,
+        "r": 53,
+        "rlgc_sections": 0,
+        "sources": 0,
+        "total": 134
+      },
+      "frequency": {
+        "fmax_hz": 1250000000,
+        "fmin_hz": 125000,
+        "points": 10000
+      },
+      "lane": "DATA",
+      "length_mm": 28.118502884254436,
+      "line_model": "compact",
+      "merged_sections": 0,
+      "model": "2-port",
+      "notes": [],
+      "ports": [
+        {
+          "at": "DATA at U1.4 (transmitter end)",
+          "node": "a",
+          "port": 1
+        },
+        {
+          "at": "DATA at U2.2 (receiver end)",
+          "node": "b",
+          "port": 2
+        }
+      ],
+      "profile": "se50",
+      "rate_gbps": 1,
+      "subckt": "DATA_lane",
+      "z_ref_ohm": 50
+    }
+  ],
+  "name": "DATA",
+  "note": "SPICE: the lane's board channel as kisi's check models it (RLGC ladders with fitted R(f)/G(f) networks – or, with --model compact, lossless-line cells with the same networks lumped –, kisi's via model, parts with estimated parasitics, stubs; pairs with modal coupled blocks); check_against_kisi compares the exported circuit with kisi's own S-parameters. Benches use the profile's linear ends; the receiver's termination resistors on the board act as the receiver's termination and are not in the subcircuit or the Touchstone file. Not included: the channel behind a connector, crosstalk between lanes, IBIS ends.",
+  "stackup_used": {
+    "lines": [
+      "stackup used (2 copper layers, 1.49 mm; er and tand at 1 GHz, the line models follow Djordjevic-Sarkar from there):",
+      "  solder mask (top): 20 um, er 3.3 [board file]",
+      "  F.Cu: copper 30 um [board file]",
+      "    NP-155F core: 1430 um, er 4.42, tand 0.02 [board file]",
+      "  B.Cu: copper 30 um [board file]",
+      "  solder mask (bottom): 20 um, er 3.3 [board file]"
+    ],
+    "provenance": {
+      "copper": [
+        "board file",
+        "board file"
+      ],
+      "dielectrics": [
+        "board file"
+      ],
+      "mask": "board file"
+    }
+  },
+  "variant": {
+    "available": [],
+    "chosen_by": null,
+    "description": null,
+    "errors": [],
+    "field_overrides": [],
+    "fitted_by_variant": [],
+    "forks_all_fitted": 0,
+    "name": null,
+    "needs_choice": false,
+    "not_fitted_by_variant": [],
+    "not_fitted_total": 0,
+    "unused_nets": 0,
+    "warnings": []
+  },
+  "written": "data/cases/level1-single-ended/kisi-dc/DATA",
+  "field_solver_run": {
+    "planned": 5,
+    "from_cache": 5,
+    "solved_now": 0,
+    "failed_now": 0,
+    "not_solved": 0,
+    "seconds": 0,
+    "cache": "native/kisi-cache/field-cache.json"
+  }
+}

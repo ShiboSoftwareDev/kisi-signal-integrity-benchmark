@@ -1,0 +1,162 @@
+{
+  "config": {
+    "entries": 1,
+    "errors": [],
+    "file": "data/cases/level1-differential/board.kisi.json",
+    "ok": true,
+    "warnings": []
+  },
+  "field_solver": {
+    "cross_sections": 17,
+    "cross_sections_field": 16,
+    "target_length_coverage_pct": 100
+  },
+  "models": "Impedance from Forstén's 2D field solver for 16 cross-sections (see field_solver: coverage), formula (Hammerstad-Jensen, Wheeler, conformal mapping for coplanar lines, IPC-2141) for the rest. Losses: Wheeler/Huray/Djordjevic-Sarkar. Lanes run from device pin to device pin through series parts (estimated parasitics); side stubs of the lane nets are open stubs (unused pads, parts not fitted with their pad capacitance, the other path of a fork). Pads: a track inside an SMD pad has the pad's width; the rest of a part's pad is a capacitance from the pad's cross-section (with what lies below it), else an estimate per package. Eye: PRBS7, linear transmitter/receiver from the profile (a termination next to the receiver acts as its termination), without equalisation, jitter and noise; the step response with a DC point and checks (band edge, response before arrival, settling, passivity) in its warnings. Pairs are 4-ports (both lines on their own paths, coupled where they run together): loss and return loss Sdd21/Sdd11, the eye driven differentially, mode_conversion_db (worst Scd21 up to 1.5 × Nyquist) as information. Multi-drop lines along one path: the eye at every receiver (receivers), the worst counts. One N-port Touchstone file behind a connector with a port map (connector_ends.<connector>.touchstone.ports): the connector's other lanes in it are worst-case aggressors (crosstalk_peak; they enter at the connector without their board traces – an estimate). Shunt parts on the lane's nets (capacitors to ground, …) are in the channel at their pads. Lanes from connector to connector: board share only (loss, return loss, skew, TDR), no eye. Lanes ending at a connector: board share – loss, return loss and skew judged; the eye with the connector end model (kisi.json connector_ends.<connector>, default the profile's receiver or transmitter at the connector) – information (eye_board_share), or judged when a channel behind the connector (rest_loss_db or a Touchstone file) is given.",
+  "not_checked_unused": null,
+  "rows": [
+    {
+      "accuracy": {
+        "impedance": {
+          "field_share": 1,
+          "level": "field solver",
+          "uncertainty_pct": 1
+        },
+        "note": "typical deviations from kisi's validation (data/accuracy.json, docs/models.md section Accuracy levels), not bounds",
+        "vias": null
+      },
+      "branches": [],
+      "bus": "U1 ↔ U2",
+      "class": "Benchmark",
+      "criteria": [
+        {
+          "hi": 110.00000000000001,
+          "key": "z",
+          "lo": 90,
+          "note": "mean along the line from the impedance analysis",
+          "red_below": null,
+          "status": "yellow",
+          "value": 152.12447465150524
+        },
+        {
+          "hi": null,
+          "key": "eye_h",
+          "lo": 0.65,
+          "note": null,
+          "red_below": 0.4,
+          "status": "green",
+          "value": 0.9478566747872788
+        },
+        {
+          "hi": null,
+          "key": "eye_w",
+          "lo": 0.5,
+          "note": null,
+          "red_below": null,
+          "status": "green",
+          "value": 0.9062499999999999
+        },
+        {
+          "hi": null,
+          "key": "il",
+          "lo": null,
+          "note": null,
+          "red_below": null,
+          "status": "green",
+          "value": -0.5813743390760802
+        },
+        {
+          "hi": null,
+          "key": "rl",
+          "lo": 10,
+          "note": null,
+          "red_below": null,
+          "status": "yellow",
+          "value": 8.661306588454242
+        },
+        {
+          "hi": 50,
+          "key": "skew",
+          "lo": null,
+          "note": "path branches or is split by components",
+          "red_below": null,
+          "status": "green",
+          "value": 0.1438257257833584
+        }
+      ],
+      "diff": true,
+      "direction": "termination R1 next to U2",
+      "ends": [
+        "U1.6",
+        "U2.6"
+      ],
+      "eye_computed": true,
+      "from": "U1.6",
+      "kind": "ic-ic",
+      "lane": "BUS_P",
+      "length_mm": 55.751248916810276,
+      "metrics": {
+        "error": null,
+        "eye_h": 0.9478566747872788,
+        "eye_w_ui": 0.9062499999999999,
+        "il_nyq_db": -0.5813743390760802,
+        "rl_db": 8.661306588454242,
+        "skew_ps": -0.1438257257833584,
+        "skew_uncertain": true,
+        "stub_ghz": null,
+        "z_max": 280.0776089103918,
+        "z_mean": 152.12447465150524,
+        "z_min": 101.74765499932003
+      },
+      "mode_conversion_db": -62.690075358429,
+      "model": "4-port",
+      "nets": [
+        "BUS_P"
+      ],
+      "not_modelled": [],
+      "profile": "lvds",
+      "rate_gbps": 1,
+      "receivers_on_stubs": [],
+      "series_parts": [],
+      "status": "yellow",
+      "stubs": [
+        "stub 1.7 mm to R1.1"
+      ],
+      "terminations": [
+        "R1 120 across the pair"
+      ],
+      "to": "U2.6",
+      "vias": 0
+    }
+  ],
+  "rows_omitted": 0,
+  "rows_shown": "all",
+  "summary": {
+    "green": 0,
+    "red": 0,
+    "yellow": 1
+  },
+  "variant": {
+    "available": [],
+    "chosen_by": null,
+    "description": null,
+    "errors": [],
+    "field_overrides": [],
+    "fitted_by_variant": [],
+    "forks_all_fitted": 0,
+    "name": null,
+    "needs_choice": false,
+    "not_fitted_by_variant": [],
+    "not_fitted_total": 0,
+    "unused_nets": 0,
+    "warnings": []
+  },
+  "field_solver_run": {
+    "planned": 16,
+    "from_cache": 16,
+    "solved_now": 0,
+    "failed_now": 0,
+    "not_solved": 0,
+    "seconds": 0,
+    "cache": "native/kisi-cache/field-cache.json"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "level": "level1-single-ended",
+  "status": "extracted",
+  "render_errors": 0,
+  "elapsed_s": 1.462281291,
+  "source_commit": "374229d3dd3ca4581053423604b715dfb11ac86b",
+  "nodes": {
+    "source_port_3": "n3",
+    "source_port_6": "n6"
+  },
+  "mappings": [
+    {
+      "port": "DATA",
+      "from": "source_port_3",
+      "to": "source_port_6",
+      "sourceTraceId": "source_trace_4",
+      "pcbTraceId": "",
+      "pcbPorts": [],
+      "stages": [],
+      "originalRoute": []
+    }
+  ],
+  "node_map": {
+    "source_port_0": "n1",
+    "source_port_1": "n2",
+    "source_port_2": "0",
+    "source_port_3": "n3",
+    "source_port_4": "n4",
+    "source_port_5": "n5",
+    "source_port_6": "n6",
+    "source_port_7": "0",
+    "source_port_8": "n7",
+    "source_port_9": "n4",
+    "source_net_0": "n4",
+    "source_net_1": "0"
+  },
+  "electrical_lines": [
+    "VDECLARED0 n4 0 3.3"
+  ],
+  "passive_elements": 2285,
+  "materials": {
+    "maskMm": 0.02,
+    "maskEr": 3.3,
+    "maskLoss": 0.025,
+    "substrateLoss": 0.02
+  }
+}

@@ -1,0 +1,228 @@
+* LTspice version of the lane library: the same circuit as the .lib next to it, with Rser=0 Rpar=1e30 on every
+* inductor (LTspice adds a series resistance of 1 mOhm and an implicit parallel damping to inductors by default)
+* kisi 0.3.3: lane D0 as a SPICE subcircuit (ngspice, Xyce, LTspice, KiCad)
+* board board.kicad_pcb
+* subcircuit D0_lane (single line)
+* port 1 (a): D0 at U1.4 (transmitter end)
+* port 2 (b): D0 at U3.2 (receiver end)
+* track length 28.12 mm, delay 162.1 ps, reference 50.00 ohm per port
+* model: kisi's channel sections; lines as RLGC ladders (20.00 sections per wavelength at 10.00 GHz) with fitted
+*   Foster (R(f), L_int(f)) and Debye (G(f), C(f)) networks, vias as kisi's via ladder, parts with estimated
+*   parasitics, open stubs; coupled sections of a pair as even/odd chains between ideal mode converters (E/F)
+* check against kisi's S-parameters (same model): |dS21| <= 0.004621 dB to 1.5 x Nyquist (0.4446 dB to the top), largest |dS| 0.0006721 to 1.5 x Nyquist (0.1534 to the top)
+* fits of the main line sections (each at least 10 % of the length): R 0.5148 %, X 0.01713 %, G 17.43 %, B 3.524 %; via ladders 0 %
+* elements after flattening: 483 R, 329 L, 232 C, 0 sources; 36 RLGC sections
+* usage: X1 a b 0 D0_lane   (the last port is the reference)
+* stackup: 2 copper layers, 1.49 mm, er and tand at 1 GHz; from board file (layer by layer in the README)
+*   layers (um): F.Cu 30 / 1430 er 4.42 tand 0.02 / B.Cu 30
+
+* last RLGC section: z, then y/2
+.subckt D0_TL1_F_Cu_end a b ref
+R1 a n1 2.865499e-4
+L1 n1 n2 2.155615e-10 Rser=0 Rpar=1e30
+R2 n2 n3 2.833014e-5
+L2 n2 n3 1.425834e-12 Rser=0 Rpar=1e30
+R3 n3 n4 2.273449e-4
+L3 n3 n4 2.874123e-12 Rser=0 Rpar=1e30
+R4 n4 n5 4.790042e-4
+L4 n4 n5 1.521106e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.003781e-3
+L5 n5 n6 8.006803e-13 Rser=0 Rpar=1e30
+R6 n6 n7 1.997103e-3
+L6 n6 n7 4.001480e-13 Rser=0 Rpar=1e30
+R7 n7 n8 3.979800e-3
+L7 n7 n8 2.003002e-13 Rser=0 Rpar=1e30
+R8 n8 n9 8.110093e-3
+L8 n8 n9 1.025288e-13 Rser=0 Rpar=1e30
+R9 n9 b 1.781333e-2
+L9 n9 b 5.656727e-14 Rser=0 Rpar=1e30
+C1 b ref 1.263226e-14
+R10 b n10 4.364853e8
+C2 n10 ref 6.484113e-16
+R11 b n11 1.703991e7
+C3 n11 ref 5.252340e-16
+R12 b n12 5.372448e5
+C4 n12 ref 5.268026e-16
+R13 b n13 4.403852e4
+C5 n13 ref 2.032298e-16
+R14 b n14 1.269197e3
+L10 n14 n15 1.009995e-8 Rser=0 Rpar=1e30
+C6 n15 ref 1.567477e-15
+.ends D0_TL1_F_Cu_end
+
+* one RLGC section: z, then y
+.subckt D0_TL1_F_Cu_sec_2 a b ref
+R1 a n1 3.045606e-3
+L1 n1 n2 6.423384e-10 Rser=0 Rpar=1e30
+R2 n2 n3 7.504058e-5
+L2 n2 n3 2.573059e-12 Rser=0 Rpar=1e30
+R3 n3 n4 2.023267e-3
+L3 n3 n4 1.494652e-11 Rser=0 Rpar=1e30
+R4 n4 n5 5.321882e-3
+L4 n4 n5 8.470039e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.183900e-2
+L5 n5 n6 4.059463e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.513277e-2
+L6 n6 n7 1.856638e-12 Rser=0 Rpar=1e30
+R7 n7 n8 6.083970e-2
+L7 n7 n8 9.682939e-13 Rser=0 Rpar=1e30
+R8 n8 b 7.051319e-2
+L8 n8 b 2.417819e-13 Rser=0 Rpar=1e30
+C1 b ref 2.951116e-14
+R9 b n9 3.131722e8
+C2 n9 ref 1.276547e-15
+R10 b n10 2.726396e7
+C3 n10 ref 9.251905e-16
+R11 b n11 1.596443e6
+C4 n11 ref 9.969350e-16
+R12 b n12 1.078512e5
+C5 n12 ref 9.310976e-16
+R13 b n13 9.221309e2
+L9 n13 n14 9.172606e-9 Rser=0 Rpar=1e30
+C6 n14 ref 2.696793e-15
+.ends D0_TL1_F_Cu_sec_2
+
+* last RLGC section: z, then y/2
+.subckt D0_TL1_F_Cu_end_2 a b ref
+R1 a n1 3.045606e-3
+L1 n1 n2 6.423384e-10 Rser=0 Rpar=1e30
+R2 n2 n3 7.504058e-5
+L2 n2 n3 2.573059e-12 Rser=0 Rpar=1e30
+R3 n3 n4 2.023267e-3
+L3 n3 n4 1.494652e-11 Rser=0 Rpar=1e30
+R4 n4 n5 5.321882e-3
+L4 n4 n5 8.470039e-12 Rser=0 Rpar=1e30
+R5 n5 n6 1.183900e-2
+L5 n5 n6 4.059463e-12 Rser=0 Rpar=1e30
+R6 n6 n7 2.513277e-2
+L6 n6 n7 1.856638e-12 Rser=0 Rpar=1e30
+R7 n7 n8 6.083970e-2
+L7 n7 n8 9.682939e-13 Rser=0 Rpar=1e30
+R8 n8 b 7.051319e-2
+L8 n8 b 2.417819e-13 Rser=0 Rpar=1e30
+C1 b ref 1.475558e-14
+R9 b n9 6.263444e8
+C2 n9 ref 6.382737e-16
+R10 b n10 5.452793e7
+C3 n10 ref 4.625952e-16
+R11 b n11 3.192885e6
+C4 n11 ref 4.984675e-16
+R12 b n12 2.157024e5
+C5 n12 ref 4.655488e-16
+R13 b n13 1.844262e3
+L9 n13 n14 1.834521e-8 Rser=0 Rpar=1e30
+C6 n14 ref 1.348396e-15
+.ends D0_TL1_F_Cu_end_2
+
+* last RLGC section: z, then y/2
+.subckt D0_TL1_F_Cu_end_3 a b ref
+R1 a n1 6.307934e-4
+L1 n1 n2 2.978505e-10 Rser=0 Rpar=1e30
+R2 n2 n3 5.971171e-6
+L2 n2 n3 4.411094e-12 Rser=0 Rpar=1e30
+R3 n3 n4 3.193421e-4
+L3 n3 n4 1.094989e-11 Rser=0 Rpar=1e30
+R4 n4 n5 9.936019e-4
+L4 n4 n5 7.340054e-12 Rser=0 Rpar=1e30
+R5 n5 n6 2.136520e-3
+L5 n5 n6 3.400378e-12 Rser=0 Rpar=1e30
+R6 n6 n7 4.759532e-3
+L6 n6 n7 1.631991e-12 Rser=0 Rpar=1e30
+R7 n7 n8 9.930340e-3
+L7 n7 n8 7.335858e-13 Rser=0 Rpar=1e30
+R8 n8 n9 2.444484e-2
+L8 n8 n9 3.890517e-13 Rser=0 Rpar=1e30
+R9 n9 b 2.524532e-2
+L9 n9 b 8.656341e-14 Rser=0 Rpar=1e30
+C1 b ref 1.983628e-14
+R10 b n10 2.744238e8
+C2 n10 ref 1.031332e-15
+R11 b n11 1.077730e7
+C3 n11 ref 8.304435e-16
+R12 b n12 3.389163e5
+C4 n12 ref 8.350792e-16
+R13 b n13 5.429421e2
+L10 n13 n14 4.320596e-9 Rser=0 Rpar=1e30
+C5 n14 ref 3.664179e-15
+.ends D0_TL1_F_Cu_end_3
+
+* line: 0.424 mm on F.Cu, Z0 86.19 ohm, eps_eff 3.122 at 1 GHz (field solver), 1 RLGC sections
+* line: 27.032 mm on F.Cu, Z0 140.04 ohm, eps_eff 2.987 at 1 GHz (field solver), 34 RLGC sections
+* line: 0.663 mm on F.Cu, Z0 79.36 ohm, eps_eff 2.881 at 1 GHz (field solver), 1 RLGC sections
+.subckt D0_TL1_F_Cu a b ref
+C1 a ref 1.263226e-14
+R1 a n2 4.364853e8
+C2 n2 ref 6.484113e-16
+R2 a n3 1.703991e7
+C3 n3 ref 5.252340e-16
+R3 a n4 5.372448e5
+C4 n4 ref 5.268026e-16
+R4 a n5 4.403852e4
+C5 n5 ref 2.032298e-16
+R5 a n6 1.269197e3
+L1 n6 n7 1.009995e-8 Rser=0 Rpar=1e30
+C6 n7 ref 1.567477e-15
+X1 a n1 ref D0_TL1_F_Cu_end
+C7 n1 ref 1.475558e-14
+R6 n1 n9 6.263444e8
+C8 n9 ref 6.382737e-16
+R7 n1 n10 5.452793e7
+C9 n10 ref 4.625952e-16
+R8 n1 n11 3.192885e6
+C10 n11 ref 4.984675e-16
+R9 n1 n12 2.157024e5
+C11 n12 ref 4.655488e-16
+R10 n1 n13 1.844262e3
+L2 n13 n14 1.834521e-8 Rser=0 Rpar=1e30
+C12 n14 ref 1.348396e-15
+X2 n1 n15 ref D0_TL1_F_Cu_sec_2
+X3 n15 n16 ref D0_TL1_F_Cu_sec_2
+X4 n16 n17 ref D0_TL1_F_Cu_sec_2
+X5 n17 n18 ref D0_TL1_F_Cu_sec_2
+X6 n18 n19 ref D0_TL1_F_Cu_sec_2
+X7 n19 n20 ref D0_TL1_F_Cu_sec_2
+X8 n20 n21 ref D0_TL1_F_Cu_sec_2
+X9 n21 n22 ref D0_TL1_F_Cu_sec_2
+X10 n22 n23 ref D0_TL1_F_Cu_sec_2
+X11 n23 n24 ref D0_TL1_F_Cu_sec_2
+X12 n24 n25 ref D0_TL1_F_Cu_sec_2
+X13 n25 n26 ref D0_TL1_F_Cu_sec_2
+X14 n26 n27 ref D0_TL1_F_Cu_sec_2
+X15 n27 n28 ref D0_TL1_F_Cu_sec_2
+X16 n28 n29 ref D0_TL1_F_Cu_sec_2
+X17 n29 n30 ref D0_TL1_F_Cu_sec_2
+X18 n30 n31 ref D0_TL1_F_Cu_sec_2
+X19 n31 n32 ref D0_TL1_F_Cu_sec_2
+X20 n32 n33 ref D0_TL1_F_Cu_sec_2
+X21 n33 n34 ref D0_TL1_F_Cu_sec_2
+X22 n34 n35 ref D0_TL1_F_Cu_sec_2
+X23 n35 n36 ref D0_TL1_F_Cu_sec_2
+X24 n36 n37 ref D0_TL1_F_Cu_sec_2
+X25 n37 n38 ref D0_TL1_F_Cu_sec_2
+X26 n38 n39 ref D0_TL1_F_Cu_sec_2
+X27 n39 n40 ref D0_TL1_F_Cu_sec_2
+X28 n40 n41 ref D0_TL1_F_Cu_sec_2
+X29 n41 n42 ref D0_TL1_F_Cu_sec_2
+X30 n42 n43 ref D0_TL1_F_Cu_sec_2
+X31 n43 n44 ref D0_TL1_F_Cu_sec_2
+X32 n44 n45 ref D0_TL1_F_Cu_sec_2
+X33 n45 n46 ref D0_TL1_F_Cu_sec_2
+X34 n46 n47 ref D0_TL1_F_Cu_sec_2
+X35 n47 n8 ref D0_TL1_F_Cu_end_2
+C13 n8 ref 1.983628e-14
+R11 n8 n48 2.744238e8
+C14 n48 ref 1.031332e-15
+R12 n8 n49 1.077730e7
+C15 n49 ref 8.304435e-16
+R13 n8 n50 3.389163e5
+C16 n50 ref 8.350792e-16
+R14 n8 n51 5.429421e2
+L3 n51 n52 4.320596e-9 Rser=0 Rpar=1e30
+C17 n52 ref 3.664179e-15
+X36 n8 b ref D0_TL1_F_Cu_end_3
+.ends D0_TL1_F_Cu
+
+* lane D0: single line, transmitter end = a, receiver end = b
+.subckt D0_lane a b ref
+X1 a b ref D0_TL1_F_Cu
+.ends D0_lane

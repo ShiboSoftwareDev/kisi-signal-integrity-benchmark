@@ -1,0 +1,14 @@
+{
+  "ports": [
+    "source_port_3",
+    "source_port_6"
+  ],
+  "nodes": [
+    "n3",
+    "n6"
+  ],
+  "ac_seconds": 0.5016852089902386,
+  "max_singular_value": 0.9999912475988695,
+  "reciprocity_error": 0.0,
+  "physical_termination_included": false
+}

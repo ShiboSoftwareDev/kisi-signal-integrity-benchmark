@@ -1,0 +1,1263 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-18T07:06:42",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "board.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Annular width (board setup constraints min annular width 0.1000 mm; actual 0.0500 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 3.8625,
+                        "y": 13.55
+                    },
+                    "uuid": "bacd3a55-bf5c-55dd-993d-b76134223b90"
+                }
+            ],
+            "severity": "error",
+            "type": "annular_width"
+        },
+        {
+            "description": "Annular width (board setup constraints min annular width 0.1000 mm; actual 0.0500 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 33.8625,
+                        "y": 13.55
+                    },
+                    "uuid": "8a41da3d-cb97-5310-a3e9-c5c5995ad531"
+                }
+            ],
+            "severity": "error",
+            "type": "annular_width"
+        },
+        {
+            "description": "Annular width (board setup constraints min annular width 0.1000 mm; actual 0.0500 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 32.9,
+                        "y": 8.95
+                    },
+                    "uuid": "5ca75648-f16a-52d4-b03a-21825eea2029"
+                }
+            ],
+            "severity": "error",
+            "type": "annular_width"
+        },
+        {
+            "description": "Annular width (board setup constraints min annular width 0.1000 mm; actual 0.0500 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 2.9,
+                        "y": 8.95
+                    },
+                    "uuid": "ba63ec2f-3ecc-5a26-ab7e-379884d0fcb1"
+                }
+            ],
+            "severity": "error",
+            "type": "annular_width"
+        },
+        {
+            "description": "Items shorting two nets (nets D1 and GND)",
+            "items": [
+                {
+                    "description": "Pad 4 [D1] of U2 on F.Cu",
+                    "pos": {
+                        "x": 6.1375,
+                        "y": 12.95
+                    },
+                    "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+                },
+                {
+                    "description": "Track [GND] on F.Cu, length 1.8000 mm",
+                    "pos": {
+                        "x": 3.8625,
+                        "y": 12.95
+                    },
+                    "uuid": "41ece69a-96b0-5762-be98-a8e7825f9ade"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets D1 and GND)",
+            "items": [
+                {
+                    "description": "Pad 4 [D1] of U2 on F.Cu",
+                    "pos": {
+                        "x": 6.1375,
+                        "y": 12.95
+                    },
+                    "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+                },
+                {
+                    "description": "Track [GND] on F.Cu, length 0.6000 mm",
+                    "pos": {
+                        "x": 5.662499,
+                        "y": 12.9485
+                    },
+                    "uuid": "cb84dd6c-c315-5876-a481-8e03d0f16286"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Rectangle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d1794087-e1f8-5f2b-93a5-67a99b55f91b"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 0.2,
+                        "y": 19.8
+                    },
+                    "uuid": "593cc85d-e8ff-5e0f-bb9a-c3093b4f6bac"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 3.8625,
+                        "y": 13.55
+                    },
+                    "uuid": "bacd3a55-bf5c-55dd-993d-b76134223b90"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 33.8625,
+                        "y": 13.55
+                    },
+                    "uuid": "8a41da3d-cb97-5310-a3e9-c5c5995ad531"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 32.9,
+                        "y": 8.95
+                    },
+                    "uuid": "5ca75648-f16a-52d4-b03a-21825eea2029"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 2.9,
+                        "y": 8.95
+                    },
+                    "uuid": "ba63ec2f-3ecc-5a26-ab7e-379884d0fcb1"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 1.8000 mm",
+                    "pos": {
+                        "x": 3.8625,
+                        "y": 12.95
+                    },
+                    "uuid": "41ece69a-96b0-5762-be98-a8e7825f9ade"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.6000 mm",
+                    "pos": {
+                        "x": 5.662499,
+                        "y": 12.9485
+                    },
+                    "uuid": "cb84dd6c-c315-5876-a481-8e03d0f16286"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 1.8000 mm",
+                    "pos": {
+                        "x": 5.662999,
+                        "y": 13.5485
+                    },
+                    "uuid": "62da93fa-bced-58e8-8859-3b67dae75658"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.0005 mm",
+                    "pos": {
+                        "x": 3.863,
+                        "y": 13.55
+                    },
+                    "uuid": "6cddb219-1acd-5eb7-9855-9c323dcc9f31"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.5995 mm",
+                    "pos": {
+                        "x": 33.8625,
+                        "y": 12.95
+                    },
+                    "uuid": "56921520-3b45-5b56-8f2e-5550efa3a67d"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.0007 mm",
+                    "pos": {
+                        "x": 33.8625,
+                        "y": 13.5495
+                    },
+                    "uuid": "9e3568be-996d-5904-9f60-edce39a84c69"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.0005 mm",
+                    "pos": {
+                        "x": 33.863,
+                        "y": 13.55
+                    },
+                    "uuid": "f00c44f1-b5ef-537e-8937-0e888ad9f9e8"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.0005 mm",
+                    "pos": {
+                        "x": 33.8625,
+                        "y": 8.95
+                    },
+                    "uuid": "c494884f-65af-557f-8a8e-326cdf582ea9"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.9630 mm",
+                    "pos": {
+                        "x": 33.863,
+                        "y": 8.95
+                    },
+                    "uuid": "82e43321-2e66-5fc3-94f4-6b7d331022c2"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.0005 mm",
+                    "pos": {
+                        "x": 3.8625,
+                        "y": 8.95
+                    },
+                    "uuid": "50790aea-fbab-519f-a75f-aafaeafd21ef"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.9630 mm",
+                    "pos": {
+                        "x": 3.863,
+                        "y": 8.95
+                    },
+                    "uuid": "97a8a117-37a3-5e97-9753-1453919143e9"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 1.1986 mm",
+                    "pos": {
+                        "x": 6.1375,
+                        "y": 7.05
+                    },
+                    "uuid": "80585838-0b90-57a6-91fc-dfc7ecef22a6"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 0.0035 mm",
+                    "pos": {
+                        "x": 5.290195,
+                        "y": 7.897805
+                    },
+                    "uuid": "246c9e7c-97a4-562d-9dc5-3cd9b79a3f56"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 2.3014 mm",
+                    "pos": {
+                        "x": 5.290195,
+                        "y": 7.901264
+                    },
+                    "uuid": "06a8c6df-65ee-5852-a540-bfe8d03b963c"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 1.1983 mm",
+                    "pos": {
+                        "x": 5.290195,
+                        "y": 10.202695
+                    },
+                    "uuid": "1edd967a-63a3-5b02-89a7-2bf812d8b4e8"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 1.1034 mm",
+                    "pos": {
+                        "x": 36.1375,
+                        "y": 7.05
+                    },
+                    "uuid": "af84d9aa-e505-5cf1-a849-9699652212f7"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 0.4780 mm",
+                    "pos": {
+                        "x": 36.918,
+                        "y": 7.83
+                    },
+                    "uuid": "767f1af2-4fcd-52d1-8d81-7ea33c52e67f"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 0.2500 mm",
+                    "pos": {
+                        "x": 37.005,
+                        "y": 8.3
+                    },
+                    "uuid": "781b3ab3-f24a-5524-9ee6-395b2996caed"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 0.2500 mm",
+                    "pos": {
+                        "x": 37.005,
+                        "y": 8.55
+                    },
+                    "uuid": "2ff4cd6b-0c1e-5a48-b53e-08a2301a263c"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 0.2500 mm",
+                    "pos": {
+                        "x": 37.005,
+                        "y": 8.8
+                    },
+                    "uuid": "1ab64ff0-09b2-5ddf-bb67-7aebda1417da"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 0.2500 mm",
+                    "pos": {
+                        "x": 37.005,
+                        "y": 9.05
+                    },
+                    "uuid": "2b4dc290-8848-560e-b7df-eb8d91bbb1c5"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 0.2996 mm",
+                    "pos": {
+                        "x": 37.005,
+                        "y": 9.3
+                    },
+                    "uuid": "867d52ee-7aa3-510e-ba4e-ba2ac7c7f3d0"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 1.0344 mm",
+                    "pos": {
+                        "x": 36.911153,
+                        "y": 9.584513
+                    },
+                    "uuid": "b07a108f-6daf-502d-a627-b55c54bdc55e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 0.7788 mm",
+                    "pos": {
+                        "x": 36.1375,
+                        "y": 10.271166
+                    },
+                    "uuid": "bdabb3c2-eca0-516a-8c09-1957444f735e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 0.6742 mm",
+                    "pos": {
+                        "x": 6.1375,
+                        "y": 7.05
+                    },
+                    "uuid": "ed1457c3-8a9e-5775-b7f8-1597a8ed54f8"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 28.9715 mm",
+                    "pos": {
+                        "x": 6.61425,
+                        "y": 6.57325
+                    },
+                    "uuid": "a66f4ab1-8f50-5e79-8eb9-fcee402f2d05"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 0.0755 mm",
+                    "pos": {
+                        "x": 35.585789,
+                        "y": 6.57325
+                    },
+                    "uuid": "4d55b4ef-fa97-5efd-96e4-e65797a94c9e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [VCC] on F.Cu, length 0.6739 mm",
+                    "pos": {
+                        "x": 35.66125,
+                        "y": 6.57325
+                    },
+                    "uuid": "80620b34-5866-54a8-b982-bcccc220926e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [D1] on F.Cu, length 1.3435 mm",
+                    "pos": {
+                        "x": 6.1375,
+                        "y": 12.95
+                    },
+                    "uuid": "a1aa349d-a89a-5b12-bb60-936519949a16"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [D1] on F.Cu, length 26.7750 mm",
+                    "pos": {
+                        "x": 7.0875,
+                        "y": 12.0
+                    },
+                    "uuid": "0048b222-01d4-5339-beb7-2ce4976a410b"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [D0] on F.Cu, length 1.3435 mm",
+                    "pos": {
+                        "x": 6.1375,
+                        "y": 8.95
+                    },
+                    "uuid": "17ae56eb-823f-59e1-91c2-6db04e9dce07"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [D0] on F.Cu, length 26.7750 mm",
+                    "pos": {
+                        "x": 7.0875,
+                        "y": 8.0
+                    },
+                    "uuid": "03eb1a9f-e8d3-513a-84c6-6214f33ca728"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.3000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 3.8625,
+                        "y": 13.55
+                    },
+                    "uuid": "bacd3a55-bf5c-55dd-993d-b76134223b90"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.3000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 33.8625,
+                        "y": 13.55
+                    },
+                    "uuid": "8a41da3d-cb97-5310-a3e9-c5c5995ad531"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.3000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 32.9,
+                        "y": 8.95
+                    },
+                    "uuid": "5ca75648-f16a-52d4-b03a-21825eea2029"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.3000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 2.9,
+                        "y": 8.95
+                    },
+                    "uuid": "ba63ec2f-3ecc-5a26-ab7e-379884d0fcb1"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 1.8000 mm",
+                    "pos": {
+                        "x": 3.8625,
+                        "y": 12.95
+                    },
+                    "uuid": "41ece69a-96b0-5762-be98-a8e7825f9ade"
+                },
+                {
+                    "description": "Pad 4 [D1] of U2 on F.Cu",
+                    "pos": {
+                        "x": 6.1375,
+                        "y": 12.95
+                    },
+                    "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.6000 mm",
+                    "pos": {
+                        "x": 5.662499,
+                        "y": 12.9485
+                    },
+                    "uuid": "cb84dd6c-c315-5876-a481-8e03d0f16286"
+                },
+                {
+                    "description": "Pad 4 [D1] of U2 on F.Cu",
+                    "pos": {
+                        "x": 6.1375,
+                        "y": 12.95
+                    },
+                    "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Rectangle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d1794087-e1f8-5f2b-93a5-67a99b55f91b"
+                },
+                {
+                    "description": "Value field of U1 (SN74LVC1G04DBV)",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 8.0
+                    },
+                    "uuid": "e1d7c62b-b734-4470-a4ea-4eb6fcebde2c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Rectangle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d1794087-e1f8-5f2b-93a5-67a99b55f91b"
+                },
+                {
+                    "description": "Value field of U2 (SN74LVC1G04DBV)",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 12.0
+                    },
+                    "uuid": "debedbed-10ba-49a7-a82c-dca3e5e74ce4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Rectangle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d1794087-e1f8-5f2b-93a5-67a99b55f91b"
+                },
+                {
+                    "description": "Value field of U3 (SN74LVC1G04DBV)",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 8.0
+                    },
+                    "uuid": "f202afab-3971-4b63-ba5a-906932d5b71b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Rectangle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d1794087-e1f8-5f2b-93a5-67a99b55f91b"
+                },
+                {
+                    "description": "Value field of U4 (SN74LVC1G04DBV)",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 12.0
+                    },
+                    "uuid": "93f3eaef-9036-4713-ab27-67b77dd427bf"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+                {
+                    "description": "Footprint U1",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 8.0
+                    },
+                    "uuid": "5fd321f9-8c87-5d4f-a1d2-b1bbbd927b80"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+                {
+                    "description": "Footprint U2",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 12.0
+                    },
+                    "uuid": "96441c5c-f929-55ec-8f2f-709853fd1470"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+                {
+                    "description": "Footprint U3",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 8.0
+                    },
+                    "uuid": "2f72a02e-a68e-589b-b69b-61c28faff60e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+                {
+                    "description": "Footprint U4",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 12.0
+                    },
+                    "uuid": "7776d52e-135a-5822-b5a1-bcd916e08432"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of U2",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 12.0
+                    },
+                    "uuid": "8a9f3ade-2c6e-4a80-9085-9041f6a0edf8"
+                },
+                {
+                    "description": "Value field of U2 (SN74LVC1G04DBV)",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 12.0
+                    },
+                    "uuid": "debedbed-10ba-49a7-a82c-dca3e5e74ce4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of U1",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 8.0
+                    },
+                    "uuid": "be555eb0-2dab-4892-8450-7fc542d5460f"
+                },
+                {
+                    "description": "Value field of U1 (SN74LVC1G04DBV)",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 8.0
+                    },
+                    "uuid": "e1d7c62b-b734-4470-a4ea-4eb6fcebde2c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of U3",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 8.0
+                    },
+                    "uuid": "bad0d6bf-821e-4385-919a-06a1822da1ca"
+                },
+                {
+                    "description": "Value field of U3 (SN74LVC1G04DBV)",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 8.0
+                    },
+                    "uuid": "f202afab-3971-4b63-ba5a-906932d5b71b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of U4",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 12.0
+                    },
+                    "uuid": "53196d7f-bf9a-4e73-8eda-58011aed75a9"
+                },
+                {
+                    "description": "Value field of U4 (SN74LVC1G04DBV)",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 12.0
+                    },
+                    "uuid": "93f3eaef-9036-4713-ab27-67b77dd427bf"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U1",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 8.0
+                    },
+                    "uuid": "be555eb0-2dab-4892-8450-7fc542d5460f"
+                },
+                {
+                    "description": "Pad 2 [UNCONNECTED_1] of U1 on F.Cu",
+                    "pos": {
+                        "x": 3.8625,
+                        "y": 8.0
+                    },
+                    "uuid": "9bb51ffb-88c8-5439-b0b2-98668f23b7c7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U1 (SN74LVC1G04DBV)",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 8.0
+                    },
+                    "uuid": "e1d7c62b-b734-4470-a4ea-4eb6fcebde2c"
+                },
+                {
+                    "description": "Pad 2 [UNCONNECTED_1] of U1 on F.Cu",
+                    "pos": {
+                        "x": 3.8625,
+                        "y": 8.0
+                    },
+                    "uuid": "9bb51ffb-88c8-5439-b0b2-98668f23b7c7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U2",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 12.0
+                    },
+                    "uuid": "8a9f3ade-2c6e-4a80-9085-9041f6a0edf8"
+                },
+                {
+                    "description": "Pad 2 [UNCONNECTED_6] of U2 on F.Cu",
+                    "pos": {
+                        "x": 3.8625,
+                        "y": 12.0
+                    },
+                    "uuid": "45068e00-a12e-569f-bdb8-1c87247dceee"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U2 (SN74LVC1G04DBV)",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 12.0
+                    },
+                    "uuid": "debedbed-10ba-49a7-a82c-dca3e5e74ce4"
+                },
+                {
+                    "description": "Pad 2 [UNCONNECTED_6] of U2 on F.Cu",
+                    "pos": {
+                        "x": 3.8625,
+                        "y": 12.0
+                    },
+                    "uuid": "45068e00-a12e-569f-bdb8-1c87247dceee"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U3",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 8.0
+                    },
+                    "uuid": "bad0d6bf-821e-4385-919a-06a1822da1ca"
+                },
+                {
+                    "description": "Pad 2 [D0] of U3 on F.Cu",
+                    "pos": {
+                        "x": 33.8625,
+                        "y": 8.0
+                    },
+                    "uuid": "7b871166-8656-56d7-acb4-a625e662373d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U3 (SN74LVC1G04DBV)",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 8.0
+                    },
+                    "uuid": "f202afab-3971-4b63-ba5a-906932d5b71b"
+                },
+                {
+                    "description": "Pad 2 [D0] of U3 on F.Cu",
+                    "pos": {
+                        "x": 33.8625,
+                        "y": 8.0
+                    },
+                    "uuid": "7b871166-8656-56d7-acb4-a625e662373d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U4 (SN74LVC1G04DBV)",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 12.0
+                    },
+                    "uuid": "93f3eaef-9036-4713-ab27-67b77dd427bf"
+                },
+                {
+                    "description": "Pad 2 [D1] of U4 on F.Cu",
+                    "pos": {
+                        "x": 33.8625,
+                        "y": 12.0
+                    },
+                    "uuid": "36dbc4d6-01cb-54fa-a118-72c208fdf6ad"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U4",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 12.0
+                    },
+                    "uuid": "53196d7f-bf9a-4e73-8eda-58011aed75a9"
+                },
+                {
+                    "description": "Pad 2 [D1] of U4 on F.Cu",
+                    "pos": {
+                        "x": 33.8625,
+                        "y": 12.0
+                    },
+                    "uuid": "36dbc4d6-01cb-54fa-a118-72c208fdf6ad"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U4",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 12.0
+                    },
+                    "uuid": "53196d7f-bf9a-4e73-8eda-58011aed75a9"
+                },
+                {
+                    "description": "Pad 5 [VCC] of U4 on F.Cu",
+                    "pos": {
+                        "x": 36.1375,
+                        "y": 11.05
+                    },
+                    "uuid": "160dc680-dd09-5a5d-a906-8d7c910a0796"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

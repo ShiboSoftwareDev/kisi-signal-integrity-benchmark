@@ -1,0 +1,15 @@
+* step response of BUS_P (kisi channel export check)
+.include "BUS_P.lib"
+VS0 e0 0 PWL(0 0 10p 0 1.350000e-10 0.5)
+RS0 e0 ap 50
+VS1 e1 0 PWL(0 0 10p 0 1.350000e-10 -0.5)
+RS1 e1 an 50
+RT2 bp 0 50
+RT3 bn 0 50
+XL ap an bp bn 0 BUS_P_lane
+.tran 5.000000e-12 2.130626e-09
+.control
+run
+wrdata step_ngspice.txt v(bp)-v(bn)
+.endc
+.end

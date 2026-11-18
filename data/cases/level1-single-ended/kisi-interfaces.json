@@ -1,0 +1,63 @@
+{
+  "buses": [
+    {
+      "bus": "U1 ↔ U2",
+      "class": "Benchmark",
+      "devices": [
+        "U1",
+        "U2"
+      ],
+      "kind": "ic-ic",
+      "lanes": [
+        {
+          "branches": [],
+          "diff": false,
+          "direction": "default order",
+          "ends": [
+            "U1.4",
+            "U2.2"
+          ],
+          "from": "U1.4",
+          "kind": "ic-ic",
+          "lane": "DATA",
+          "nets": [
+            "DATA"
+          ],
+          "not_modelled": [],
+          "receivers_on_stubs": [],
+          "series_parts": [],
+          "terminations": [],
+          "to": "U2.2"
+        }
+      ],
+      "profile": "se50",
+      "values": [
+        "SN74LVC1G04DBV",
+        "SN74LVC1G04DBV"
+      ]
+    }
+  ],
+  "config": {
+    "entries": 1,
+    "errors": [],
+    "file": "data/cases/level1-single-ended/board.kisi.json",
+    "ok": true,
+    "warnings": []
+  },
+  "notes": "Lanes follow nets through series resistors (≤ 100 Ω), AC-coupling capacitors (≥ 1 nF) and small inductors; parts not fitted (DNP in KiCad or not in the chosen assembly variant) connect nothing, their pads stay as stubs. kind: ic-ic (eye checked), connector-connector (board share only, no eye), ic-connector (board share: loss, return loss, skew judged; the eye with the connector end model – connector_ends.<connector> in kisi.json, default the profile's receiver or transmitter; information unless a channel behind the connector is given), multi-drop along one path (the first two ends are transmitter and receiver at the ends of the path, the other devices receivers on side stubs: the eye at every receiver, the worst counts), open lines and multi-drop trees through series parts (not checked). Direction is a guess (termination next to the receiver), parasitics of passives are estimates from data/components.json. mpns (when present): the devices' manufacturer part numbers where the Value field does not show one.",
+  "variant": {
+    "available": [],
+    "chosen_by": null,
+    "description": null,
+    "errors": [],
+    "field_overrides": [],
+    "fitted_by_variant": [],
+    "forks_all_fitted": 0,
+    "name": null,
+    "needs_choice": false,
+    "not_fitted_by_variant": [],
+    "not_fitted_total": 0,
+    "unused_nets": 0,
+    "warnings": []
+  }
+}

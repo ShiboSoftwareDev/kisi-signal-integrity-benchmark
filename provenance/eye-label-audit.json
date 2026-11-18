@@ -1,0 +1,71 @@
+{
+  "method": "Independent PRBS-label classification on the same absolute phase grid. Offset grids can change maxima by sub-mV sampling differences.",
+  "results": {
+    "level1-single-ended": {
+      "our": [
+        {
+          "rx": 0,
+          "height_using_known_prbs_labels_v": 0.9949936820505898,
+          "reported_height_v": 0.9949936820505898,
+          "difference_v": 0.0
+        }
+      ],
+      "kisi": [
+        {
+          "rx": 0,
+          "height_using_known_prbs_labels_v": 0.996384680242478,
+          "reported_height_v": 0.996384680242478,
+          "difference_v": 0.0
+        }
+      ]
+    },
+    "level2-two-channels": {
+      "our": [
+        {
+          "rx": 0,
+          "height_using_known_prbs_labels_v": 0.990267579129729,
+          "reported_height_v": 0.990267579129729,
+          "difference_v": 0.0
+        },
+        {
+          "rx": 1,
+          "height_using_known_prbs_labels_v": 0.9893376175486636,
+          "reported_height_v": 0.9893376175486636,
+          "difference_v": 0.0
+        }
+      ],
+      "kisi": [
+        {
+          "rx": 0,
+          "height_using_known_prbs_labels_v": 0.996384680242478,
+          "reported_height_v": 0.996384680242478,
+          "difference_v": 0.0
+        },
+        {
+          "rx": 1,
+          "height_using_known_prbs_labels_v": 0.9963846802424785,
+          "reported_height_v": 0.9963846802424785,
+          "difference_v": 0.0
+        }
+      ]
+    },
+    "level1-differential": {
+      "our": [
+        {
+          "rx": 0,
+          "height_using_known_prbs_labels_v": 1.0850897130861956,
+          "reported_height_v": 1.0850897130861956,
+          "difference_v": 0.0
+        }
+      ],
+      "kisi": [
+        {
+          "rx": 0,
+          "height_using_known_prbs_labels_v": 1.0858376989256757,
+          "reported_height_v": 1.0858376989256757,
+          "difference_v": 0.0
+        }
+      ]
+    }
+  }
+}

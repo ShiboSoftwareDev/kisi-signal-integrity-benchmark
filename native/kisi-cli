@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+BENCH_REPO=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+export KISI_THREADS=1
+export KISI_CACHE="$BENCH_REPO/.cache/kisi"
+exec node "$BENCH_REPO/.cache/tools/kisi.mjs" "$@" --roughness smooth

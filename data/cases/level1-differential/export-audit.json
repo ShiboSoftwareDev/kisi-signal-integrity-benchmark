@@ -1,0 +1,70 @@
+{
+  "level": "level1-differential",
+  "reference_mapping": {
+    "TX": "U1",
+    "RX": "U2",
+    "RTERM": "R1"
+  },
+  "net_names": [
+    "",
+    "BUS_N",
+    "BUS_P",
+    "GND",
+    "UNCONNECTED_0",
+    "UNCONNECTED_1",
+    "UNCONNECTED_10",
+    "UNCONNECTED_11",
+    "UNCONNECTED_15",
+    "UNCONNECTED_19",
+    "UNCONNECTED_2",
+    "UNCONNECTED_21",
+    "UNCONNECTED_3",
+    "UNCONNECTED_7",
+    "UNCONNECTED_8",
+    "UNCONNECTED_9"
+  ],
+  "signal_net_names": [
+    "BUS_P",
+    "BUS_N"
+  ],
+  "source_port_to_net": {
+    "source_port_0": "UNCONNECTED_0",
+    "source_port_1": "UNCONNECTED_1",
+    "source_port_2": "UNCONNECTED_2",
+    "source_port_3": "UNCONNECTED_3",
+    "source_port_4": "GND",
+    "source_port_5": "BUS_P",
+    "source_port_6": "BUS_N",
+    "source_port_7": "UNCONNECTED_7",
+    "source_port_8": "UNCONNECTED_8",
+    "source_port_9": "UNCONNECTED_9",
+    "source_port_10": "UNCONNECTED_10",
+    "source_port_11": "UNCONNECTED_11",
+    "source_port_12": "GND",
+    "source_port_13": "BUS_P",
+    "source_port_14": "BUS_N",
+    "source_port_15": "UNCONNECTED_15",
+    "source_port_16": "BUS_P",
+    "source_port_17": "BUS_N",
+    "source_port_18": "GND",
+    "source_port_19": "UNCONNECTED_19",
+    "source_port_20": "GND",
+    "source_port_21": "UNCONNECTED_21",
+    "source_net_0": "GND"
+  },
+  "lengths_mm": {
+    "GND": 2.100000000000005,
+    "BUS_P": 57.412152285462405,
+    "BUS_N": 57.412152285462405
+  },
+  "segments": 18,
+  "pads": 18,
+  "vias": 2,
+  "pours": 1,
+  "original_nominal_board_mm": 1.6,
+  "actual_stack_mm": 1.49,
+  "coordinate_transform": "x_kicad=x-cx+width/2; y_kicad=height/2-(y-cy)",
+  "routes_modified": false,
+  "materials": "Exact generated stackup, plus the same declared mask and loss assumptions used by our extractor.",
+  "known_render_errors": []
+}

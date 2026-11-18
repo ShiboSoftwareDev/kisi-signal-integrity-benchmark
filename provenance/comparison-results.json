@@ -1,0 +1,260 @@
+{
+  "settings": {
+    "our_spatial_refinement": 4,
+    "bitrate_bps": 1000000000.0,
+    "prbs": 7,
+    "spui": 256,
+    "edge_10_90_ps": 100,
+    "source_ohm_per_leg": 50,
+    "pin_capacitance_pf_per_leg": 1,
+    "single_ended_rx_ohm": 50,
+    "differential_rx_bridge_ohm": 120,
+    "noise": 0,
+    "jitter": 0,
+    "equalization": false,
+    "two_channel_pattern_offset_ui": 31,
+    "roughness": "smooth",
+    "native_touchstone_used_for_kisi": true,
+    "native_ngspice_ac_used_for_ours": true,
+    "eye_processing": "Same FFT and metric implementation for both independent extracted channels; no output amplitude normalization."
+  },
+  "examples": {
+    "level1-differential": {
+      "level": "level1-differential",
+      "signal_names": [
+        "BUS_P-N"
+      ],
+      "our": [
+        {
+          "height_v": 1.0850897130861956,
+          "width_ui": 0.9992707281859907,
+          "best_phase_ui": 0.96484375,
+          "min_v": -0.016720789176948227,
+          "max_v": 1.1053678659283948,
+          "threshold_v": 0.544406038687987,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "kisi": [
+        {
+          "height_v": 1.0858376989256757,
+          "width_ui": 0.9991378133892113,
+          "best_phase_ui": 0.34765625,
+          "min_v": -0.02349554917426025,
+          "max_v": 1.1123484042262815,
+          "threshold_v": 0.544406038687987,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "loaded_gain_1ghz_db": {
+        "our": -0.274359151724365,
+        "kisi": -0.5381075091168507
+      },
+      "step_delay_ps": {
+        "our": 426.4323092988596,
+        "kisi": 402.9325692134449
+      },
+      "dc_gain_v_per_bit": {
+        "our": 1.0887774694034678,
+        "kisi": 1.08884668534848
+      },
+      "max_complex_loaded_difference_to_3ghz": 0.4024966767692368,
+      "max_complex_loaded_difference_to_10ghz": 0.8208879923088273,
+      "kisi_max_singular_value": 0.9999988287277874,
+      "notes": [
+        "Original 120ohm resistor remains at its physical nodes in our circuit. Kisi removes it from the channel and applies it as an RX differential termination; the common loading restores that 120ohm bridge, without duplicating it. This includes a placement approximation in Kisi."
+      ],
+      "render_diagnostics": [],
+      "kicad_shorts": []
+    },
+    "level1-single-ended": {
+      "level": "level1-single-ended",
+      "signal_names": [
+        "DATA"
+      ],
+      "our": [
+        {
+          "height_v": 0.9949936820505898,
+          "width_ui": 0.9986013056260674,
+          "best_phase_ui": 0.1328125,
+          "min_v": -0.0217111668220243,
+          "max_v": 1.0205168229310544,
+          "threshold_v": 0.4994664250006035,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "kisi": [
+        {
+          "height_v": 0.996384680242478,
+          "width_ui": 0.9972191053179813,
+          "best_phase_ui": 0.11328125,
+          "min_v": -0.021701014345730074,
+          "max_v": 1.0205760464772904,
+          "threshold_v": 0.4994664250006035,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "loaded_gain_1ghz_db": {
+        "our": -2.874827193806464,
+        "kisi": -3.019413451374536
+      },
+      "step_delay_ps": {
+        "our": 251.73888328631895,
+        "kisi": 251.14181593359734
+      },
+      "dc_gain_v_per_bit": {
+        "our": 0.998910003573866,
+        "kisi": 0.9989556964285481
+      },
+      "max_complex_loaded_difference_to_3ghz": 0.06808892414590154,
+      "max_complex_loaded_difference_to_10ghz": 0.2759192496678089,
+      "kisi_max_singular_value": 0.9999992223154435,
+      "notes": [],
+      "render_diagnostics": [],
+      "kicad_shorts": []
+    },
+    "level2-two-channels": {
+      "level": "level2-two-channels",
+      "signal_names": [
+        "D0",
+        "D1"
+      ],
+      "our": [
+        {
+          "height_v": 0.990267579129729,
+          "width_ui": 0.9885453207797639,
+          "best_phase_ui": 0.0859375,
+          "min_v": -0.027756542003951907,
+          "max_v": 1.0266595115627928,
+          "threshold_v": 0.4994662027562563,
+          "bits": 127,
+          "spui": 256
+        },
+        {
+          "height_v": 0.9893376175486636,
+          "width_ui": 0.9888561481362785,
+          "best_phase_ui": 0.0859375,
+          "min_v": -0.02991704436216908,
+          "max_v": 1.0290806813555966,
+          "threshold_v": 0.4994662027562563,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "kisi": [
+        {
+          "height_v": 0.996384680242478,
+          "width_ui": 0.9972191022882555,
+          "best_phase_ui": 0.11328125,
+          "min_v": -0.021701014345730074,
+          "max_v": 1.0205760464772904,
+          "threshold_v": 0.4994662027562563,
+          "bits": 127,
+          "spui": 256
+        },
+        {
+          "height_v": 0.9963846802424785,
+          "width_ui": 0.9972191022882555,
+          "best_phase_ui": 0.11328125,
+          "min_v": -0.02170101434573035,
+          "max_v": 1.0205760464772902,
+          "threshold_v": 0.4994662027562563,
+          "bits": 127,
+          "spui": 256
+        }
+      ],
+      "loaded_gain_1ghz_db": {
+        "our": -2.845274983240356,
+        "kisi": -3.019413451374536
+      },
+      "step_delay_ps": {
+        "our": 251.27981682348926,
+        "kisi": 251.14181593359734
+      },
+      "dc_gain_v_per_bit": {
+        "our": 0.9989091145964771,
+        "kisi": 0.9989556964285481
+      },
+      "max_complex_loaded_difference_to_3ghz": 0.08744717667357702,
+      "max_complex_loaded_difference_to_10ghz": 0.36610527359117817,
+      "kisi_max_singular_value": 0.9999992223154437,
+      "notes": [
+        "Kisi exports each lane independently; block-diagonal assembly deliberately contains no inter-lane coupling."
+      ],
+      "render_diagnostics": [
+        {
+          "type": "pcb_trace_error",
+          "pcb_trace_error_id": "pcb_trace_error_0",
+          "error_type": "pcb_trace_error",
+          "message": "PCB trace .TX1 > .GND to net.GND overlaps with pcb_smtpad \"TX1.Y\" (accidental contact)",
+          "pcb_trace_id": "source_net_1_mst0_0",
+          "center": {
+            "x": -14.525,
+            "y": -2.9486562500000035
+          },
+          "source_trace_id": "",
+          "pcb_component_ids": [
+            "pcb_component_1"
+          ],
+          "pcb_port_ids": [
+            "pcb_port_7",
+            "pcb_port_8"
+          ]
+        }
+      ],
+      "kicad_shorts": [
+        {
+          "description": "Items shorting two nets (nets D1 and GND)",
+          "items": [
+            {
+              "description": "Pad 4 [D1] of U2 on F.Cu",
+              "pos": {
+                "x": 6.1375,
+                "y": 12.95
+              },
+              "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+            },
+            {
+              "description": "Track [GND] on F.Cu, length 1.8000 mm",
+              "pos": {
+                "x": 3.8625,
+                "y": 12.95
+              },
+              "uuid": "41ece69a-96b0-5762-be98-a8e7825f9ade"
+            }
+          ],
+          "severity": "error",
+          "type": "shorting_items"
+        },
+        {
+          "description": "Items shorting two nets (nets D1 and GND)",
+          "items": [
+            {
+              "description": "Pad 4 [D1] of U2 on F.Cu",
+              "pos": {
+                "x": 6.1375,
+                "y": 12.95
+              },
+              "uuid": "20e423df-ff99-575a-8524-79f7e4562119"
+            },
+            {
+              "description": "Track [GND] on F.Cu, length 0.6000 mm",
+              "pos": {
+                "x": 5.662499,
+                "y": 12.9485
+              },
+              "uuid": "cb84dd6c-c315-5876-a481-8e03d0f16286"
+            }
+          ],
+          "severity": "error",
+          "type": "shorting_items"
+        }
+      ],
+      "our_cross_transfer_peak_v_per_bit": 0.09251801167506662
+    }
+  }
+}

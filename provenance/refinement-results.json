@@ -1,0 +1,82 @@
+{
+  "level1-single-ended": {
+    "coarse_refinement": 2,
+    "fine_refinement": 4,
+    "step_delay_ps": 251.73888328631895,
+    "delay_change_ps": -0.025695719703094255,
+    "max_complex_response_change_to_3ghz": 0.0005707813137840776,
+    "max_complex_response_change_to_10ghz": 0.048145274124370696,
+    "fine_metrics": [
+      {
+        "height_v": 0.9949936820505898,
+        "width_ui": 0.9986013089842061,
+        "best_phase_ui": 0.1328125,
+        "min_v": -0.0217111668220243,
+        "max_v": 1.0205168229310544,
+        "threshold_v": 0.4994666740587823,
+        "bits": 127,
+        "spui": 256
+      }
+    ],
+    "height_changes_v": [
+      -0.000153650746384848
+    ]
+  },
+  "level2-two-channels": {
+    "coarse_refinement": 2,
+    "fine_refinement": 4,
+    "step_delay_ps": 251.27981682348926,
+    "delay_change_ps": -0.012461721421260563,
+    "max_complex_response_change_to_3ghz": 0.0002864775812367114,
+    "max_complex_response_change_to_10ghz": 0.015269961226959842,
+    "fine_metrics": [
+      {
+        "height_v": 0.990267579129729,
+        "width_ui": 0.9885453129132316,
+        "best_phase_ui": 0.0859375,
+        "min_v": -0.027756542003951907,
+        "max_v": 1.0266595115627928,
+        "threshold_v": 0.49946655428403497,
+        "bits": 127,
+        "spui": 256
+      },
+      {
+        "height_v": 0.9893376175486636,
+        "width_ui": 0.9888561389552137,
+        "best_phase_ui": 0.0859375,
+        "min_v": -0.02991704436216908,
+        "max_v": 1.0290806813555966,
+        "threshold_v": 0.49946655428403497,
+        "bits": 127,
+        "spui": 256
+      }
+    ],
+    "height_changes_v": [
+      -6.794613635252578e-05,
+      -0.0001129866867802809
+    ]
+  },
+  "level1-differential": {
+    "coarse_refinement": 2,
+    "fine_refinement": 4,
+    "step_delay_ps": 426.4323092988596,
+    "delay_change_ps": 0.04601259017766779,
+    "max_complex_response_change_to_3ghz": 0.0017937470304606891,
+    "max_complex_response_change_to_10ghz": 0.029917886029195793,
+    "fine_metrics": [
+      {
+        "height_v": 1.0850897130861956,
+        "width_ui": 0.9992700515192894,
+        "best_phase_ui": 0.96484375,
+        "min_v": -0.016720789176948227,
+        "max_v": 1.1053678659283948,
+        "threshold_v": 0.544407976545605,
+        "bits": 127,
+        "spui": 256
+      }
+    ],
+    "height_changes_v": [
+      1.2945792191798589e-05
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+D0: [ladder, 1044 elements] ngspice vs kisi: |dS21| 0.005 dB to 1.5xNyq, 0.44 dB to fmax; max|dS| 0.153 (kisi's own evaluation 0.153); largest singular value: kisi 0.999999, ngspice 0.999885, sweep to 48 GHz 1.000000; step: max diff 2.94 %, t50 180.1 / 175.5 ps
+  LTspice files: consistent (6 subcircuits, 39 instances checked)
+D0: [compact, 438 elements] ngspice vs kisi: |dS21| 0.005 dB to 1.5xNyq, 0.45 dB to fmax; max|dS| 0.175 (kisi's own evaluation 0.175); largest singular value: kisi 0.999999, ngspice 0.999885, sweep to 48 GHz 1.000000; step: max diff 2.93 %, t50 180.1 / 175.5 ps
+  LTspice files: consistent (9 subcircuits, 17 instances checked)
+D0: compact vs ladder (ngspice): 438 vs 1044 elements; |dS21| 0.0005 dB to 1.5xNyq, 0.112 dB to fmax; max|dS| 0.0001 / 0.0236; step 0.23 %; PRBS levels 2.31 mV (0.23 % of 1001 mV), t50 7253.2 / 7253.2 ps; ngspice bench 4.0 / 0.9 s
+

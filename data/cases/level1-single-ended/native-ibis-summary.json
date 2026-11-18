@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "qualification": "candidate-unqualified",
+  "bits": 16,
+  "bit_rate_bps": 20000000,
+  "duration_s": 8e-7,
+  "samples": 29706,
+  "seconds": 0.921490084,
+  "pcb_records_unchanged": true,
+  "pcb_sha256": "b4a68944085dd0e88b8b3144562c5b09302251b17ec1f9600b3c9f0b35201cfb",
+  "probes": [
+    {
+      "name": "DATA_0",
+      "min_v": -0.8828782991630686,
+      "max_v": 4.883916745482843
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+* kisi 0.3.3: S-parameters of the lane subcircuit, reference 50.00 ohm per port
+* lane BUS_P
+* port 1 = ap = P BUS_P at U1.6 (transmitter end)
+* port 2 = an = N BUS_N at U1.7 (transmitter end)
+* port 3 = bp = P BUS_P at U2.6 (receiver end)
+* port 4 = bn = N BUS_N at U2.7 (receiver end)
+* stackup: 2 copper layers, 1.49 mm, er and tand at 1 GHz; from board file (layer by layer in the README)
+*   layers (um): F.Cu 30 / 1430 er 4.42 tand 0.02 / B.Cu 30
+.include "BUS_P.lib"
+
+VP1 ap 0 dc 0 ac 1 portnum 1 z0 5.000000e1
+VP2 an 0 dc 0 ac 1 portnum 2 z0 5.000000e1
+VP3 bp 0 dc 0 ac 1 portnum 3 z0 5.000000e1
+VP4 bn 0 dc 0 ac 1 portnum 4 z0 5.000000e1
+XLANE ap an bp bn 0 BUS_P_lane
+
+.sp dec 25 1e3 5.000000e+10
+.control
+run
+wrdata passivity_ngspice.txt S_1_1 S_1_2 S_1_3 S_1_4 S_2_1 S_2_2 S_2_3 S_2_4 S_3_1 S_3_2 S_3_3 S_3_4 S_4_1 S_4_2 S_4_3 S_4_4
+.endc
+.end

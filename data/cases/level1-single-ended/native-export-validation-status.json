@@ -1,0 +1,24 @@
+{
+  "exit_code": 0,
+  "command": [
+    "python",
+    ".cache/upstream/kisi/validation/channel_export/compare.py",
+    "native/kisi-cli",
+    "data/cases/level1-single-ended/board.kicad_pcb",
+    "--out",
+    "data/cases/level1-single-ended/native-export-validation",
+    "--lane",
+    "DATA",
+    "--models",
+    "ladder,compact",
+    "--fmax",
+    "10",
+    "--passivity",
+    "--transient",
+    "--strict",
+    "--report",
+    "data/cases/level1-single-ended/native-export-validation.md"
+  ],
+  "kisi_roughness": "smooth",
+  "strict": true
+}

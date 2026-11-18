@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "qualification": "candidate-unqualified",
+  "bits": 16,
+  "bit_rate_bps": 250000,
+  "duration_s": 0.000064,
+  "samples": 13878,
+  "seconds": 1.3171208340000002,
+  "pcb_records_unchanged": true,
+  "pcb_sha256": "8990881e39fb07493d7f007a4b52eb2662d9e4d16deead1ce427ab3c971231a5",
+  "probes": [
+    {
+      "name": "BUS_0",
+      "min_v": -2.2294932212964866,
+      "max_v": 2.229484282183462
+    },
+    {
+      "name": "BUS_0_P",
+      "min_v": 0.8718578007134744,
+      "max_v": 3.101344800581204
+    },
+    {
+      "name": "BUS_0_N",
+      "min_v": 0.871860473095738,
+      "max_v": 3.101351051526846
+    }
+  ]
+}

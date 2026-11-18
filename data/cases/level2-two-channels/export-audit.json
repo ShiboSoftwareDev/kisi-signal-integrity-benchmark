@@ -1,0 +1,88 @@
+{
+  "level": "level2-two-channels",
+  "reference_mapping": {
+    "TX0": "U1",
+    "TX1": "U2",
+    "RX0": "U3",
+    "RX1": "U4"
+  },
+  "net_names": [
+    "",
+    "D0",
+    "D1",
+    "GND",
+    "UNCONNECTED_0",
+    "UNCONNECTED_1",
+    "UNCONNECTED_10",
+    "UNCONNECTED_13",
+    "UNCONNECTED_15",
+    "UNCONNECTED_18",
+    "UNCONNECTED_5",
+    "UNCONNECTED_6",
+    "VCC"
+  ],
+  "signal_net_names": [
+    "D0",
+    "D1"
+  ],
+  "source_port_to_net": {
+    "source_port_0": "UNCONNECTED_0",
+    "source_port_1": "UNCONNECTED_1",
+    "source_port_2": "GND",
+    "source_port_3": "D0",
+    "source_port_4": "VCC",
+    "source_port_5": "UNCONNECTED_5",
+    "source_port_6": "UNCONNECTED_6",
+    "source_port_7": "GND",
+    "source_port_8": "D1",
+    "source_port_9": "VCC",
+    "source_port_10": "UNCONNECTED_10",
+    "source_port_11": "D0",
+    "source_port_12": "GND",
+    "source_port_13": "UNCONNECTED_13",
+    "source_port_14": "VCC",
+    "source_port_15": "UNCONNECTED_15",
+    "source_port_16": "D1",
+    "source_port_17": "GND",
+    "source_port_18": "UNCONNECTED_18",
+    "source_port_19": "VCC",
+    "source_net_0": "VCC",
+    "source_net_1": "GND"
+  },
+  "lengths_mm": {
+    "GND": 6.728207315114489,
+    "VCC": 39.79115643132645,
+    "D1": 28.118502884254436,
+    "D0": 28.118502884254436
+  },
+  "segments": 32,
+  "pads": 20,
+  "vias": 4,
+  "pours": 1,
+  "original_nominal_board_mm": 1.6,
+  "actual_stack_mm": 1.49,
+  "coordinate_transform": "x_kicad=x-cx+width/2; y_kicad=height/2-(y-cy)",
+  "routes_modified": false,
+  "materials": "Exact generated stackup, plus the same declared mask and loss assumptions used by our extractor.",
+  "known_render_errors": [
+    {
+      "type": "pcb_trace_error",
+      "pcb_trace_error_id": "pcb_trace_error_0",
+      "error_type": "pcb_trace_error",
+      "message": "PCB trace .TX1 > .GND to net.GND overlaps with pcb_smtpad \"TX1.Y\" (accidental contact)",
+      "pcb_trace_id": "source_net_1_mst0_0",
+      "center": {
+        "x": -14.525,
+        "y": -2.9486562500000035
+      },
+      "source_trace_id": "",
+      "pcb_component_ids": [
+        "pcb_component_1"
+      ],
+      "pcb_port_ids": [
+        "pcb_port_7",
+        "pcb_port_8"
+      ]
+    }
+  ]
+}

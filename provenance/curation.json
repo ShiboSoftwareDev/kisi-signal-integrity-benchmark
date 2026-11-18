@@ -1,0 +1,2414 @@
+{
+  "source_bundle_sha256": "0393c0fc360e4f66b5fcbac5cdaf6797a11d90c5cb76dd56e555db1ea400970c",
+  "policy": "Numerical native channels and arrays retained. Host paths sanitized in textual evidence. Vendor-containing intermediates and duplicate AC decks omitted; adapters reconstruct the decks. No measurement is rescaled or repaired. KiCad GUI lock files and local project-view state omitted.",
+  "files": [
+    {
+      "path": "data/cases/level1-single-ended/kisi-crosstalk.json",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-crosstalk.json",
+      "source_sha256": "7940c3bcad045c481e0bd171cc15ad486032cc008acd0f9bdb4e41d54b18a7ea",
+      "published_sha256": "c985c8e75b4a3a1c8d0c7cfff6a6514ce6eea79c24774e94c46b1ea6a27ce9b2",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-single-ended/our-channel.s2p",
+      "source": "work/kisi-three/results/level1-single-ended/our-channel.s2p",
+      "source_sha256": "a87c953b637ca571c5f0201f505fbabc86ad9f2b6373f571b0c2618eea05a170",
+      "published_sha256": "a87c953b637ca571c5f0201f505fbabc86ad9f2b6373f571b0c2618eea05a170",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi-config-check.json",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-config-check.json",
+      "source_sha256": "b5f0b320069c0c208a12f5e56b215167b7d16894f9ec50bef85067447fcd63ab",
+      "published_sha256": "8e09f4c8ee5460cd976027300fef94c6ac51a29f53b7cd49d90ad0ff74fde2d6",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi-config-check.log",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-config-check.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-ibis-summary.json",
+      "source": "work/kisi-three/results/level1-single-ended/native-ibis-summary.json",
+      "source_sha256": "6c12ababc9265731b1746a2b2e347b0c7d352cf012539bbf8b632e35a2013cb4",
+      "published_sha256": "6c12ababc9265731b1746a2b2e347b0c7d352cf012539bbf8b632e35a2013cb4",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/comparison-r2.json",
+      "source": "work/kisi-three/results/level1-single-ended/comparison-r2.json",
+      "source_sha256": "2eb606cf80c76a7ac1ab1a4e98f6f0f93be609505783f1847aa903c14444c99c",
+      "published_sha256": "2eb606cf80c76a7ac1ab1a4e98f6f0f93be609505783f1847aa903c14444c99c",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/render-diagnostics.json",
+      "source": "work/kisi-three/results/level1-single-ended/render-diagnostics.json",
+      "source_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "published_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi-dc-DATA.json",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-dc-DATA.json",
+      "source_sha256": "363d8ab0ddf11c3fc957c3c9c175886a329556491c7d04aa5db87397c9a1349f",
+      "published_sha256": "2e46433bf773882374a6c5752d093c3cf9c6114eb6263fd0b670596cab33a8a9",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-single-ended/our-channel.lib",
+      "source": "work/kisi-three/results/level1-single-ended/our-channel.lib",
+      "source_sha256": "44aff30f5f64bfaf8855abd89e4af5b0d7c0a8f2e7e42808fdd8209deea556c0",
+      "published_sha256": "44aff30f5f64bfaf8855abd89e4af5b0d7c0a8f2e7e42808fdd8209deea556c0",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/board.kicad_pro",
+      "source": "work/kisi-three/results/level1-single-ended/board.kicad_pro",
+      "source_sha256": "800a33ca01f24744a60b1713075fc0b566f997bf5663612ebdc523ef2bab734a",
+      "published_sha256": "800a33ca01f24744a60b1713075fc0b566f997bf5663612ebdc523ef2bab734a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-ibis-capture.json",
+      "source": "work/kisi-three/results/level1-single-ended/native-ibis-capture.json",
+      "source_sha256": "b8e6b57a083aeba20016c71b9f013fd235507ccd9450919694c65144f4798ede",
+      "published_sha256": "b8e6b57a083aeba20016c71b9f013fd235507ccd9450919694c65144f4798ede",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/metadata.json",
+      "source": "work/kisi-three/results/level1-single-ended/metadata.json",
+      "source_sha256": "61564955a8cb3bfc70cb79f5beaec97b1ba674c73e283f55fe7bac1bead11176",
+      "published_sha256": "61564955a8cb3bfc70cb79f5beaec97b1ba674c73e283f55fe7bac1bead11176",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/our-ac-summary.json",
+      "source": "work/kisi-three/results/level1-single-ended/our-ac-summary.json",
+      "source_sha256": "97aeebd3eca6533e84dca5aa47c28d02ac0df4a3278c45e39a64d3f85b06cc26",
+      "published_sha256": "97aeebd3eca6533e84dca5aa47c28d02ac0df4a3278c45e39a64d3f85b06cc26",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi-crosstalk.log",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-crosstalk.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/comparison.npz",
+      "source": "work/kisi-three/results/level1-single-ended/comparison.npz",
+      "source_sha256": "7ea177ce95c6f089153b672813689ca7d02b6430ef725b3f1434618844b3f265",
+      "published_sha256": "7ea177ce95c6f089153b672813689ca7d02b6430ef725b3f1434618844b3f265",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi-interfaces.json",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-interfaces.json",
+      "source_sha256": "b41b8eaaa2c8c2a758cb5cb248ed22532bd701572b69bc5df346d293e2cc0bc8",
+      "published_sha256": "953020f742788273e63713a1744ffd4aa40c4e4bd831d8d3f50c044d8d993380",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-single-ended/comparison.json",
+      "source": "work/kisi-three/results/level1-single-ended/comparison.json",
+      "source_sha256": "2a8fa804ea4bf2846e64d5b037535a6aead6ab9354ce2b0f3add499c2f394c4b",
+      "published_sha256": "2a8fa804ea4bf2846e64d5b037535a6aead6ab9354ce2b0f3add499c2f394c4b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi-check.json",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-check.json",
+      "source_sha256": "ae47250b8aaab73129a4581755cefe19996dcac144824f3e40be5876cdc2dc21",
+      "published_sha256": "f3154d65f981c62c93dc63c10a6697547c894598e6a469a3fb483680a003cd09",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kicad-drc.log",
+      "source": "work/kisi-three/results/level1-single-ended/kicad-drc.log",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "published_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/our-channel.npz",
+      "source": "work/kisi-three/results/level1-single-ended/our-channel.npz",
+      "source_sha256": "fd2fea26257f850e4c02a88305ddf47dcd7ab9ce04374db1092f55c58590e5d5",
+      "published_sha256": "fd2fea26257f850e4c02a88305ddf47dcd7ab9ce04374db1092f55c58590e5d5",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kicad-drc.json",
+      "source": "work/kisi-three/results/level1-single-ended/kicad-drc.json",
+      "source_sha256": "6d6b46c1cf3ab7770b725db37695c0245644307ade18f0e20449ec79473dc728",
+      "published_sha256": "6d6b46c1cf3ab7770b725db37695c0245644307ade18f0e20449ec79473dc728",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/export-audit.json",
+      "source": "work/kisi-three/results/level1-single-ended/export-audit.json",
+      "source_sha256": "90b72b5749851e7ad6aa6062ebc109aa2b5ad7b9beb73392b387ad9220caab96",
+      "published_sha256": "90b72b5749851e7ad6aa6062ebc109aa2b5ad7b9beb73392b387ad9220caab96",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation-status.json",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation-status.json",
+      "source_sha256": "7c01ea33da3956aa23ed496a0ad70251ab0b2b385d03727479edc94ff5b5b730",
+      "published_sha256": "4b19b21066210aaff7403b1f8331f4201901be084854c975a12b59a8426ed22a",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi-check.log",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-check.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi-export-DATA.log",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-export-DATA.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/board.png",
+      "source": "work/kisi-three/results/level1-single-ended/board.png",
+      "source_sha256": "68ebe440f9d95365caad9aebfe55ebba9db23e7bdf764394fb5130cbf93d900b",
+      "published_sha256": "68ebe440f9d95365caad9aebfe55ebba9db23e7bdf764394fb5130cbf93d900b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi-export-DATA.json",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-export-DATA.json",
+      "source_sha256": "7001e60837d505da1b49923d2769ca035fd9cbe3cec982436d96bf7df21e0564",
+      "published_sha256": "1d70871f00f15848902fc2be46dc34520ee33bbb55abb85d7e9f1da498929050",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-single-ended/board.svg",
+      "source": "work/kisi-three/results/level1-single-ended/board.svg",
+      "source_sha256": "824a01418d598d12fad47b1727ea0b0783cc891314ba56210053063cfb4b7f3e",
+      "published_sha256": "824a01418d598d12fad47b1727ea0b0783cc891314ba56210053063cfb4b7f3e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation.md",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation.md",
+      "source_sha256": "baba9731dbf649ae7e06880a1909fd399edd9dc5d2d4c4836b6f33e6e204b788",
+      "published_sha256": "baba9731dbf649ae7e06880a1909fd399edd9dc5d2d4c4836b6f33e6e204b788",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/circuit.json",
+      "source": "work/kisi-three/results/level1-single-ended/circuit.json",
+      "source_sha256": "d66c60c2cf04771ba9f0d76cbdb6dd7199c3df3e9608148189baf9384ff3680f",
+      "published_sha256": "d66c60c2cf04771ba9f0d76cbdb6dd7199c3df3e9608148189baf9384ff3680f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi-interfaces.log",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-interfaces.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation.log",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation.log",
+      "source_sha256": "0072792337feb58f364c1fc6410b7fe85c368837394612544ba4b6badf4ab049",
+      "published_sha256": "0072792337feb58f364c1fc6410b7fe85c368837394612544ba4b6badf4ab049",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/board.kicad_pcb",
+      "source": "work/kisi-three/results/level1-single-ended/board.kicad_pcb",
+      "source_sha256": "9a4edd179812a20544884b60e8dafc4ed04dece292d3cf81a56d0a654c996da4",
+      "published_sha256": "9a4edd179812a20544884b60e8dafc4ed04dece292d3cf81a56d0a654c996da4",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/board.kisi.json",
+      "source": "work/kisi-three/results/level1-single-ended/board.kisi.json",
+      "source_sha256": "897c9aa8e8a4ab54a327bfd8daf8430f32b0f65d31f9282e0d088da99eab2296",
+      "published_sha256": "897c9aa8e8a4ab54a327bfd8daf8430f32b0f65d31f9282e0d088da99eab2296",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/results.json",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/results.json",
+      "source_sha256": "fac10e03acfe1d77999d5ef6af08589ec7497e67f00867f6ad0fe77758764fce",
+      "published_sha256": "1a183fb5c1bc42f63d0cd79b9e462cf17fc0bbe58b6e138801b59b8249db9b46",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-single-ended/ac-0/response.tsv",
+      "source": "work/kisi-three/results/level1-single-ended/ac-0/response.tsv",
+      "source_sha256": "5b274c32293023eb8b59e6adb1e6c7a090d9af656f8a45694a457766b319fb79",
+      "published_sha256": "5b274c32293023eb8b59e6adb1e6c7a090d9af656f8a45694a457766b319fb79",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/ac-0/solver.log",
+      "source": "work/kisi-three/results/level1-single-ended/ac-0/solver.log",
+      "source_sha256": "e0122c7cabcd2bf158224380d61ee201cfc74c96a3686058fddfeeb5421ddddf",
+      "published_sha256": "e0122c7cabcd2bf158224380d61ee201cfc74c96a3686058fddfeeb5421ddddf",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/ac-1/response.tsv",
+      "source": "work/kisi-three/results/level1-single-ended/ac-1/response.tsv",
+      "source_sha256": "444f1d3bb582ab8887b49a4c3c44a1dc87b160a80183fb8c0aa54f658eb302da",
+      "published_sha256": "444f1d3bb582ab8887b49a4c3c44a1dc87b160a80183fb8c0aa54f658eb302da",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/ac-1/solver.log",
+      "source": "work/kisi-three/results/level1-single-ended/ac-1/solver.log",
+      "source_sha256": "e0122c7cabcd2bf158224380d61ee201cfc74c96a3686058fddfeeb5421ddddf",
+      "published_sha256": "e0122c7cabcd2bf158224380d61ee201cfc74c96a3686058fddfeeb5421ddddf",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/refinement4/our-channel.s2p",
+      "source": "work/kisi-three/results/level1-single-ended/refinement4/our-channel.s2p",
+      "source_sha256": "723a8f2d59990a71d12354497912a019948fd5e6684c1fe7a3f4f89aa5bb9ce9",
+      "published_sha256": "723a8f2d59990a71d12354497912a019948fd5e6684c1fe7a3f4f89aa5bb9ce9",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/refinement4/our-channel.lib",
+      "source": "work/kisi-three/results/level1-single-ended/refinement4/our-channel.lib",
+      "source_sha256": "0d4353965d501be9b7b7f014affc604473a44a15cb6159aae199ece35406a81e",
+      "published_sha256": "0d4353965d501be9b7b7f014affc604473a44a15cb6159aae199ece35406a81e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/refinement4/metadata.json",
+      "source": "work/kisi-three/results/level1-single-ended/refinement4/metadata.json",
+      "source_sha256": "adba8e557ed66cdc642c98d8491e56e4038faf3ee85b27994001f441abf3259a",
+      "published_sha256": "adba8e557ed66cdc642c98d8491e56e4038faf3ee85b27994001f441abf3259a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/refinement4/our-ac-summary.json",
+      "source": "work/kisi-three/results/level1-single-ended/refinement4/our-ac-summary.json",
+      "source_sha256": "58aaada4282ffd6e7bb109069bdae7df99d80d3e8fbb3e4c976a4a7bbd353185",
+      "published_sha256": "58aaada4282ffd6e7bb109069bdae7df99d80d3e8fbb3e4c976a4a7bbd353185",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/refinement4/our-channel.npz",
+      "source": "work/kisi-three/results/level1-single-ended/refinement4/our-channel.npz",
+      "source_sha256": "50674e1f31537bbc61abaebc14aa53df5f6ec23ed240eb60af72bf0603c22168",
+      "published_sha256": "50674e1f31537bbc61abaebc14aa53df5f6ec23ed240eb60af72bf0603c22168",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi/DATA/sparam_ngspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/kisi/DATA/sparam_ngspice.cir",
+      "source_sha256": "80eb01437bb25d6afa9395a91f14b88b389e51f874e9eac242971bd10aea6108",
+      "published_sha256": "80eb01437bb25d6afa9395a91f14b88b389e51f874e9eac242971bd10aea6108",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi/DATA/DATA.s2p",
+      "source": "work/kisi-three/results/level1-single-ended/kisi/DATA/DATA.s2p",
+      "source_sha256": "6e270acb4d1377ca17a9b0cb24747bfe8d0b28fee40687b88c8f84e382edf60d",
+      "published_sha256": "6e270acb4d1377ca17a9b0cb24747bfe8d0b28fee40687b88c8f84e382edf60d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi/DATA/DATA.lib",
+      "source": "work/kisi-three/results/level1-single-ended/kisi/DATA/DATA.lib",
+      "source_sha256": "ec2e82d20b8afd3ca1fd1e607ebb0490dd233244cbcdea4a046818b2218ebeec",
+      "published_sha256": "ec2e82d20b8afd3ca1fd1e607ebb0490dd233244cbcdea4a046818b2218ebeec",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi/DATA/README.md",
+      "source": "work/kisi-three/results/level1-single-ended/kisi/DATA/README.md",
+      "source_sha256": "c472ce57cbc14068bcc0d5d14047532521927260464a4165db4d8e82a101caca",
+      "published_sha256": "c472ce57cbc14068bcc0d5d14047532521927260464a4165db4d8e82a101caca",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi/DATA/bench_ngspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/kisi/DATA/bench_ngspice.cir",
+      "source_sha256": "b08c79b7c8074167b635a8a20715dac995fec91d419fc95dab58d341e802c915",
+      "published_sha256": "b08c79b7c8074167b635a8a20715dac995fec91d419fc95dab58d341e802c915",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi-dc/DATA/DATA.s2p",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-dc/DATA/DATA.s2p",
+      "source_sha256": "697c94636d36a40649f04f36061e1e6624889928b56f1866faa2bcddd107392b",
+      "published_sha256": "697c94636d36a40649f04f36061e1e6624889928b56f1866faa2bcddd107392b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/kisi-dc/DATA/README.md",
+      "source": "work/kisi-three/results/level1-single-ended/kisi-dc/DATA/README.md",
+      "source_sha256": "a5797b07e772652b97dc8cae3770b39cf942513c7d56e293a08d2b05bcf39004",
+      "published_sha256": "a5797b07e772652b97dc8cae3770b39cf942513c7d56e293a08d2b05bcf39004",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/bench_xyce.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/bench_xyce.cir",
+      "source_sha256": "9431a7d8dd5e12f803abd45e8f306d3aa579b3ead516a8bfa48e17a4b9d7a9c4",
+      "published_sha256": "9431a7d8dd5e12f803abd45e8f306d3aa579b3ead516a8bfa48e17a4b9d7a9c4",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/sparam_ngspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/sparam_ngspice.cir",
+      "source_sha256": "6f8ad664006f3f8e2e28168607c54b0830dda73efd3c6cc90d1114abc7d7603d",
+      "published_sha256": "6f8ad664006f3f8e2e28168607c54b0830dda73efd3c6cc90d1114abc7d7603d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/DATA.kicad_sch",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/DATA.kicad_sch",
+      "source_sha256": "bf27d1484f7e421c741f2c4b696fe514b9c940136c3aa00ca08495f05856e622",
+      "published_sha256": "bf27d1484f7e421c741f2c4b696fe514b9c940136c3aa00ca08495f05856e622",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/export.json",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/export.json",
+      "source_sha256": "8c520ee70dceb148b44672315202380eec88f6071da4518be8f5a1e1de146781",
+      "published_sha256": "418fc0f85bc7bcfcd388bf8cab3184ee49261b173430051e88d7ea6f8aa48679",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/bench_ngspice.txt",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/bench_ngspice.txt",
+      "source_sha256": "5456aad251314d85634a7b297cba6a58e7fc31391c034b183dcc17217149f0be",
+      "published_sha256": "5456aad251314d85634a7b297cba6a58e7fc31391c034b183dcc17217149f0be",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/bench_ltspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/bench_ltspice.cir",
+      "source_sha256": "8cd797d43a99f9fb5b079ca35e0686fc66df58d64ed9c3ba91d5d07b8583bcda",
+      "published_sha256": "8cd797d43a99f9fb5b079ca35e0686fc66df58d64ed9c3ba91d5d07b8583bcda",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/DATA.s2p",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/DATA.s2p",
+      "source_sha256": "dbf360c946a25e1cb2be40999b4cf63e7ef26e8fb9b60380f653173f0b9fedab",
+      "published_sha256": "dbf360c946a25e1cb2be40999b4cf63e7ef26e8fb9b60380f653173f0b9fedab",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/step_ngspice.txt",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/step_ngspice.txt",
+      "source_sha256": "f1f7442a3081ade6cb60eb06afead176f84fba21e6253c962c5be8b2b1084068",
+      "published_sha256": "f1f7442a3081ade6cb60eb06afead176f84fba21e6253c962c5be8b2b1084068",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/passivity_ngspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/passivity_ngspice.cir",
+      "source_sha256": "da24d6d290a22261a04bad08aceccb7dc84b91064c618a3b8bfa2571bf437eb6",
+      "published_sha256": "da24d6d290a22261a04bad08aceccb7dc84b91064c618a3b8bfa2571bf437eb6",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/DATA.lib",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/DATA.lib",
+      "source_sha256": "acc297997b220c15b15f742fe0571664e4e49484a91f62106351c7b5e47bcb80",
+      "published_sha256": "acc297997b220c15b15f742fe0571664e4e49484a91f62106351c7b5e47bcb80",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/DATA.kicad_pro",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/DATA.kicad_pro",
+      "source_sha256": "a051b2e4181acf57e56b0117fd1d917b7b1b08e7a58305aecdfcfbd3c7732416",
+      "published_sha256": "a051b2e4181acf57e56b0117fd1d917b7b1b08e7a58305aecdfcfbd3c7732416",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/DATA_kicad.lib",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/DATA_kicad.lib",
+      "source_sha256": "0f8872af215e96ab2ab791a4c2144e29aff7b220fe45a8d07f1e3195cbb01a2d",
+      "published_sha256": "0f8872af215e96ab2ab791a4c2144e29aff7b220fe45a8d07f1e3195cbb01a2d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/README.md",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/README.md",
+      "source_sha256": "0ad18c94a4fa547e0b7e6a00a0ac230e28e71fc7e1d83117be598278c25586f7",
+      "published_sha256": "0ad18c94a4fa547e0b7e6a00a0ac230e28e71fc7e1d83117be598278c25586f7",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/step_ngspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/step_ngspice.cir",
+      "source_sha256": "6b63f6abd2a1aa1c7f0c9172277ece07b93adc51263908ad87143f279cf2ebe7",
+      "published_sha256": "6b63f6abd2a1aa1c7f0c9172277ece07b93adc51263908ad87143f279cf2ebe7",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/passivity_ngspice.txt",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/passivity_ngspice.txt",
+      "source_sha256": "22b726d9e312b0bc5c32f370d6a9495b5564b8f9faa9abdb4745a0c691aeaee3",
+      "published_sha256": "22b726d9e312b0bc5c32f370d6a9495b5564b8f9faa9abdb4745a0c691aeaee3",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/sparam_xyce.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/sparam_xyce.cir",
+      "source_sha256": "d4b5a2c1963698813a2d617c7ef9fbfff25169df9b88ff41f6f559cb232211f8",
+      "published_sha256": "d4b5a2c1963698813a2d617c7ef9fbfff25169df9b88ff41f6f559cb232211f8",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/sym-lib-table",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/sym-lib-table",
+      "source_sha256": "57f69d4278ad758f64183cf64866c0f4ae80081ce6568670bcef9c82af7d637e",
+      "published_sha256": "57f69d4278ad758f64183cf64866c0f4ae80081ce6568670bcef9c82af7d637e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/sparam_ltspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/sparam_ltspice.cir",
+      "source_sha256": "1651293fba9a358b94ec942761f603e2821ca24d10691d50251cb6aaa5b4a027",
+      "published_sha256": "1651293fba9a358b94ec942761f603e2821ca24d10691d50251cb6aaa5b4a027",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/sparam_ngspice.txt",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/sparam_ngspice.txt",
+      "source_sha256": "28a2f896a81c88aa47e323d911d7b7dd357c362578d47f8f77b090025e67c4e8",
+      "published_sha256": "28a2f896a81c88aa47e323d911d7b7dd357c362578d47f8f77b090025e67c4e8",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/DATA_ltspice.lib",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/DATA_ltspice.lib",
+      "source_sha256": "53ec1a872f83e3908f805a6f7ecdb12dc20b260826798a0964ffc39deac24325",
+      "published_sha256": "53ec1a872f83e3908f805a6f7ecdb12dc20b260826798a0964ffc39deac24325",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/kisi.kicad_sym",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/kisi.kicad_sym",
+      "source_sha256": "8c0858db87c6fd80c46a7ec120458f82236793f387b8212d4352745eed32724f",
+      "published_sha256": "8c0858db87c6fd80c46a7ec120458f82236793f387b8212d4352745eed32724f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_compact/bench_ngspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_compact/bench_ngspice.cir",
+      "source_sha256": "b08c79b7c8074167b635a8a20715dac995fec91d419fc95dab58d341e802c915",
+      "published_sha256": "b08c79b7c8074167b635a8a20715dac995fec91d419fc95dab58d341e802c915",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/bench_xyce.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/bench_xyce.cir",
+      "source_sha256": "9431a7d8dd5e12f803abd45e8f306d3aa579b3ead516a8bfa48e17a4b9d7a9c4",
+      "published_sha256": "9431a7d8dd5e12f803abd45e8f306d3aa579b3ead516a8bfa48e17a4b9d7a9c4",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/sparam_ngspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/sparam_ngspice.cir",
+      "source_sha256": "6f8ad664006f3f8e2e28168607c54b0830dda73efd3c6cc90d1114abc7d7603d",
+      "published_sha256": "6f8ad664006f3f8e2e28168607c54b0830dda73efd3c6cc90d1114abc7d7603d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/DATA.kicad_sch",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/DATA.kicad_sch",
+      "source_sha256": "bf27d1484f7e421c741f2c4b696fe514b9c940136c3aa00ca08495f05856e622",
+      "published_sha256": "bf27d1484f7e421c741f2c4b696fe514b9c940136c3aa00ca08495f05856e622",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/export.json",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/export.json",
+      "source_sha256": "c502111d527dcb0df6ecd4cf82b6d0069af4d4a9fe646d1c7e7f312b4ae84f54",
+      "published_sha256": "c3b593277cf4bccf752ac346802a4cca5905e472e42e048a935b65c78fbdb1d9",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/bench_ngspice.txt",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/bench_ngspice.txt",
+      "source_sha256": "2f2195213a1fd79f13fd37ece39ee46397d7a315ace2241114d8ba480c07f959",
+      "published_sha256": "2f2195213a1fd79f13fd37ece39ee46397d7a315ace2241114d8ba480c07f959",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/bench_ltspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/bench_ltspice.cir",
+      "source_sha256": "8cd797d43a99f9fb5b079ca35e0686fc66df58d64ed9c3ba91d5d07b8583bcda",
+      "published_sha256": "8cd797d43a99f9fb5b079ca35e0686fc66df58d64ed9c3ba91d5d07b8583bcda",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/DATA.s2p",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/DATA.s2p",
+      "source_sha256": "dbf360c946a25e1cb2be40999b4cf63e7ef26e8fb9b60380f653173f0b9fedab",
+      "published_sha256": "dbf360c946a25e1cb2be40999b4cf63e7ef26e8fb9b60380f653173f0b9fedab",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/step_ngspice.txt",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/step_ngspice.txt",
+      "source_sha256": "e40a21d66fa52e89f0ef191b43db607c83f3dea0ea9d7ccb5070cce388a2d7d7",
+      "published_sha256": "e40a21d66fa52e89f0ef191b43db607c83f3dea0ea9d7ccb5070cce388a2d7d7",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/passivity_ngspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/passivity_ngspice.cir",
+      "source_sha256": "da24d6d290a22261a04bad08aceccb7dc84b91064c618a3b8bfa2571bf437eb6",
+      "published_sha256": "da24d6d290a22261a04bad08aceccb7dc84b91064c618a3b8bfa2571bf437eb6",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/DATA.lib",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/DATA.lib",
+      "source_sha256": "f0170b7e4cd81cf3a6faa687a92fd20b07bc10755da9c98d521226774d32147a",
+      "published_sha256": "f0170b7e4cd81cf3a6faa687a92fd20b07bc10755da9c98d521226774d32147a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/DATA.kicad_pro",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/DATA.kicad_pro",
+      "source_sha256": "a051b2e4181acf57e56b0117fd1d917b7b1b08e7a58305aecdfcfbd3c7732416",
+      "published_sha256": "a051b2e4181acf57e56b0117fd1d917b7b1b08e7a58305aecdfcfbd3c7732416",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/DATA_kicad.lib",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/DATA_kicad.lib",
+      "source_sha256": "0f8872af215e96ab2ab791a4c2144e29aff7b220fe45a8d07f1e3195cbb01a2d",
+      "published_sha256": "0f8872af215e96ab2ab791a4c2144e29aff7b220fe45a8d07f1e3195cbb01a2d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/README.md",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/README.md",
+      "source_sha256": "617e783b0540a35cc611ad5bd3430ecd9b5a9fc93b08c0828bfc736f94417d1e",
+      "published_sha256": "617e783b0540a35cc611ad5bd3430ecd9b5a9fc93b08c0828bfc736f94417d1e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/step_ngspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/step_ngspice.cir",
+      "source_sha256": "6b63f6abd2a1aa1c7f0c9172277ece07b93adc51263908ad87143f279cf2ebe7",
+      "published_sha256": "6b63f6abd2a1aa1c7f0c9172277ece07b93adc51263908ad87143f279cf2ebe7",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/passivity_ngspice.txt",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/passivity_ngspice.txt",
+      "source_sha256": "b0aded8f3b3876ae009a416617aba3c1c51bc9a7981e64bb4a8f1cc7e932899b",
+      "published_sha256": "b0aded8f3b3876ae009a416617aba3c1c51bc9a7981e64bb4a8f1cc7e932899b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/sparam_xyce.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/sparam_xyce.cir",
+      "source_sha256": "d4b5a2c1963698813a2d617c7ef9fbfff25169df9b88ff41f6f559cb232211f8",
+      "published_sha256": "d4b5a2c1963698813a2d617c7ef9fbfff25169df9b88ff41f6f559cb232211f8",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/sym-lib-table",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/sym-lib-table",
+      "source_sha256": "57f69d4278ad758f64183cf64866c0f4ae80081ce6568670bcef9c82af7d637e",
+      "published_sha256": "57f69d4278ad758f64183cf64866c0f4ae80081ce6568670bcef9c82af7d637e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/sparam_ltspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/sparam_ltspice.cir",
+      "source_sha256": "1651293fba9a358b94ec942761f603e2821ca24d10691d50251cb6aaa5b4a027",
+      "published_sha256": "1651293fba9a358b94ec942761f603e2821ca24d10691d50251cb6aaa5b4a027",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/sparam_ngspice.txt",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/sparam_ngspice.txt",
+      "source_sha256": "873fbaa73f3dabc341e27b4ea11c99438f852a05f32050ee5e39d2f7ef320cde",
+      "published_sha256": "873fbaa73f3dabc341e27b4ea11c99438f852a05f32050ee5e39d2f7ef320cde",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/DATA_ltspice.lib",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/DATA_ltspice.lib",
+      "source_sha256": "574b704d1c36fe182541ca1fdd3e2d1ccbfc5f05af69fa49dd22024f60bab160",
+      "published_sha256": "574b704d1c36fe182541ca1fdd3e2d1ccbfc5f05af69fa49dd22024f60bab160",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/kisi.kicad_sym",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/kisi.kicad_sym",
+      "source_sha256": "8c0858db87c6fd80c46a7ec120458f82236793f387b8212d4352745eed32724f",
+      "published_sha256": "8c0858db87c6fd80c46a7ec120458f82236793f387b8212d4352745eed32724f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/native-export-validation/DATA_ladder/bench_ngspice.cir",
+      "source": "work/kisi-three/results/level1-single-ended/native-export-validation/DATA_ladder/bench_ngspice.cir",
+      "source_sha256": "b08c79b7c8074167b635a8a20715dac995fec91d419fc95dab58d341e802c915",
+      "published_sha256": "b08c79b7c8074167b635a8a20715dac995fec91d419fc95dab58d341e802c915",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/refinement4/ac-0/response.tsv",
+      "source": "work/kisi-three/results/level1-single-ended/refinement4/ac-0/response.tsv",
+      "source_sha256": "a5d2a478fa3d434aaa15836d8e5eb0a3d704433fc8fdfb38ac5fe3b395d16e8c",
+      "published_sha256": "a5d2a478fa3d434aaa15836d8e5eb0a3d704433fc8fdfb38ac5fe3b395d16e8c",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/refinement4/ac-0/solver.log",
+      "source": "work/kisi-three/results/level1-single-ended/refinement4/ac-0/solver.log",
+      "source_sha256": "e0122c7cabcd2bf158224380d61ee201cfc74c96a3686058fddfeeb5421ddddf",
+      "published_sha256": "e0122c7cabcd2bf158224380d61ee201cfc74c96a3686058fddfeeb5421ddddf",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/refinement4/ac-1/response.tsv",
+      "source": "work/kisi-three/results/level1-single-ended/refinement4/ac-1/response.tsv",
+      "source_sha256": "c83743cde86af0b972f3d42782d59bcee939ca18b7264876e7eac41e16f8973f",
+      "published_sha256": "c83743cde86af0b972f3d42782d59bcee939ca18b7264876e7eac41e16f8973f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-single-ended/refinement4/ac-1/solver.log",
+      "source": "work/kisi-three/results/level1-single-ended/refinement4/ac-1/solver.log",
+      "source_sha256": "e0122c7cabcd2bf158224380d61ee201cfc74c96a3686058fddfeeb5421ddddf",
+      "published_sha256": "e0122c7cabcd2bf158224380d61ee201cfc74c96a3686058fddfeeb5421ddddf",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-crosstalk.json",
+      "source": "work/kisi-three/results/level1-differential/kisi-crosstalk.json",
+      "source_sha256": "5bbdb5ef997ee5e6b5fe82e2ac3b1add9090095ead66d8c5f11ab6bdc5946606",
+      "published_sha256": "5bbdb5ef997ee5e6b5fe82e2ac3b1add9090095ead66d8c5f11ab6bdc5946606",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-config-check.json",
+      "source": "work/kisi-three/results/level1-differential/kisi-config-check.json",
+      "source_sha256": "fd92c993abb06c0c0b00d597c6da3c612978d236d59e30b163cde232571a206f",
+      "published_sha256": "9d4f6838b801230d599e05842a58773ebd413a3283cc0c96f8bdfdedf4c7410c",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-config-check.log",
+      "source": "work/kisi-three/results/level1-differential/kisi-config-check.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-ibis-summary.json",
+      "source": "work/kisi-three/results/level1-differential/native-ibis-summary.json",
+      "source_sha256": "3565600e1e43a30440188038a06a115119db2006658c1caedf4dc2f1fae5e8ab",
+      "published_sha256": "3565600e1e43a30440188038a06a115119db2006658c1caedf4dc2f1fae5e8ab",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/comparison-r2.json",
+      "source": "work/kisi-three/results/level1-differential/comparison-r2.json",
+      "source_sha256": "5a78103169cade32ad76304a2b0fc4717db7673509f2ba5f0721802a5748383f",
+      "published_sha256": "5a78103169cade32ad76304a2b0fc4717db7673509f2ba5f0721802a5748383f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-export-BUS_P.log",
+      "source": "work/kisi-three/results/level1-differential/kisi-export-BUS_P.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/render-diagnostics.json",
+      "source": "work/kisi-three/results/level1-differential/render-diagnostics.json",
+      "source_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "published_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/our-channel.lib",
+      "source": "work/kisi-three/results/level1-differential/our-channel.lib",
+      "source_sha256": "4c5d3c9e1c2a750cff5e78bf5b69176dbc9fd1437971841ad52c6321e25bdc52",
+      "published_sha256": "4c5d3c9e1c2a750cff5e78bf5b69176dbc9fd1437971841ad52c6321e25bdc52",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/board.kicad_pro",
+      "source": "work/kisi-three/results/level1-differential/board.kicad_pro",
+      "source_sha256": "800a33ca01f24744a60b1713075fc0b566f997bf5663612ebdc523ef2bab734a",
+      "published_sha256": "800a33ca01f24744a60b1713075fc0b566f997bf5663612ebdc523ef2bab734a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-ibis-capture.json",
+      "source": "work/kisi-three/results/level1-differential/native-ibis-capture.json",
+      "source_sha256": "15c4d944351f8f771c6b96d89cc6732027d24af2505849e8d49644cb29d8168d",
+      "published_sha256": "15c4d944351f8f771c6b96d89cc6732027d24af2505849e8d49644cb29d8168d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/metadata.json",
+      "source": "work/kisi-three/results/level1-differential/metadata.json",
+      "source_sha256": "edf03befd8860172e9806d639c714273faaa937a3453206765cb3720255cd42d",
+      "published_sha256": "edf03befd8860172e9806d639c714273faaa937a3453206765cb3720255cd42d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/our-ac-summary.json",
+      "source": "work/kisi-three/results/level1-differential/our-ac-summary.json",
+      "source_sha256": "fdbb261eb2e013103863b264a69f08be0c1842fbaec63c9f0acf2b61de562cba",
+      "published_sha256": "fdbb261eb2e013103863b264a69f08be0c1842fbaec63c9f0acf2b61de562cba",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-crosstalk.log",
+      "source": "work/kisi-three/results/level1-differential/kisi-crosstalk.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/comparison.npz",
+      "source": "work/kisi-three/results/level1-differential/comparison.npz",
+      "source_sha256": "defc95803cab0213205959ba5d8ead5a1f9b9a547a9d3f8053057fb9c0b578db",
+      "published_sha256": "defc95803cab0213205959ba5d8ead5a1f9b9a547a9d3f8053057fb9c0b578db",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-interfaces.json",
+      "source": "work/kisi-three/results/level1-differential/kisi-interfaces.json",
+      "source_sha256": "24d3d64e1f13779c261c21a756291bad336bf9c238bfe3db2b5a1a90c6ab958f",
+      "published_sha256": "49c9fda875a92602f2d0be9b5824daf2bfe120a394d7a99307882fa1b9d06cf3",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-differential/comparison.json",
+      "source": "work/kisi-three/results/level1-differential/comparison.json",
+      "source_sha256": "d29e304216c391f89b143a08d9981dce18e15255764a76ec369d13c51880cdfe",
+      "published_sha256": "d29e304216c391f89b143a08d9981dce18e15255764a76ec369d13c51880cdfe",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-check.json",
+      "source": "work/kisi-three/results/level1-differential/kisi-check.json",
+      "source_sha256": "37cf658abd34784ceb258a504505b1d440088b10c52377839178d76dd462a747",
+      "published_sha256": "39adcd84f77440794ab5b68df4a7d7a4f55c88356df9eef4296436257404317c",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-differential/kicad-drc.log",
+      "source": "work/kisi-three/results/level1-differential/kicad-drc.log",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "published_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/our-channel.s4p",
+      "source": "work/kisi-three/results/level1-differential/our-channel.s4p",
+      "source_sha256": "e5900dbea06f79d0f9de4906329cb1706ea948a19a9a0b434b4300c67990c033",
+      "published_sha256": "e5900dbea06f79d0f9de4906329cb1706ea948a19a9a0b434b4300c67990c033",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/our-channel.npz",
+      "source": "work/kisi-three/results/level1-differential/our-channel.npz",
+      "source_sha256": "435d3e95236af67668c3d175ee9aeb198d5df45fb5e034e8ed8fc673d3b3a56f",
+      "published_sha256": "435d3e95236af67668c3d175ee9aeb198d5df45fb5e034e8ed8fc673d3b3a56f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kicad-drc.json",
+      "source": "work/kisi-three/results/level1-differential/kicad-drc.json",
+      "source_sha256": "141e5f7a8a5ed5dc90f585d8b8d9f2163e730c139b34f4726a6ec93375a8a6eb",
+      "published_sha256": "141e5f7a8a5ed5dc90f585d8b8d9f2163e730c139b34f4726a6ec93375a8a6eb",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-dc-BUS_P.json",
+      "source": "work/kisi-three/results/level1-differential/kisi-dc-BUS_P.json",
+      "source_sha256": "21f3d348e2d2e660fd49ea0e24dd80e7d5488dc4e4c0e8b825de9f78e9f489e4",
+      "published_sha256": "4c72b36a2be6726742dc12ee8f1c04e3525c40f492d28a743b69cea1b0c620d5",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-differential/export-audit.json",
+      "source": "work/kisi-three/results/level1-differential/export-audit.json",
+      "source_sha256": "c29c7778d173f10fcc3f9451c54acae8141b464b76f0ec6208cad4ac138910be",
+      "published_sha256": "c29c7778d173f10fcc3f9451c54acae8141b464b76f0ec6208cad4ac138910be",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation-status.json",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation-status.json",
+      "source_sha256": "56eca6cd4b41708e494ea7c8dcdf276906e796fcd18a1b064ffe60d25ebf190f",
+      "published_sha256": "dd1edb2f71aacadcf26e312fd489eb4eecd5e3b3b7fcc7a32f5276bb0e991678",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-check.log",
+      "source": "work/kisi-three/results/level1-differential/kisi-check.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/board.png",
+      "source": "work/kisi-three/results/level1-differential/board.png",
+      "source_sha256": "b533c1aa336ce5b7504cdb15c6b85415666b8cd2950b6ee34c95ce987821144d",
+      "published_sha256": "b533c1aa336ce5b7504cdb15c6b85415666b8cd2950b6ee34c95ce987821144d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/board.svg",
+      "source": "work/kisi-three/results/level1-differential/board.svg",
+      "source_sha256": "f65c5e2692d0f31a575391acc0f34c038fd7a32db5c2d488a590300a8530b3bb",
+      "published_sha256": "f65c5e2692d0f31a575391acc0f34c038fd7a32db5c2d488a590300a8530b3bb",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation.md",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation.md",
+      "source_sha256": "d01ac6699085d37dce48d36f2a6f172d47493cb65cded0770727e735ed045621",
+      "published_sha256": "d01ac6699085d37dce48d36f2a6f172d47493cb65cded0770727e735ed045621",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/circuit.json",
+      "source": "work/kisi-three/results/level1-differential/circuit.json",
+      "source_sha256": "ab568343a3ab0663a6ddfae90d922c82c0cd44d7173d9d5cdabc4ed9650a5a0a",
+      "published_sha256": "ab568343a3ab0663a6ddfae90d922c82c0cd44d7173d9d5cdabc4ed9650a5a0a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-interfaces.log",
+      "source": "work/kisi-three/results/level1-differential/kisi-interfaces.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation.log",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation.log",
+      "source_sha256": "bdb62bdea6b2322e3f66e168fa52edabab35ee12ac877c2dd1297d937976e6d8",
+      "published_sha256": "bdb62bdea6b2322e3f66e168fa52edabab35ee12ac877c2dd1297d937976e6d8",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/board.kicad_pcb",
+      "source": "work/kisi-three/results/level1-differential/board.kicad_pcb",
+      "source_sha256": "e1abcb902129cde1747e03504dc73baab5d048833bb24ad3aad22f006a89d91a",
+      "published_sha256": "e1abcb902129cde1747e03504dc73baab5d048833bb24ad3aad22f006a89d91a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/board.kisi.json",
+      "source": "work/kisi-three/results/level1-differential/board.kisi.json",
+      "source_sha256": "6576b7cc9f3ecdb606219e4e832be4a14b2360bb54542de14e6bcbd2d2dcf5ed",
+      "published_sha256": "6576b7cc9f3ecdb606219e4e832be4a14b2360bb54542de14e6bcbd2d2dcf5ed",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-export-BUS_P.json",
+      "source": "work/kisi-three/results/level1-differential/kisi-export-BUS_P.json",
+      "source_sha256": "be346c22fae9ddfee958d064d0f57df1905a6ea00d5b23fe1049697ff4688e1c",
+      "published_sha256": "c623413411e491bb3326966e7a1af3a5da985a5ac9b2eb7a4817edd285f679b5",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-differential/ac-3/response.tsv",
+      "source": "work/kisi-three/results/level1-differential/ac-3/response.tsv",
+      "source_sha256": "d81a64cd010641cbf0d749d26cc3b930a3ff13d9c15236103785540ab50d05de",
+      "published_sha256": "d81a64cd010641cbf0d749d26cc3b930a3ff13d9c15236103785540ab50d05de",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/ac-3/solver.log",
+      "source": "work/kisi-three/results/level1-differential/ac-3/solver.log",
+      "source_sha256": "0bbc8d40647ea345c1b5bebb5911863ba4db2273a1d7a329697b0663985ac573",
+      "published_sha256": "0bbc8d40647ea345c1b5bebb5911863ba4db2273a1d7a329697b0663985ac573",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/ac-2/response.tsv",
+      "source": "work/kisi-three/results/level1-differential/ac-2/response.tsv",
+      "source_sha256": "1e4341d943f88e80b26287da54dc437aa57c70da26a4ce3e5b9c57b42a996bb2",
+      "published_sha256": "1e4341d943f88e80b26287da54dc437aa57c70da26a4ce3e5b9c57b42a996bb2",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/ac-2/solver.log",
+      "source": "work/kisi-three/results/level1-differential/ac-2/solver.log",
+      "source_sha256": "02a8d67eeec93f9ebb6b0356fff4eb787b22778751d01ab92f2d6bc678f3a748",
+      "published_sha256": "02a8d67eeec93f9ebb6b0356fff4eb787b22778751d01ab92f2d6bc678f3a748",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/termination-location-control/deck.cir",
+      "source": "work/kisi-three/results/level1-differential/termination-location-control/deck.cir",
+      "source_sha256": "3fc17d5a6055130c8c63d7b5caa2860449d5811f9728e2808d92dd6e07977b8d",
+      "published_sha256": "3fc17d5a6055130c8c63d7b5caa2860449d5811f9728e2808d92dd6e07977b8d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/termination-location-control/ac.tsv",
+      "source": "work/kisi-three/results/level1-differential/termination-location-control/ac.tsv",
+      "source_sha256": "b7825e83d5546b876e5364dfd3020e7d2845955116f0d4ea1d923826127cbf86",
+      "published_sha256": "b7825e83d5546b876e5364dfd3020e7d2845955116f0d4ea1d923826127cbf86",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/termination-location-control/control.s4p",
+      "source": "work/kisi-three/results/level1-differential/termination-location-control/control.s4p",
+      "source_sha256": "33114718d43e3d7f345c87a82b95aca2d19cd140c42de8df1022a41b00b25034",
+      "published_sha256": "33114718d43e3d7f345c87a82b95aca2d19cd140c42de8df1022a41b00b25034",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/termination-location-control/control.json",
+      "source": "work/kisi-three/results/level1-differential/termination-location-control/control.json",
+      "source_sha256": "47b19499e57552a8dd0c78d605cc06d8570cc94b15916a03c7ea2325c5a5daf6",
+      "published_sha256": "47b19499e57552a8dd0c78d605cc06d8570cc94b15916a03c7ea2325c5a5daf6",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/results.json",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/results.json",
+      "source_sha256": "964a0f050e95861371da01d6de412125b9f16fd73fbb923bd71913a9d539989d",
+      "published_sha256": "f2b2d986e71c6c3c79397efe86564fd9c2cb72856b1c76a0da8933687c6e0794",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-differential/ac-0/response.tsv",
+      "source": "work/kisi-three/results/level1-differential/ac-0/response.tsv",
+      "source_sha256": "1c47b4b9c350dc9a5f431c0aba4cb4724f549ed6b5fa85c3a2cf9638b773180e",
+      "published_sha256": "1c47b4b9c350dc9a5f431c0aba4cb4724f549ed6b5fa85c3a2cf9638b773180e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/ac-0/solver.log",
+      "source": "work/kisi-three/results/level1-differential/ac-0/solver.log",
+      "source_sha256": "eceabd721ccbd9765d4b955062ac580d9a37131fb5be29a3d9f4693716440faa",
+      "published_sha256": "eceabd721ccbd9765d4b955062ac580d9a37131fb5be29a3d9f4693716440faa",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/ac-1/response.tsv",
+      "source": "work/kisi-three/results/level1-differential/ac-1/response.tsv",
+      "source_sha256": "b61700f416df034ab1facc9103055012d93fd890cd7264c39687b4ac04ee0bbe",
+      "published_sha256": "b61700f416df034ab1facc9103055012d93fd890cd7264c39687b4ac04ee0bbe",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/ac-1/solver.log",
+      "source": "work/kisi-three/results/level1-differential/ac-1/solver.log",
+      "source_sha256": "c091260faf08573f5d36a3778fe4cd27ba8600e857d32808bb5062b6d24a198c",
+      "published_sha256": "c091260faf08573f5d36a3778fe4cd27ba8600e857d32808bb5062b6d24a198c",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/our-channel.lib",
+      "source": "work/kisi-three/results/level1-differential/refinement4/our-channel.lib",
+      "source_sha256": "16c4b2f90634ee3487187f2d74840682966856c25dc7096d61a5452a2816887c",
+      "published_sha256": "16c4b2f90634ee3487187f2d74840682966856c25dc7096d61a5452a2816887c",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/metadata.json",
+      "source": "work/kisi-three/results/level1-differential/refinement4/metadata.json",
+      "source_sha256": "706128d3bb53b8b1cae2e2222e8723cda089f6393231866caa64aa3719b72639",
+      "published_sha256": "706128d3bb53b8b1cae2e2222e8723cda089f6393231866caa64aa3719b72639",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/our-ac-summary.json",
+      "source": "work/kisi-three/results/level1-differential/refinement4/our-ac-summary.json",
+      "source_sha256": "e4dc1c9cdbd7d47dd86ce94fafd563312d9f210f6644298e376cead4b2bc1707",
+      "published_sha256": "e4dc1c9cdbd7d47dd86ce94fafd563312d9f210f6644298e376cead4b2bc1707",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/our-channel.s4p",
+      "source": "work/kisi-three/results/level1-differential/refinement4/our-channel.s4p",
+      "source_sha256": "a9589f403de774a6bc86ef31f917e73f4253ce518c36d9457e26ba053a474446",
+      "published_sha256": "a9589f403de774a6bc86ef31f917e73f4253ce518c36d9457e26ba053a474446",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/our-channel.npz",
+      "source": "work/kisi-three/results/level1-differential/refinement4/our-channel.npz",
+      "source_sha256": "7700c75b64f290bce129767707032207a12529b42709726c9c3a04afcb4a2933",
+      "published_sha256": "7700c75b64f290bce129767707032207a12529b42709726c9c3a04afcb4a2933",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi/BUS_P/BUS_P.lib",
+      "source": "work/kisi-three/results/level1-differential/kisi/BUS_P/BUS_P.lib",
+      "source_sha256": "b8f0a09e582043731a0f1544880ad33c0d10beb144d8422bcaf578fd971e50ef",
+      "published_sha256": "b8f0a09e582043731a0f1544880ad33c0d10beb144d8422bcaf578fd971e50ef",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi/BUS_P/sparam_ngspice.cir",
+      "source": "work/kisi-three/results/level1-differential/kisi/BUS_P/sparam_ngspice.cir",
+      "source_sha256": "8d124e7c4074f46e1af02455e48ac4955f35753e69746cbbb5025d877faa9aa7",
+      "published_sha256": "8d124e7c4074f46e1af02455e48ac4955f35753e69746cbbb5025d877faa9aa7",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi/BUS_P/README.md",
+      "source": "work/kisi-three/results/level1-differential/kisi/BUS_P/README.md",
+      "source_sha256": "53be848180fbf683282f0dd7503fa536746e2c93bca15a0f7c9ed3870e4be786",
+      "published_sha256": "53be848180fbf683282f0dd7503fa536746e2c93bca15a0f7c9ed3870e4be786",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi/BUS_P/BUS_P.s4p",
+      "source": "work/kisi-three/results/level1-differential/kisi/BUS_P/BUS_P.s4p",
+      "source_sha256": "d8c801c8b7687d9302792edbc3daf7e31aa547bd160295515f46941a73b293f1",
+      "published_sha256": "d8c801c8b7687d9302792edbc3daf7e31aa547bd160295515f46941a73b293f1",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi/BUS_P/bench_ngspice.cir",
+      "source": "work/kisi-three/results/level1-differential/kisi/BUS_P/bench_ngspice.cir",
+      "source_sha256": "115b641471545d82ea042a9436171dd3b7538ebdd1980d991435f1fc40566bb0",
+      "published_sha256": "115b641471545d82ea042a9436171dd3b7538ebdd1980d991435f1fc40566bb0",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-dc/BUS_P/README.md",
+      "source": "work/kisi-three/results/level1-differential/kisi-dc/BUS_P/README.md",
+      "source_sha256": "9da547a648834a21e012153d623041b75a40f7f4b826f022dd1b6fd00660f827",
+      "published_sha256": "9da547a648834a21e012153d623041b75a40f7f4b826f022dd1b6fd00660f827",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/kisi-dc/BUS_P/BUS_P.s4p",
+      "source": "work/kisi-three/results/level1-differential/kisi-dc/BUS_P/BUS_P.s4p",
+      "source_sha256": "2cddbae6daeb887cd90105fd3dc200c00b5c67d123e1e9d82f4cd3c03b4fa3dd",
+      "published_sha256": "2cddbae6daeb887cd90105fd3dc200c00b5c67d123e1e9d82f4cd3c03b4fa3dd",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/BUS_P.lib",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/BUS_P.lib",
+      "source_sha256": "4f87f954a2b84628019dd21bad0cde309c0f6d1c27d66585767c8c9f3db4cdff",
+      "published_sha256": "4f87f954a2b84628019dd21bad0cde309c0f6d1c27d66585767c8c9f3db4cdff",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/bench_xyce.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/bench_xyce.cir",
+      "source_sha256": "d6f764ccbca6d7baeaa11527372bd457c921390b8bd14145b1676c0b8de62741",
+      "published_sha256": "d6f764ccbca6d7baeaa11527372bd457c921390b8bd14145b1676c0b8de62741",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/sparam_ngspice.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/sparam_ngspice.cir",
+      "source_sha256": "e09eb2d3fb671a1fd24d03651703854450424f000b08dd4c800c1ab1c7f946fb",
+      "published_sha256": "e09eb2d3fb671a1fd24d03651703854450424f000b08dd4c800c1ab1c7f946fb",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/export.json",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/export.json",
+      "source_sha256": "b7ec7177795458688f2cbada6b30c9f76c4034cedc0e2819e92c1d4d524bd9ec",
+      "published_sha256": "1690dd66fa92cbac954066d26858f59938a28cfd37e56a933227a2b757eb7973",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/BUS_P.kicad_pro",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/BUS_P.kicad_pro",
+      "source_sha256": "0e0bb1c2b1f0234e7c21ef02bc5f5ab3832a0907ea4961912edfc0637c92765b",
+      "published_sha256": "0e0bb1c2b1f0234e7c21ef02bc5f5ab3832a0907ea4961912edfc0637c92765b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/bench_ngspice.txt",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/bench_ngspice.txt",
+      "source_sha256": "ac093f3f6da4711cedde08c19847b02c94d1ae3806a49db97f0f847f5890257c",
+      "published_sha256": "ac093f3f6da4711cedde08c19847b02c94d1ae3806a49db97f0f847f5890257c",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/bench_ltspice.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/bench_ltspice.cir",
+      "source_sha256": "309ecacb054c1a3b5c63b03d509c95224d3c006e2570d850c0cf28346a6c912a",
+      "published_sha256": "309ecacb054c1a3b5c63b03d509c95224d3c006e2570d850c0cf28346a6c912a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/step_ngspice.txt",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/step_ngspice.txt",
+      "source_sha256": "2b34543e8a3cf9f15589784d834d1e908d9e8397820eb1f228b47b13af494ed0",
+      "published_sha256": "2b34543e8a3cf9f15589784d834d1e908d9e8397820eb1f228b47b13af494ed0",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/BUS_P.kicad_sch",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/BUS_P.kicad_sch",
+      "source_sha256": "0752e567d75fa928f27f1a3eeaa9f100f38c9a564ab0410c90d81abdb83d960b",
+      "published_sha256": "0752e567d75fa928f27f1a3eeaa9f100f38c9a564ab0410c90d81abdb83d960b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/passivity_ngspice.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/passivity_ngspice.cir",
+      "source_sha256": "7807cba4cd0928face34294f9503568a7d23095c700330a4cae65972d3078ea2",
+      "published_sha256": "7807cba4cd0928face34294f9503568a7d23095c700330a4cae65972d3078ea2",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/README.md",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/README.md",
+      "source_sha256": "7ee17a9e17e2b03eadf7ba17ce7419df218c8de1a34cd83303ea8763062332ba",
+      "published_sha256": "7ee17a9e17e2b03eadf7ba17ce7419df218c8de1a34cd83303ea8763062332ba",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/step_ngspice.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/step_ngspice.cir",
+      "source_sha256": "b4584c0305835b8a15d7383f75403eaf70510e23b4f0f0b860fa5a81f886f81a",
+      "published_sha256": "b4584c0305835b8a15d7383f75403eaf70510e23b4f0f0b860fa5a81f886f81a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/passivity_ngspice.txt",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/passivity_ngspice.txt",
+      "source_sha256": "36dedf497ff19fa7ead4db49ab906252b790300ed3c2ee0a3e558dfe9d100f72",
+      "published_sha256": "36dedf497ff19fa7ead4db49ab906252b790300ed3c2ee0a3e558dfe9d100f72",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/sparam_xyce.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/sparam_xyce.cir",
+      "source_sha256": "9ef3f3247fc6953e9574506c2e6aa8a848bf4c905585d8ce83e5c8f47b3f4c9b",
+      "published_sha256": "9ef3f3247fc6953e9574506c2e6aa8a848bf4c905585d8ce83e5c8f47b3f4c9b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/BUS_P.s4p",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/BUS_P.s4p",
+      "source_sha256": "d2607c893ad55dacf14c75cd101e39b7f86ef187c5cea76e11de3d89b6c806cb",
+      "published_sha256": "d2607c893ad55dacf14c75cd101e39b7f86ef187c5cea76e11de3d89b6c806cb",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/sym-lib-table",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/sym-lib-table",
+      "source_sha256": "57f69d4278ad758f64183cf64866c0f4ae80081ce6568670bcef9c82af7d637e",
+      "published_sha256": "57f69d4278ad758f64183cf64866c0f4ae80081ce6568670bcef9c82af7d637e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/BUS_P_kicad.lib",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/BUS_P_kicad.lib",
+      "source_sha256": "017d37b18a1a46d1c06d85bedb32fd91a79febdc15ef47badb9cec6cd1b37410",
+      "published_sha256": "017d37b18a1a46d1c06d85bedb32fd91a79febdc15ef47badb9cec6cd1b37410",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/sparam_ngspice.txt",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/sparam_ngspice.txt",
+      "source_sha256": "2bc566c54b49ded587c67dbc6d16193b5ad37b7b23b8e323076d9ec4f29573f1",
+      "published_sha256": "2bc566c54b49ded587c67dbc6d16193b5ad37b7b23b8e323076d9ec4f29573f1",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/BUS_P_ltspice.lib",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/BUS_P_ltspice.lib",
+      "source_sha256": "a4b0c4c1267e36c8da1859e311f875949f77d02e3ea6606346de3f65f5d2fde9",
+      "published_sha256": "a4b0c4c1267e36c8da1859e311f875949f77d02e3ea6606346de3f65f5d2fde9",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/kisi.kicad_sym",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/kisi.kicad_sym",
+      "source_sha256": "8c0858db87c6fd80c46a7ec120458f82236793f387b8212d4352745eed32724f",
+      "published_sha256": "8c0858db87c6fd80c46a7ec120458f82236793f387b8212d4352745eed32724f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_ladder/bench_ngspice.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_ladder/bench_ngspice.cir",
+      "source_sha256": "115b641471545d82ea042a9436171dd3b7538ebdd1980d991435f1fc40566bb0",
+      "published_sha256": "115b641471545d82ea042a9436171dd3b7538ebdd1980d991435f1fc40566bb0",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/BUS_P.lib",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/BUS_P.lib",
+      "source_sha256": "403c35a0406f6d5b76f50d210a4c766ca044f2f7710dd6a00b34f32cabcc358d",
+      "published_sha256": "403c35a0406f6d5b76f50d210a4c766ca044f2f7710dd6a00b34f32cabcc358d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/bench_xyce.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/bench_xyce.cir",
+      "source_sha256": "d6f764ccbca6d7baeaa11527372bd457c921390b8bd14145b1676c0b8de62741",
+      "published_sha256": "d6f764ccbca6d7baeaa11527372bd457c921390b8bd14145b1676c0b8de62741",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/sparam_ngspice.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/sparam_ngspice.cir",
+      "source_sha256": "e09eb2d3fb671a1fd24d03651703854450424f000b08dd4c800c1ab1c7f946fb",
+      "published_sha256": "e09eb2d3fb671a1fd24d03651703854450424f000b08dd4c800c1ab1c7f946fb",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/export.json",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/export.json",
+      "source_sha256": "abb2e8061cfa2bd91f887111a2402744e64b1fec8dac04b3e910b2644e565aa5",
+      "published_sha256": "b36a0caa50eb2ebff9c12288c436e235c883924dd8f5d7ca878ebace7b41c8eb",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/BUS_P.kicad_pro",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/BUS_P.kicad_pro",
+      "source_sha256": "0e0bb1c2b1f0234e7c21ef02bc5f5ab3832a0907ea4961912edfc0637c92765b",
+      "published_sha256": "0e0bb1c2b1f0234e7c21ef02bc5f5ab3832a0907ea4961912edfc0637c92765b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/bench_ngspice.txt",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/bench_ngspice.txt",
+      "source_sha256": "367d072c1d4809605e00b87fb3bf04c34fe62904a11d77f5c60053d996cbe9b9",
+      "published_sha256": "367d072c1d4809605e00b87fb3bf04c34fe62904a11d77f5c60053d996cbe9b9",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/bench_ltspice.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/bench_ltspice.cir",
+      "source_sha256": "309ecacb054c1a3b5c63b03d509c95224d3c006e2570d850c0cf28346a6c912a",
+      "published_sha256": "309ecacb054c1a3b5c63b03d509c95224d3c006e2570d850c0cf28346a6c912a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/step_ngspice.txt",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/step_ngspice.txt",
+      "source_sha256": "5299a36bbfc85a12b5d337443b43dbdd624c2c1544a8bb7a7bfdec3d573d402c",
+      "published_sha256": "5299a36bbfc85a12b5d337443b43dbdd624c2c1544a8bb7a7bfdec3d573d402c",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/BUS_P.kicad_sch",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/BUS_P.kicad_sch",
+      "source_sha256": "6efc204ef96c92df9c507ce6f72cb6d51a23145706b9a86fe7a2af13d55601e3",
+      "published_sha256": "6efc204ef96c92df9c507ce6f72cb6d51a23145706b9a86fe7a2af13d55601e3",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/passivity_ngspice.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/passivity_ngspice.cir",
+      "source_sha256": "7807cba4cd0928face34294f9503568a7d23095c700330a4cae65972d3078ea2",
+      "published_sha256": "7807cba4cd0928face34294f9503568a7d23095c700330a4cae65972d3078ea2",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/README.md",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/README.md",
+      "source_sha256": "01d8c32174ba3386bf36b12a11d0bb77a0d832b63b924c7981675e3963333436",
+      "published_sha256": "01d8c32174ba3386bf36b12a11d0bb77a0d832b63b924c7981675e3963333436",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/step_ngspice.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/step_ngspice.cir",
+      "source_sha256": "b4584c0305835b8a15d7383f75403eaf70510e23b4f0f0b860fa5a81f886f81a",
+      "published_sha256": "b4584c0305835b8a15d7383f75403eaf70510e23b4f0f0b860fa5a81f886f81a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/passivity_ngspice.txt",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/passivity_ngspice.txt",
+      "source_sha256": "5ca880907ac2daf8a8c8e1c98fd1a7971eaa11fcd11bf28bd25e64254cb6752e",
+      "published_sha256": "5ca880907ac2daf8a8c8e1c98fd1a7971eaa11fcd11bf28bd25e64254cb6752e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/sparam_xyce.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/sparam_xyce.cir",
+      "source_sha256": "9ef3f3247fc6953e9574506c2e6aa8a848bf4c905585d8ce83e5c8f47b3f4c9b",
+      "published_sha256": "9ef3f3247fc6953e9574506c2e6aa8a848bf4c905585d8ce83e5c8f47b3f4c9b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/BUS_P.s4p",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/BUS_P.s4p",
+      "source_sha256": "d2607c893ad55dacf14c75cd101e39b7f86ef187c5cea76e11de3d89b6c806cb",
+      "published_sha256": "d2607c893ad55dacf14c75cd101e39b7f86ef187c5cea76e11de3d89b6c806cb",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/sym-lib-table",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/sym-lib-table",
+      "source_sha256": "57f69d4278ad758f64183cf64866c0f4ae80081ce6568670bcef9c82af7d637e",
+      "published_sha256": "57f69d4278ad758f64183cf64866c0f4ae80081ce6568670bcef9c82af7d637e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/BUS_P_kicad.lib",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/BUS_P_kicad.lib",
+      "source_sha256": "2cf45e2293de5eea8c863252882ea50660435fff780e359b1e572a7aad402d3e",
+      "published_sha256": "2cf45e2293de5eea8c863252882ea50660435fff780e359b1e572a7aad402d3e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/sparam_ngspice.txt",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/sparam_ngspice.txt",
+      "source_sha256": "7608b62fa524a9e6462a5dec47e760dbe0a3e3620ad529344ca8d3bb54900be0",
+      "published_sha256": "7608b62fa524a9e6462a5dec47e760dbe0a3e3620ad529344ca8d3bb54900be0",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/BUS_P_ltspice.lib",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/BUS_P_ltspice.lib",
+      "source_sha256": "39e0eef1b862ecdd7e23c83cae7c13e441a461261bacbd7f906f833c44007abc",
+      "published_sha256": "39e0eef1b862ecdd7e23c83cae7c13e441a461261bacbd7f906f833c44007abc",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/kisi.kicad_sym",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/kisi.kicad_sym",
+      "source_sha256": "8c0858db87c6fd80c46a7ec120458f82236793f387b8212d4352745eed32724f",
+      "published_sha256": "8c0858db87c6fd80c46a7ec120458f82236793f387b8212d4352745eed32724f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/native-export-validation/BUS_P_compact/bench_ngspice.cir",
+      "source": "work/kisi-three/results/level1-differential/native-export-validation/BUS_P_compact/bench_ngspice.cir",
+      "source_sha256": "115b641471545d82ea042a9436171dd3b7538ebdd1980d991435f1fc40566bb0",
+      "published_sha256": "115b641471545d82ea042a9436171dd3b7538ebdd1980d991435f1fc40566bb0",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/ac-3/response.tsv",
+      "source": "work/kisi-three/results/level1-differential/refinement4/ac-3/response.tsv",
+      "source_sha256": "8d87bbf7b3a4ad64f9cab2c38b2282894eb08c7ad2cd3ef116ffbe5a507f90d6",
+      "published_sha256": "8d87bbf7b3a4ad64f9cab2c38b2282894eb08c7ad2cd3ef116ffbe5a507f90d6",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/ac-3/solver.log",
+      "source": "work/kisi-three/results/level1-differential/refinement4/ac-3/solver.log",
+      "source_sha256": "e36bfbd297fca140017b8b2c35f813c21cef41cde650329604520f705c74bd2a",
+      "published_sha256": "e36bfbd297fca140017b8b2c35f813c21cef41cde650329604520f705c74bd2a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/ac-2/response.tsv",
+      "source": "work/kisi-three/results/level1-differential/refinement4/ac-2/response.tsv",
+      "source_sha256": "7c4aa597c0c0b2621b7cf088a775c7eb337a433aa2972aea1ba6ed7282d2410f",
+      "published_sha256": "7c4aa597c0c0b2621b7cf088a775c7eb337a433aa2972aea1ba6ed7282d2410f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/ac-2/solver.log",
+      "source": "work/kisi-three/results/level1-differential/refinement4/ac-2/solver.log",
+      "source_sha256": "efcc9923763b59701620a06c11824278e5bd8e1186f305ad8755e09f334feffc",
+      "published_sha256": "efcc9923763b59701620a06c11824278e5bd8e1186f305ad8755e09f334feffc",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/ac-0/response.tsv",
+      "source": "work/kisi-three/results/level1-differential/refinement4/ac-0/response.tsv",
+      "source_sha256": "298aa94fe0a06b05483960e97d9b92359c40c5043ca3bd9ee265cbb9a416b50d",
+      "published_sha256": "298aa94fe0a06b05483960e97d9b92359c40c5043ca3bd9ee265cbb9a416b50d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/ac-0/solver.log",
+      "source": "work/kisi-three/results/level1-differential/refinement4/ac-0/solver.log",
+      "source_sha256": "cf433321f88e958b9a01224fb5d81af4e6b12f9c80e58f40fa13cb2bea3522c7",
+      "published_sha256": "cf433321f88e958b9a01224fb5d81af4e6b12f9c80e58f40fa13cb2bea3522c7",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/ac-1/response.tsv",
+      "source": "work/kisi-three/results/level1-differential/refinement4/ac-1/response.tsv",
+      "source_sha256": "e89fc87849f2eec7778910d335bddfa8a4d81405c0fc37941c85d9841581a34c",
+      "published_sha256": "e89fc87849f2eec7778910d335bddfa8a4d81405c0fc37941c85d9841581a34c",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level1-differential/refinement4/ac-1/solver.log",
+      "source": "work/kisi-three/results/level1-differential/refinement4/ac-1/solver.log",
+      "source_sha256": "ec753c222235635e156dbac6828298f8037f7d991bfe617174ad4a4d474db506",
+      "published_sha256": "ec753c222235635e156dbac6828298f8037f7d991bfe617174ad4a4d474db506",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-dc-D1.json",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-dc-D1.json",
+      "source_sha256": "8e40933ab16e57352e8ee3fb951ede5ff663bc9d68e8c5137080c93478547bd6",
+      "published_sha256": "d635001bd54814e20511c77edcd5eee4d5339803a9bb9fbb0b80feff856d7229",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-crosstalk.json",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-crosstalk.json",
+      "source_sha256": "189774055a849ccbdac1d56215c5a554ba4c961ba9869a7cd878d48310f9e36b",
+      "published_sha256": "6e44b535b176052f5c5e30f3c83e378378f55cb1c8fc6850ada0c5da153da5a3",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-config-check.json",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-config-check.json",
+      "source_sha256": "864b311ca3b8013aab81d1bc36823d06e0ad4e13973ed46291a83f811b07f807",
+      "published_sha256": "b5dbcde55a3cad5a945c7068e0b6b48022a35305a2e7a14e63e73e339c9a4012",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-config-check.log",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-config-check.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-ibis-summary.json",
+      "source": "work/kisi-three/results/level2-two-channels/native-ibis-summary.json",
+      "source_sha256": "348d60550c57875d42a616ff49fdf5b426ed8a4e5173fa11ed6152095e390ea3",
+      "published_sha256": "348d60550c57875d42a616ff49fdf5b426ed8a4e5173fa11ed6152095e390ea3",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/comparison-r2.json",
+      "source": "work/kisi-three/results/level2-two-channels/comparison-r2.json",
+      "source_sha256": "6a7c5ed07cc70ebde16bf9c0a1aff957fbc6a6a18faac9b43c1f73d7e96f1f5a",
+      "published_sha256": "6a7c5ed07cc70ebde16bf9c0a1aff957fbc6a6a18faac9b43c1f73d7e96f1f5a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-export-D1.log",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-export-D1.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-dc-D0.json",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-dc-D0.json",
+      "source_sha256": "79b1ab6c99bf0d2c24b7d6c0a1b608c5ba4a8d84006210bb3a73b7aca1b417f0",
+      "published_sha256": "61bfce66b138f35af101ee68175e4f1b4cdaa8d68a88438f08bc95e5536286f7",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-export-D0.log",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-export-D0.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/render-diagnostics.json",
+      "source": "work/kisi-three/results/level2-two-channels/render-diagnostics.json",
+      "source_sha256": "4cae599c87a87ed008ad5e55e5bec97956b4b5e9d1c579d70a23fe3f0737f423",
+      "published_sha256": "4cae599c87a87ed008ad5e55e5bec97956b4b5e9d1c579d70a23fe3f0737f423",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/our-channel.lib",
+      "source": "work/kisi-three/results/level2-two-channels/our-channel.lib",
+      "source_sha256": "0d5815409b21c05b067e841c55dabbc5e0fdf25b9692ee929b87eb7c2c22453a",
+      "published_sha256": "0d5815409b21c05b067e841c55dabbc5e0fdf25b9692ee929b87eb7c2c22453a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/board.kicad_pro",
+      "source": "work/kisi-three/results/level2-two-channels/board.kicad_pro",
+      "source_sha256": "800a33ca01f24744a60b1713075fc0b566f997bf5663612ebdc523ef2bab734a",
+      "published_sha256": "800a33ca01f24744a60b1713075fc0b566f997bf5663612ebdc523ef2bab734a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/metadata.json",
+      "source": "work/kisi-three/results/level2-two-channels/metadata.json",
+      "source_sha256": "478f61882c48e4f5dc863667c42a39891d69270b4cf9a7270acca11a240a236c",
+      "published_sha256": "478f61882c48e4f5dc863667c42a39891d69270b4cf9a7270acca11a240a236c",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/our-ac-summary.json",
+      "source": "work/kisi-three/results/level2-two-channels/our-ac-summary.json",
+      "source_sha256": "5337f70131a1ad2c84ac94bd62754e47d156c15eeea3d3dd224cdbddae9cf345",
+      "published_sha256": "5337f70131a1ad2c84ac94bd62754e47d156c15eeea3d3dd224cdbddae9cf345",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-crosstalk.log",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-crosstalk.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/comparison.npz",
+      "source": "work/kisi-three/results/level2-two-channels/comparison.npz",
+      "source_sha256": "e84845d5d503012314310d242162ec2d22cee6e3f36add94d4b566a9f6f462c3",
+      "published_sha256": "e84845d5d503012314310d242162ec2d22cee6e3f36add94d4b566a9f6f462c3",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-interfaces.json",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-interfaces.json",
+      "source_sha256": "99554991b5342d7fbfc1824539b42988dc2ab6f0836509f699fbf623515d1340",
+      "published_sha256": "c2942c53e45d8e8d473815d4bab5f1d12bd32a804b98babfd785bcc143dfb379",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level2-two-channels/comparison.json",
+      "source": "work/kisi-three/results/level2-two-channels/comparison.json",
+      "source_sha256": "8ef66e3e1e40e7c393724ea72784a13aec5f478ae3d1f72c11420386ffc560b0",
+      "published_sha256": "8ef66e3e1e40e7c393724ea72784a13aec5f478ae3d1f72c11420386ffc560b0",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-check.json",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-check.json",
+      "source_sha256": "d191aef1e4bb109b71a8a5befe0e41f7341bc3cd64287d2142a5daa612e0d32a",
+      "published_sha256": "3b723a281909c09cac51e4c2d4c286ef0ce32cc84ed5085109382c5ff095612b",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kicad-drc.log",
+      "source": "work/kisi-three/results/level2-two-channels/kicad-drc.log",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "published_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/our-channel.s4p",
+      "source": "work/kisi-three/results/level2-two-channels/our-channel.s4p",
+      "source_sha256": "8cb00f18069f18ffae8147c995428992962a734b8370d130d5bfb1858ff4d028",
+      "published_sha256": "8cb00f18069f18ffae8147c995428992962a734b8370d130d5bfb1858ff4d028",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/our-channel.npz",
+      "source": "work/kisi-three/results/level2-two-channels/our-channel.npz",
+      "source_sha256": "79bc7e96c869723138d17b81b956782abd138e1f8cd529a57ad2fb143b450e89",
+      "published_sha256": "79bc7e96c869723138d17b81b956782abd138e1f8cd529a57ad2fb143b450e89",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kicad-drc.json",
+      "source": "work/kisi-three/results/level2-two-channels/kicad-drc.json",
+      "source_sha256": "7fd2bc55b0bb51956baa4c694202f38a8be30e5e2b847973a0bd3b61ae2523fd",
+      "published_sha256": "7fd2bc55b0bb51956baa4c694202f38a8be30e5e2b847973a0bd3b61ae2523fd",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/export-audit.json",
+      "source": "work/kisi-three/results/level2-two-channels/export-audit.json",
+      "source_sha256": "77a95dcff5bf1538288c96294199e60ebb5fa95170eea5bebeac1d5c9070bfc5",
+      "published_sha256": "77a95dcff5bf1538288c96294199e60ebb5fa95170eea5bebeac1d5c9070bfc5",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation-status.json",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation-status.json",
+      "source_sha256": "2cccb66b511482c4b5cbd86acb89137cc278a881258acab92932c4a9a6c3f436",
+      "published_sha256": "e1dc263f5350c185c949ace28f657570604a99522e39468a011c7140a18cd6aa",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-check.log",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-check.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/board.png",
+      "source": "work/kisi-three/results/level2-two-channels/board.png",
+      "source_sha256": "cf22fff62fb68260258d45007a8a96300fd3ccd9a13458b46e3bdf13ae766e91",
+      "published_sha256": "cf22fff62fb68260258d45007a8a96300fd3ccd9a13458b46e3bdf13ae766e91",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/board.svg",
+      "source": "work/kisi-three/results/level2-two-channels/board.svg",
+      "source_sha256": "644428d7e0379c007b08419c3f1b61a0cc6a5f2e2593fc1bee2fbd80b0eeef79",
+      "published_sha256": "644428d7e0379c007b08419c3f1b61a0cc6a5f2e2593fc1bee2fbd80b0eeef79",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation.md",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation.md",
+      "source_sha256": "08e472ccb9f7f6c49512d341c1c799dd7f9e9110079ca3c5353c4c5dc7d11a9d",
+      "published_sha256": "08e472ccb9f7f6c49512d341c1c799dd7f9e9110079ca3c5353c4c5dc7d11a9d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/circuit.json",
+      "source": "work/kisi-three/results/level2-two-channels/circuit.json",
+      "source_sha256": "6baf81ea386a7a4a7486880d42bc7c5c36f3e6e3f5ec1cbd839a37184b6c266e",
+      "published_sha256": "6baf81ea386a7a4a7486880d42bc7c5c36f3e6e3f5ec1cbd839a37184b6c266e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-interfaces.log",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-interfaces.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-export-D0.json",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-export-D0.json",
+      "source_sha256": "1358b5dcca16f924d122679568da3808856231c027a9244b4b84b527d06004b6",
+      "published_sha256": "63a6b720e8a1fa75adc2ea02dbd3ad22fd7d63c641cfd24e433d7ce0f38dc345",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-export-D1.json",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-export-D1.json",
+      "source_sha256": "f48393991a6365a43becaa623f064a5956745d651726a8fd56553b7f6012238b",
+      "published_sha256": "c0690820176a06b1b75529b61db5bfd99f36b817d3f8abca8428a60717b0f31d",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation.log",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation.log",
+      "source_sha256": "5ecbec774ae55ef3b05a073d99f83e8ef66b30e6630cc5ea6ac22714531c6439",
+      "published_sha256": "5ecbec774ae55ef3b05a073d99f83e8ef66b30e6630cc5ea6ac22714531c6439",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/board.kicad_pcb",
+      "source": "work/kisi-three/results/level2-two-channels/board.kicad_pcb",
+      "source_sha256": "30f094bf5a4237b9bbccf5be5ad5070a6a2e96b8986573c1d743bb39e8e68dfa",
+      "published_sha256": "30f094bf5a4237b9bbccf5be5ad5070a6a2e96b8986573c1d743bb39e8e68dfa",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/board.kisi.json",
+      "source": "work/kisi-three/results/level2-two-channels/board.kisi.json",
+      "source_sha256": "0a5ab160bfbabd0f0c0abd890cba0406a7969756a3d23944344899abe30635cf",
+      "published_sha256": "0a5ab160bfbabd0f0c0abd890cba0406a7969756a3d23944344899abe30635cf",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/ac-3/response.tsv",
+      "source": "work/kisi-three/results/level2-two-channels/ac-3/response.tsv",
+      "source_sha256": "7a18cd3d3820d98d42912a3a2cda22355f0109ec3949f298d88a76552681906a",
+      "published_sha256": "7a18cd3d3820d98d42912a3a2cda22355f0109ec3949f298d88a76552681906a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/ac-3/solver.log",
+      "source": "work/kisi-three/results/level2-two-channels/ac-3/solver.log",
+      "source_sha256": "29fa2f3d2dd1bf2a1aae0a1a60a80ae84aad4568c7d590f39a175feec083ee59",
+      "published_sha256": "29fa2f3d2dd1bf2a1aae0a1a60a80ae84aad4568c7d590f39a175feec083ee59",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/ac-2/response.tsv",
+      "source": "work/kisi-three/results/level2-two-channels/ac-2/response.tsv",
+      "source_sha256": "7ffc337891b2b3c948f98bdd533c0be0b6a14d12226a894f50653cc7a3bf6a98",
+      "published_sha256": "7ffc337891b2b3c948f98bdd533c0be0b6a14d12226a894f50653cc7a3bf6a98",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/ac-2/solver.log",
+      "source": "work/kisi-three/results/level2-two-channels/ac-2/solver.log",
+      "source_sha256": "5961d99442e60ec47ddc32ac00267b642c3360f318d5dac2d11c64422b07e663",
+      "published_sha256": "5961d99442e60ec47ddc32ac00267b642c3360f318d5dac2d11c64422b07e663",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/results.json",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/results.json",
+      "source_sha256": "53e8a52f62db338877f6095e6fce361de49a7a6a401a704fad5edc8bd0704930",
+      "published_sha256": "b70eb835b1f978f65e5890f7086516f9de0e19bac67572c21c9347e7a8d3b14e",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level2-two-channels/ac-0/response.tsv",
+      "source": "work/kisi-three/results/level2-two-channels/ac-0/response.tsv",
+      "source_sha256": "d3957861a4f652dee7d60c1e3cf37c8280f08d616286eaf50b5c70c92edb82a0",
+      "published_sha256": "d3957861a4f652dee7d60c1e3cf37c8280f08d616286eaf50b5c70c92edb82a0",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/ac-0/solver.log",
+      "source": "work/kisi-three/results/level2-two-channels/ac-0/solver.log",
+      "source_sha256": "56038642863103ff0bae4b843e45e46230bdf7dd89376c44e8f4fa7676d8ac54",
+      "published_sha256": "56038642863103ff0bae4b843e45e46230bdf7dd89376c44e8f4fa7676d8ac54",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/ac-1/response.tsv",
+      "source": "work/kisi-three/results/level2-two-channels/ac-1/response.tsv",
+      "source_sha256": "46efd3f2b7c1760a264f41f4dc4764c6815e2d7553494c8f9eb07b12aaad1dd5",
+      "published_sha256": "46efd3f2b7c1760a264f41f4dc4764c6815e2d7553494c8f9eb07b12aaad1dd5",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/ac-1/solver.log",
+      "source": "work/kisi-three/results/level2-two-channels/ac-1/solver.log",
+      "source_sha256": "7d6a9a89775fef44d457f8f908b01dc13084bffd063dd2e3c4328ee5b77a5d2f",
+      "published_sha256": "7d6a9a89775fef44d457f8f908b01dc13084bffd063dd2e3c4328ee5b77a5d2f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/our-channel.lib",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/our-channel.lib",
+      "source_sha256": "986a5ad11114c3cbf8391c687f87b0e3c5231b71b995bfe4871b27767bf43ee9",
+      "published_sha256": "986a5ad11114c3cbf8391c687f87b0e3c5231b71b995bfe4871b27767bf43ee9",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/metadata.json",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/metadata.json",
+      "source_sha256": "40308da7d309716b6583551cff204784b457e72f1fa054527885fcfffda82fd2",
+      "published_sha256": "40308da7d309716b6583551cff204784b457e72f1fa054527885fcfffda82fd2",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/our-ac-summary.json",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/our-ac-summary.json",
+      "source_sha256": "a3371967a55a2041e2bbf01e1bc769ec99cb3c4ba97b641ea92ce5aa4f18d7b4",
+      "published_sha256": "a3371967a55a2041e2bbf01e1bc769ec99cb3c4ba97b641ea92ce5aa4f18d7b4",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/our-channel.s4p",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/our-channel.s4p",
+      "source_sha256": "121ad874ae6b12241b1c890d57560d58317f299d686ab7c75bc731e3dfc848f4",
+      "published_sha256": "121ad874ae6b12241b1c890d57560d58317f299d686ab7c75bc731e3dfc848f4",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/our-channel.npz",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/our-channel.npz",
+      "source_sha256": "bbd2f2e91902e2cdc512a010c0f8708309df2402c5bb0ffc7caf9f44240908f9",
+      "published_sha256": "bbd2f2e91902e2cdc512a010c0f8708309df2402c5bb0ffc7caf9f44240908f9",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi/D0/sparam_ngspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/kisi/D0/sparam_ngspice.cir",
+      "source_sha256": "86072402373e1753de8b8555ac756826cc9f83e298f1f14f1b7b39f4af29bbb7",
+      "published_sha256": "86072402373e1753de8b8555ac756826cc9f83e298f1f14f1b7b39f4af29bbb7",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi/D0/D0.s2p",
+      "source": "work/kisi-three/results/level2-two-channels/kisi/D0/D0.s2p",
+      "source_sha256": "78d0113c0ab9bc04b54b6fad7d72a4c73ee17ae1b60e054c3ef8581d23d322c3",
+      "published_sha256": "78d0113c0ab9bc04b54b6fad7d72a4c73ee17ae1b60e054c3ef8581d23d322c3",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi/D0/D0.lib",
+      "source": "work/kisi-three/results/level2-two-channels/kisi/D0/D0.lib",
+      "source_sha256": "46aeb4da351e303593299e9c7353b51e220df8d2f5eed1e66a42e3ba1881da11",
+      "published_sha256": "46aeb4da351e303593299e9c7353b51e220df8d2f5eed1e66a42e3ba1881da11",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi/D0/README.md",
+      "source": "work/kisi-three/results/level2-two-channels/kisi/D0/README.md",
+      "source_sha256": "54b8b4b6c5977ca2d9d75cd98a93041a6a41fce9e923ae8287e91224c28bea97",
+      "published_sha256": "54b8b4b6c5977ca2d9d75cd98a93041a6a41fce9e923ae8287e91224c28bea97",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi/D0/bench_ngspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/kisi/D0/bench_ngspice.cir",
+      "source_sha256": "d3981dd31a28f69e2e3d5b2d2b60b94ef474337ed353905b96a683ab999b2d5f",
+      "published_sha256": "d3981dd31a28f69e2e3d5b2d2b60b94ef474337ed353905b96a683ab999b2d5f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi/D1/sparam_ngspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/kisi/D1/sparam_ngspice.cir",
+      "source_sha256": "445a976c8991eae2285336b235ac119f9b4d1c8f3ebe6eb51887c7294bc653db",
+      "published_sha256": "445a976c8991eae2285336b235ac119f9b4d1c8f3ebe6eb51887c7294bc653db",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi/D1/D1.s2p",
+      "source": "work/kisi-three/results/level2-two-channels/kisi/D1/D1.s2p",
+      "source_sha256": "a2a22912486ba63e539b6a0da29366a393723d291802577494492570a0d9be1f",
+      "published_sha256": "a2a22912486ba63e539b6a0da29366a393723d291802577494492570a0d9be1f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi/D1/D1.lib",
+      "source": "work/kisi-three/results/level2-two-channels/kisi/D1/D1.lib",
+      "source_sha256": "a1e49a6bcfeb18eceb1a60af4a5ec21b9d4c5d24624ffcb8553f8cb9193cb934",
+      "published_sha256": "a1e49a6bcfeb18eceb1a60af4a5ec21b9d4c5d24624ffcb8553f8cb9193cb934",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi/D1/README.md",
+      "source": "work/kisi-three/results/level2-two-channels/kisi/D1/README.md",
+      "source_sha256": "a64ab8e40b60aaf0dc9d928da784dd1b51d76941ace7f06dbf94223688404cbf",
+      "published_sha256": "a64ab8e40b60aaf0dc9d928da784dd1b51d76941ace7f06dbf94223688404cbf",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi/D1/bench_ngspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/kisi/D1/bench_ngspice.cir",
+      "source_sha256": "47ccda640d34ab034520181f532c39e240df90d147977091b9cd95a39d53c2d4",
+      "published_sha256": "47ccda640d34ab034520181f532c39e240df90d147977091b9cd95a39d53c2d4",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-dc/D0/D0.s2p",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-dc/D0/D0.s2p",
+      "source_sha256": "f6bf84a749067e1efd6ee1312cd84cfac8cf8be431914f6e9787c6de381b61fb",
+      "published_sha256": "f6bf84a749067e1efd6ee1312cd84cfac8cf8be431914f6e9787c6de381b61fb",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-dc/D0/README.md",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-dc/D0/README.md",
+      "source_sha256": "78d999c7773a2bbcd3f43e71cb6f8f06ca2141c752e66f45a5f47711e3ff5b39",
+      "published_sha256": "78d999c7773a2bbcd3f43e71cb6f8f06ca2141c752e66f45a5f47711e3ff5b39",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-dc/D1/D1.s2p",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-dc/D1/D1.s2p",
+      "source_sha256": "0dd758a03478877838f28307aeec66e3f4a039a16422d55c0069e67104811ae6",
+      "published_sha256": "0dd758a03478877838f28307aeec66e3f4a039a16422d55c0069e67104811ae6",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/kisi-dc/D1/README.md",
+      "source": "work/kisi-three/results/level2-two-channels/kisi-dc/D1/README.md",
+      "source_sha256": "a18c0b817e543e963974fdd248f0d9fadb8771e61a3a1025b5accfedb8b3c3d4",
+      "published_sha256": "a18c0b817e543e963974fdd248f0d9fadb8771e61a3a1025b5accfedb8b3c3d4",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/bench_xyce.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/bench_xyce.cir",
+      "source_sha256": "627356a23784407072e46871bb0e50eebbe5d09e89d7b752a08cd24545a7994e",
+      "published_sha256": "627356a23784407072e46871bb0e50eebbe5d09e89d7b752a08cd24545a7994e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/D0_ltspice.lib",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/D0_ltspice.lib",
+      "source_sha256": "f45db996059ab9f90780d747e6ba535e548a2997e03f2a7d1fa8c4062df46456",
+      "published_sha256": "f45db996059ab9f90780d747e6ba535e548a2997e03f2a7d1fa8c4062df46456",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/sparam_ngspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/sparam_ngspice.cir",
+      "source_sha256": "e3962efb40d6de0ce2057352688953a00d62037df4573c947d6541c2162cf2f1",
+      "published_sha256": "e3962efb40d6de0ce2057352688953a00d62037df4573c947d6541c2162cf2f1",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/export.json",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/export.json",
+      "source_sha256": "272881cf79a6f01ed560fdf8f720a0188bdbe09d8fabb1410742133bab25acdd",
+      "published_sha256": "1d6dc4935c31451ae844af7bf4510b8967089fc27d8822b8a791b973b6ffec78",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/D0_kicad.lib",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/D0_kicad.lib",
+      "source_sha256": "b029e8b9d2ac118b333b99d29d7684ac6d594e03d101a08f1767f6d0cd6e16ec",
+      "published_sha256": "b029e8b9d2ac118b333b99d29d7684ac6d594e03d101a08f1767f6d0cd6e16ec",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/bench_ngspice.txt",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/bench_ngspice.txt",
+      "source_sha256": "5456aad251314d85634a7b297cba6a58e7fc31391c034b183dcc17217149f0be",
+      "published_sha256": "5456aad251314d85634a7b297cba6a58e7fc31391c034b183dcc17217149f0be",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/D0.s2p",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/D0.s2p",
+      "source_sha256": "b24421493a284b66f5d1517d73311d0c869afc6d3e7a312f3cabdb348c7233d8",
+      "published_sha256": "b24421493a284b66f5d1517d73311d0c869afc6d3e7a312f3cabdb348c7233d8",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/bench_ltspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/bench_ltspice.cir",
+      "source_sha256": "51f071edcc2aac517f4f5c7211a58a10550fd2f21c4755cdd2da1a47485bf770",
+      "published_sha256": "51f071edcc2aac517f4f5c7211a58a10550fd2f21c4755cdd2da1a47485bf770",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/step_ngspice.txt",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/step_ngspice.txt",
+      "source_sha256": "f1f7442a3081ade6cb60eb06afead176f84fba21e6253c962c5be8b2b1084068",
+      "published_sha256": "f1f7442a3081ade6cb60eb06afead176f84fba21e6253c962c5be8b2b1084068",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/passivity_ngspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/passivity_ngspice.cir",
+      "source_sha256": "91f8992dc8f60fd2d00a150885592593edf70dfaca1c2892cc3842190bd0f7d4",
+      "published_sha256": "91f8992dc8f60fd2d00a150885592593edf70dfaca1c2892cc3842190bd0f7d4",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/D0.lib",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/D0.lib",
+      "source_sha256": "9afa99c4ebd7e3d76b40384bfd168e29faf46f9db69a057302e57679835716d7",
+      "published_sha256": "9afa99c4ebd7e3d76b40384bfd168e29faf46f9db69a057302e57679835716d7",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/README.md",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/README.md",
+      "source_sha256": "997f87eca6bcc2ba7bc13869b77a315aec53122c80d2c93e500b480a53b04997",
+      "published_sha256": "997f87eca6bcc2ba7bc13869b77a315aec53122c80d2c93e500b480a53b04997",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/step_ngspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/step_ngspice.cir",
+      "source_sha256": "bec9fe433a2531a32d48709fc1c9f86ed34b08939c1b232990f57d201df4fadc",
+      "published_sha256": "bec9fe433a2531a32d48709fc1c9f86ed34b08939c1b232990f57d201df4fadc",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/passivity_ngspice.txt",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/passivity_ngspice.txt",
+      "source_sha256": "22b726d9e312b0bc5c32f370d6a9495b5564b8f9faa9abdb4745a0c691aeaee3",
+      "published_sha256": "22b726d9e312b0bc5c32f370d6a9495b5564b8f9faa9abdb4745a0c691aeaee3",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/D0.kicad_sch",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/D0.kicad_sch",
+      "source_sha256": "60b7fe57023a56a9ebaa146db0a1f45df4e8e59ae996fa3411d553e89763e491",
+      "published_sha256": "60b7fe57023a56a9ebaa146db0a1f45df4e8e59ae996fa3411d553e89763e491",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/sparam_xyce.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/sparam_xyce.cir",
+      "source_sha256": "e445688acf906e738517699268a83bbf2752fe58d4d82dc3d655ba59d592e69a",
+      "published_sha256": "e445688acf906e738517699268a83bbf2752fe58d4d82dc3d655ba59d592e69a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/D0.kicad_pro",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/D0.kicad_pro",
+      "source_sha256": "012fff495e30a86bb9766aa18ef6d6e78a290f741556f07914d1ac079ef17248",
+      "published_sha256": "012fff495e30a86bb9766aa18ef6d6e78a290f741556f07914d1ac079ef17248",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/sym-lib-table",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/sym-lib-table",
+      "source_sha256": "57f69d4278ad758f64183cf64866c0f4ae80081ce6568670bcef9c82af7d637e",
+      "published_sha256": "57f69d4278ad758f64183cf64866c0f4ae80081ce6568670bcef9c82af7d637e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/sparam_ltspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/sparam_ltspice.cir",
+      "source_sha256": "81ed613335a752ebac1e7f16a8bb33478d0337b7119827a241748cfaea2f2e7d",
+      "published_sha256": "81ed613335a752ebac1e7f16a8bb33478d0337b7119827a241748cfaea2f2e7d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/sparam_ngspice.txt",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/sparam_ngspice.txt",
+      "source_sha256": "28a2f896a81c88aa47e323d911d7b7dd357c362578d47f8f77b090025e67c4e8",
+      "published_sha256": "28a2f896a81c88aa47e323d911d7b7dd357c362578d47f8f77b090025e67c4e8",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/kisi.kicad_sym",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/kisi.kicad_sym",
+      "source_sha256": "8c0858db87c6fd80c46a7ec120458f82236793f387b8212d4352745eed32724f",
+      "published_sha256": "8c0858db87c6fd80c46a7ec120458f82236793f387b8212d4352745eed32724f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_compact/bench_ngspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_compact/bench_ngspice.cir",
+      "source_sha256": "d3981dd31a28f69e2e3d5b2d2b60b94ef474337ed353905b96a683ab999b2d5f",
+      "published_sha256": "d3981dd31a28f69e2e3d5b2d2b60b94ef474337ed353905b96a683ab999b2d5f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/bench_xyce.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/bench_xyce.cir",
+      "source_sha256": "627356a23784407072e46871bb0e50eebbe5d09e89d7b752a08cd24545a7994e",
+      "published_sha256": "627356a23784407072e46871bb0e50eebbe5d09e89d7b752a08cd24545a7994e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/D0_ltspice.lib",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/D0_ltspice.lib",
+      "source_sha256": "924fa63b9bf67bc66a0cd917469e96c421d0f33e61f1018c3a2396c109e6966b",
+      "published_sha256": "924fa63b9bf67bc66a0cd917469e96c421d0f33e61f1018c3a2396c109e6966b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/sparam_ngspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/sparam_ngspice.cir",
+      "source_sha256": "e3962efb40d6de0ce2057352688953a00d62037df4573c947d6541c2162cf2f1",
+      "published_sha256": "e3962efb40d6de0ce2057352688953a00d62037df4573c947d6541c2162cf2f1",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/export.json",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/export.json",
+      "source_sha256": "e7fc2c47126016797774000ef41bdb5444aaaa15dec2141c9ad2e85d0be1bdb6",
+      "published_sha256": "0bbb2fb35d3c698348718a167d9811e1667ef2ef2c1bef16ca2db0dfacbf2c89",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/D0_kicad.lib",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/D0_kicad.lib",
+      "source_sha256": "b029e8b9d2ac118b333b99d29d7684ac6d594e03d101a08f1767f6d0cd6e16ec",
+      "published_sha256": "b029e8b9d2ac118b333b99d29d7684ac6d594e03d101a08f1767f6d0cd6e16ec",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/bench_ngspice.txt",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/bench_ngspice.txt",
+      "source_sha256": "2f2195213a1fd79f13fd37ece39ee46397d7a315ace2241114d8ba480c07f959",
+      "published_sha256": "2f2195213a1fd79f13fd37ece39ee46397d7a315ace2241114d8ba480c07f959",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/D0.s2p",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/D0.s2p",
+      "source_sha256": "b24421493a284b66f5d1517d73311d0c869afc6d3e7a312f3cabdb348c7233d8",
+      "published_sha256": "b24421493a284b66f5d1517d73311d0c869afc6d3e7a312f3cabdb348c7233d8",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/bench_ltspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/bench_ltspice.cir",
+      "source_sha256": "51f071edcc2aac517f4f5c7211a58a10550fd2f21c4755cdd2da1a47485bf770",
+      "published_sha256": "51f071edcc2aac517f4f5c7211a58a10550fd2f21c4755cdd2da1a47485bf770",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/step_ngspice.txt",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/step_ngspice.txt",
+      "source_sha256": "e40a21d66fa52e89f0ef191b43db607c83f3dea0ea9d7ccb5070cce388a2d7d7",
+      "published_sha256": "e40a21d66fa52e89f0ef191b43db607c83f3dea0ea9d7ccb5070cce388a2d7d7",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/passivity_ngspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/passivity_ngspice.cir",
+      "source_sha256": "91f8992dc8f60fd2d00a150885592593edf70dfaca1c2892cc3842190bd0f7d4",
+      "published_sha256": "91f8992dc8f60fd2d00a150885592593edf70dfaca1c2892cc3842190bd0f7d4",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/D0.lib",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/D0.lib",
+      "source_sha256": "8713c77ef57b07664b5f78201adec282b42370dd97404d2655fcb8b13c4acc41",
+      "published_sha256": "8713c77ef57b07664b5f78201adec282b42370dd97404d2655fcb8b13c4acc41",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/README.md",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/README.md",
+      "source_sha256": "dedc90c64ab435accb5de31fd2bdbe293c294b365a730120eeb4e15645de425b",
+      "published_sha256": "dedc90c64ab435accb5de31fd2bdbe293c294b365a730120eeb4e15645de425b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/step_ngspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/step_ngspice.cir",
+      "source_sha256": "bec9fe433a2531a32d48709fc1c9f86ed34b08939c1b232990f57d201df4fadc",
+      "published_sha256": "bec9fe433a2531a32d48709fc1c9f86ed34b08939c1b232990f57d201df4fadc",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/passivity_ngspice.txt",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/passivity_ngspice.txt",
+      "source_sha256": "b0aded8f3b3876ae009a416617aba3c1c51bc9a7981e64bb4a8f1cc7e932899b",
+      "published_sha256": "b0aded8f3b3876ae009a416617aba3c1c51bc9a7981e64bb4a8f1cc7e932899b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/D0.kicad_sch",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/D0.kicad_sch",
+      "source_sha256": "60b7fe57023a56a9ebaa146db0a1f45df4e8e59ae996fa3411d553e89763e491",
+      "published_sha256": "60b7fe57023a56a9ebaa146db0a1f45df4e8e59ae996fa3411d553e89763e491",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/sparam_xyce.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/sparam_xyce.cir",
+      "source_sha256": "e445688acf906e738517699268a83bbf2752fe58d4d82dc3d655ba59d592e69a",
+      "published_sha256": "e445688acf906e738517699268a83bbf2752fe58d4d82dc3d655ba59d592e69a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/D0.kicad_pro",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/D0.kicad_pro",
+      "source_sha256": "012fff495e30a86bb9766aa18ef6d6e78a290f741556f07914d1ac079ef17248",
+      "published_sha256": "012fff495e30a86bb9766aa18ef6d6e78a290f741556f07914d1ac079ef17248",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/sym-lib-table",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/sym-lib-table",
+      "source_sha256": "57f69d4278ad758f64183cf64866c0f4ae80081ce6568670bcef9c82af7d637e",
+      "published_sha256": "57f69d4278ad758f64183cf64866c0f4ae80081ce6568670bcef9c82af7d637e",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/sparam_ltspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/sparam_ltspice.cir",
+      "source_sha256": "81ed613335a752ebac1e7f16a8bb33478d0337b7119827a241748cfaea2f2e7d",
+      "published_sha256": "81ed613335a752ebac1e7f16a8bb33478d0337b7119827a241748cfaea2f2e7d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/sparam_ngspice.txt",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/sparam_ngspice.txt",
+      "source_sha256": "873fbaa73f3dabc341e27b4ea11c99438f852a05f32050ee5e39d2f7ef320cde",
+      "published_sha256": "873fbaa73f3dabc341e27b4ea11c99438f852a05f32050ee5e39d2f7ef320cde",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/kisi.kicad_sym",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/kisi.kicad_sym",
+      "source_sha256": "8c0858db87c6fd80c46a7ec120458f82236793f387b8212d4352745eed32724f",
+      "published_sha256": "8c0858db87c6fd80c46a7ec120458f82236793f387b8212d4352745eed32724f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/native-export-validation/D0_ladder/bench_ngspice.cir",
+      "source": "work/kisi-three/results/level2-two-channels/native-export-validation/D0_ladder/bench_ngspice.cir",
+      "source_sha256": "d3981dd31a28f69e2e3d5b2d2b60b94ef474337ed353905b96a683ab999b2d5f",
+      "published_sha256": "d3981dd31a28f69e2e3d5b2d2b60b94ef474337ed353905b96a683ab999b2d5f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/ac-3/response.tsv",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/ac-3/response.tsv",
+      "source_sha256": "3fa447cab9d52f23bb9fdc37f10337844b933e8432b6687db83b10ed4cecf8f3",
+      "published_sha256": "3fa447cab9d52f23bb9fdc37f10337844b933e8432b6687db83b10ed4cecf8f3",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/ac-3/solver.log",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/ac-3/solver.log",
+      "source_sha256": "6980aba5d70dd909d644f2ae3330fda0506ad3c5c682fda350b113c3426aff49",
+      "published_sha256": "6980aba5d70dd909d644f2ae3330fda0506ad3c5c682fda350b113c3426aff49",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/ac-2/response.tsv",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/ac-2/response.tsv",
+      "source_sha256": "1222438be5b588fc469b164529d49bb8e46acff064c286a63d19e7dad8b7d747",
+      "published_sha256": "1222438be5b588fc469b164529d49bb8e46acff064c286a63d19e7dad8b7d747",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/ac-2/solver.log",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/ac-2/solver.log",
+      "source_sha256": "9a64256a743dbe8c8951ff75549b7e035620b0875e9b6718ba0f7abecea3f181",
+      "published_sha256": "9a64256a743dbe8c8951ff75549b7e035620b0875e9b6718ba0f7abecea3f181",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/ac-0/response.tsv",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/ac-0/response.tsv",
+      "source_sha256": "bd7fda91c21450228f145cf75963a4da686227d185b993c8986fadb98759a229",
+      "published_sha256": "bd7fda91c21450228f145cf75963a4da686227d185b993c8986fadb98759a229",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/ac-0/solver.log",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/ac-0/solver.log",
+      "source_sha256": "1e20667d3b315a2a4276761c62239fe8a578fb8a7aa556fa34120774514e531f",
+      "published_sha256": "1e20667d3b315a2a4276761c62239fe8a578fb8a7aa556fa34120774514e531f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/ac-1/response.tsv",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/ac-1/response.tsv",
+      "source_sha256": "aa25d8132464abf6d4c1491945aa11a44f825d01af16da533c65094e4ebbb70d",
+      "published_sha256": "aa25d8132464abf6d4c1491945aa11a44f825d01af16da533c65094e4ebbb70d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "data/cases/level2-two-channels/refinement4/ac-1/solver.log",
+      "source": "work/kisi-three/results/level2-two-channels/refinement4/ac-1/solver.log",
+      "source_sha256": "3ec5d1e170afb74f71c98538908f3379908ca0589560f4f7542aa5a4861758e8",
+      "published_sha256": "3ec5d1e170afb74f71c98538908f3379908ca0589560f4f7542aa5a4861758e8",
+      "change": "byte-identical"
+    },
+    {
+      "path": "provenance/source-audit.json",
+      "source": "work/kisi-three/source-audit.json",
+      "source_sha256": "0436a086a1debe900809517dc0f400ae352f13a3582cc77bf9c66c1afd8ae0ad",
+      "published_sha256": "0436a086a1debe900809517dc0f400ae352f13a3582cc77bf9c66c1afd8ae0ad",
+      "change": "byte-identical"
+    },
+    {
+      "path": "provenance/board-source-identities.json",
+      "source": "work/kisi-three/board-source-identities.json",
+      "source_sha256": "b08ae1100789cc51f8ffc900d3eb0c13d57e677b275a4ec9b548c9c9e8abc0c5",
+      "published_sha256": "b08ae1100789cc51f8ffc900d3eb0c13d57e677b275a4ec9b548c9c9e8abc0c5",
+      "change": "byte-identical"
+    },
+    {
+      "path": "provenance/eye-label-audit.json",
+      "source": "work/kisi-three/eye-label-audit.json",
+      "source_sha256": "b8549be80e9e35abf0970b041d208e41144b7cedc2969d82068047dd5abb6ba3",
+      "published_sha256": "b8549be80e9e35abf0970b041d208e41144b7cedc2969d82068047dd5abb6ba3",
+      "change": "byte-identical"
+    },
+    {
+      "path": "provenance/refinement-results.json",
+      "source": "work/kisi-three/refinement-results.json",
+      "source_sha256": "09e21dceae93b27a26a1a078d3d84fd14c91f8342f5d5632e3fd94571187015c",
+      "published_sha256": "09e21dceae93b27a26a1a078d3d84fd14c91f8342f5d5632e3fd94571187015c",
+      "change": "byte-identical"
+    },
+    {
+      "path": "provenance/comparison-results.json",
+      "source": "work/kisi-three/comparison-results.json",
+      "source_sha256": "295c28645e70368204c495c8859ea6b8ae2dfd5c4b494191312ad1b216786f38",
+      "published_sha256": "295c28645e70368204c495c8859ea6b8ae2dfd5c4b494191312ad1b216786f38",
+      "change": "byte-identical"
+    },
+    {
+      "path": "reports/results.json",
+      "source": "outputs/kisi-three-results.json",
+      "source_sha256": "7797108a0595f5b76eb0e0d2bdda83a744699a24a35579fe6ae4c3456e3a975d",
+      "published_sha256": "4d37190eea3b4220ebff9121e183891791ba25303ff7a27df2fa3b755f7d19a1",
+      "change": "host paths sanitized"
+    },
+    {
+      "path": "reports/figures/comparison.png",
+      "source": "outputs/kisi-three-comparison.png",
+      "source_sha256": "57114da46a2159ef4e3282db1ccd3688195362a6a67b95bdd1089c61cbb29d89",
+      "published_sha256": "57114da46a2159ef4e3282db1ccd3688195362a6a67b95bdd1089c61cbb29d89",
+      "change": "byte-identical"
+    },
+    {
+      "path": "reports/figures/frequency.png",
+      "source": "outputs/kisi-three-frequency.png",
+      "source_sha256": "81c1f9aff80559491cbcff7b268b5ddda2bf35337ff3f278100d2e8b031d470f",
+      "published_sha256": "81c1f9aff80559491cbcff7b268b5ddda2bf35337ff3f278100d2e8b031d470f",
+      "change": "byte-identical"
+    },
+    {
+      "path": "reports/figures/short.png",
+      "source": "outputs/kisi-three-short.png",
+      "source_sha256": "b2daec3ba2f09d084edb30711e39e3e40ed1a0a59e885ad6c8f76c02cfe009b4",
+      "published_sha256": "b2daec3ba2f09d084edb30711e39e3e40ed1a0a59e885ad6c8f76c02cfe009b4",
+      "change": "byte-identical"
+    },
+    {
+      "path": "reports/figures/ibis.png",
+      "source": "outputs/kisi-three-ibis.png",
+      "source_sha256": "54649d0349b3cec56d579c5578045a1eecc42da05f304f5e6239c539c709d823",
+      "published_sha256": "54649d0349b3cec56d579c5578045a1eecc42da05f304f5e6239c539c709d823",
+      "change": "byte-identical"
+    },
+    {
+      "path": "examples/level1-single-ended/level1-single-ended.tsx",
+      "source": "work/kisi-three/pipeline/examples/level1-single-ended/level1-single-ended.tsx",
+      "source_sha256": "0827c08e270de7c01a0f175b918f8773ff1cc294b608ca4c4547bbc3d022f9f0",
+      "published_sha256": "0827c08e270de7c01a0f175b918f8773ff1cc294b608ca4c4547bbc3d022f9f0",
+      "change": "byte-identical"
+    },
+    {
+      "path": "examples/level1-differential/routes.ts",
+      "source": "work/kisi-three/pipeline/examples/level1-differential/routes.ts",
+      "source_sha256": "17a02650ead02125ce19e25aa858cd0ee1ce56756adbb72b0a494a0ec5ace4d6",
+      "published_sha256": "17a02650ead02125ce19e25aa858cd0ee1ce56756adbb72b0a494a0ec5ace4d6",
+      "change": "byte-identical"
+    },
+    {
+      "path": "examples/level1-differential/level1-differential.tsx",
+      "source": "work/kisi-three/pipeline/examples/level1-differential/level1-differential.tsx",
+      "source_sha256": "b18401a07e533d291f0618646845ea25635270cf67eea2b3632595554d7ed4ff",
+      "published_sha256": "b18401a07e533d291f0618646845ea25635270cf67eea2b3632595554d7ed4ff",
+      "change": "byte-identical"
+    },
+    {
+      "path": "examples/level2-two-channels/level2-two-channels.tsx",
+      "source": "work/kisi-three/pipeline/examples/level2-two-channels/level2-two-channels.tsx",
+      "source_sha256": "afeabe2d778cca548293835099286c200f748ed9b0cfbcf46d6355f02b55244d",
+      "published_sha256": "afeabe2d778cca548293835099286c200f748ed9b0cfbcf46d6355f02b55244d",
+      "change": "byte-identical"
+    },
+    {
+      "path": "examples/parts.tsx",
+      "source": "work/kisi-three/pipeline/examples/parts.tsx",
+      "source_sha256": "5f573b0863af04c811575547902f80f5c2b56d53d6e8845d4edb2024f0129d1b",
+      "published_sha256": "5f573b0863af04c811575547902f80f5c2b56d53d6e8845d4edb2024f0129d1b",
+      "change": "byte-identical"
+    },
+    {
+      "path": "provenance/vendor-models.lock.json",
+      "source": "work/kisi-three/pipeline/examples/vendor-models.lock.json",
+      "source_sha256": "f6f2a8dd9929a1a077f89f1204d0ae784e88070aefe146b84f745d5ca37db9bf",
+      "published_sha256": "f6f2a8dd9929a1a077f89f1204d0ae784e88070aefe146b84f745d5ca37db9bf",
+      "change": "byte-identical"
+    },
+    {
+      "path": "licenses/upstream-pipeline-MIT.txt",
+      "source": "work/kisi-three/pipeline/LICENSE",
+      "source_sha256": "bf1f3a88d5cefe6da3d7540f13ea290159b1083f32c0dcd02c914c3e5f55ae3a",
+      "published_sha256": "bf1f3a88d5cefe6da3d7540f13ea290159b1083f32c0dcd02c914c3e5f55ae3a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "provenance/upstream-dependencies/package.json",
+      "source": "work/kisi-three/pipeline/package.json",
+      "source_sha256": "e50b0fae89d48dece6b19236683823412f44d64f8ca2159a1ff64fd97d55093a",
+      "published_sha256": "e50b0fae89d48dece6b19236683823412f44d64f8ca2159a1ff64fd97d55093a",
+      "change": "byte-identical"
+    },
+    {
+      "path": "provenance/upstream-dependencies/pnpm-lock.yaml",
+      "source": "work/kisi-three/pipeline/pnpm-lock.yaml",
+      "source_sha256": "b4907f423fbb231a15059cf9410cfe45490d4400d1d3fb46d3ac1fec73d90514",
+      "published_sha256": "b4907f423fbb231a15059cf9410cfe45490d4400d1d3fb46d3ac1fec73d90514",
+      "change": "byte-identical"
+    },
+    {
+      "path": "provenance/upstream-dependencies/pnpm-workspace.yaml",
+      "source": "work/kisi-three/pipeline/pnpm-workspace.yaml",
+      "source_sha256": "60400f464f7e846678f4015afc70bc1dff05228c75d98ac1f2476413a381ccac",
+      "published_sha256": "60400f464f7e846678f4015afc70bc1dff05228c75d98ac1f2476413a381ccac",
+      "change": "byte-identical"
+    }
+  ]
+}

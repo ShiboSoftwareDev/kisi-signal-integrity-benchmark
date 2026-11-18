@@ -1,0 +1,48 @@
+{
+  "level": "level1-single-ended",
+  "signal_names": [
+    "DATA"
+  ],
+  "our": [
+    {
+      "height_v": 0.9951473327969746,
+      "width_ui": 0.9986295495416471,
+      "best_phase_ui": 0.02734375,
+      "min_v": -0.021864923939986066,
+      "max_v": 1.0206721741429028,
+      "threshold_v": 0.4994666740587823,
+      "bits": 127,
+      "spui": 256
+    }
+  ],
+  "kisi": [
+    {
+      "height_v": 0.996384680242478,
+      "width_ui": 0.9972191087132671,
+      "best_phase_ui": 0.11328125,
+      "min_v": -0.021701014345730074,
+      "max_v": 1.0205760464772904,
+      "threshold_v": 0.4994666740587823,
+      "bits": 127,
+      "spui": 256
+    }
+  ],
+  "loaded_gain_1ghz_db": {
+    "our": -2.875329803890265,
+    "kisi": -3.019413451374536
+  },
+  "step_delay_ps": {
+    "our": 251.76457900602205,
+    "kisi": 251.14181593359734
+  },
+  "dc_gain_v_per_bit": {
+    "our": 0.998910999806581,
+    "kisi": 0.9989556964285481
+  },
+  "max_complex_loaded_difference_to_3ghz": 0.06865090189500886,
+  "max_complex_loaded_difference_to_10ghz": 0.29560538790948837,
+  "kisi_max_singular_value": 0.9999992223154435,
+  "notes": [],
+  "render_diagnostics": [],
+  "kicad_shorts": []
+}

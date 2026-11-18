@@ -1,0 +1,50 @@
+{
+  "level": "level1-differential",
+  "signal_names": [
+    "BUS_P-N"
+  ],
+  "our": [
+    {
+      "height_v": 1.0850767672940038,
+      "width_ui": 0.9992970696363557,
+      "best_phase_ui": 0.96484375,
+      "min_v": -0.016955447886914946,
+      "max_v": 1.1056093381034628,
+      "threshold_v": 0.544407976545605,
+      "bits": 127,
+      "spui": 256
+    }
+  ],
+  "kisi": [
+    {
+      "height_v": 1.0858376989256757,
+      "width_ui": 0.9991378291912838,
+      "best_phase_ui": 0.34765625,
+      "min_v": -0.02349554917426025,
+      "max_v": 1.1123484042262815,
+      "threshold_v": 0.544407976545605,
+      "bits": 127,
+      "spui": 256
+    }
+  ],
+  "loaded_gain_1ghz_db": {
+    "our": -0.2734567116373639,
+    "kisi": -0.5381075091168507
+  },
+  "step_delay_ps": {
+    "our": 426.3862967086819,
+    "kisi": 402.9325692134449
+  },
+  "dc_gain_v_per_bit": {
+    "our": 1.0887852208339401,
+    "kisi": 1.08884668534848
+  },
+  "max_complex_loaded_difference_to_3ghz": 0.4039804021654851,
+  "max_complex_loaded_difference_to_10ghz": 0.8275052208248505,
+  "kisi_max_singular_value": 0.9999988287277874,
+  "notes": [
+    "Original 120ohm resistor remains at its physical nodes in our circuit. Kisi removes it from the channel and applies it as an RX differential termination; the common loading restores that 120ohm bridge, without duplicating it. This includes a placement approximation in Kisi."
+  ],
+  "render_diagnostics": [],
+  "kicad_shorts": []
+}

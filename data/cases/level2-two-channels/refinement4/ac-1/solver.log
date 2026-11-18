@@ -1,0 +1,15 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: native routed passive channel ac
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using KLU as Direct Linear Solver
+ Reference value :  2.08079e+09
+ Reference value :  5.69043e+09
+ Reference value :  9.26007e+09
+No. of Data Rows : 1001
+ngspice-47 done
+

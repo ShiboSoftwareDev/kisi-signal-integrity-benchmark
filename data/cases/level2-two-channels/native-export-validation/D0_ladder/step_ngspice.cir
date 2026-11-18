@@ -1,0 +1,12 @@
+* step response of D0 (kisi channel export check)
+.include "D0.lib"
+VS0 e0 0 PWL(0 0 10p 0 1.350000e-10 1.0)
+RS0 e0 a 50
+RT1 b 0 50
+XL a b 0 D0_lane
+.tran 5.000000e-12 1.824196e-09
+.control
+run
+wrdata step_ngspice.txt v(b)
+.endc
+.end

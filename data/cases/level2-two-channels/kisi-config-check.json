@@ -1,0 +1,23 @@
+{
+  "entries": 1,
+  "errors": [],
+  "file": "data/cases/level2-two-channels/board.kisi.json",
+  "messages": [],
+  "ok": true,
+  "variant": {
+    "available": [],
+    "chosen_by": null,
+    "description": null,
+    "errors": [],
+    "field_overrides": [],
+    "fitted_by_variant": [],
+    "forks_all_fitted": 0,
+    "name": null,
+    "needs_choice": false,
+    "not_fitted_by_variant": [],
+    "not_fitted_total": 0,
+    "unused_nets": 0,
+    "warnings": []
+  },
+  "warnings": []
+}

@@ -1,0 +1,5 @@
+# Versions used for this experiment. Python 3.12.
+numpy==2.5.5
+scipy==1.18.1
+scikit-rf==2.0.1
+matplotlib==3.11.2

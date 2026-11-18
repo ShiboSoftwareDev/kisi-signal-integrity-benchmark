@@ -1,0 +1,223 @@
+* LTspice version of the lane library: the same circuit as the .lib next to it, with Rser=0 Rpar=1e30 on every
+* inductor (LTspice adds a series resistance of 1 mOhm and an implicit parallel damping to inductors by default)
+* kisi 0.3.3: lane D0 as a SPICE subcircuit (ngspice, Xyce, LTspice, KiCad)
+* board board.kicad_pcb
+* subcircuit D0_lane (single line)
+* port 1 (a): D0 at U1.4 (transmitter end)
+* port 2 (b): D0 at U3.2 (receiver end)
+* track length 28.12 mm, delay 162.1 ps, reference 50.00 ohm per port
+* model (compact): kisi's channel sections; lines as lossless-line cells (at least 3 per delay x 10.00 GHz): per cell
+*   a lossless LC ladder (40 sections per wavelength: the delay) and the fitted Foster (R(f), L_int(f)) and Debye
+*   (G(f), C(f)) networks lumped once; consecutive sections with the same model merged (0 merges); vias as kisi's
+*   via ladder, parts with estimated parasitics, open stubs; coupled sections of a pair as even/odd chains between
+*   ideal mode converters (E/F). Passive and causal by construction.
+* check against kisi's S-parameters (same model): |dS21| <= 0.005129 dB to 1.5 x Nyquist (0.4545 dB to the top), largest |dS| 0.0006898 to 1.5 x Nyquist (0.1747 to the top)
+* fits of the main line sections (each at least 10 % of the length): R 0.5148 %, X 0.01713 %, G 17.43 %, B 3.524 %; via ladders 0 %
+* elements after flattening: 144 R, 158 L, 136 C, 0 sources; 0 RLGC sections, 11 lossless-line cells
+* usage: X1 a b 0 D0_lane   (the last port is the reference)
+* stackup: 2 copper layers, 1.49 mm, er and tand at 1 GHz; from board file (layer by layer in the README)
+*   layers (um): F.Cu 30 / 1430 er 4.42 tand 0.02 / B.Cu 30
+
+* half a lossless line (LC ladder)
+.subckt D0_TL1_F_Cu_head a b ref
+C1 a ref 6.316130e-15
+L1 a b 1.077808e-10 Rser=0 Rpar=1e30
+C2 b ref 6.316130e-15
+.ends D0_TL1_F_Cu_head
+
+* last cell: z, y, then half the lossless line
+.subckt D0_TL1_F_Cu_end a b ref
+R1 a n1 2.865499e-4
+R2 n1 n2 2.833014e-5
+L1 n1 n2 1.425834e-12 Rser=0 Rpar=1e30
+R3 n2 n3 2.273449e-4
+L2 n2 n3 2.874123e-12 Rser=0 Rpar=1e30
+R4 n3 n4 4.790042e-4
+L3 n3 n4 1.521106e-12 Rser=0 Rpar=1e30
+R5 n4 n5 1.003781e-3
+L4 n4 n5 8.006803e-13 Rser=0 Rpar=1e30
+R6 n5 n6 1.997103e-3
+L5 n5 n6 4.001480e-13 Rser=0 Rpar=1e30
+R7 n6 n7 3.979800e-3
+L6 n6 n7 2.003002e-13 Rser=0 Rpar=1e30
+R8 n7 n8 8.110093e-3
+L7 n7 n8 1.025288e-13 Rser=0 Rpar=1e30
+R9 n8 x 1.781333e-2
+L8 n8 x 5.656727e-14 Rser=0 Rpar=1e30
+R10 x n9 2.182426e8
+C1 n9 ref 1.296823e-15
+R11 x n10 8.519955e6
+C2 n10 ref 1.050468e-15
+R12 x n11 2.686224e5
+C3 n11 ref 1.053605e-15
+R13 x n12 2.201926e4
+C4 n12 ref 4.064596e-16
+R14 x n13 6.345984e2
+L9 n13 n14 5.049973e-9 Rser=0 Rpar=1e30
+C5 n14 ref 3.134954e-15
+C6 x ref 6.316130e-15
+L10 x b 1.077808e-10 Rser=0 Rpar=1e30
+C7 b ref 6.316130e-15
+.ends D0_TL1_F_Cu_end
+
+* half a lossless line (LC ladder)
+.subckt D0_TL1_F_Cu_head_2 a b ref
+C1 a ref 6.967912e-15
+L1 a n1 3.033265e-10 Rser=0 Rpar=1e30
+C2 n1 ref 1.393582e-14
+L2 n1 n2 3.033265e-10 Rser=0 Rpar=1e30
+C3 n2 ref 1.393582e-14
+L3 n2 n3 3.033265e-10 Rser=0 Rpar=1e30
+C4 n3 ref 1.393582e-14
+L4 n3 b 3.033265e-10 Rser=0 Rpar=1e30
+C5 b ref 6.967912e-15
+.ends D0_TL1_F_Cu_head_2
+
+* one lossless-line cell: series loss z, shunt loss y, then the lossless line (LC ladder)
+.subckt D0_TL1_F_Cu_cell_2 a b ref
+R1 a n1 1.150562e-2
+R2 n1 n2 2.834866e-4
+L1 n1 n2 9.720443e-12 Rser=0 Rpar=1e30
+R3 n2 n3 7.643453e-3
+L2 n2 n3 5.646462e-11 Rser=0 Rpar=1e30
+R4 n3 n4 2.010489e-2
+L3 n3 n4 3.199792e-11 Rser=0 Rpar=1e30
+R5 n4 n5 4.472512e-2
+L4 n4 n5 1.533575e-11 Rser=0 Rpar=1e30
+R6 n5 n6 9.494601e-2
+L5 n5 n6 7.013964e-12 Rser=0 Rpar=1e30
+R7 n6 n7 2.298389e-1
+L6 n6 n7 3.657999e-12 Rser=0 Rpar=1e30
+R8 n7 x 2.663832e-1
+L7 n7 x 9.133984e-13 Rser=0 Rpar=1e30
+R9 x n8 8.289853e7
+C1 n8 ref 4.822512e-15
+R10 x n9 7.216931e6
+C2 n9 ref 3.495164e-15
+R11 x n10 4.225877e5
+C3 n10 ref 3.766199e-15
+R12 x n11 2.854884e4
+C4 n11 ref 3.517480e-15
+R13 x n12 2.440935e2
+L8 n12 n13 2.428043e-9 Rser=0 Rpar=1e30
+C5 n13 ref 1.018788e-14
+C6 x ref 7.963328e-15
+L9 x n14 3.466588e-10 Rser=0 Rpar=1e30
+C7 n14 ref 1.592666e-14
+L10 n14 n15 3.466588e-10 Rser=0 Rpar=1e30
+C8 n15 ref 1.592666e-14
+L11 n15 n16 3.466588e-10 Rser=0 Rpar=1e30
+C9 n16 ref 1.592666e-14
+L12 n16 n17 3.466588e-10 Rser=0 Rpar=1e30
+C10 n17 ref 1.592666e-14
+L13 n17 n18 3.466588e-10 Rser=0 Rpar=1e30
+C11 n18 ref 1.592666e-14
+L14 n18 n19 3.466588e-10 Rser=0 Rpar=1e30
+C12 n19 ref 1.592666e-14
+L15 n19 b 3.466588e-10 Rser=0 Rpar=1e30
+C13 b ref 7.963328e-15
+.ends D0_TL1_F_Cu_cell_2
+
+* last cell: z, y, then half the lossless line
+.subckt D0_TL1_F_Cu_end_2 a b ref
+R1 a n1 1.150562e-2
+R2 n1 n2 2.834866e-4
+L1 n1 n2 9.720443e-12 Rser=0 Rpar=1e30
+R3 n2 n3 7.643453e-3
+L2 n2 n3 5.646462e-11 Rser=0 Rpar=1e30
+R4 n3 n4 2.010489e-2
+L3 n3 n4 3.199792e-11 Rser=0 Rpar=1e30
+R5 n4 n5 4.472512e-2
+L4 n4 n5 1.533575e-11 Rser=0 Rpar=1e30
+R6 n5 n6 9.494601e-2
+L5 n5 n6 7.013964e-12 Rser=0 Rpar=1e30
+R7 n6 n7 2.298389e-1
+L6 n6 n7 3.657999e-12 Rser=0 Rpar=1e30
+R8 n7 x 2.663832e-1
+L7 n7 x 9.133984e-13 Rser=0 Rpar=1e30
+R9 x n8 8.289853e7
+C1 n8 ref 4.822512e-15
+R10 x n9 7.216931e6
+C2 n9 ref 3.495164e-15
+R11 x n10 4.225877e5
+C3 n10 ref 3.766199e-15
+R12 x n11 2.854884e4
+C4 n11 ref 3.517480e-15
+R13 x n12 2.440935e2
+L8 n12 n13 2.428043e-9 Rser=0 Rpar=1e30
+C5 n13 ref 1.018788e-14
+C6 x ref 6.967912e-15
+L9 x n14 3.033265e-10 Rser=0 Rpar=1e30
+C7 n14 ref 1.393582e-14
+L10 n14 n15 3.033265e-10 Rser=0 Rpar=1e30
+C8 n15 ref 1.393582e-14
+L11 n15 n16 3.033265e-10 Rser=0 Rpar=1e30
+C9 n16 ref 1.393582e-14
+L12 n16 b 3.033265e-10 Rser=0 Rpar=1e30
+C10 b ref 6.967912e-15
+.ends D0_TL1_F_Cu_end_2
+
+* half a lossless line (LC ladder)
+.subckt D0_TL1_F_Cu_head_3 a b ref
+C1 a ref 9.918141e-15
+L1 a b 1.489252e-10 Rser=0 Rpar=1e30
+C2 b ref 9.918141e-15
+.ends D0_TL1_F_Cu_head_3
+
+* last cell: z, y, then half the lossless line
+.subckt D0_TL1_F_Cu_end_3 a b ref
+R1 a n1 6.307934e-4
+R2 n1 n2 5.971171e-6
+L1 n1 n2 4.411094e-12 Rser=0 Rpar=1e30
+R3 n2 n3 3.193421e-4
+L2 n2 n3 1.094989e-11 Rser=0 Rpar=1e30
+R4 n3 n4 9.936019e-4
+L3 n3 n4 7.340054e-12 Rser=0 Rpar=1e30
+R5 n4 n5 2.136520e-3
+L4 n4 n5 3.400378e-12 Rser=0 Rpar=1e30
+R6 n5 n6 4.759532e-3
+L5 n5 n6 1.631991e-12 Rser=0 Rpar=1e30
+R7 n6 n7 9.930340e-3
+L6 n6 n7 7.335858e-13 Rser=0 Rpar=1e30
+R8 n7 n8 2.444484e-2
+L7 n7 n8 3.890517e-13 Rser=0 Rpar=1e30
+R9 n8 x 2.524532e-2
+L8 n8 x 8.656341e-14 Rser=0 Rpar=1e30
+R10 x n9 1.372119e8
+C1 n9 ref 2.062664e-15
+R11 x n10 5.388651e6
+C2 n10 ref 1.660887e-15
+R12 x n11 1.694581e5
+C3 n11 ref 1.670158e-15
+R13 x n12 2.714710e2
+L9 n12 n13 2.160298e-9 Rser=0 Rpar=1e30
+C4 n13 ref 7.328357e-15
+C5 x ref 9.918141e-15
+L10 x b 1.489252e-10 Rser=0 Rpar=1e30
+C6 b ref 9.918141e-15
+.ends D0_TL1_F_Cu_end_3
+
+* line: 0.424 mm on F.Cu, Z0 86.19 ohm, eps_eff 3.122 at 1 GHz (field solver), 1 lossless-line cells (LC ladders of 1 sections) with lumped losses
+* line: 27.032 mm on F.Cu, Z0 140.04 ohm, eps_eff 2.987 at 1 GHz (field solver), 9 lossless-line cells (LC ladders of 7 sections) with lumped losses
+* line: 0.663 mm on F.Cu, Z0 79.36 ohm, eps_eff 2.881 at 1 GHz (field solver), 1 lossless-line cells (LC ladders of 2 sections) with lumped losses
+.subckt D0_TL1_F_Cu a b ref
+X1 a n2 ref D0_TL1_F_Cu_head
+X2 n2 n1 ref D0_TL1_F_Cu_end
+X3 n1 n4 ref D0_TL1_F_Cu_head_2
+X4 n4 n5 ref D0_TL1_F_Cu_cell_2
+X5 n5 n6 ref D0_TL1_F_Cu_cell_2
+X6 n6 n7 ref D0_TL1_F_Cu_cell_2
+X7 n7 n8 ref D0_TL1_F_Cu_cell_2
+X8 n8 n9 ref D0_TL1_F_Cu_cell_2
+X9 n9 n10 ref D0_TL1_F_Cu_cell_2
+X10 n10 n11 ref D0_TL1_F_Cu_cell_2
+X11 n11 n12 ref D0_TL1_F_Cu_cell_2
+X12 n12 n3 ref D0_TL1_F_Cu_end_2
+X13 n3 n13 ref D0_TL1_F_Cu_head_3
+X14 n13 b ref D0_TL1_F_Cu_end_3
+.ends D0_TL1_F_Cu
+
+* lane D0: single line, transmitter end = a, receiver end = b
+.subckt D0_lane a b ref
+X1 a b ref D0_TL1_F_Cu
+.ends D0_lane

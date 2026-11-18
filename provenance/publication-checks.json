@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-18",
+  "purpose": "Publication checks using portable adapters, unmodified pinned tools, and locally supplied original vendor models. Fresh native outputs remain ignored under build/. The committed scientific snapshot is unchanged.",
+  "bootstrap": "Verified and reused exact local sources, release CLI, published dependencies, and vendor model bytes; download/install paths were not re-executed during packaging.",
+  "unit_tests": {
+    "count": 4,
+    "result": "passed"
+  },
+  "native_rerun": {
+    "level1-differential": {
+      "max_absolute_loaded_transfer_difference": {
+        "our": 0.0,
+        "kisi": 0.0
+      },
+      "step_delay_difference_ps": {
+        "our": 0.0,
+        "kisi": 0.0
+      },
+      "shorting_items": 0,
+      "native_ibis_status": "completed",
+      "native_strict_export_exit": 1,
+      "export_max_step_error": [
+        0.05178708300960837,
+        0.05208428230326269
+      ]
+    },
+    "level1-single-ended": {
+      "max_absolute_loaded_transfer_difference": {
+        "our": 0.0,
+        "kisi": 0.0
+      },
+      "step_delay_difference_ps": {
+        "our": 0.0,
+        "kisi": 0.0
+      },
+      "shorting_items": 0,
+      "native_ibis_status": "completed",
+      "native_strict_export_exit": 0,
+      "export_max_step_error": [
+        0.02942231900545725,
+        0.029322987751894375
+      ]
+    },
+    "level2-two-channels": {
+      "max_absolute_loaded_transfer_difference": {
+        "our": 0.0,
+        "kisi": 0.0
+      },
+      "step_delay_difference_ps": {
+        "our": 0.0,
+        "kisi": 0.0
+      },
+      "shorting_items": 2,
+      "native_ibis_status": "blocked_by_verified_short",
+      "native_strict_export_exit": 0,
+      "export_max_step_error": [
+        0.02942231900545725,
+        0.029322987751894375
+      ]
+    }
+  },
+  "macos_drc_environment": "Restricted app sandbox aborted KiCad; the same read-only DRC completed in the normal desktop environment. No board or solver change was made."
+}

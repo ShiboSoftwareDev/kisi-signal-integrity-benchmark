@@ -1,0 +1,918 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-18T07:07:26",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "board.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Rectangle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "eafc1af5-4e01-5ae8-b030-c2435f11b98a"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 0.2,
+                        "y": 19.8
+                    },
+                    "uuid": "7b53d6aa-a14e-5495-8e9e-2b8e424196b1"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 8.3,
+                        "y": 11.905
+                    },
+                    "uuid": "65818d3e-e169-5cee-8bc1-52454ff8c76b"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 53.1,
+                        "y": 11.905
+                    },
+                    "uuid": "cda83eb0-2259-5902-bed0-0beecb241313"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1000 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 1.1500 mm",
+                    "pos": {
+                        "x": 7.15,
+                        "y": 11.905
+                    },
+                    "uuid": "c4d526d7-e80c-5277-83c9-0ae8249dc0e4"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1000 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.9500 mm",
+                    "pos": {
+                        "x": 52.15,
+                        "y": 11.905
+                    },
+                    "uuid": "df6bfc21-bb92-5d87-9f9f-263091d7d0ad"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_P] on F.Cu, length 1.3500 mm",
+                    "pos": {
+                        "x": 7.15,
+                        "y": 10.635
+                    },
+                    "uuid": "eb26a144-0595-5b1a-b02d-f7872dc7c493"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_P] on F.Cu, length 0.7212 mm",
+                    "pos": {
+                        "x": 8.5,
+                        "y": 10.635
+                    },
+                    "uuid": "6bd304d6-5bed-5cce-a2fc-d9d8e25d2480"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_P] on F.Cu, length 37.7400 mm",
+                    "pos": {
+                        "x": 9.01,
+                        "y": 10.125
+                    },
+                    "uuid": "0a669770-189d-5317-a59f-bc42f96c9f5e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_P] on F.Cu, length 2.8750 mm",
+                    "pos": {
+                        "x": 46.75,
+                        "y": 10.125
+                    },
+                    "uuid": "6b39f0cf-352d-55fb-9178-3ccdb9cede25"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_P] on F.Cu, length 8.0500 mm",
+                    "pos": {
+                        "x": 46.75,
+                        "y": 13.0
+                    },
+                    "uuid": "50a4568e-1979-539c-9898-ad04f10e4dd2"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_P] on F.Cu, length 2.3650 mm",
+                    "pos": {
+                        "x": 54.8,
+                        "y": 13.0
+                    },
+                    "uuid": "5f94482e-0606-5391-a069-c266c6f58db6"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_P] on F.Cu, length 2.6500 mm",
+                    "pos": {
+                        "x": 54.8,
+                        "y": 10.635
+                    },
+                    "uuid": "f7317e91-b1b6-583b-b9c1-4a5b350564bb"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_N] on F.Cu, length 1.3500 mm",
+                    "pos": {
+                        "x": 7.15,
+                        "y": 9.365
+                    },
+                    "uuid": "677d1b1f-3b53-5560-9f9b-8edb0e672ec4"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_N] on F.Cu, length 0.7212 mm",
+                    "pos": {
+                        "x": 8.5,
+                        "y": 9.365
+                    },
+                    "uuid": "87bce4f2-b175-524c-a4f4-3ff75e865714"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_N] on F.Cu, length 37.4900 mm",
+                    "pos": {
+                        "x": 9.01,
+                        "y": 9.875
+                    },
+                    "uuid": "3202d3d9-91d9-5f6c-a8f4-1b43e691c72e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_N] on F.Cu, length 2.8750 mm",
+                    "pos": {
+                        "x": 46.5,
+                        "y": 9.875
+                    },
+                    "uuid": "b438ad14-96cf-5bb2-9084-e6c4c3ce5004"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_N] on F.Cu, length 8.3000 mm",
+                    "pos": {
+                        "x": 46.5,
+                        "y": 7.0
+                    },
+                    "uuid": "74bc9f19-0c8b-5c73-8361-3b9059affc9e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_N] on F.Cu, length 2.3650 mm",
+                    "pos": {
+                        "x": 54.8,
+                        "y": 7.0
+                    },
+                    "uuid": "4fea5c9f-d0c7-5e7f-ad1e-e0e8af29e35e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_N] on F.Cu, length 2.6500 mm",
+                    "pos": {
+                        "x": 54.8,
+                        "y": 9.365
+                    },
+                    "uuid": "e074403a-f025-50df-b01f-0b1a1ad73787"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_P] on F.Cu, length 1.6609 mm",
+                    "pos": {
+                        "x": 52.15,
+                        "y": 10.635
+                    },
+                    "uuid": "38a8168b-6068-5c90-ad82-36ecbc80e4cf"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [BUS_N] on F.Cu, length 1.6609 mm",
+                    "pos": {
+                        "x": 52.15,
+                        "y": 9.365
+                    },
+                    "uuid": "79dd0a27-db6c-58cd-9b59-6ced97ad6dbb"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.4000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 8.3,
+                        "y": 11.905
+                    },
+                    "uuid": "65818d3e-e169-5cee-8bc1-52454ff8c76b"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.4000 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 53.1,
+                        "y": 11.905
+                    },
+                    "uuid": "cda83eb0-2259-5902-bed0-0beecb241313"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+                {
+                    "description": "Footprint U1",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 10.0
+                    },
+                    "uuid": "8eba9c12-1a86-5683-9db5-3b128efa1506"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+                {
+                    "description": "Footprint U2",
+                    "pos": {
+                        "x": 50.0,
+                        "y": 10.0
+                    },
+                    "uuid": "2ee76e58-6834-575a-932d-f3f7660ec6fb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Original'",
+            "items": [
+                {
+                    "description": "Footprint R1",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.0
+                    },
+                    "uuid": "27efa529-0415-5ba4-934a-3e64fba9ae7e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of U1",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 10.0
+                    },
+                    "uuid": "a4ce4496-2032-4666-a7ec-7813d63ddfb0"
+                },
+                {
+                    "description": "Value field of U1 (SN65HVD72D)",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 10.0
+                    },
+                    "uuid": "d49c51c5-5a48-4a5e-be5f-5d60eb004cf7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Value field of U2 (SN65HVD72D)",
+                    "pos": {
+                        "x": 50.0,
+                        "y": 10.0
+                    },
+                    "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+                },
+                {
+                    "description": "Reference field of U2",
+                    "pos": {
+                        "x": 50.0,
+                        "y": 10.0
+                    },
+                    "uuid": "c7b7ab6d-c985-4390-9277-d02b13286289"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Value field of R1 (120)",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.0
+                    },
+                    "uuid": "492cc535-fae4-4506-ac9c-7ad5ba3d4dce"
+                },
+                {
+                    "description": "Value field of U2 (SN65HVD72D)",
+                    "pos": {
+                        "x": 50.0,
+                        "y": 10.0
+                    },
+                    "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.0
+                    },
+                    "uuid": "5335ca43-13b5-4cf9-9bdf-420dd31911e1"
+                },
+                {
+                    "description": "Value field of U2 (SN65HVD72D)",
+                    "pos": {
+                        "x": 50.0,
+                        "y": 10.0
+                    },
+                    "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Value field of R1 (120)",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.0
+                    },
+                    "uuid": "492cc535-fae4-4506-ac9c-7ad5ba3d4dce"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.0
+                    },
+                    "uuid": "5335ca43-13b5-4cf9-9bdf-420dd31911e1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U1 (SN65HVD72D)",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 10.0
+                    },
+                    "uuid": "d49c51c5-5a48-4a5e-be5f-5d60eb004cf7"
+                },
+                {
+                    "description": "Pad 3 [UNCONNECTED_2] of U1 on F.Cu",
+                    "pos": {
+                        "x": 2.85,
+                        "y": 10.635
+                    },
+                    "uuid": "fe1ab99d-c75c-5ab7-906e-063a66c48065"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U1 (SN65HVD72D)",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 10.0
+                    },
+                    "uuid": "d49c51c5-5a48-4a5e-be5f-5d60eb004cf7"
+                },
+                {
+                    "description": "Pad 2 [UNCONNECTED_1] of U1 on F.Cu",
+                    "pos": {
+                        "x": 2.85,
+                        "y": 9.365
+                    },
+                    "uuid": "b99a06c7-5083-5396-a43f-c6b700fdb935"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U1 (SN65HVD72D)",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 10.0
+                    },
+                    "uuid": "d49c51c5-5a48-4a5e-be5f-5d60eb004cf7"
+                },
+                {
+                    "description": "Pad 7 [BUS_N] of U1 on F.Cu",
+                    "pos": {
+                        "x": 7.15,
+                        "y": 9.365
+                    },
+                    "uuid": "d62af984-18c8-539a-845e-e94e336f1a5a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U1 (SN65HVD72D)",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 10.0
+                    },
+                    "uuid": "d49c51c5-5a48-4a5e-be5f-5d60eb004cf7"
+                },
+                {
+                    "description": "Pad 6 [BUS_P] of U1 on F.Cu",
+                    "pos": {
+                        "x": 7.15,
+                        "y": 10.635
+                    },
+                    "uuid": "0d93947b-6455-523d-82c6-cf62ef218578"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U2 (SN65HVD72D)",
+                    "pos": {
+                        "x": 50.0,
+                        "y": 10.0
+                    },
+                    "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+                },
+                {
+                    "description": "Pad 2 [UNCONNECTED_9] of U2 on F.Cu",
+                    "pos": {
+                        "x": 47.85,
+                        "y": 9.365
+                    },
+                    "uuid": "3b96af97-cba6-5a4d-a9a2-5e17618f3fa6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U2 (SN65HVD72D)",
+                    "pos": {
+                        "x": 50.0,
+                        "y": 10.0
+                    },
+                    "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+                },
+                {
+                    "description": "Pad 3 [UNCONNECTED_10] of U2 on F.Cu",
+                    "pos": {
+                        "x": 47.85,
+                        "y": 10.635
+                    },
+                    "uuid": "bd29a51c-8250-543e-8d9d-db3361ca42dd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U2 (SN65HVD72D)",
+                    "pos": {
+                        "x": 50.0,
+                        "y": 10.0
+                    },
+                    "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+                },
+                {
+                    "description": "Pad 7 [BUS_N] of U2 on F.Cu",
+                    "pos": {
+                        "x": 52.15,
+                        "y": 9.365
+                    },
+                    "uuid": "262c09f6-0e66-5a64-9916-659ba76d5bae"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U2 (SN65HVD72D)",
+                    "pos": {
+                        "x": 50.0,
+                        "y": 10.0
+                    },
+                    "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+                },
+                {
+                    "description": "Pad 6 [BUS_P] of U2 on F.Cu",
+                    "pos": {
+                        "x": 52.15,
+                        "y": 10.635
+                    },
+                    "uuid": "298ec5a8-95ac-5dfe-bf09-d6319bebe157"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of R1 (120)",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.0
+                    },
+                    "uuid": "492cc535-fae4-4506-ac9c-7ad5ba3d4dce"
+                },
+                {
+                    "description": "Pad 7 [BUS_N] of U2 on F.Cu",
+                    "pos": {
+                        "x": 52.15,
+                        "y": 9.365
+                    },
+                    "uuid": "262c09f6-0e66-5a64-9916-659ba76d5bae"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U2 (SN65HVD72D)",
+                    "pos": {
+                        "x": 50.0,
+                        "y": 10.0
+                    },
+                    "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+                },
+                {
+                    "description": "Pad 2 [BUS_N] of R1 on F.Cu",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 9.175
+                    },
+                    "uuid": "67cbcb75-3949-5d35-803f-431ec711065d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.0
+                    },
+                    "uuid": "5335ca43-13b5-4cf9-9bdf-420dd31911e1"
+                },
+                {
+                    "description": "Pad 2 [BUS_N] of R1 on F.Cu",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 9.175
+                    },
+                    "uuid": "67cbcb75-3949-5d35-803f-431ec711065d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of R1 (120)",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.0
+                    },
+                    "uuid": "492cc535-fae4-4506-ac9c-7ad5ba3d4dce"
+                },
+                {
+                    "description": "Pad 2 [BUS_N] of R1 on F.Cu",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 9.175
+                    },
+                    "uuid": "67cbcb75-3949-5d35-803f-431ec711065d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of U2 (SN65HVD72D)",
+                    "pos": {
+                        "x": 50.0,
+                        "y": 10.0
+                    },
+                    "uuid": "6201cdc2-9d7c-472a-b6dc-5c6ae8346d83"
+                },
+                {
+                    "description": "Pad 1 [BUS_P] of R1 on F.Cu",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.825
+                    },
+                    "uuid": "70fac05c-0497-5e0a-9817-8c9054615a2e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.0
+                    },
+                    "uuid": "5335ca43-13b5-4cf9-9bdf-420dd31911e1"
+                },
+                {
+                    "description": "Pad 1 [BUS_P] of R1 on F.Cu",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.825
+                    },
+                    "uuid": "70fac05c-0497-5e0a-9817-8c9054615a2e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of R1 (120)",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.0
+                    },
+                    "uuid": "492cc535-fae4-4506-ac9c-7ad5ba3d4dce"
+                },
+                {
+                    "description": "Pad 6 [BUS_P] of U2 on F.Cu",
+                    "pos": {
+                        "x": 52.15,
+                        "y": 10.635
+                    },
+                    "uuid": "298ec5a8-95ac-5dfe-bf09-d6319bebe157"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Value field of R1 (120)",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.0
+                    },
+                    "uuid": "492cc535-fae4-4506-ac9c-7ad5ba3d4dce"
+                },
+                {
+                    "description": "Pad 1 [BUS_P] of R1 on F.Cu",
+                    "pos": {
+                        "x": 53.8,
+                        "y": 10.825
+                    },
+                    "uuid": "70fac05c-0497-5e0a-9817-8c9054615a2e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

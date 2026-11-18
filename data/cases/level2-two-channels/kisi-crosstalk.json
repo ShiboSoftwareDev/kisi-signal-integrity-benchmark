@@ -1,0 +1,56 @@
+{
+  "critical": 1,
+  "field_solver": {
+    "cross_sections": 9,
+    "cross_sections_field": 0,
+    "target_length_coverage_pct": 0
+  },
+  "note": "NEXT (backward, seen at the near end) and FEXT (forward, at the far end) as fractions of the aggressor swing, all aggressors summed; critical from 1 % (kisi guide value). Source 'formula' is an estimate; kisi.mjs solves the critical coupling cross-sections with the field solver. Broadside overlaps (tracks on the adjacent layer) are counted but not computed yet. Details per net: `kisi net`.",
+  "rise_ps": 100,
+  "rows": [
+    {
+      "broadside_overlaps": 0,
+      "critical": true,
+      "differential": false,
+      "fext": 0.04514376372341656,
+      "fext_common": null,
+      "net": "D0",
+      "next": 0.08799899600808767,
+      "next_common": null,
+      "partner": null,
+      "source": "field",
+      "unsolved_cross_sections": 0,
+      "worst_aggressor": "VCC",
+      "worst_aggressor_pair": null
+    },
+    {
+      "broadside_overlaps": 0,
+      "critical": false,
+      "differential": false,
+      "fext": 0,
+      "fext_common": null,
+      "net": "D1",
+      "next": 0,
+      "next_common": null,
+      "partner": null,
+      "source": "formula",
+      "unsolved_cross_sections": 0,
+      "worst_aggressor": null,
+      "worst_aggressor_pair": null
+    }
+  ],
+  "rows_omitted": 0,
+  "rows_shown": "all",
+  "threshold": 0.01,
+  "unsolved_critical_cross_sections": 0,
+  "victims": 2,
+  "field_solver_run": {
+    "planned": 4,
+    "from_cache": 4,
+    "solved_now": 0,
+    "failed_now": 0,
+    "not_solved": 0,
+    "seconds": 0,
+    "cache": "native/kisi-cache/field-cache.json"
+  }
+}

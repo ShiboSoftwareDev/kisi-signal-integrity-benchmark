@@ -1,0 +1,49 @@
+{
+  "level": "level1-single-ended",
+  "reference_mapping": {
+    "TX": "U1",
+    "RX": "U2"
+  },
+  "net_names": [
+    "",
+    "DATA",
+    "GND",
+    "UNCONNECTED_0",
+    "UNCONNECTED_1",
+    "UNCONNECTED_5",
+    "UNCONNECTED_8",
+    "VCC"
+  ],
+  "signal_net_names": [
+    "DATA"
+  ],
+  "source_port_to_net": {
+    "source_port_0": "UNCONNECTED_0",
+    "source_port_1": "UNCONNECTED_1",
+    "source_port_2": "GND",
+    "source_port_3": "DATA",
+    "source_port_4": "VCC",
+    "source_port_5": "UNCONNECTED_5",
+    "source_port_6": "DATA",
+    "source_port_7": "GND",
+    "source_port_8": "UNCONNECTED_8",
+    "source_port_9": "VCC",
+    "source_net_0": "VCC",
+    "source_net_1": "GND"
+  },
+  "lengths_mm": {
+    "GND": 1.2014142135623789,
+    "VCC": 30.439354173480297,
+    "DATA": 28.118502884254436
+  },
+  "segments": 11,
+  "pads": 10,
+  "vias": 2,
+  "pours": 1,
+  "original_nominal_board_mm": 1.6,
+  "actual_stack_mm": 1.49,
+  "coordinate_transform": "x_kicad=x-cx+width/2; y_kicad=height/2-(y-cy)",
+  "routes_modified": false,
+  "materials": "Exact generated stackup, plus the same declared mask and loss assumptions used by our extractor.",
+  "known_render_errors": []
+}
